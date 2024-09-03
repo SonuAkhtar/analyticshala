@@ -1,0 +1,74 @@
+.menuMobile_container {
+  display: none;
+}
+
+/* Responsive design for mobile */
+@media screen and (max-width: 600px) {
+  .menuMobile_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 3rem;
+    left: 0;
+    background: var(--dark-bg);
+    width: 100%;
+    height: max-content;
+    padding: 3rem 1rem;
+    border-radius: 2rem 2rem 0 0;
+    box-shadow: 0 0 5px var(--off-white);
+    transform: translateY(50vh);
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .menuMobile_container.expand {
+    transform: translateY(0);
+  }
+
+  .menuMobile_container ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    row-gap: 3.5rem;
+  }
+
+  .menuMobile_container ul a {
+    position: relative;
+    width: 80px;
+    padding: 0.25rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menuMobile_container a span,
+  .menuMobile_container a i {
+    position: absolute;
+  }
+
+  .menuMobile_container a span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--off-white);
+    opacity: 0.6;
+  }
+
+  .menuMobile_container a i {
+    font-size: 2.25rem;
+    color: var(--off-white);
+    opacity: 0.15;
+  }
+
+  .menuMobile_container ul a.active span {
+    opacity: 1;
+    letter-spacing: 4px;
+    font-weight: 600;
+  }
+
+  .menuMobile_container ul a.active i {
+    opacity: 0.4;
+  }
+}

@@ -1,0 +1,125 @@
+.qualification_container[data-scroll="in"] {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 1s;
+}
+
+.qualification_tabs {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
+}
+
+.qualification_button {
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.4;
+}
+
+.qualification_button img {
+  height: 40px;
+  mix-blend-mode: multiply;
+  opacity: 0.4;
+}
+
+.qualification_button.active,
+.qualification_button:hover,
+.qualification_button.active img,
+.qualification_button:hover img {
+  color: var(--off-dark);
+  opacity: 1;
+}
+
+.qualification_data {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  column-gap: 1.5rem;
+}
+
+.qualification_data_wrapper.left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  transform: translateX(-100vw);
+  transition: all 1s ease;
+}
+
+.qualification_data_wrapper.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transform: translateX(100vw);
+  transition: all 1s ease;
+}
+
+.qualification_data_wrapper.left.show,
+.qualification_data_wrapper.right.show {
+  transform: translateX(0);
+}
+
+.qualification_title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.qualification_subtitle {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.qualification_calendar {
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.qualification_rounder {
+  display: inline-block;
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+  background: var(--off-dark);
+}
+
+.qualification_line {
+  display: block;
+  width: 1px;
+  height: 100%;
+  background: var(--off-dark);
+  transform: translate(6px, -7px);
+}
+
+.qualification_content {
+  height: 0;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+.qualification_content.show {
+  height: max-content;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  .qualification {
+    padding: 2rem 1rem;
+  }
+
+  .qualification_data {
+    column-gap: 1rem;
+  }
+
+  .qualification_data_wrapper.left {
+    text-align: right;
+  }
+
+  .qualification_data_wrapper.right {
+    text-align: left;
+  }
+}

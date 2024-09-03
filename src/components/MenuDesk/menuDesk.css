@@ -1,0 +1,162 @@
+.menuDesk_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80vw;
+  height: 100vh;
+  background: var(--off-white);
+  transition: all 0.5s ease-in-out;
+  transform: translateX(-120vw);
+  overflow: hidden;
+  z-index: 999;
+  box-shadow: 0 0 15px var(--off-dark);
+}
+
+.menuDesk_container.show {
+  transform: translateX(0);
+  transition: all 0.5s ease-in-out;
+}
+
+.menuDesk_circle {
+  position: absolute;
+  top: -5vh;
+  left: -55vh;
+  height: 110vh;
+  width: 110vh;
+  border-radius: 50%;
+  border: 2px solid #acb0bd;
+  transition: all 0.5s ease-in-out;
+}
+
+.menuDesk_circle.one {
+  rotate: 45deg;
+}
+
+.menuDesk_circle.two {
+  rotate: 30deg;
+}
+
+.menuDesk_circle.three {
+  rotate: 15deg;
+}
+
+.menuDesk_circle.four {
+  rotate: 0deg;
+}
+
+.menuDesk_circle.five {
+  rotate: -15deg;
+}
+
+.menuDesk_circle.six {
+  rotate: -30deg;
+}
+
+.menuDesk_circle.seven {
+  rotate: -45deg;
+}
+
+.menuDesk_stripe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0, -50%);
+  transform-origin: 0% 50%;
+  width: 100%;
+  height: 60px;
+  display: flex;
+}
+
+.menuDesk_dot {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.menuDesk_dot i {
+  font-size: 1rem;
+  transform: translateX(55%);
+  color: var(--off-dark);
+  opacity: 0.3;
+}
+
+.menuDesk_dot i.active {
+  opacity: 1;
+}
+
+.menuDesk_text {
+  width: 50%;
+  height: 100%;
+  padding-left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  color: var(--off-dark);
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+.menuDesk_text:hover,
+.menuDesk_text.active {
+  opacity: 1;
+}
+
+.menuDesk_text .number {
+  font-size: 2rem;
+}
+
+.menuDesk_text .name {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.menuDesk_stripe.one {
+  transform: translate(0, -50%) rotate(-45deg);
+}
+
+.menuDesk_stripe.two {
+  transform: translate(0, -50%) rotate(-30deg);
+}
+
+.menuDesk_stripe.three {
+  transform: translate(0, -50%) rotate(-15deg);
+}
+
+.menuDesk_stripe.four {
+  transform: translate(0, -50%) rotate(0deg);
+}
+
+.menuDesk_stripe.five {
+  transform: translate(0, -50%) rotate(15deg);
+}
+
+.menuDesk_stripe.six {
+  transform: translate(0, -50%) rotate(30deg);
+}
+
+.menuDesk_stripe.seven {
+  transform: translate(0, -50%) rotate(45deg);
+}
+
+/* Responsive design */
+@media screen and (max-width: 900px) {
+  .menuDesk_circle {
+    position: absolute;
+    top: 2vh;
+    left: -65vh;
+    height: 100vh;
+    width: 100vh;
+    border-radius: 50%;
+    border: 2px solid #acb0bd;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .menuDesk_container {
+    display: none;
+  }
+}
