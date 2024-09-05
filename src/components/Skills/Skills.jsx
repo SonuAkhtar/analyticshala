@@ -1,17 +1,7 @@
-import React, { useState } from "react";
-
-// imported Data
-import { skillsData } from "../../../appData";
-
 // imported CSS
 import "./skills.css";
 
-// imported icons
-import arrowIcon from "/assets/skills/arrow.gif";
-
 const Skills = () => {
-  const [skillsList, setSkillsList] = useState(0);
-
   return (
     <>
       <section className="skills" id="skills">
@@ -20,49 +10,66 @@ const Skills = () => {
           <span className="section_subtitle">Technical</span>
 
           <main className="skills_main">
-            {skillsData.map((skill, index) => (
-              <div key={skill.id} className="skills_content">
-                <div className="skills_header">
-                  <i className={`skills_icon ${skill.icon}`} />
-                  <div>
-                    <h1 className="skills_title">{skill.title}</h1>
-                    <span className="skills_subtitle">{skill.subtitle}</span>
+            <div className="skills_top">
+              <div className="skills__heading">
+                Get the skills you need to get a Job that is <br />
+                <span>in Demand</span>
+              </div>
+              <div className="skills_details">
+                <p>
+                  The modern labor market dictates its own terms. Today, to be a
+                  competitive spiaclist requires more than professional skills.
+                </p>
+                <div className="skills_data">
+                  <div className="skills_data_item">
+                    <div className="skills_number">5+</div>
+                    <div className="skills_info">Years Experience</div>
                   </div>
-                  <img
-                    src={arrowIcon}
-                    alt="arrow"
-                    className={`skills_arrow ${
-                      skillsList === index && "rotate"
-                    }`}
-                    onClick={() =>
-                      setSkillsList((prev) =>
-                        skillsList === index ? (prev = null) : (prev = index)
-                      )
-                    }
-                  />
-                </div>
-                <div
-                  className={`skills_list ${
-                    skillsList === index ? "show" : ""
-                  }`}
-                >
-                  {skill.data.map((item) => (
-                    <div key={item.id} className="skills_data">
-                      <div className="skills_titles">
-                        <h3 className="skills_name">{item.name}</h3>
-                        <span className="skills_number">{item.number}%</span>
-                      </div>
-                      <div className="skills_bar">
-                        <span
-                          className="skills_percentage"
-                          style={{ width: `${item.number}%` }}
-                        ></span>
-                      </div>
-                    </div>
-                  ))}
+                  <span>|</span>
+                  <div className="skills_data_item">
+                    <div className="skills_number">10</div>
+                    <div className="skills_info">Types of Courses</div>
+                  </div>
+                  <span>|</span>
+                  <div className="skills_data_item">
+                    <div className="skills_number">25</div>
+                    <div className="skills_info">Students Trained</div>
+                  </div>
                 </div>
               </div>
-            ))}
+            </div>
+            <div className="skills_bottom">
+              <div className="skills_types">
+                <div className="skills_type_item">
+                  <i class="fas fa-medal" />
+                  <div className="skills_type_points">
+                    <div className="skills_type_title">Leadership</div>
+                    <div className="skills_type_subtitle">
+                      Fully commited to the success company
+                    </div>
+                  </div>
+                </div>
+                <div className="skills_type_item">
+                  <i class="fas fa-brain" />
+                  <div className="skills_type_points">
+                    <div className="skills_type_title">Responsibility</div>
+                    <div className="skills_type_subtitle">
+                      Fully commited to the success company
+                    </div>
+                  </div>
+                </div>
+
+                <div className="skills_type_item">
+                  <i class="fas fa-bolt" />
+                  <div className="skills_type_points">
+                    <div className="skills_type_title">Flexibility</div>
+                    <div className="skills_type_subtitle">
+                      Fully commited to the success company
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </main>
         </div>
       </section>
