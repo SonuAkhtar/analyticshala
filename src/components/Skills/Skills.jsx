@@ -41,7 +41,7 @@ const Skills = () => {
             <div className="skills_bottom">
               <div className="skills_types">
                 <div className="skills_type_item">
-                  <i class="fas fa-medal" />
+                  <i className="fas fa-medal" />
                   <div className="skills_type_points">
                     <div className="skills_type_title">Leadership</div>
                     <div className="skills_type_subtitle">
@@ -50,7 +50,7 @@ const Skills = () => {
                   </div>
                 </div>
                 <div className="skills_type_item">
-                  <i class="fas fa-brain" />
+                  <i className="fas fa-brain" />
                   <div className="skills_type_points">
                     <div className="skills_type_title">Responsibility</div>
                     <div className="skills_type_subtitle">
@@ -60,7 +60,7 @@ const Skills = () => {
                 </div>
 
                 <div className="skills_type_item">
-                  <i class="fas fa-bolt" />
+                  <i className="fas fa-bolt" />
                   <div className="skills_type_points">
                     <div className="skills_type_title">Flexibility</div>
                     <div className="skills_type_subtitle">

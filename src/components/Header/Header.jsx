@@ -23,7 +23,7 @@ const Header = () => {
       <header className={`header ${headerScroll && "scroll"}`}>
         <nav>
           <a className="nav_logo" href="#">
-            Riyaz
+            AnalyticShala
           </a>
 
           <div

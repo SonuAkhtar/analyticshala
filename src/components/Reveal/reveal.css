@@ -1,0 +1,11 @@
+.reveal_main {
+  overflow: hidden;
+  padding-top: 1rem;
+}
+
+.reveal_main h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin: 0;
+  line-height: 4rem;
+}

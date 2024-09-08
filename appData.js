@@ -169,6 +169,33 @@ export const projectsData = [
   },
 ];
 
+export const imagesData = [
+  {
+    id: 0,
+    image: "/assets/projects/project1.PNG",
+  },
+  {
+    id: 1,
+    image: "/assets/projects/project4.PNG",
+  },
+  {
+    id: 2,
+    image: "/assets/projects/project5.PNG",
+  },
+  {
+    id: 3,
+    image: "/assets/projects/project6.PNG",
+  },
+  {
+    id: 4,
+    image: "/assets/projects/project5.PNG",
+  },
+  {
+    id: 5,
+    image: "/assets/projects/project6.PNG",
+  },
+];
+
 export const skillsData = [
   {
     id: 0,
@@ -301,18 +328,26 @@ export const teamData = [
     id: 1,
     number: "01",
     name: "Faizan Ansari",
-    position: "Tech Lead",
-    image: "/assets/hobbies/dev_1.jpg",
+    position: "Senior Engineer",
+    image: "/assets/hobbies/dev_2.jpg",
   },
   {
     id: 2,
     number: "02",
     name: "Aishvarya Joshi",
-    position: "Senior Engineer",
-    image: "/assets/hobbies/dev_2.jpg",
+    position: "Tech Lead",
+    image: "/assets/hobbies/dev_1.jpg",
   },
+
   {
     id: 3,
+    number: "03",
+    name: "Riyaz Akhtar",
+    position: "Lead Engineer",
+    image: "/assets/hobbies/dev_3.jpg",
+  },
+  {
+    id: 4,
     number: "03",
     name: "Riyaz Akhtar",
     position: "Lead Engineer",

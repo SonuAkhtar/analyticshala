@@ -1,11 +1,14 @@
 .header {
   position: sticky;
   top: 0;
-  width: 100vw;
+  width: 95vw;
   height: 60px;
-  background: var(--dark-bg);
-  color: var(--off-white);
+  margin: 1rem auto 0 auto;
   padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--dark-bg);
+  background-color: #222;
+  color: var(--off-white);
   display: flex;
   align-items: center;
   justify-content: center;
