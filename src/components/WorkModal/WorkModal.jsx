@@ -14,7 +14,7 @@ const WorkModal = ({ openModal, setOpenModal, modalData }) => {
           <div className="worksModal_main">
             <ul>
               {modalData.features?.map((data, i) => (
-                <li>
+                <li key={i}>
                   <i className="far fa-check-square" />
                   <p>{data}</p>
                 </li>

@@ -388,3 +388,41 @@ export const contactData = [
     alt: "telephone",
   },
 ];
+
+export const testimonyData = [
+  {
+    id: 1,
+    image: "/assets/hobbies/dev_1.jpg",
+    review:
+      "It has been a great learning experience. Everything was so precise and upto the industry demand and standdards. It has been a great learning experience. Everything was so precise and upto the industry demand and standdards",
+    name: "Person One",
+    position: "Senior Engineer",
+  },
+
+  {
+    id: 2,
+    image: "/assets/hobbies/dev_2.jpg",
+    review:
+      "It has been a great learning experience. Everything was so precise and upto the industry demand and standdards. It has been a great learning experience. Everything was so precise and upto the industry demand and standdards",
+    name: "Person Two",
+    position: "Senior Engineer",
+  },
+
+  {
+    id: 3,
+    image: "/assets/hobbies/dev_1.jpg",
+    review:
+      "It has been a great learning experience. Everything was so precise and upto the industry demand and standdards. It has been a great learning experience. Everything was so precise and upto the industry demand and standdards",
+    name: "Person Three",
+    position: "Senior Engineer",
+  },
+
+  {
+    id: 4,
+    image: "/assets/hobbies/dev_3.jpg",
+    review:
+      "It has been a great learning experience. Everything was so precise and upto the industry demand and standdards. It has been a great learning experience. Everything was so precise and upto the industry demand and standdards",
+    name: "Person Four",
+    position: "Senior Engineer",
+  },
+];

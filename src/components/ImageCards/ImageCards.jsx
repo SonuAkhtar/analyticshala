@@ -15,6 +15,7 @@ const ImageCards = () => {
         <main className="imageCards_main">
           {imagesData.map((image, index) => (
             <div
+              key={index}
               className={`image_wrapper ${
                 index === activeImage ? "active" : ""
               }`}

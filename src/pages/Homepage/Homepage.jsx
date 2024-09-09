@@ -18,6 +18,7 @@ import Reveal from "../../components/Reveal/Reveal";
 import Gallery from "../../components/Gallery/Gallery";
 import ImageCards from "../../components/ImageCards/ImageCards";
 import Why from "../../components/Why/Why";
+import ScrollText from "../../components/ScrollText/ScrollText";
 
 function Homepage() {
   return (
@@ -37,6 +38,7 @@ function Homepage() {
       <Reveal />
       <Gallery />
       <ImageCards />
+      {/* <ScrollText /> */}
       <Footer />
     </>
   );

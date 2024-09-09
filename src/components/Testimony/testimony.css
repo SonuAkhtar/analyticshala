@@ -1,0 +1,150 @@
+.testimony {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6fbff;
+}
+
+.testimony h1 {
+  position: relative;
+  font-size: 2rem;
+  margin-bottom: 4rem;
+}
+
+.testimony h1::before {
+  content: "";
+  width: 300px;
+  height: 3px;
+  background: linear-gradient(to right, #f44336, #9f4db5);
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.review_box {
+  width: 100%;
+  max-width: 1200px;
+  height: 50vh;
+  border-radius: 1rem;
+  box-shadow: -10px 10px 40px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  width: 90%;
+  padding-right: 60px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 1s ease-in-out;
+}
+
+.card_wrapper {
+  width: 100%;
+  height: 50vh;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  height: 100%;
+  line-height: 22px;
+  border-radius: 1rem;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #e7f0dc;
+  color: #777;
+  padding: 1rem 2rem;
+  overflow: hidden;
+}
+
+.card > p {
+  width: 90%;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.5rem;
+  color: #666;
+  transform: translateY(-50vh);
+  transition: all 1.5s ease;
+}
+
+.card > p i {
+  padding: 0 1rem;
+  font-size: 1rem;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  transform: translateX(-50vw);
+  transition: all 1.5s ease;
+}
+
+.profile img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.profile h3 {
+  font-size: 1.25rem;
+}
+
+.sidebar {
+  width: 15vw;
+  height: 100%;
+  padding: 1rem 0;
+  box-sizing: border-box;
+  background-color: #ef9c66;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar i {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.current_card_number {
+  font-size: 4rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.current_card_number span {
+  font-size: 3rem;
+  opacity: 0.5;
+}
+
+.card.active > p {
+  transform: translateY(0);
+}
+
+.card.active .profile {
+  transform: translateY(0);
+}
