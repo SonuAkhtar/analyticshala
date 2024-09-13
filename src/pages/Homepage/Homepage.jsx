@@ -19,20 +19,22 @@ import Gallery from "../../components/Gallery/Gallery";
 import ImageCards from "../../components/ImageCards/ImageCards";
 import Why from "../../components/Why/Why";
 import ScrollText from "../../components/ScrollText/ScrollText";
+import Hero1 from "../../components/Hero1/Hero1";
 
 function Homepage() {
   return (
     <>
       <Header />
+      <Hero1 />
+      <RotateText />
       <Hero />
-      <AboutMe />
+      {/* <AboutMe /> */}
       <Testimony />
-      <Works />
+      {/* <Works /> */}
       <Why />
       <Skills />
       <Info />
-      <Projects />
-      <RotateText />
+      {/* <Projects /> */}
       <HomeTeam />
       <Contact />
       <Reveal />

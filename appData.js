@@ -329,14 +329,44 @@ export const teamData = [
     number: "01",
     name: "Faizan Ansari",
     position: "Senior Engineer",
+    profile: "CEO",
     image: "/assets/hobbies/dev_2.jpg",
+    social: [
+      {
+        href: "https://github.com/SonuAkhtar",
+        iconClass: "fab fa-github",
+      },
+      {
+        href: "https://github.com/SonuAkhtar",
+        iconClass: "fab fa-linkedin-in",
+      },
+      {
+        href: "https://github.com/SonuAkhtar",
+        iconClass: "fab fa-twitter",
+      },
+    ],
   },
   {
     id: 2,
     number: "02",
     name: "Aishvarya Joshi",
     position: "Tech Lead",
+    profile: "CFO",
     image: "/assets/hobbies/dev_1.jpg",
+    social: [
+      {
+        href: "https://github.com/SonuAkhtar",
+        iconClass: "fab fa-github",
+      },
+      {
+        href: "https://github.com/SonuAkhtar",
+        iconClass: "fab fa-linkedin-in",
+      },
+      {
+        href: "https://github.com/SonuAkhtar",
+        iconClass: "fab fa-twitter",
+      },
+    ],
   },
 
   {
@@ -344,14 +374,44 @@ export const teamData = [
     number: "03",
     name: "Riyaz Akhtar",
     position: "Lead Engineer",
+    profile: "CTO",
     image: "/assets/hobbies/dev_3.jpg",
+    social: [
+      {
+        href: "https://github.com/SonuAkhtar",
+        iconClass: "fab fa-github",
+      },
+      {
+        href: "https://github.com/SonuAkhtar",
+        iconClass: "fab fa-linkedin-in",
+      },
+      {
+        href: "https://github.com/SonuAkhtar",
+        iconClass: "fab fa-twitter",
+      },
+    ],
   },
   {
     id: 4,
-    number: "03",
+    number: "04",
     name: "Riyaz Akhtar",
     position: "Lead Engineer",
+    profile: "CTO",
     image: "/assets/hobbies/dev_3.jpg",
+    social: [
+      {
+        href: "https://github.com/SonuAkhtar",
+        iconClass: "fab fa-github",
+      },
+      {
+        href: "https://github.com/SonuAkhtar",
+        iconClass: "fab fa-linkedin-in",
+      },
+      {
+        href: "https://github.com/SonuAkhtar",
+        iconClass: "fab fa-twitter",
+      },
+    ],
   },
 ];
 

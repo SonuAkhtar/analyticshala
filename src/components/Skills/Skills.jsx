@@ -6,9 +6,6 @@ const Skills = () => {
     <>
       <section className="skills" id="skills">
         <div className="container">
-          <h2 className="section_title">Skills</h2>
-          <span className="section_subtitle">Technical</span>
-
           <main className="skills_main">
             <div className="skills_top">
               <div className="skills__heading">
@@ -17,7 +14,7 @@ const Skills = () => {
               </div>
               <div className="skills_details">
                 <p>
-                  The modern labor market dictates its own terms. Today, to be a
+                  The modern tech market dictates its own terms. Today, to be a
                   competitive spiaclist requires more than professional skills.
                 </p>
                 <div className="skills_data">

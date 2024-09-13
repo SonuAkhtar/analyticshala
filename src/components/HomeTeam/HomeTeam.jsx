@@ -24,8 +24,15 @@ const HomeTeam = () => {
                     <span className="teamCard_position">{team.position}</span>
                   </div>
 
-                  <button className="teamCard_button">Know More</button>
+                  <div className="social_buttons">
+                    {team.social.map((val, i) => (
+                      <a key={i} className="social_link" href={val.href}>
+                        <i className={val.iconClass}></i>
+                      </a>
+                    ))}
+                  </div>
                 </div>
+                <span className="teamCard_profile">{team.profile}</span>
               </div>
             ))}
           </main>
