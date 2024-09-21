@@ -29,15 +29,15 @@ function Homepage() {
       <RotateText />
       <Hero />
       {/* <AboutMe /> */}
+      <Reveal />
       <Testimony />
       {/* <Works /> */}
       <Why />
       <Skills />
-      <Info />
+      {/* <Info /> */}
       {/* <Projects /> */}
       <HomeTeam />
       <Contact />
-      <Reveal />
       <Gallery />
       <ImageCards />
       {/* <ScrollText /> */}

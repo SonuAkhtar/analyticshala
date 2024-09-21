@@ -1,4 +1,27 @@
-.reveal_main {
+.reveal_container {
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.reveal {
+  width: 80%;
+}
+
+.reveal-text {
+  font-size: 8rem;
+  line-height: 8rem;
+  font-weight: bold;
+  color: #f0f0f0;
+  filter: drop-shadow(0 0 0.06rem #444);
+}
+
+/* .reveal_main {
   overflow: hidden;
   padding-top: 1rem;
 }
@@ -8,4 +31,4 @@
   text-align: center;
   margin: 0;
   line-height: 4rem;
-}
+} */

@@ -37,16 +37,13 @@ const RotateText = () => {
   return (
     <section className="rotateText" id="rotateText">
       <div className="container">
-        <h2 className="section_title">Text</h2>
-        <span className="section_subtitle">Rotate</span>
-
         <main className="rotate_main">
           <div className="text_wrapper">
-            <p>Designer</p>
-            <p>Developer</p>
-            <p>Poet</p>
-            <p>Photographer</p>
-            <p>Writer</p>
+            <p>Data Science</p>
+            <p>Artificial Intelligence</p>
+            <p>Machine Learning</p>
+            <p>Python</p>
+            <p>Advance Excel</p>
           </div>
         </main>
       </div>
