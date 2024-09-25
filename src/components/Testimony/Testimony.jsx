@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { testimonyData } from "../../../appData";
 
 // imported CSS
-import "./Testimony.css";
+import "./testimony.css";
 
 const Testimony = () => {
   const [currentCard, setCurrentCard] = useState(0);
