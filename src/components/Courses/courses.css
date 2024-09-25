@@ -1,0 +1,14 @@
+.courses_container {
+  height: 100vh;
+  width: 100%;
+  background-color: lightsteelblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.courses_wrapper {
+  width: 80%;
+  background-color: lightblue;
+}

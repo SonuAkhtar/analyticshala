@@ -20,6 +20,7 @@ import ImageCards from "../../components/ImageCards/ImageCards";
 import Why from "../../components/Why/Why";
 import ScrollText from "../../components/ScrollText/ScrollText";
 import Hero1 from "../../components/Hero1/Hero1";
+import Courses from "../../components/Courses/Courses";
 
 function Homepage() {
   return (
@@ -30,6 +31,7 @@ function Homepage() {
       <Hero />
       {/* <AboutMe /> */}
       <Reveal />
+      <Courses />
       <Testimony />
       {/* <Works /> */}
       <Why />

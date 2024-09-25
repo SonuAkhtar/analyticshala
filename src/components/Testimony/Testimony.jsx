@@ -18,7 +18,7 @@ const Testimony = () => {
   };
   return (
     <div className="testimony" id="testimony">
-      <h1>Customer Review</h1>
+      <h1>Students Reviews</h1>
       <div className="review_box">
         <div
           className="slide"
@@ -29,12 +29,12 @@ const Testimony = () => {
               <div className={`card ${currentCard === index ? "active" : ""}`}>
                 <p>
                   <span>
-                    <i class="fas fa-quote-left" />
+                    <i className="fas fa-quote-left" />
                   </span>
 
                   {value.review}
                   <span>
-                    <i class="fas fa-quote-right" />
+                    <i className="fas fa-quote-right" />
                   </span>
                 </p>
                 <div className="profile">
@@ -50,14 +50,17 @@ const Testimony = () => {
         </div>
 
         <div className="sidebar">
-          <i class="fas fa-arrow-up" onClick={() => handleArrowClick("up")} />
+          <i
+            className="fas fa-arrow-up"
+            onClick={() => handleArrowClick("up")}
+          />
 
           <span className="current_card_number">
             {currentCard + 1}/<span>{testimonyData.length}</span>
           </span>
 
           <i
-            class="fas fa-arrow-down"
+            className="fas fa-arrow-down"
             onClick={() => handleArrowClick("down")}
           />
         </div>
