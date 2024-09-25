@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import gsap from "gsap-trial";
-import { SplitText } from "gsap-trial/SplitText";
-import { ScrollTrigger } from "gsap-trial/ScrollTrigger";
-gsap.registerPlugin(SplitText, ScrollTrigger);
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
+// imported CSS
 import "./scrollText.css";
 
 const ScrollText = () => {

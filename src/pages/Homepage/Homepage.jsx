@@ -26,9 +26,9 @@ function Homepage() {
   return (
     <>
       <Header />
-      <Hero1 />
-      <RotateText />
       <Hero />
+      {/* <Hero1 />
+      <RotateText /> */}
       {/* <AboutMe /> */}
       <Reveal />
       <Courses />

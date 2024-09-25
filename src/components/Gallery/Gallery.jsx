@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap-trial/ScrollTrigger";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import "./gallery.css";
 
@@ -56,7 +56,7 @@ const Gallery = () => {
     <div className="gallery_container">
       <main className="main">
         <div className="top">
-          <h1 className="top-h">GALLERY</h1>
+          <h1 className="top-h">COURSES</h1>
         </div>
         <div className="center">
           <div className="content">
@@ -64,7 +64,7 @@ const Gallery = () => {
           </div>
         </div>
         <div className="bottom">
-          <h1 className="bottom-h">GALLERY</h1>
+          <h1 className="bottom-h">COURSES</h1>
         </div>
       </main>
     </div>

@@ -8,7 +8,7 @@ const Hero = () => {
         <h1 className="hero_top">Analytics</h1>
         <h1 className="hero_center">that helps you</h1>
         <h1 className="hero_bottom">
-          shape your <span>Future</span>
+          <span>Shape</span> your <span>Future</span>
         </h1>
       </main>
     </div>

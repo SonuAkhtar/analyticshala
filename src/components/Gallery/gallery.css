@@ -36,6 +36,7 @@ section.gallery {
   width: 100%;
   font-size: 5rem;
   color: white;
+  background-color: aqua;
 }
 
 .bottom {
