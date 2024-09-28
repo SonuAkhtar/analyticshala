@@ -1,10 +1,13 @@
 // imported Data
+import { useState } from "react";
 import { teamData } from "../../../appData";
 
 // imported CSS
 import "./homeTeam.css";
 
 const HomeTeam = () => {
+  const [currentCard, setCurrentCard] = useState(0);
+
   return (
     <>
       <section className="homeTeam" id="homeTeam">
@@ -13,8 +16,14 @@ const HomeTeam = () => {
           <span className="section_subtitle">Meet the</span>
 
           <main className="homeTeam_main">
-            {teamData.map((team) => (
-              <div key={team.id} className="card_container">
+            {teamData.map((team, index) => (
+              <div
+                key={team.id}
+                className={`card_container ${
+                  currentCard === index ? "active" : ""
+                }`}
+                onClick={() => setCurrentCard(index)}
+              >
                 <img src={team.image} alt="team member" />
 
                 <div className="teamCard_details">

@@ -36,6 +36,7 @@
   background-color: lightgreen;
   padding: 2rem;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
@@ -104,4 +105,43 @@
 
 /* Responsive design */
 @media screen and (max-width: 600px) {
+  .skills_main {
+    gap: 2rem;
+  }
+
+  .skills_top {
+    flex-direction: column;
+  }
+
+  .skills__heading {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .skills_details p {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+
+  .skills_data {
+    padding: 1rem;
+  }
+
+  .skills_number {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .skills_types {
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .skills_type_title {
+    font-size: 1.1rem;
+  }
+
+  .skills_type_subtitle {
+    line-height: 1.25rem;
+  }
 }

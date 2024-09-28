@@ -30,7 +30,7 @@ const Courses = () => {
   return (
     <div className="courses_container">
       <div className="courses_wrapper">
-        <h1>COURSES ---- we offer</h1>
+        <h1>COURSES we offer</h1>
         <div className="course_nav">
           {courseCategory.map((course, index) => (
             <button
@@ -51,7 +51,7 @@ const Courses = () => {
               </div>
               <div className="course_info">
                 <h2>{course.title}</h2>
-                <h4>{course.subtitle}</h4>
+                <p>{course.subtitle}</p>
               </div>
               <button className="course_btn">Know more</button>
             </div>

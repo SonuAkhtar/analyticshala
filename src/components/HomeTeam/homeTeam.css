@@ -1,10 +1,14 @@
+section.homeTeam {
+  background-color: #fafafa;
+}
+
 .homeTeam_main {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 2rem;
 }
 
 .homeTeam_main .card_container {
@@ -15,14 +19,15 @@
   color: var(--off-white);
   overflow: hidden;
   box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
   transition: all 0.7s ease-in-out;
 }
 
-.homeTeam_main .card_container:hover {
+.card_container.active {
   width: 350px;
 }
 
-.homeTeam_main .card_container:hover .teamCard_profile {
+.homeTeam_main .card_container.active .teamCard_profile {
   left: 100vw;
 }
 
@@ -37,7 +42,7 @@
   font-size: 3rem;
   font-weight: bold;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  transition: all 1.5s ease-in-out;
+  transition: all 0.7s ease-in-out;
 }
 
 .homeTeam_main .card_container img {
@@ -64,13 +69,14 @@
 .teamCard_number,
 .teamCard_info,
 .social_buttons {
-  transition: all 1s ease;
+  transition: all 0.7s ease;
 }
 
 .teamCard_number {
-  font-size: 3rem;
-  font-weight: 100;
-  transform: translateY(-100px);
+  font-size: 5rem;
+  font-weight: 500;
+  opacity: 0.75;
+  transform: translateY(-150px);
 }
 
 .teamCard_info {
@@ -111,18 +117,29 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
-.homeTeam_main .card_container:hover img {
+.card_container.active img {
   filter: grayscale(1);
   transform: scale(1.75);
   transform-origin: left;
 }
 
-.homeTeam_main .card_container:hover .teamCard_number,
-.homeTeam_main .card_container:hover .teamCard_info,
-.homeTeam_main .card_container:hover .social_buttons {
+.card_container.active .teamCard_number,
+.card_container.active .teamCard_info,
+.card_container.active .social_buttons {
   transform: translateY(0);
 }
 
 /* Responsive design */
 @media screen and (max-width: 600px) {
+  .homeTeam_main {
+    gap: 0.5rem;
+  }
+
+  .homeTeam_main .card_container {
+    height: 40vh;
+  }
+
+  .card_container.active {
+    width: 300px;
+  }
 }
