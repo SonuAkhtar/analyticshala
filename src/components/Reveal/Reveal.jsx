@@ -21,7 +21,7 @@ const Reveal = () => {
         trigger: triggerRef.current,
         scrub: true,
         start: "top 50%",
-        end: "80% 50%",
+        end: "bottom 50%",
       },
       color: "#222",
       duration: 1,
@@ -40,7 +40,7 @@ const Reveal = () => {
   const setLetters = useLettersArray();
 
   const text =
-    "This is a test text that can be used to show text reveal animation with gsap. This is a test text that can be used to show text reveal animation with gsap.";
+    "Unlock your potential with our expert-led courses in data analytics, visualization, and web development! Whether you're a student looking to enhance your skills or a professional aiming to stay ahead in your career, we provide practical knowledge and hands-on experience. Join us to transform your data expertise and elevate your career. Start your journey with us today!";
   return (
     <div className="reveal_container">
       <div className="reveal_wrapper">

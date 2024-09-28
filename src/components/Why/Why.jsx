@@ -108,7 +108,7 @@ const Why = () => {
   return (
     <div className="why">
       <div className="why_left">
-        <h1>Why to choose AnalyticShala?</h1>
+        <h1>Why choose AnalyticShala?</h1>
         <div className="icon_wrapper">
           <i className="fas fa-paper-plane" />
         </div>

@@ -1,0 +1,147 @@
+.questions_container {
+  height: 100%;
+  min-height: 80vh;
+  width: 100%;
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.questions_wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.questions_wrapper h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.questions_wrapper h1 span {
+  font-weight: 400;
+  font-family: "Norican", cursive;
+}
+
+.questions_main {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.question_item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 2px solid #d0d0d0;
+  border-radius: 1rem;
+  height: 10vh;
+  transition: all 0.5s ease-in-out;
+}
+
+.question_number {
+  font-size: 3rem;
+  line-height: 3rem;
+  font-family: "Norican", cursive;
+  font-weight: 300;
+}
+
+.question_answer {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.question_answer h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.question_answer p {
+  transform: translateY(150px);
+  transition: all 0.5s ease-in-out;
+}
+
+.question_arrow {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background-color: #dfdfdf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.question_item.active {
+  height: 15vh;
+  border-color: #555;
+}
+
+.question_item.active .question_answer p {
+  transform: translateY(0px);
+}
+
+.question_item.active .question_arrow {
+  rotate: 180deg;
+  background-color: #333;
+  color: #f5f5f5;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  .questions_container {
+    padding: 2rem 1rem;
+  }
+
+  .questions_wrapper {
+    gap: 1.5rem;
+  }
+
+  .questions_wrapper h1 {
+    font-size: 1.5rem;
+  }
+
+  .questions_main {
+    width: 100%;
+  }
+
+  .question_item.active {
+    padding: 0.75rem;
+    height: 25vh;
+  }
+
+  .question_number {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .question_answer {
+    width: 70%;
+    gap: 0.5rem;
+  }
+
+  .question_answer h3 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+
+  .question_answer p {
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+
+  .question_arrow {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}

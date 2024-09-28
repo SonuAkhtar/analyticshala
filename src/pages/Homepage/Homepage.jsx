@@ -21,6 +21,7 @@ import Why from "../../components/Why/Why";
 import ScrollText from "../../components/ScrollText/ScrollText";
 import Hero1 from "../../components/Hero1/Hero1";
 import Courses from "../../components/Courses/Courses";
+import Questions from "../../components/Questions/Questions";
 
 function Homepage() {
   return (
@@ -42,6 +43,7 @@ function Homepage() {
       <Contact />
       <Gallery />
       <ImageCards />
+      <Questions />
       {/* <ScrollText /> */}
       <Footer />
     </>

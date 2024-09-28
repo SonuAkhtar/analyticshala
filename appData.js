@@ -486,3 +486,165 @@ export const testimonyData = [
     position: "Senior Engineer",
   },
 ];
+
+export const coursesData = [
+  {
+    id: 1,
+    number: "01",
+    category: "Data Analytics",
+    title: "Excel",
+    subtitle: "course 1 subtitle for brief information",
+    image: "/assets/hobbies/dev_3.jpg",
+  },
+  {
+    id: 2,
+    number: "02",
+    category: "Data Analytics",
+    title: "Python",
+    subtitle: "course 1 subtitle for brief information",
+    image: "/assets/hobbies/dev_3.jpg",
+  },
+  {
+    id: 3,
+    number: "03",
+    category: "Data Analytics",
+    title: "Snowflake",
+    subtitle: "course 1 subtitle for brief information",
+    image: "/assets/hobbies/dev_3.jpg",
+  },
+  {
+    id: 4,
+    number: "04",
+    category: "Data Analytics",
+    title: "Sigma",
+    subtitle: "course 1 subtitle for brief information",
+    image: "/assets/hobbies/dev_3.jpg",
+  },
+  {
+    id: 5,
+    number: "05",
+    category: "Data Analytics",
+    title: "Looker",
+    subtitle: "course 1 subtitle for brief information",
+    image: "/assets/hobbies/dev_3.jpg",
+  },
+
+  {
+    id: 6,
+    number: "01",
+    category: "Visualization",
+    title: "Tableau",
+    subtitle: "course 1 subtitle for brief information",
+    image: "/assets/hobbies/dev_3.jpg",
+  },
+  {
+    id: 7,
+    number: "02",
+    category: "Visualization",
+    title: "Power Bi",
+    subtitle: "course 1 subtitle for brief information",
+    image: "/assets/hobbies/dev_3.jpg",
+  },
+  {
+    id: 8,
+    number: "03",
+    category: "Visualization",
+    title: "Qlik",
+    subtitle: "course 1 subtitle for brief information",
+    image: "/assets/hobbies/dev_3.jpg",
+  },
+  {
+    id: 9,
+    number: "04",
+    category: "Visualization",
+    title: "Zoho",
+    subtitle: "course 1 subtitle for brief information",
+    image: "/assets/hobbies/dev_3.jpg",
+  },
+  {
+    id: 10,
+    number: "05",
+    category: "Visualization",
+    title: "Google Charts",
+    subtitle: "course 1 subtitle for brief information",
+    image: "/assets/hobbies/dev_3.jpg",
+  },
+  {
+    id: 11,
+    number: "01",
+    category: "Web Development",
+    title: "HTML",
+    subtitle: "course 1 subtitle for brief information",
+    image: "/assets/hobbies/dev_3.jpg",
+  },
+  {
+    id: 12,
+    number: "02",
+    category: "Web Development",
+    title: "CSS",
+    subtitle: "course 1 subtitle for brief information",
+    image: "/assets/hobbies/dev_3.jpg",
+  },
+  {
+    id: 13,
+    number: "03",
+    category: "Web Development",
+    title: "JavaScript",
+    subtitle: "course 1 subtitle for brief information",
+    image: "/assets/hobbies/dev_3.jpg",
+  },
+  {
+    id: 14,
+    number: "04",
+    category: "Web Development",
+    title: "ReactJS",
+    subtitle: "course 1 subtitle for brief information",
+    image: "/assets/hobbies/dev_3.jpg",
+  },
+  {
+    id: 15,
+    number: "05",
+    category: "Web Development",
+    title: "Redux",
+    subtitle: "course 1 subtitle for brief information",
+    image: "/assets/hobbies/dev_3.jpg",
+  },
+];
+
+export const questionsData = [
+  {
+    id: 1,
+    number: "01",
+    question: "What is data analytics?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio esse magni, minima unde incidunt ut modi aspernatur dicta voluptatem.",
+  },
+  {
+    id: 2,
+    number: "02",
+    question: "What is Question number 2?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio esse magni, minima unde incidunt ut modi aspernatur dicta voluptatem.",
+  },
+  {
+    id: 3,
+    number: "03",
+    question: "What is Question number 3?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio esse magni, minima unde incidunt ut modi aspernatur dicta voluptatem.",
+  },
+  {
+    id: 1,
+    number: "04",
+    question: "What is Question number 4?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio esse magni, minima unde incidunt ut modi aspernatur dicta voluptatem.",
+  },
+  {
+    id: 1,
+    number: "05",
+    question: "What is Question number 5?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio esse magni, minima unde incidunt ut modi aspernatur dicta voluptatem.",
+  },
+];
