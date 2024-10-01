@@ -64,3 +64,38 @@ section.gallery {
 .main .bottom-h {
   top: 0%;
 }
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  .homeTeam_main {
+    gap: 0.5rem;
+  }
+
+  .homeTeam_main .card_container {
+    height: 40vh;
+  }
+
+  .card_container.active {
+    width: 300px;
+  }
+
+  .top {
+    height: 35vh;
+  }
+
+  .center {
+    height: 70vh;
+  }
+
+  .bottom {
+    height: 35vh;
+  }
+
+  .main h1 {
+    font-size: 4rem;
+  }
+
+  .main .bottom-h {
+    bottom: unset;
+  }
+}

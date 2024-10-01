@@ -32,3 +32,24 @@
 .hero_main span {
   color: orange;
 }
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  .hero {
+    height: 60vh;
+  }
+
+  .hero_main h1 {
+    font-size: 5vh;
+    line-height: 6vh;
+  }
+
+  .hero_main .hero_top,
+  .hero_main .hero_bottom {
+    text-align: left;
+  }
+
+  .hero_main .hero_center {
+    padding-left: 0;
+  }
+}
