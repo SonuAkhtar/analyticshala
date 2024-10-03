@@ -3,6 +3,12 @@
   width: 100%;
   height: 80vh;
   overflow: hidden;
+  background: rgb(218, 226, 248);
+  background: linear-gradient(
+    90deg,
+    rgba(218, 226, 248, 1) 0%,
+    rgba(219, 225, 242, 1) 100%
+  );
 }
 
 .hero_main {

@@ -15,6 +15,7 @@ const Questions = () => {
         <div className="questions_main">
           {questionsData.map((question, index) => (
             <div
+              key={index}
               className={`question_item ${
                 currentQuestion === index ? "active" : ""
               }`}
@@ -28,7 +29,7 @@ const Questions = () => {
                 className="question_arrow"
                 onClick={() => setCurrentQuestion(index)}
               >
-                <i class="fas fa-chevron-down" />
+                <i className="fas fa-chevron-down" />
               </div>
             </div>
           ))}

@@ -648,3 +648,36 @@ export const questionsData = [
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio esse magni, minima unde incidunt ut modi aspernatur dicta voluptatem.",
   },
 ];
+
+export const scrollCardsData = [
+  {
+    id: 1,
+    bgColor: "linear-gradient(135deg, #c7a9e9, #a1c4fd)",
+    title: "Live Classes",
+    info: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum temporibus neque nobis libero est doloremque, eum ipsa in.",
+  },
+  {
+    id: 2,
+    bgColor: "linear-gradient(135deg, #a1c4fd, #c2e9fb)",
+    title: "Practice and Revision",
+    info: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum temporibus neque nobis libero est doloremque, eum ipsa in.",
+  },
+  {
+    id: 3,
+    bgColor: "linear-gradient(135deg, #77a1d3, #79cbca)",
+    title: "Lifetime Support",
+    info: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum temporibus neque nobis libero est doloremque, eum ipsa in.",
+  },
+  {
+    id: 4,
+    bgColor: "linear-gradient(135deg, #636fa4, #e8cbc0)",
+    title: "One-on-One sessions",
+    info: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum temporibus neque nobis libero est doloremque, eum ipsa in.",
+  },
+  {
+    id: 5,
+    bgColor: "linear-gradient(135deg, #a2c0cc, #fceea7)",
+    title: "Interview Preparation",
+    info: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum temporibus neque nobis libero est doloremque, eum ipsa in.",
+  },
+];

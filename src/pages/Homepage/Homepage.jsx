@@ -22,29 +22,31 @@ import ScrollText from "../../components/ScrollText/ScrollText";
 import Hero1 from "../../components/Hero1/Hero1";
 import Courses from "../../components/Courses/Courses";
 import Questions from "../../components/Questions/Questions";
+import ScrollCards from "../../components/ScrollCards/ScrollCards";
 
 function Homepage() {
   return (
     <>
       <Header />
       <Hero />
-      {/* <Hero1 />
-      <RotateText /> */}
+      {/* <Hero1 /> */}
+      <RotateText />
       {/* <AboutMe /> */}
       <Reveal />
       <Courses />
+      <ScrollCards />
       <Testimony />
       {/* <Works /> */}
-      <Why />
+      {/* <Why /> */}
       <Skills />
       {/* <Info /> */}
       {/* <Projects /> */}
       <HomeTeam />
-      <Contact />
       <Gallery />
       {/* <ImageCards /> */}
       <Questions />
       {/* <ScrollText /> */}
+      <Contact />
       <Footer />
     </>
   );
