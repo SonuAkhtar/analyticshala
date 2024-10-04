@@ -25,7 +25,7 @@ const Skills = () => {
                   <span>|</span>
                   <div className="skills_data_item">
                     <div className="skills_number">10</div>
-                    <div className="skills_info">Types of Courses</div>
+                    <div className="skills_info">Courses</div>
                   </div>
                   <span>|</span>
                   <div className="skills_data_item">

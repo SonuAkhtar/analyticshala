@@ -36,7 +36,8 @@
 }
 
 .hero_main span {
-  color: orange;
+  color: #964734;
+  font-weight: 500;
 }
 
 /* Responsive design */

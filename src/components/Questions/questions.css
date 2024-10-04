@@ -20,12 +20,12 @@
 
 .questions_wrapper h1 {
   font-size: 2.5rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .questions_wrapper h1 span {
   font-weight: 400;
-  font-family: "Norican", cursive;
+  font-family: "Kaushan Script", cursive;
 }
 
 .questions_main {
@@ -50,6 +50,7 @@
   line-height: 3rem;
   font-family: "Norican", cursive;
   font-weight: 300;
+  color: #888;
 }
 
 .question_answer {
@@ -83,7 +84,7 @@
 }
 
 .question_item.active {
-  height: 15vh;
+  height: 20vh;
   border-color: #555;
 }
 
@@ -117,7 +118,7 @@
 
   .question_item.active {
     padding: 0.75rem;
-    height: 25vh;
+    height: 30vh;
   }
 
   .question_number {
@@ -131,8 +132,8 @@
   }
 
   .question_answer h3 {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.25rem;
   }
 
   .question_answer p {

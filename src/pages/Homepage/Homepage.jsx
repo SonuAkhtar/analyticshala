@@ -42,7 +42,7 @@ function Homepage() {
       {/* <Info /> */}
       {/* <Projects /> */}
       <HomeTeam />
-      <Gallery />
+      {/* <Gallery /> */}
       {/* <ImageCards /> */}
       <Questions />
       {/* <ScrollText /> */}
