@@ -1,5 +1,5 @@
 // import React Hooks
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 // import Libraries
 import gsap from "gsap";
@@ -10,6 +10,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 // import CSS
 import "./reveal.css";
+
+// import Components
+import SectionHeader from "../SectionHeader/SectionHeader";
 
 const Reveal = () => {
   const triggerRef = useRef(null);
@@ -42,8 +45,10 @@ const Reveal = () => {
   const text =
     "Unlock your potential with our expert-led courses in data analytics, visualization, and web development! Whether you're a student looking to enhance your skills or a professional aiming to stay ahead in your career, we provide practical knowledge and hands-on experience.";
   return (
-    <div className="reveal_container">
-      <div className="reveal_wrapper">
+    <section className="reveal">
+      <div className="container">
+        <SectionHeader number="01" title="know" subtitle="About Us" />
+
         <div ref={triggerRef}>
           {text.split("").map((letter, index) => (
             <span className="reveal_text" key={index} ref={setLetters}>
@@ -52,7 +57,7 @@ const Reveal = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default Reveal;

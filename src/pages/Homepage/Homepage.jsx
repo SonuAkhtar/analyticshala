@@ -30,7 +30,7 @@ function Homepage() {
       <Header />
       <Hero />
       {/* <Hero1 /> */}
-      <RotateText />
+      {/* <RotateText /> */}
       {/* <AboutMe /> */}
       <Reveal />
       <Courses />

@@ -1,28 +1,3 @@
-.courses_container {
-  height: 100%;
-  min-height: 60vh;
-  width: 100%;
-  background-color: #f0f0f0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-}
-
-.courses_wrapper {
-  width: 90%;
-  height: 100%;
-  padding: 1rem;
-  overflow: hidden;
-}
-
-.courses_wrapper h1 {
-  font-size: 5rem;
-  font-weight: bold;
-  opacity: 0.3;
-  margin-bottom: 2rem;
-}
-
 .course_nav {
   display: flex;
   align-items: center;

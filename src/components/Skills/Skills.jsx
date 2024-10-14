@@ -1,11 +1,20 @@
-// imported CSS
+// import CSS
 import "./skills.css";
+
+// import Components
+import SectionHeader from "../SectionHeader/SectionHeader";
 
 const Skills = () => {
   return (
     <>
       <section className="skills" id="skills">
         <div className="container">
+          <SectionHeader
+            number="01"
+            title="Get the Required"
+            subtitle="Skills"
+          />
+
           <main className="skills_main">
             <div className="skills_top">
               <div className="skills__heading">

@@ -1,18 +1,21 @@
 import "./questions.css";
 import { questionsData } from "../../../appData";
 import { useState } from "react";
+import SectionHeader from "../SectionHeader/SectionHeader";
 
 const Questions = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
   return (
-    <div className="questions_container">
-      <div className="questions_wrapper">
-        <h1>
-          Frequently Asked <span>Questions</span>
-        </h1>
+    <section className="questions" id="questions">
+      <div className="container">
+        <SectionHeader
+          number="01"
+          title="Frequently Asked"
+          subtitle="Questions"
+        />
 
-        <div className="questions_main">
+        <main className="questions_main">
           {questionsData.map((question, index) => (
             <div
               key={index}
@@ -33,9 +36,9 @@ const Questions = () => {
               </div>
             </div>
           ))}
-        </div>
+        </main>
       </div>
-    </div>
+    </section>
   );
 };
 

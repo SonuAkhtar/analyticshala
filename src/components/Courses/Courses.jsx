@@ -1,7 +1,13 @@
 import { useState } from "react";
+
+// import appData
+import { coursesData } from "../../../appData";
+
+// import CSS
 import "./courses.css";
 
-import { coursesData } from "../../../appData";
+// import Components
+import SectionHeader from "../SectionHeader/SectionHeader";
 
 const Courses = () => {
   const [selectedCourse, setSelectedCourse] = useState(coursesData);
@@ -28,9 +34,10 @@ const Courses = () => {
   };
 
   return (
-    <div className="courses_container">
-      <div className="courses_wrapper">
-        <h1>COURSES we offer</h1>
+    <section className="courses">
+      <div className="container">
+        <SectionHeader number="01" title="Review the" subtitle="Courses" />
+
         <div className="course_nav">
           {courseCategory.map((course, index) => (
             <button
@@ -58,7 +65,7 @@ const Courses = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

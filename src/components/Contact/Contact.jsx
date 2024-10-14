@@ -1,17 +1,15 @@
-import React from "react";
-
 // imported Data
 import { contactData } from "../../../appData";
 
 // imported CSS
 import "./contact.css";
+import SectionHeader from "../SectionHeader/SectionHeader";
 
 const Contact = () => {
   return (
     <section className="contact" id="contact">
       <div className="container">
-        <h2 className="section_title">Contact Us</h2>
-        <span className="section_subtitle">Get in touch</span>
+        <SectionHeader number="01" title="Get in Touch" subtitle="Contact Us" />
 
         <main className="contact_main">
           <div className="contact_info">

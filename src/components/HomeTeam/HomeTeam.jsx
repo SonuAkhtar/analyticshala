@@ -1,9 +1,13 @@
-// imported Data
 import { useState } from "react";
+
+// import CSS
+import "./homeTeam.css";
+
+// import appData
 import { teamData } from "../../../appData";
 
-// imported CSS
-import "./homeTeam.css";
+// import Components
+import SectionHeader from "../SectionHeader/SectionHeader";
 
 const HomeTeam = () => {
   const [currentCard, setCurrentCard] = useState(0);
@@ -12,8 +16,7 @@ const HomeTeam = () => {
     <>
       <section className="homeTeam" id="homeTeam">
         <div className="container">
-          <h2 className="section_title">Team</h2>
-          <span className="section_subtitle">Meet the</span>
+          <SectionHeader number="01" title="Meet the" subtitle="Team" />
 
           <main className="homeTeam_main">
             {teamData.map((team, index) => (

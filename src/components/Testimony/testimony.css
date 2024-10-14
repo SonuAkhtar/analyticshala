@@ -1,33 +1,4 @@
-.testimony {
-  width: 100%;
-  height: 75vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #f6fbff;
-  padding: 1rem;
-}
-
-.testimony h1 {
-  position: relative;
-  font-size: 2rem;
-  line-height: 2rem;
-  margin-bottom: 3rem;
-}
-
-.testimony h1::before {
-  content: "";
-  width: 300px;
-  height: 3px;
-  background: linear-gradient(to right, #f44336, #9f4db5);
-  position: absolute;
-  bottom: -1rem;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.review_box {
+.testimony_main {
   width: 100%;
   max-width: 1200px;
   height: 50vh;
@@ -37,8 +8,8 @@
   overflow: hidden;
 }
 
-.slide {
-  width: 90%;
+.testimony_cards {
+  width: 100%;
   padding-right: 60px;
   box-sizing: border-box;
   position: absolute;
@@ -47,7 +18,7 @@
   transition: all 1s ease-in-out;
 }
 
-.card_wrapper {
+.testimony_card_wrapper {
   width: 100%;
   height: 50vh;
   padding: 2rem;
@@ -56,22 +27,21 @@
   justify-content: center;
 }
 
-.card {
+.testimony_card_item {
   position: relative;
   height: 100%;
   line-height: 22px;
   border-radius: 1rem;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #e7f0dc;
   color: #777;
   padding: 1rem 2rem;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
   overflow: hidden;
 }
 
-.card > p {
+.testimony_card_item > p {
   width: 90%;
   font-size: 2rem;
   font-weight: 600;
@@ -81,7 +51,7 @@
   transition: all 1.5s ease;
 }
 
-.card > p i {
+.testimony_card_item > p i {
   padding: 0 1rem;
   font-size: 1rem;
 }
@@ -110,7 +80,7 @@
   height: 100%;
   padding: 1rem 0;
   box-sizing: border-box;
-  background-color: #ef9c66;
+  background-color: #333;
   position: absolute;
   right: 0;
   top: 0;
@@ -143,11 +113,11 @@
   opacity: 0.5;
 }
 
-.card.active > p {
+.testimony_card_item.active > p {
   transform: translateY(0);
 }
 
-.card.active .profile {
+.testimony_card_item.active .profile {
   transform: translateY(0);
 }
 
@@ -163,13 +133,13 @@
     margin-bottom: 2rem;
   }
 
-  .review_box {
+  .testimony_main {
     position: relative;
     width: 100%;
     height: 50vh;
   }
 
-  .slide {
+  .testimony_cards {
     width: 100%;
     padding-right: 0px;
     display: flex;
@@ -177,16 +147,16 @@
     gap: 5rem;
   }
 
-  .card {
+  .testimony_card_item {
     padding: 1rem;
   }
 
-  .card_wrapper {
+  .testimony_card_wrapper {
     height: 40vh;
     padding: 1rem;
   }
 
-  .card > p {
+  .testimony_card_item > p {
     width: 100%;
     font-size: 1rem;
     line-height: 1.25rem;
