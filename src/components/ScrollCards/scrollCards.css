@@ -73,38 +73,22 @@ section.scrollCards {
 
 /* Responsive design */
 @media screen and (max-width: 600px) {
-  .scrollCards_title {
-    font-size: 3rem;
-    line-height: 3rem;
-    padding: 2rem 0 0rem 0;
-  }
-
   .scrollCards {
-    width: 95%;
-    padding: 2rem 0;
-    gap: 2rem;
-  }
-
-  .scrollCard_item {
-    border-radius: 2rem;
+    gap: 1rem;
   }
 
   .scrollCard_item .card_body {
-    height: 30vh;
     padding: 1rem;
+    gap: 1rem;
   }
 
   .scrollCard_item .card_number {
-    top: 0rem;
-    left: 1rem;
     font-size: 3rem;
-    opacity: 0.5;
   }
 
   .scrollCard_item .card_title {
     font-size: 2rem;
     line-height: 2rem;
-    opacity: 0.5;
     width: 100%;
     text-align: right;
   }

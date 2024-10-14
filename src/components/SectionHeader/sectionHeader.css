@@ -21,15 +21,23 @@
 }
 /* Responsive design */
 @media screen and (max-width: 600px) {
-  .sectionHeader_title {
-    font-size: 1.25rem;
+  .sectionHeader {
+    gap: 0.2rem;
     margin-bottom: 2rem;
+    font-size: 0.8rem;
   }
 
-  .sectionHeader_subtitle {
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-    word-spacing: 5px;
-    line-height: 0;
+  .sectionHeader .sectionHeader_number {
+    font-size: 1.5rem;
+  }
+
+  .sectionHeader span {
+    height: 2px;
+    width: 50px;
+    background-color: coral;
+  }
+
+  .sectionHeader h1 {
+    font-weight: 300;
   }
 }
