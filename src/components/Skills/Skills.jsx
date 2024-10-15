@@ -10,7 +10,7 @@ const Skills = () => {
       <section className="skills" id="skills">
         <div className="container">
           <SectionHeader
-            number="01"
+            number="05"
             title="Get the Required"
             subtitle="Skills"
           />

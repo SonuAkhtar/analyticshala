@@ -10,7 +10,7 @@ const Questions = () => {
     <section className="questions" id="faq">
       <div className="container">
         <SectionHeader
-          number="01"
+          number="07"
           title="Frequently Asked"
           subtitle="Questions"
         />

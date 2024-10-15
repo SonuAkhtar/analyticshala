@@ -17,7 +17,7 @@ footer {
 }
 
 .footer_logo h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--off-white);
   font-family: "Kaushan Script", cursive;
   font-weight: 400;
@@ -30,7 +30,6 @@ footer {
 
 .footer_social {
   display: flex;
-  flex-direction: column;
   gap: 1rem;
   font-size: 1.25rem;
 }

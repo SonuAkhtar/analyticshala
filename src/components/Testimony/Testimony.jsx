@@ -20,7 +20,7 @@ const Testimony = () => {
   return (
     <section className="testimony" id="testimony">
       <div className="container">
-        <SectionHeader number="01" title="Reviews by" subtitle="Students" />
+        <SectionHeader number="04" title="Reviews by" subtitle="Students" />
 
         <main className="testimony_main">
           <div

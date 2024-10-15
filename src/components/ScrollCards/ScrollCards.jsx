@@ -12,8 +12,8 @@ const ScrollCards = () => {
     <section className="scrollCards">
       <div className="container">
         <SectionHeader
-          number="01"
-          title="Reasons to Choose"
+          number="03"
+          title="Why to Choose"
           subtitle="Analyticshala"
         />
 

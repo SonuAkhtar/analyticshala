@@ -16,7 +16,7 @@ const HomeTeam = () => {
     <>
       <section className="homeTeam" id="homeTeam">
         <div className="container">
-          <SectionHeader number="01" title="Meet the" subtitle="Team" />
+          <SectionHeader number="06" title="Meet the" subtitle="Team" />
 
           <main className="homeTeam_main">
             {teamData.map((team, index) => (

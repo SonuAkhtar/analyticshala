@@ -42,17 +42,17 @@
 }
 
 .testimony_card_item > p {
-  width: 90%;
-  font-size: 2rem;
+  width: 80%;
+  font-size: 1.25rem;
   font-weight: 600;
-  line-height: 2.5rem;
+  line-height: 1.5rem;
   color: #666;
   transform: translateY(-50vh);
   transition: all 1.5s ease;
 }
 
 .testimony_card_item > p i {
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   font-size: 1rem;
 }
 
