@@ -1,9 +1,13 @@
+section.reveal {
+  background-color: #fff;
+}
+
 .reveal_text {
   font-size: 5rem;
   line-height: 6rem;
   font-weight: bold;
-  color: #fafafa;
-  filter: drop-shadow(0 0 0.06rem #444);
+  color: #fff;
+  filter: drop-shadow(0 1px 0.06rem #333);
 }
 
 /* Responsive design */

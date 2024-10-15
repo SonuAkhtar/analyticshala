@@ -1,26 +1,18 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 
-// Imported Component
+// import Component
 import MenuDesk from "../MenuDesk/MenuDesk";
 import MenuMobile from "../MenuMobile/MenuMobile";
 
-// Imported CSS
+// import CSS
 import "./header.css";
 
 const Header = () => {
   const [menuClick, setMenuClick] = useState(false);
-  const [headerScroll, setHeaderScroll] = useState(false);
-  const [burgerClick, setBurgerClick] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setHeaderScroll(window.scrollY > 50);
-    });
-  }, []);
 
   return (
     <>
-      <header className={`header ${headerScroll && "scroll"}`}>
+      <header className="header">
         <nav>
           <a className="nav_logo" href="#">
             AnalyticShala
@@ -36,9 +28,8 @@ const Header = () => {
               <span></span>
             </div>
           </div>
-
-          <MenuMobile expand={menuClick} setExpand={setMenuClick} />
         </nav>
+        <MenuMobile expand={menuClick} setExpand={setMenuClick} />
       </header>
       <MenuDesk show={menuClick} setShow={setMenuClick} />
     </>

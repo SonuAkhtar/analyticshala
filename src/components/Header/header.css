@@ -1,12 +1,9 @@
 .header {
   position: sticky;
   top: 0;
-  width: 95vw;
-  height: 60px;
-  margin: 1rem auto 0 auto;
+  width: 100%;
+  height: 10vh;
   padding: 1rem;
-  border-radius: 1rem;
-  background-color: var(--dark-bg);
   background-color: #222;
   color: var(--off-white);
   display: flex;
@@ -15,11 +12,7 @@
   z-index: 9999;
 }
 
-.header.scroll {
-  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.25);
-}
-
-nav {
+.header nav {
   position: relative;
   height: 100%;
   width: 100%;
@@ -31,7 +24,7 @@ nav {
   gap: 2rem;
 }
 
-.nav_logo {
+.header .nav_logo {
   font-family: "Kaushan Script", cursive;
   font-size: 2rem;
   width: 100%;
@@ -94,7 +87,7 @@ nav {
 
 .ham_wrapper.active span:nth-child(1) {
   width: 100%;
-  transform: translateY(7px);
+  transform: translateY(9px);
   transition-delay: 0s;
 }
 
@@ -114,20 +107,15 @@ nav {
 /* Responsive design */
 @media screen and (max-width: 600px) {
   .header {
-    height: 6vh;
-    position: fixed;
-    bottom: 0;
-    top: auto;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    height: 8vh;
   }
 
-  nav {
-    flex-direction: row;
-  }
-
-  .nav_logo {
-    text-align: left;
-    z-index: 999;
+  .header .nav_logo {
     font-size: 1.5rem;
+    text-align: right;
+  }
+
+  .ham_icon span {
+    height: 2px;
   }
 }

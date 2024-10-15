@@ -7,7 +7,7 @@ const Questions = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
   return (
-    <section className="questions" id="questions">
+    <section className="questions" id="faq">
       <div className="container">
         <SectionHeader
           number="01"

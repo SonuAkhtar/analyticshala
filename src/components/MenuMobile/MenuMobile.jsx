@@ -23,8 +23,7 @@ const MenuMobile = ({ expand, setExpand }) => {
               href={item.href}
               className={`${menuItem == item.class && "active"}`}
             >
-              <i className={`${item.icon} ${item.class}`} />
-              <span>{item.name}</span>
+              {item.name}
             </a>
           </li>
         ))}

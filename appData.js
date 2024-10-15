@@ -13,13 +13,11 @@ export const socialIconsData = [
 ];
 
 export const menuDeskData = [
-  { id: 0, class: "one", number: "01", name: "About", href: "#about" },
-  { id: 1, class: "two", number: "02", name: "Skills", href: "#skills" },
-  { id: 2, class: "three", number: "03", name: "Work", href: "#works" },
-  { id: 3, class: "four", number: "04", name: "Hero", href: "#" },
-  { id: 4, class: "five", number: "05", name: "Projects", href: "#projects" },
-  { id: 5, class: "six", number: "06", name: "Hobbies", href: "#hobbies" },
-  { id: 6, class: "seven", number: "07", name: "Contact", href: "#contact" },
+  { id: 0, class: "one", number: "01", name: "About Us", href: "#about" },
+  { id: 1, class: "two", number: "02", name: "Courses", href: "#courses" },
+  { id: 2, class: "three", number: "03", name: "Hero", href: "#" },
+  { id: 3, class: "four", number: "04", name: "FAQ", href: "#faq" },
+  { id: 4, class: "five", number: "05", name: "Contact", href: "#contact" },
 ];
 
 export const menuMobileData = [
@@ -34,42 +32,28 @@ export const menuMobileData = [
     id: 1,
     class: "two",
     icon: "fas fa-user",
-    name: "About",
+    name: "About Us",
     href: "#about",
   },
   {
     id: 2,
     class: "three",
     icon: "fas fa-file-code",
-    name: "Skills",
-    href: "#skills",
+    name: "Courses",
+    href: "#courses",
   },
   {
     id: 3,
     class: "four",
     icon: "fas fa-briefcase",
-    name: "Works",
-    href: "#works",
+    name: "FAQ",
+    href: "#faq",
   },
   {
     id: 4,
     class: "five",
     icon: "fas fa-project-diagram",
-    name: "Projects",
-    href: "#projects",
-  },
-  {
-    id: 5,
-    class: "six",
-    icon: "fas fa-camera",
-    name: "Hobbies",
-    href: "#hobbies",
-  },
-  {
-    id: 6,
-    class: "seven",
-    icon: "fas fa-phone",
-    name: "Contact",
+    name: "Contact Us",
     href: "#contact",
   },
 ];
@@ -659,7 +643,7 @@ export const scrollCardsData = [
   {
     id: 2,
     bgColor: "linear-gradient(135deg, #a1c4fd, #c2e9fb)",
-    title: "Practice and Revision",
+    title: "Practice & Revision",
     info: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum temporibus neque nobis libero est doloremque, eum ipsa in.",
   },
   {
@@ -678,6 +662,12 @@ export const scrollCardsData = [
     id: 5,
     bgColor: "linear-gradient(135deg, #a2c0cc, #fceea7)",
     title: "Interview Preparation",
+    info: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum temporibus neque nobis libero est doloremque, eum ipsa in.",
+  },
+  {
+    id: 6,
+    bgColor: "linear-gradient(135deg, #a2c0cc, #fceea7)",
+    title: "Recorded Sessions",
     info: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum temporibus neque nobis libero est doloremque, eum ipsa in.",
   },
 ];

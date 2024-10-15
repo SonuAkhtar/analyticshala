@@ -1,42 +1,19 @@
-import React from "react";
-
-// imported Data
+// import Data
 import { socialIconsData } from "../../../appData";
 
-// imported CSS
+// import CSS
 import "./footer.css";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer_container">
-        <div className="footer_info">
-          <a href="#">
-            <h1 className="footer_title">AnalyticShala</h1>
-          </a>
-        </div>
+        <a className="footer_logo" href="#">
+          <h1>AnalyticShala</h1>
+        </a>
 
-        <div className="footer_links">
-          <ul>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#skills">Skills</a>
-            </li>
-            <li>
-              <a href="#works">Work</a>
-            </li>
-            <li>
-              <a href="#projects">Projects</a>
-            </li>
-            <li>
-              <a href="#hobbies">Hobbies</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
+        <div className="footer_copyright">
+          <span>&#169;</span> All rights reserved 2024, Analyticshala
         </div>
 
         <div className="footer_social">
@@ -46,18 +23,6 @@ const Footer = () => {
             </a>
           ))}
         </div>
-      </div>
-
-      <hr />
-
-      <div className="footer_bottom">
-        <div className="copyright">
-          <span>&#169;</span> All rights reserved 2024, Analyticshala
-        </div>
-
-        <div className="terms">Terms of Servies</div>
-
-        <div className="privacy">Privacy Policy</div>
       </div>
     </footer>
   );

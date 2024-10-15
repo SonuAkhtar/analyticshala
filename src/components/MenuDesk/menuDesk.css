@@ -48,14 +48,6 @@
   rotate: -15deg;
 }
 
-.menuDesk_circle.six {
-  rotate: -30deg;
-}
-
-.menuDesk_circle.seven {
-  rotate: -45deg;
-}
-
 .menuDesk_stripe {
   position: absolute;
   top: 50%;
@@ -131,14 +123,6 @@
 
 .menuDesk_stripe.five {
   transform: translate(0, -50%) rotate(15deg);
-}
-
-.menuDesk_stripe.six {
-  transform: translate(0, -50%) rotate(30deg);
-}
-
-.menuDesk_stripe.seven {
-  transform: translate(0, -50%) rotate(45deg);
 }
 
 /* Responsive design */

@@ -27,17 +27,7 @@
     font-size: 0.8rem;
   }
 
-  .sectionHeader .sectionHeader_number {
-    font-size: 1.5rem;
-  }
-
   .sectionHeader span {
-    height: 2px;
-    width: 50px;
-    background-color: coral;
-  }
-
-  .sectionHeader h1 {
-    font-weight: 300;
+    width: 40px;
   }
 }

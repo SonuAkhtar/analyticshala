@@ -34,7 +34,7 @@ const Courses = () => {
   };
 
   return (
-    <section className="courses">
+    <section className="courses" id="courses">
       <div className="container">
         <SectionHeader number="01" title="Review the" subtitle="Courses" />
 

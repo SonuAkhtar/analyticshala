@@ -1,6 +1,3 @@
-section.contact {
-}
-
 .contact_main {
   display: flex;
   align-items: center;
@@ -108,20 +105,17 @@ section.contact {
 
 /* Responsive design */
 @media screen and (max-width: 600px) {
-  .contact {
-    padding: 2rem 1rem;
-  }
-
   .contact_info {
-    justify-content: center;
-    padding: 1rem;
     width: 100%;
+    height: max-content;
     gap: 1rem;
-    column-gap: 0.5rem;
-    font-size: 0.75rem;
+    padding: 1rem;
+    justify-content: flex-start;
+    font-size: 0.9rem;
+    border-radius: 0.5rem;
   }
 
   .contact_sub_info {
-    min-width: 150px;
+    width: max-content;
   }
 }

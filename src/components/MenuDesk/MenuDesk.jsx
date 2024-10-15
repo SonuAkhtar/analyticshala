@@ -7,7 +7,7 @@ import { menuDeskData } from "../../../appData";
 import "./menuDesk.css";
 
 const MenuDesk = ({ show, setShow }) => {
-  const [menuItem, setMenuItem] = useState("four");
+  const [menuItem, setMenuItem] = useState("three");
 
   const handleMenuClick = (val) => {
     setMenuItem(val);

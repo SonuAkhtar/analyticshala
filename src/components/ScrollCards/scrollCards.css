@@ -2,11 +2,6 @@ section.scrollCards {
   overflow: unset;
 }
 
-.scrollCards_container .sectionHeader {
-  position: sticky;
-  top: 5rem;
-}
-
 .scrollCards {
   width: 100%;
   margin: 0 auto;
@@ -15,7 +10,12 @@ section.scrollCards {
   gap: 3rem;
 }
 
-.scrollCard_item {
+.scrollCards .sectionHeader {
+  position: sticky;
+  top: 10vh;
+}
+
+.scrollCards .scrollCard_item {
   position: sticky;
   border-radius: 1rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
@@ -77,25 +77,36 @@ section.scrollCards {
     gap: 1rem;
   }
 
+  .scrollCard_item .card_number_title {
+    line-height: 2rem;
+  }
+
   .scrollCard_item .card_body {
     padding: 1rem;
     gap: 1rem;
   }
 
   .scrollCard_item .card_number {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .scrollCard_item .card_title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 2rem;
     width: 100%;
     text-align: right;
   }
 
   .scrollCard_item p {
-    font-size: 1rem;
-    line-height: 1.1rem;
+    font-size: 0.9rem;
+    line-height: 1rem;
     width: 100%;
+    text-align: left;
+  }
+
+  .scrollCard_item .card_btn {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.75rem 2rem;
   }
 }

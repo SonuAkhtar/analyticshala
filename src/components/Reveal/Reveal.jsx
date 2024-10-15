@@ -26,7 +26,7 @@ const Reveal = () => {
         start: "top 50%",
         end: "bottom 50%",
       },
-      color: "#222",
+      color: "#333",
       duration: 1,
       stagger: 1,
     });
@@ -43,9 +43,10 @@ const Reveal = () => {
   const setLetters = useLettersArray();
 
   const text =
-    "Unlock your potential with our expert-led courses in data analytics, visualization, and web development! Whether you're a student looking to enhance your skills or a professional aiming to stay ahead in your career, we provide practical knowledge and hands-on experience.";
+    "At AnalyticShala, we offer engaging courses in analytics, data visualization, and web development, helping you gain the skills to excel in today’s data-driven world. Join us and unlock your potential!";
+
   return (
-    <section className="reveal">
+    <section className="reveal" id="about">
       <div className="container">
         <SectionHeader number="01" title="know" subtitle="About Us" />
 
