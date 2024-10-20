@@ -21,6 +21,7 @@ import Why from "../../components/Why/Why";
 import ScrollText from "../../components/ScrollText/ScrollText";
 import Hero1 from "../../components/Hero1/Hero1";
 import Courses from "../../components/Courses/Courses";
+import Courses1 from "../../components/Courses1/Courses1";
 import Questions from "../../components/Questions/Questions";
 import ScrollCards from "../../components/ScrollCards/ScrollCards";
 
@@ -34,6 +35,7 @@ function Homepage() {
       {/* <AboutMe /> */}
       <Reveal />
       <Courses />
+      <Courses1 />
       <ScrollCards />
       <Testimony />
       {/* <Works /> */}

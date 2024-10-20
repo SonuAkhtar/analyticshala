@@ -105,17 +105,33 @@
 
 /* Responsive design */
 @media screen and (max-width: 600px) {
+  section.contact {
+    padding: 1rem 0;
+  }
+
+  section.contact .sectionHeader {
+    padding: 0 1rem;
+  }
+
   .contact_info {
     width: 100%;
     height: max-content;
     gap: 1rem;
-    padding: 1rem;
-    justify-content: flex-start;
+    padding: 1rem 0.5rem;
+    justify-content: space-around;
     font-size: 0.9rem;
-    border-radius: 0.5rem;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .contact_info_title h3 {
+    font-size: 0.9rem;
+    font-weight: 500;
   }
 
   .contact_sub_info {
-    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

@@ -1,6 +1,12 @@
-import "./questions.css";
-import { questionsData } from "../../../appData";
 import { useState } from "react";
+
+// import CSS
+import "./questions.css";
+
+// import appData
+import { questionsData } from "../../../appData";
+
+// import Components
 import SectionHeader from "../SectionHeader/SectionHeader";
 
 const Questions = () => {
@@ -23,17 +29,19 @@ const Questions = () => {
                 currentQuestion === index ? "active" : ""
               }`}
             >
-              <div className="question_number">{question.number}</div>
-              <div className="question_answer">
-                <h3>{question.question}</h3>
-                <p>{question.answer}</p>
+              <div className="question_area">
+                <h3>
+                  <span className="question_number">0{question.id}</span>{" "}
+                  {question.question}
+                </h3>
+                <div
+                  className="question_arrow"
+                  onClick={() => setCurrentQuestion(index)}
+                >
+                  <i className="fas fa-chevron-right" />
+                </div>
               </div>
-              <div
-                className="question_arrow"
-                onClick={() => setCurrentQuestion(index)}
-              >
-                <i className="fas fa-chevron-down" />
-              </div>
+              <p className="answer_area">{question.answer}</p>
             </div>
           ))}
         </main>

@@ -42,10 +42,6 @@
 
 /* Responsive design */
 @media screen and (max-width: 600px) {
-  .hero {
-    height: 60vh;
-  }
-
   .hero_main h1 {
     font-size: 5vh;
     line-height: 6vh;
