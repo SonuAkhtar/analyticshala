@@ -598,38 +598,29 @@ export const coursesData = [
 export const questionsData = [
   {
     id: 1,
-    number: "01",
-    question: "What is data analytics?",
+    question:
+      "Can I join these classes even if I am from a non-technical background with no former experience in programming?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio esse magni, minima unde incidunt ut modi aspernatur dicta voluptatem.",
+      "Yes, absolutely. AnalyticShala is open to everyone, regardless of their technical background. We use straightforward teaching methods to help students understand analytics easily and develop a strong interest in the subject. Our aim is to make analytics accessible and enjoyable for all participants, regardless of their initial knowledge level.",
   },
   {
     id: 2,
-    number: "02",
-    question: "What is Question number 2?",
+    question: "What if I miss a class?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio esse magni, minima unde incidunt ut modi aspernatur dicta voluptatem.",
+      "Please avoid this situation. In case it is a genuine reason, the faculty will be available for the student.",
   },
   {
     id: 3,
-    number: "03",
-    question: "What is Question number 3?",
+    question: "Can I be assured of a guaranteed placement?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio esse magni, minima unde incidunt ut modi aspernatur dicta voluptatem.",
+      "At AnalyticShala, we aim to make you self-sufficient. We provide all the necessary study material, and try to make the student confident enough to crack interviews of all sorts.",
   },
   {
-    id: 1,
-    number: "04",
-    question: "What is Question number 4?",
+    id: 4,
+    question:
+      "Will I be able to manage and understand these classes alongside my office work?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio esse magni, minima unde incidunt ut modi aspernatur dicta voluptatem.",
-  },
-  {
-    id: 1,
-    number: "05",
-    question: "What is Question number 5?",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio esse magni, minima unde incidunt ut modi aspernatur dicta voluptatem.",
+      "Our classes are held on weekends only. Apart from this, if you take out just an hour everyday for revision, you should be good to go.",
   },
 ];
 
@@ -661,13 +652,13 @@ export const scrollCardsData = [
   {
     id: 5,
     bgColor: "linear-gradient(135deg, #a2c0cc, #fceea7)",
-    title: "Interview Preparation",
+    title: "Recorded Sessions",
     info: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum temporibus neque nobis libero est doloremque, eum ipsa in.",
   },
   {
     id: 6,
     bgColor: "linear-gradient(135deg, #a2c0cc, #fceea7)",
-    title: "Recorded Sessions",
+    title: "Interview Preparation",
     info: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum temporibus neque nobis libero est doloremque, eum ipsa in.",
   },
 ];
