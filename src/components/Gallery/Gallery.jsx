@@ -1,10 +1,15 @@
+// import CSS
+import "./gallery.css";
+
+// import GSAP
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import "./gallery.css";
-
 gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+// import Components
+import Courses1 from "../Courses1/Courses1";
 
 const Gallery = () => {
   useGSAP(() => {
@@ -60,7 +65,7 @@ const Gallery = () => {
         </div>
         <div className="center">
           <div className="content">
-            <div className="h2">This is the inner section</div>
+            <Courses1 />
           </div>
         </div>
         <div className="bottom">

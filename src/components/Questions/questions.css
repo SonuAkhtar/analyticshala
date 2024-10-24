@@ -13,7 +13,7 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem;
-  border: 2px solid burlywood;
+  border: 2px solid var(--off-dark);
   width: 100%;
   height: 10vh;
   transition: all 0.5s ease-in-out;
@@ -22,7 +22,8 @@
 
 .question_item.active {
   height: 22vh;
-  background-color: burlywood;
+  background-color: var(--off-dark);
+  color: var(--off-white);
 }
 
 .question_item .question_area {
@@ -58,6 +59,7 @@
 
 .question_item.active .question_arrow {
   transform: rotate(90deg);
+  border: 2px solid var(--off-white);
 }
 
 .question_item .answer_area {

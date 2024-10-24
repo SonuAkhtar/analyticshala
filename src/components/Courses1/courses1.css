@@ -99,16 +99,17 @@
   background-color: var(--off-dark);
   color: var(--off-white);
   border-radius: 2rem;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   transition: all 0.5s ease-in-out;
   overflow: hidden;
   z-index: 2;
 }
 
 .course_right_view a:hover {
-  color: red;
-  z-index: 99;
   border-color: var(--off-dark);
+  color: var(--off-dark);
+  font-weight: 500;
+  z-index: 1;
 }
 
 .course_right_view a::before {
@@ -120,7 +121,7 @@
   height: 100%;
   width: 0;
   transition: all 0.3s ease-in-out;
-  z-index: 1;
+  z-index: -1;
 }
 
 .course_right_view a:hover::before {

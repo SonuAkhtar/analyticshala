@@ -34,18 +34,18 @@ function Homepage() {
       {/* <RotateText /> */}
       {/* <AboutMe /> */}
       <Reveal />
-      <Courses />
+      {/* <Courses /> */}
       <Courses1 />
       <ScrollCards />
-      <Testimony />
+      <Skills />
       {/* <Works /> */}
       {/* <Why /> */}
-      <Skills />
       {/* <Info /> */}
       {/* <Projects /> */}
       <HomeTeam />
       {/* <Gallery /> */}
       {/* <ImageCards /> */}
+      <Testimony />
       <Questions />
       {/* <ScrollText /> */}
       <Contact />

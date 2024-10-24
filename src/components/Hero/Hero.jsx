@@ -3,15 +3,30 @@ import "./hero.css";
 
 const Hero = () => {
   return (
-    <div className="hero" id="hero">
+    <section className="hero" id="hero">
       <main className="hero_main">
-        <h1 className="hero_top">Analytics</h1>
-        <h1 className="hero_center">that helps you</h1>
-        <h1 className="hero_bottom">
-          <span>Shape</span> your <span>Future</span>
-        </h1>
+        <div className="hero_title">
+          <span>Analytics</span>
+          <span>that Helps You</span>
+          <span className="shape">Shape Your Future</span>
+        </div>
+        <div className="hero_buttons">
+          <a href="#contact">Contact Us</a>
+          <a href="https://topmate.io/faizan_ansari007" target="_blank">
+            Request a Demo
+          </a>
+        </div>
+
+        <div className="hero_info">
+          <p>
+            <i class="fas fa-check" /> Free 2-Classes Trial
+          </p>
+          <p>
+            <i class="fas fa-check" /> Free Career Counselling
+          </p>
+        </div>
       </main>
-    </div>
+    </section>
   );
 };
 

@@ -28,17 +28,23 @@ const Skills = () => {
                 </p>
                 <div className="skills_data">
                   <div className="skills_data_item">
-                    <div className="skills_number">5+</div>
+                    <div className="skills_number">
+                      8<span>+</span>
+                    </div>
                     <div className="skills_info">Years Experience</div>
                   </div>
                   <span>|</span>
                   <div className="skills_data_item">
-                    <div className="skills_number">10</div>
+                    <div className="skills_number">
+                      10<span>+</span>
+                    </div>
                     <div className="skills_info">Courses</div>
                   </div>
                   <span>|</span>
                   <div className="skills_data_item">
-                    <div className="skills_number">25</div>
+                    <div className="skills_number">
+                      45<span>+</span>
+                    </div>
                     <div className="skills_info">Students Trained</div>
                   </div>
                 </div>

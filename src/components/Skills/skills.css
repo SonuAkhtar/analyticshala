@@ -51,6 +51,12 @@
 .skills_number {
   font-size: 3rem;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.skills_number span {
+  font-size: 1.5rem;
 }
 
 .skills_bottom {

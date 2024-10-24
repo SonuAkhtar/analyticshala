@@ -47,7 +47,6 @@ section {
   padding: 3rem 1rem;
   background-color: var(--off-white);
   color: var(--off-dark);
-  box-shadow: 0 0 5px var(--off-dark);
   overflow: hidden;
 }
 
