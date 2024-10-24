@@ -14,7 +14,7 @@
   gap: 2rem;
   box-shadow: 0 0 7px var(--off-dark);
   padding: 2rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
 }
 
 .contact_info_title {
