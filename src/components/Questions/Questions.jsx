@@ -28,16 +28,14 @@ const Questions = () => {
               className={`question_item ${
                 currentQuestion === index ? "active" : ""
               }`}
+              onClick={() => setCurrentQuestion(index)}
             >
               <div className="question_area">
                 <h3>
-                  <span className="question_number">0{question.id}</span>{" "}
+                  <span className="question_number">0{question.id}</span>
                   {question.question}
                 </h3>
-                <div
-                  className="question_arrow"
-                  onClick={() => setCurrentQuestion(index)}
-                >
+                <div className="question_arrow">
                   <i className="fas fa-chevron-right" />
                 </div>
               </div>

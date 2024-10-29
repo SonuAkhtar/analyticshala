@@ -24,7 +24,7 @@ const Courses1 = () => {
                 </div>
               </div>
               <div className="course_card_right">
-                <div className="card_right_name">Chapters</div>
+                <div className="card_right_name">Subjects</div>
                 <div className="card_right_chapters">
                   {course.chapters.map((chapter, i) => (
                     <span key={i}>{chapter}</span>

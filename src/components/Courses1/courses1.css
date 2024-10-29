@@ -47,6 +47,8 @@
   position: relative;
   width: 100%;
   font-size: 1.5rem;
+  line-height: 1.75rem;
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -68,6 +70,7 @@
 
 .card_right_name {
   font-weight: 500;
+  width: fit-content;
 }
 
 .card_right_chapters {
@@ -80,6 +83,8 @@
 }
 
 .card_right_chapters span {
+  font-size: 1rem;
+  font-weight: 400;
   background-color: coral;
   color: white;
   padding: 0.25rem 0.75rem;
@@ -150,7 +155,7 @@
   }
 
   .card_left_title {
-    line-height: 2rem;
+    font-weight: 500;
     font-size: 1.1rem;
   }
 

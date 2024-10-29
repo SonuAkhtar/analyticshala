@@ -1,15 +1,16 @@
 .reveal_text {
-  font-size: 5rem;
-  line-height: 6rem;
+  font-size: 4rem;
+  line-height: 5rem;
   font-weight: bold;
   color: #fff;
   filter: drop-shadow(0 1px 0.06rem #333);
+  text-align: justify;
 }
 
 /* Responsive design */
 @media screen and (max-width: 600px) {
   .reveal_text {
-    font-size: 3rem;
-    line-height: 4rem;
+    font-size: 2rem;
+    line-height: 2.5rem;
   }
 }

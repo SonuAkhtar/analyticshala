@@ -19,10 +19,10 @@ const Hero = () => {
 
         <div className="hero_info">
           <p>
-            <i class="fas fa-check" /> Free 2-Classes Trial
+            <i className="fas fa-check" /> Free 2-Classes Trial
           </p>
           <p>
-            <i class="fas fa-check" /> Free Career Counselling
+            <i className="fas fa-check" /> Free Career Counselling
           </p>
         </div>
       </main>

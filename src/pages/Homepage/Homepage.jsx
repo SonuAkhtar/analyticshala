@@ -1,7 +1,6 @@
 // Imported components
 import Header from "../../components/Header/Header";
 import Hero from "../../components/Hero/Hero";
-import AboutMe from "../../components/AboutMe/AboutMe";
 import Skills from "../../components/Skills/Skills";
 import Testimony from "../../components/Testimony/Testimony";
 import Works from "../../components/Works/Works";
@@ -30,26 +29,25 @@ function Homepage() {
     <>
       <Header />
       <Hero />
-      {/* <Hero1 /> */}
-      {/* <RotateText /> */}
-      {/* <AboutMe /> */}
       <Reveal />
-      {/* <Courses /> */}
       <Courses1 />
       <ScrollCards />
       <Skills />
+      <Testimony />
+      <HomeTeam />
+      <Questions />
+      <Contact />
+      <Footer />
+      {/* <ScrollText /> */}
+      {/* <Hero1 /> */}
+      {/* <RotateText /> */}
+      {/* <Courses /> */}
       {/* <Works /> */}
       {/* <Why /> */}
       {/* <Info /> */}
       {/* <Projects /> */}
-      <HomeTeam />
       {/* <Gallery /> */}
       {/* <ImageCards /> */}
-      <Testimony />
-      <Questions />
-      {/* <ScrollText /> */}
-      <Contact />
-      <Footer />
     </>
   );
 }

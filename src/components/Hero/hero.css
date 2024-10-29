@@ -12,7 +12,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
   padding: 1rem 2rem;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .hero_main .hero_title .shape {
-  color: darkorange;
+  color: #e3735e;
 }
 
 .hero_buttons,
@@ -48,6 +48,7 @@
   background-color: var(--off-dark);
   color: var(--off-white);
   border: 2px solid transparent;
+  border-radius: 0.25rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
@@ -85,7 +86,7 @@
 /* Responsive design */
 @media screen and (max-width: 600px) {
   .hero {
-    height: 75vh;
+    height: max-content;
   }
 
   .hero_main {

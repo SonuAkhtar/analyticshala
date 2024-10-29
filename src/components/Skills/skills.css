@@ -20,6 +20,10 @@
   font-weight: bold;
 }
 
+.skills__heading .demand_mob {
+  display: none;
+}
+
 .skills_details {
   flex: 2;
   display: flex;
@@ -121,6 +125,15 @@
   .skills__heading {
     font-size: 2rem;
     line-height: 2.5rem;
+    text-align: justify;
+  }
+
+  .skills__heading .demand_mob {
+    display: inline;
+  }
+
+  .skills__heading .demand_desk {
+    display: none;
   }
 
   .skills_details p {
@@ -129,12 +142,16 @@
   }
 
   .skills_data {
-    padding: 1rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .skills_data .sperator {
+    display: none;
   }
 
   .skills_number {
-    font-size: 2rem;
-    line-height: 2.5rem;
+    font-size: 1.75rem;
+    line-height: 2rem;
   }
 
   .skills_types {

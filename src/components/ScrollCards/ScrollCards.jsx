@@ -19,13 +19,7 @@ const ScrollCards = () => {
 
         <div className="scrollCards">
           {scrollCardsData.map((card) => (
-            <div
-              key={card.id}
-              className="scrollCard_item"
-              style={{
-                top: `${(card.id + 1) * 10}vh`,
-              }}
-            >
+            <div key={card.id} className="scrollCard_item">
               <div className="card_body">
                 <div className="card_number_title">
                   <h1 className="card_number">0{card.id}</h1>

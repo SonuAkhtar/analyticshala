@@ -18,8 +18,11 @@ const Skills = () => {
           <main className="skills_main">
             <div className="skills_top">
               <div className="skills__heading">
-                Get the skills you need to get a Job that is <br />
-                <span>in Demand</span>
+                Get the skills you need to get a Job that is
+                <span className="demand_mob"> in Demand</span>
+                <span className="demand_desk">
+                  <br /> in Demand
+                </span>
               </div>
               <div className="skills_details">
                 <p>
@@ -33,14 +36,14 @@ const Skills = () => {
                     </div>
                     <div className="skills_info">Years Experience</div>
                   </div>
-                  <span>|</span>
+                  <span className="sperator">|</span>
                   <div className="skills_data_item">
                     <div className="skills_number">
                       10<span>+</span>
                     </div>
                     <div className="skills_info">Courses</div>
                   </div>
-                  <span>|</span>
+                  <span className="sperator">|</span>
                   <div className="skills_data_item">
                     <div className="skills_number">
                       45<span>+</span>

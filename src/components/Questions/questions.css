@@ -15,13 +15,12 @@
   padding: 1rem;
   border: 2px solid var(--off-dark);
   width: 100%;
-  height: 10vh;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
   overflow: hidden;
 }
 
 .question_item.active {
-  height: 22vh;
+  /* height: 22vh; */
   background-color: var(--off-dark);
   color: var(--off-white);
 }
@@ -41,7 +40,7 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 3rem;
-  line-height: 3rem;
+  line-height: 2rem;
 }
 
 .question_arrow {
@@ -63,12 +62,12 @@
 }
 
 .question_item .answer_area {
-  transition: all 0.7s ease-in-out;
-  transform: translateY(50vh);
+  max-height: 0;
+  overflow: hidden;
 }
 
 .question_item.active .answer_area {
-  transform: translateY(0);
+  max-height: max-content;
 }
 
 /* Responsive design */
@@ -87,11 +86,7 @@
 
   .question_item {
     padding: 1rem 0.5rem;
-    height: 20vh;
-  }
-
-  .question_item.active {
-    height: 30vh;
+    border-width: 1px;
   }
 
   .question_item .question_area {
@@ -103,6 +98,7 @@
     line-height: 1.25rem;
     max-width: 90%;
     gap: 0.25rem;
+    font-weight: 500;
   }
 
   .question_item .question_number {
@@ -119,5 +115,6 @@
   .question_item .answer_area {
     font-size: 0.9rem;
     line-height: 1rem;
+    padding: 0 0.5rem;
   }
 }

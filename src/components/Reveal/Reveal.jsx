@@ -23,8 +23,8 @@ const Reveal = () => {
       scrollTrigger: {
         trigger: triggerRef.current,
         scrub: true,
-        start: "top 50%",
-        end: "bottom 50%",
+        start: "top 70%",
+        end: "bottom 70%",
       },
       color: "#333",
       duration: 1,

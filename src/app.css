@@ -45,6 +45,7 @@ a {
 section {
   position: relative;
   padding: 3rem 1rem;
+  padding-top: 0;
   background-color: var(--off-white);
   color: var(--off-dark);
   overflow: hidden;
