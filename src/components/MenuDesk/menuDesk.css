@@ -9,7 +9,7 @@
   transform: translateX(-120vw);
   overflow: hidden;
   z-index: 999;
-  box-shadow: 0 0 15px var(--off-dark);
+  box-shadow: 0 0 10px var(--off-dark);
 }
 
 .menuDesk_container.show {
@@ -24,28 +24,28 @@
   height: 110vh;
   width: 110vh;
   border-radius: 50%;
-  border: 2px solid #acb0bd;
+  border: 2px solid var(--black);
   transition: all 0.5s ease-in-out;
 }
 
 .menuDesk_circle.one {
-  rotate: 45deg;
+  rotate: 24deg;
 }
 
 .menuDesk_circle.two {
-  rotate: 30deg;
+  rotate: 12deg;
 }
 
 .menuDesk_circle.three {
-  rotate: 15deg;
-}
-
-.menuDesk_circle.four {
   rotate: 0deg;
 }
 
+.menuDesk_circle.four {
+  rotate: -12deg;
+}
+
 .menuDesk_circle.five {
-  rotate: -15deg;
+  rotate: -24deg;
 }
 
 .menuDesk_stripe {
@@ -68,9 +68,9 @@
 }
 
 .menuDesk_dot i {
-  font-size: 1rem;
+  font-size: 1.2rem;
   transform: translateX(55%);
-  color: var(--off-dark);
+  color: var(--black);
   opacity: 0.3;
 }
 
@@ -86,7 +86,7 @@
   align-items: center;
   gap: 1rem;
   cursor: pointer;
-  color: var(--off-dark);
+  color: var(--black);
   opacity: 0.3;
   transition: all 0.3s ease;
 }
@@ -97,32 +97,32 @@
 }
 
 .menuDesk_text .number {
-  font-size: 2rem;
-}
-
-.menuDesk_text .name {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 600;
 }
 
+.menuDesk_text .name {
+  font-size: 2rem;
+}
+
 .menuDesk_stripe.one {
-  transform: translate(0, -50%) rotate(-45deg);
+  transform: translate(0, -50%) rotate(-24deg);
 }
 
 .menuDesk_stripe.two {
-  transform: translate(0, -50%) rotate(-30deg);
+  transform: translate(0, -50%) rotate(-12deg);
 }
 
 .menuDesk_stripe.three {
-  transform: translate(0, -50%) rotate(-15deg);
-}
-
-.menuDesk_stripe.four {
   transform: translate(0, -50%) rotate(0deg);
 }
 
+.menuDesk_stripe.four {
+  transform: translate(0, -50%) rotate(12deg);
+}
+
 .menuDesk_stripe.five {
-  transform: translate(0, -50%) rotate(15deg);
+  transform: translate(0, -50%) rotate(24deg);
 }
 
 /* Responsive design */

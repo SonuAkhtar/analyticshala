@@ -50,6 +50,7 @@
   line-height: 1.75rem;
   text-align: center;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
@@ -131,6 +132,14 @@
 
 .course_right_view a:hover::before {
   width: 100%;
+}
+
+.course_right_view a i {
+  transition: transform 0.5s ease-in-out;
+}
+
+.course_right_view a:hover i {
+  transform: translateX(7px);
 }
 
 /* Responsive design */

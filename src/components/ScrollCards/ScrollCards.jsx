@@ -17,7 +17,7 @@ const ScrollCards = () => {
           subtitle="Analyticshala"
         />
 
-        <div className="scrollCards">
+        <div className="scrollCards_all">
           {scrollCardsData.map((card) => (
             <div key={card.id} className="scrollCard_item">
               <div className="card_body">
@@ -26,10 +26,13 @@ const ScrollCards = () => {
                   <h2 className="card_title">{card.title}</h2>
                 </div>
                 <p>{card.info}</p>
-                <button className="card_btn">View Courses</button>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="card_btn">
+          <a href="#courses">View Courses</a>
         </div>
       </div>
     </section>

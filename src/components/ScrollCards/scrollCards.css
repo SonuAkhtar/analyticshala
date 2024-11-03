@@ -2,20 +2,20 @@ section.scrollCards {
   overflow: unset;
 }
 
-.scrollCards {
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
 .scrollCards .sectionHeader {
   position: sticky;
   top: 12vh;
 }
 
-.scrollCards .scrollCard_item {
+.scrollCards_all {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.scrollCards_all .scrollCard_item {
   position: sticky;
   border-radius: 1rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
@@ -23,27 +23,27 @@ section.scrollCards {
   overflow: hidden;
 }
 
-.scrollCards .scrollCard_item:nth-child(1) {
+.scrollCards_all .scrollCard_item:nth-child(1) {
   top: 20vh;
 }
 
-.scrollCards .scrollCard_item:nth-child(2) {
+.scrollCards_all .scrollCard_item:nth-child(2) {
   top: 33vh;
 }
 
-.scrollCards .scrollCard_item:nth-child(3) {
+.scrollCards_all .scrollCard_item:nth-child(3) {
   top: 46vh;
 }
 
-.scrollCards .scrollCard_item:nth-child(4) {
+.scrollCards_all .scrollCard_item:nth-child(4) {
   top: 59vh;
 }
 
-.scrollCards .scrollCard_item:nth-child(5) {
+.scrollCards_all .scrollCard_item:nth-child(5) {
   top: 72vh;
 }
 
-.scrollCards .scrollCard_item:nth-child(6) {
+.scrollCards_all .scrollCard_item:nth-child(6) {
   top: 85vh;
 }
 
@@ -54,7 +54,7 @@ section.scrollCards {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 5rem;
+  gap: 3rem;
 }
 
 .scrollCard_item .card_number_title {
@@ -67,26 +67,31 @@ section.scrollCards {
 }
 
 .scrollCard_item .card_number {
-  font-size: 5rem;
+  font-size: 4rem;
   color: #888;
 }
 
 .scrollCard_item .card_title {
-  font-size: 3rem;
-  line-height: 4rem;
+  font-size: 2.5rem;
+  line-height: 3rem;
   color: #333;
 }
 
 .scrollCard_item p {
   font-size: 1.25rem;
   line-height: 1.25rem;
-  width: 80%;
+  width: 96%;
   text-align: center;
 }
 
-.scrollCard_item .card_btn {
-  border: none;
-  outline: none;
+.scrollCards .card_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrollCards .card_btn a {
+  margin-top: 2rem;
   font-size: 1rem;
   font-weight: 600;
   color: #fafafa;
@@ -94,6 +99,12 @@ section.scrollCards {
   border-radius: 0.5rem;
   cursor: pointer;
   background: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.scrollCards .card_btn a:hover {
+  font-weight: 400;
+  border-radius: 2rem;
 }
 
 /* Responsive design */
@@ -102,7 +113,7 @@ section.scrollCards {
     font-size: 0.75rem;
   }
 
-  .scrollCards {
+  .scrollCards_all {
     gap: 1rem;
   }
 
@@ -112,31 +123,32 @@ section.scrollCards {
   }
 
   .scrollCard_item .card_number_title {
-    height: 5vh;
+    min-height: 5vh;
+    height: fit-content;
   }
 
-  .scrollCards .scrollCard_item:nth-child(1) {
+  .scrollCards_all .scrollCard_item:nth-child(1) {
     top: 20vh;
   }
 
-  .scrollCards .scrollCard_item:nth-child(2) {
-    top: 28vh;
+  .scrollCards_all .scrollCard_item:nth-child(2) {
+    top: 32vh;
   }
 
-  .scrollCards .scrollCard_item:nth-child(3) {
-    top: 36vh;
-  }
-
-  .scrollCards .scrollCard_item:nth-child(4) {
+  .scrollCards_all .scrollCard_item:nth-child(3) {
     top: 44vh;
   }
 
-  .scrollCards .scrollCard_item:nth-child(5) {
-    top: 52vh;
+  .scrollCards_all .scrollCard_item:nth-child(4) {
+    top: 56vh;
   }
 
-  .scrollCards .scrollCard_item:nth-child(6) {
-    top: 60vh;
+  .scrollCards_all .scrollCard_item:nth-child(5) {
+    top: 68vh;
+  }
+
+  .scrollCards_all .scrollCard_item:nth-child(6) {
+    top: 80vh;
   }
 
   .scrollCard_item .card_number {
