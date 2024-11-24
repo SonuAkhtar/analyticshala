@@ -47,6 +47,10 @@ section.scrollCards {
   top: 85vh;
 }
 
+.scrollCards_all .scrollCard_item:nth-child(7) {
+  top: 98vh;
+}
+
 .scrollCard_item .card_body {
   position: relative;
   padding: 3vh 2rem;
@@ -117,6 +121,10 @@ section.scrollCards {
     gap: 1rem;
   }
 
+  .scrollCards_all .scrollCard_item {
+    border-radius: 0.25rem;
+  }
+
   .scrollCard_item .card_body {
     padding: 1rem;
     gap: 1rem;
@@ -128,27 +136,31 @@ section.scrollCards {
   }
 
   .scrollCards_all .scrollCard_item:nth-child(1) {
-    top: 20vh;
+    top: 18vh;
   }
 
   .scrollCards_all .scrollCard_item:nth-child(2) {
-    top: 32vh;
+    top: 27vh;
   }
 
   .scrollCards_all .scrollCard_item:nth-child(3) {
-    top: 44vh;
+    top: 36vh;
   }
 
   .scrollCards_all .scrollCard_item:nth-child(4) {
-    top: 56vh;
+    top: 46vh;
   }
 
   .scrollCards_all .scrollCard_item:nth-child(5) {
-    top: 68vh;
+    top: 56vh;
   }
 
   .scrollCards_all .scrollCard_item:nth-child(6) {
-    top: 80vh;
+    top: 66vh;
+  }
+
+  .scrollCards_all .scrollCard_item:nth-child(7) {
+    top: 76vh;
   }
 
   .scrollCard_item .card_number {

@@ -27,9 +27,7 @@ import ScrollCards from "../../components/ScrollCards/ScrollCards";
 function Homepage() {
   return (
     <>
-      <Header />
       <Hero />
-      <Reveal />
       <Courses1 />
       <ScrollCards />
       <Skills />
@@ -37,7 +35,7 @@ function Homepage() {
       <HomeTeam />
       <Questions />
       <Contact />
-      <Footer />
+      {/* <Reveal /> */}
       {/* <ScrollText /> */}
       {/* <Hero1 /> */}
       {/* <RotateText /> */}

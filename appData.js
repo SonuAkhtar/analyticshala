@@ -12,35 +12,27 @@ export const socialIconsData = [
   { id: 2, class: "fab fa-twitter", href: "https://twitter.com/SonuA007" },
 ];
 
-export const menuDeskData = [
-  { id: 0, class: "one", number: "01", name: "About Us", href: "#about" },
-  { id: 1, class: "two", number: "02", name: "Courses", href: "#courses" },
-  { id: 2, class: "three", number: "03", name: "Hero", href: "#" },
-  { id: 3, class: "four", number: "04", name: "FAQ", href: "#faq" },
-  { id: 4, class: "five", number: "05", name: "Contact", href: "#contact" },
-];
-
 export const menuMobileData = [
   {
     id: 0,
     class: "one",
     icon: "fas fa-home",
-    name: "Hero",
-    href: "#",
+    name: "Home",
+    href: "/",
   },
   {
     id: 1,
     class: "two",
     icon: "fas fa-user",
     name: "About Us",
-    href: "#about",
+    href: "/aboutUs",
   },
   {
     id: 2,
     class: "three",
     icon: "fas fa-file-code",
     name: "Courses",
-    href: "#courses",
+    href: "/courses",
   },
   {
     id: 3,
@@ -55,6 +47,45 @@ export const menuMobileData = [
     icon: "fas fa-project-diagram",
     name: "Contact Us",
     href: "#contact",
+  },
+];
+
+export const heroMarqData = [
+  {
+    id: 1,
+    image: "/assets/marq/ai.webp",
+  },
+  {
+    id: 2,
+    image: "/assets/marq/python.webp",
+  },
+  {
+    id: 3,
+    image: "/assets/marq/sql.webp",
+  },
+  {
+    id: 4,
+    image: "/assets/marq/tableau.webp",
+  },
+  {
+    id: 5,
+    image: "/assets/marq/excel.jpg",
+  },
+  {
+    id: 6,
+    image: "/assets/marq/html.webp",
+  },
+  {
+    id: 7,
+    image: "/assets/marq/css.png",
+  },
+  {
+    id: 8,
+    image: "/assets/marq/javascript.webp",
+  },
+  {
+    id: 9,
+    image: "/assets/marq/react.webp",
   },
 ];
 
@@ -310,55 +341,23 @@ export const skillsData = [
 export const teamData = [
   {
     id: 1,
-    number: "01",
     name: "Faizan Ansari",
-    position: "Senior Engineer",
-    profile: "CEO",
+    position: "Data Science Trainer, Career Coach",
+    college: "ISB Alumni",
+    profile: "FAIZAN",
     image: "/assets/hobbies/dev_2.jpg",
     social: [
       {
-        href: "https://github.com/SonuAkhtar",
-        iconClass: "fab fa-github",
-      },
-      {
-        href: "https://github.com/SonuAkhtar",
+        href: "https://www.linkedin.com/in/faizan-ansari-8989ab125",
         iconClass: "fab fa-linkedin-in",
-      },
-      {
-        href: "https://github.com/SonuAkhtar",
-        iconClass: "fab fa-twitter",
       },
     ],
   },
   {
     id: 2,
-    number: "02",
-    name: "Aishvarya Joshi",
-    position: "Tech Lead",
-    profile: "CFO",
-    image: "/assets/hobbies/dev_1.jpg",
-    social: [
-      {
-        href: "https://github.com/SonuAkhtar",
-        iconClass: "fab fa-github",
-      },
-      {
-        href: "https://github.com/SonuAkhtar",
-        iconClass: "fab fa-linkedin-in",
-      },
-      {
-        href: "https://github.com/SonuAkhtar",
-        iconClass: "fab fa-twitter",
-      },
-    ],
-  },
-
-  {
-    id: 3,
-    number: "03",
     name: "Riyaz Akhtar",
-    position: "Lead Engineer",
-    profile: "CTO",
+    position: "Web Developer, Trainer",
+    profile: "RIYAZ",
     image: "/assets/hobbies/dev_3.jpg",
     social: [
       {
@@ -366,12 +365,47 @@ export const teamData = [
         iconClass: "fab fa-github",
       },
       {
-        href: "https://github.com/SonuAkhtar",
+        href: "https://www.linkedin.com/in/riyaz-akhtar-03bb59129/",
         iconClass: "fab fa-linkedin-in",
       },
+    ],
+  },
+  {
+    id: 3,
+    name: "Aishvarya Joshi",
+    position: "Tech Lead",
+    profile: "AISHVARYA",
+    image: "/assets/hobbies/dev_1.jpg",
+    social: [
       {
-        href: "https://github.com/SonuAkhtar",
-        iconClass: "fab fa-twitter",
+        href: "https://www.linkedin.com/in/aishvarya1011/",
+        iconClass: "fab fa-linkedin-in",
+      },
+    ],
+  },
+  {
+    id: 4,
+    name: "Tavleen Kaur",
+    position: "Operations Manager",
+    profile: "TAVLEEN",
+    image: "/assets/hobbies/dev_1.jpg",
+    social: [
+      {
+        href: "https://www.linkedin.com/in/tavleen-kaur-a2b867293/",
+        iconClass: "fab fa-linkedin-in",
+      },
+    ],
+  },
+  {
+    id: 5,
+    name: "Zahid Hussain",
+    position: "Business Development Manager",
+    profile: "ZAHID",
+    image: "/assets/hobbies/dev_3.jpg",
+    social: [
+      {
+        href: "https://www.linkedin.com/in/zahid-hussain-a6a216a0/",
+        iconClass: "fab fa-linkedin-in",
       },
     ],
   },
@@ -414,61 +448,75 @@ export const contactData = [
 export const testimonyData = [
   {
     id: 1,
-    image: "/assets/hobbies/dev_1.jpg",
+    image: "/assets/testimony/boy.jpg",
     review:
-      "It has been a great learning experience. Everything was so precise and upto the industry demand and standdards. It has been a great learning experience. Everything was so precise and upto the industry demand and standdards",
-    name: "Person One",
-    position: "Senior Engineer",
+      "I had a highly positive experience completing the SQL course with Analytical Shala. The instructor was knowledgeable, clear, and responsive, ensuring an engaging and effective learning experience. I look forward to enrolling in future courses.",
+    name: "Sameer",
+    position: "Senior Engineer @abc",
   },
-
   {
     id: 2,
-    image: "/assets/hobbies/dev_2.jpg",
+    image: "/assets/testimony/girl.webp",
     review:
-      "It has been a great learning experience. Everything was so precise and upto the industry demand and standdards. It has been a great learning experience. Everything was so precise and upto the industry demand and standdards",
-    name: "Person Two",
-    position: "Senior Engineer",
+      "I recently took SQL classes with Analytical Shala, and my experience was exceptional. The course provided a thorough introduction to SQL, with the instructor's deep knowledge and clear teaching style making complex concepts easy to understand.",
+    name: "Neha",
+    position: "Manager @genpact",
   },
-
   {
     id: 3,
-    image: "/assets/hobbies/dev_1.jpg",
+    image: "/assets/testimony/boy.jpg",
     review:
-      "It has been a great learning experience. Everything was so precise and upto the industry demand and standdards. It has been a great learning experience. Everything was so precise and upto the industry demand and standdards",
-    name: "Person Three",
-    position: "Senior Engineer",
+      "I received excellent service from Analytical Shala. The support was helpful and responsive, with clear explanations throughout. The online format allowed me to learn at my own pace and complete assignments easily. The course content was concise.",
+    name: "Tabjeel",
+    position: "Data Analyst @wnf",
   },
-
   {
     id: 4,
-    image: "/assets/hobbies/dev_3.jpg",
+    image: "/assets/testimony/girl.webp",
     review:
-      "It has been a great learning experience. Everything was so precise and upto the industry demand and standdards. It has been a great learning experience. Everything was so precise and upto the industry demand and standdards",
-    name: "Person Four",
-    position: "Senior Engineer",
+      "Thank you, Analytical Shala, for providing an outstanding learning experience. The trainer's enthusiasm and passion for SQL and Tableau made complex concepts easy to understand, while keeping the sessions engaging and enjoyable.",
+    name: "Tavleen",
+    position: "Business Analyst @accenture",
   },
 ];
 
 export const coursesData = [
   {
     id: 1,
-    title: "Data Analytics",
-    chapters: ["One", "Two", "Three", "Four", "Five"],
+    title: "Data Analytics & Visualization",
+    chapters: [
+      "Advanced-Excel",
+      "SQL/Advanced SQL",
+      "Principles of Visualization",
+    ],
   },
   {
     id: 2,
-    title: "Data Visualization",
-    chapters: ["One", "Two", "Three", "Four", "Five"],
+    title: "Data Analytics with Python",
+    chapters: [
+      "SQL/Advanced SQL",
+      "Python",
+      "Pandas",
+      "Numpy",
+      "Seabond/Metplotlib",
+    ],
   },
   {
     id: 3,
     title: "Web Development",
-    chapters: ["HTML", "JavaScript", "CSS", "ReactJS", "NextJS"],
+    chapters: ["HTML", "CSS", "JavaScript", "ReactJS", "NextJS"],
   },
   {
     id: 4,
-    title: "Individual",
-    chapters: ["Python", "Excel", "SQL", "Tableau", "NLP"],
+    title: "Exclusive Courses",
+    chapters: [
+      "Prompt Engineering",
+      "Gen-AI",
+      "NLP",
+      "Text Analytics",
+      "LLM",
+      "Machine Learning",
+    ],
   },
 ];
 
@@ -504,38 +552,38 @@ export const questionsData = [
 export const scrollCardsData = [
   {
     id: 1,
-    bgColor: "linear-gradient(135deg, #c7a9e9, #a1c4fd)",
     title: "Live Classes",
     info: "Join our interactive live classes led by expert instructors, providing real-time engagement and personalized attention to enhance your learning experience.",
   },
   {
     id: 2,
-    bgColor: "linear-gradient(135deg, #a1c4fd, #c2e9fb)",
-    title: "Practice & Revision",
-    info: "Reinforce your knowledge with targeted practice sessions and revision materials designed to solidify your understanding and boost your confidence.",
-  },
-  {
-    id: 3,
-    bgColor: "linear-gradient(135deg, #77a1d3, #79cbca)",
-    title: "Lifetime Support",
-    info: "Enjoy continuous access to resources and expert guidance even after your course ends, ensuring you're never alone on your learning journey.",
-  },
-  {
-    id: 4,
-    bgColor: "linear-gradient(135deg, #636fa4, #e8cbc0)",
-    title: "One-on-One sessions",
-    info: "Experience personalized learning with dedicated one-on-one sessions tailored to your unique needs, helping you overcome challenges and achieve your goals faster.",
-  },
-  {
-    id: 5,
-    bgColor: "linear-gradient(135deg, #a2c0cc, #fceea7)",
     title: "Recorded Sessions",
     info: "Access a library of recorded sessions anytime, allowing you to learn at your own pace and revisit key concepts whenever you need a refresher.",
   },
   {
-    id: 6,
-    bgColor: "linear-gradient(135deg, #a2c0cc, #fceea7)",
+    id: 3,
+    title: "One-on-One sessions",
+    info: "Experience personalized learning with dedicated one-on-one sessions tailored to your unique needs, helping you overcome challenges and achieve your goals faster.",
+  },
+
+  {
+    id: 4,
+    title: "Practice & Revision",
+    info: "Reinforce your knowledge with targeted practice sessions and revision materials designed to solidify your understanding and boost your confidence.",
+  },
+  {
+    id: 5,
     title: "Interview Preparation",
     info: "Prepare for success with our specialized interview coaching, offering insights and strategies to help you ace your interviews and land your dream job.",
+  },
+  {
+    id: 6,
+    title: "Lifetime Support",
+    info: "Enjoy continuous access to resources and expert guidance even after your course ends, ensuring you're never alone on your learning journey.",
+  },
+  {
+    id: 7,
+    title: "Live Projects",
+    info: "Work on live projects based on the coureses you have learned, and skills you have practiced.",
   },
 ];

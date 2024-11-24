@@ -1,14 +1,18 @@
 // imported CSS
 import "./hero.css";
 
+// imported Component
+import Marq from "../Marq/Marq";
+import { heroMarqData } from "../../../appData";
+
 const Hero = () => {
   return (
     <section className="hero" id="hero">
       <main className="hero_main">
         <div className="hero_title">
-          <span>Analytics</span>
-          <span>that Helps You</span>
-          <span className="shape">Shape Your Future</span>
+          <div className="single_line">Analytics</div>
+          <div className="single_line">that Helps You</div>
+          <div className="shape single_line">Shape Your Future</div>
         </div>
         <div className="hero_buttons">
           <a href="#contact">Contact Us</a>
@@ -19,12 +23,13 @@ const Hero = () => {
 
         <div className="hero_info">
           <p>
-            <i className="fas fa-check" /> Free 2-Classes Trial
+            <i className="fas fa-check" /> Free 2-Trial Classes
           </p>
           <p>
             <i className="fas fa-check" /> Free Career Counselling
           </p>
         </div>
+        <Marq data={heroMarqData} />
       </main>
     </section>
   );

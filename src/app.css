@@ -44,7 +44,7 @@ a {
 /* Section Styles*/
 section {
   position: relative;
-  padding: 3rem 1rem;
+  padding: 10vh 1rem;
   padding-top: 0;
   background-color: var(--off-white);
   color: var(--off-dark);
@@ -61,6 +61,6 @@ section {
 /* Responsive design */
 @media screen and (max-width: 600px) {
   section {
-    padding: 1rem;
+    padding: 5vh 1rem;
   }
 }

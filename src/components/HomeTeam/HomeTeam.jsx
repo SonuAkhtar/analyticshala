@@ -30,10 +30,11 @@ const HomeTeam = () => {
                 <img src={team.image} alt="team member" />
 
                 <div className="teamCard_details">
-                  <span className="teamCard_number">{team.number}</span>
+                  <span className="teamCard_number">0{team.id}</span>
                   <div className="teamCard_info">
                     <span>{team.name}</span>
                     <span className="teamCard_position">{team.position}</span>
+                    <span className="teamCard_position">{team.college}</span>
                   </div>
 
                   <div className="social_buttons">

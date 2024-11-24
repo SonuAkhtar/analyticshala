@@ -16,12 +16,23 @@
 }
 
 .courses1 .course_card_left {
+  position: relative;
   width: 30%;
   padding: 2rem;
   display: flex;
   align-items: center;
   background-color: var(--off-dark);
   color: var(--off-white);
+}
+
+.course_card_left .course_card_left_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
 }
 
 .courses1 .course_card_right {
@@ -50,7 +61,6 @@
   line-height: 1.75rem;
   text-align: center;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
@@ -86,8 +96,8 @@
 .card_right_chapters span {
   font-size: 1rem;
   font-weight: 400;
-  background-color: coral;
-  color: white;
+  background-color: #e3735e;
+  color: #fff;
   padding: 0.25rem 0.75rem;
   border-radius: 2rem;
 }
@@ -152,11 +162,11 @@
   .courses1 .course_card_left,
   .courses1 .course_card_right {
     width: 100%;
-    padding: 0.75rem;
+    padding: 1rem 0.75rem;
   }
 
   .courses1 .course_card_right {
-    gap: 0.5rem;
+    gap: 1.5rem;
   }
 
   .card_left_name {
@@ -166,6 +176,7 @@
   .card_left_title {
     font-weight: 500;
     font-size: 1.1rem;
+    flex-wrap: wrap;
   }
 
   .card_left_title span {
@@ -175,6 +186,10 @@
   .card_right_chapters {
     font-weight: 500;
     font-size: 0.9rem;
+  }
+
+  .course_right_view {
+    justify-content: flex-start;
   }
 
   .course_right_view a {

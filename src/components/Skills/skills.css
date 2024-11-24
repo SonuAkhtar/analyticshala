@@ -123,9 +123,8 @@
   }
 
   .skills__heading {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    text-align: justify;
+    font-size: 1.75rem;
+    line-height: 2rem;
   }
 
   .skills__heading .demand_mob {

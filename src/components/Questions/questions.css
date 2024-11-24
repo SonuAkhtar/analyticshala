@@ -73,7 +73,7 @@
 /* Responsive design */
 @media screen and (max-width: 600px) {
   section.questions {
-    padding: 1rem 0;
+    padding: 5vh 0;
   }
 
   section.questions .sectionHeader {

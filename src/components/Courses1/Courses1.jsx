@@ -7,6 +7,8 @@ import SectionHeader from "../SectionHeader/SectionHeader";
 // import appData
 import { coursesData } from "../../../appData";
 
+//import images
+import courseImage from "/assets/courses/visual.jpg";
 const Courses1 = () => {
   return (
     <section className="courses1" id="courses1">
@@ -17,6 +19,11 @@ const Courses1 = () => {
           {coursesData.map((course) => (
             <div key={course.id} className="course_card">
               <div className="course_card_left">
+                <img
+                  className="course_card_left_image"
+                  src={courseImage}
+                  alt="course image"
+                />
                 <div className="card_left_name">Course</div>
                 <div className="card_left_title">
                   <span>0{course.id}</span>
@@ -34,7 +41,7 @@ const Courses1 = () => {
 
                 <div className="course_right_view">
                   <a href="">
-                    View all Chapters <i className="fas fa-chevron-right" />
+                    View Details <i className="fas fa-chevron-right" />
                   </a>
                 </div>
               </div>

@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 // import Component
-import MenuDesk from "../MenuDesk/MenuDesk";
 import MenuMobile from "../MenuMobile/MenuMobile";
 
 // import CSS
@@ -14,9 +14,16 @@ const Header = () => {
     <>
       <header className="header">
         <nav>
-          <a className="nav_logo" href="#">
+          <Link className="nav_logo" to="/">
             AnalyticShala
-          </a>
+          </Link>
+
+          <div className="nav_items">
+            <Link to="/aboutUs">About Us</Link>
+            <Link to="/courses">Courses</Link>
+            <a href="#FAQ">FAQ</a>
+            <a href="#contact">Contact</a>
+          </div>
 
           <div
             className={`ham_wrapper ${menuClick && "active"}`}
@@ -31,7 +38,6 @@ const Header = () => {
         </nav>
         <MenuMobile expand={menuClick} setExpand={setMenuClick} />
       </header>
-      <MenuDesk show={menuClick} setShow={setMenuClick} />
     </>
   );
 };
