@@ -118,7 +118,7 @@
     height: max-content;
     gap: 1rem;
     padding: 1rem 0.5rem;
-    justify-content: space-around;
+    justify-content: space-between;
     font-size: 0.9rem;
     border-radius: 0;
     box-shadow: none;

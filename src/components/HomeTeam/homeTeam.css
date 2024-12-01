@@ -10,7 +10,7 @@
 
 .homeTeam_main .card_container {
   position: relative;
-  height: 60vh;
+  height: 70vh;
   width: 100px;
   border-radius: 0.5rem;
   color: var(--off-white);
@@ -21,7 +21,7 @@
 }
 
 .card_container.active {
-  width: 350px;
+  width: 300px;
 }
 
 .homeTeam_main .card_container.active .teamCard_profile {
@@ -98,6 +98,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  gap: 1rem;
   transform: translateY(100px);
 }
 
@@ -134,21 +135,51 @@
   }
 
   .homeTeam_main .card_container {
-    height: 40vh;
+    height: 45vh;
     width: 300px;
+  }
+
+  .teamCard_details {
+    padding: 0.5rem;
+    align-items: flex-start;
   }
 
   .homeTeam_main .card_container .teamCard_profile {
     left: 100vw;
   }
 
+  .card_container.active img,
   .card_container img {
-    filter: grayscale(1);
+    filter: grayscale(0);
+    transform: scale(1);
   }
 
   .card_container .teamCard_number,
   .card_container .teamCard_info,
   .card_container .social_buttons {
     transform: translateY(0);
+  }
+
+  .teamCard_number {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    text-shadow: 1px 1px #333;
+  }
+
+  .teamCard_info {
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-shadow: 1px 1px #666;
+  }
+
+  .teamCard_position {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .social_buttons a {
+    height: 2rem;
+    width: 2rem;
+    font-size: 1.1rem;
   }
 }

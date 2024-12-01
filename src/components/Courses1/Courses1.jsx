@@ -40,8 +40,8 @@ const Courses1 = () => {
                 </div>
 
                 <div className="course_right_view">
-                  <a href="">
-                    View Details <i className="fas fa-chevron-right" />
+                  <a href="#">
+                    Download Brochure <i className="fas fa-chevron-right" />
                   </a>
                 </div>
               </div>

@@ -32,7 +32,7 @@ const ScrollCards = () => {
         </div>
 
         <div className="card_btn">
-          <a href="#courses">View Courses</a>
+          <a href="#courses">Download Brochure</a>
         </div>
       </div>
     </section>

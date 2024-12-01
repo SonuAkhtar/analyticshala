@@ -355,6 +355,19 @@ export const teamData = [
   },
   {
     id: 2,
+    name: "Aishvarya Joshi",
+    position: "Communication Trainer",
+    profile: "AISHVARYA",
+    image: "/assets/hobbies/dev_1.jpg",
+    social: [
+      {
+        href: "https://www.linkedin.com/in/aishvarya1011/",
+        iconClass: "fab fa-linkedin-in",
+      },
+    ],
+  },
+  {
+    id: 3,
     name: "Riyaz Akhtar",
     position: "Web Developer, Trainer",
     profile: "RIYAZ",
@@ -366,19 +379,6 @@ export const teamData = [
       },
       {
         href: "https://www.linkedin.com/in/riyaz-akhtar-03bb59129/",
-        iconClass: "fab fa-linkedin-in",
-      },
-    ],
-  },
-  {
-    id: 3,
-    name: "Aishvarya Joshi",
-    position: "Tech Lead",
-    profile: "AISHVARYA",
-    image: "/assets/hobbies/dev_1.jpg",
-    social: [
-      {
-        href: "https://www.linkedin.com/in/aishvarya1011/",
         iconClass: "fab fa-linkedin-in",
       },
     ],

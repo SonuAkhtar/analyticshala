@@ -97,7 +97,6 @@ section.scrollCards {
 .scrollCards .card_btn a {
   margin-top: 2rem;
   font-size: 1rem;
-  font-weight: 600;
   color: #fafafa;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
@@ -107,7 +106,6 @@ section.scrollCards {
 }
 
 .scrollCards .card_btn a:hover {
-  font-weight: 400;
   border-radius: 2rem;
 }
 
@@ -140,27 +138,27 @@ section.scrollCards {
   }
 
   .scrollCards_all .scrollCard_item:nth-child(2) {
-    top: 27vh;
+    top: 30vh;
   }
 
   .scrollCards_all .scrollCard_item:nth-child(3) {
-    top: 36vh;
+    top: 42vh;
   }
 
   .scrollCards_all .scrollCard_item:nth-child(4) {
-    top: 46vh;
+    top: 54vh;
   }
 
   .scrollCards_all .scrollCard_item:nth-child(5) {
-    top: 56vh;
-  }
-
-  .scrollCards_all .scrollCard_item:nth-child(6) {
     top: 66vh;
   }
 
+  .scrollCards_all .scrollCard_item:nth-child(6) {
+    top: 78vh;
+  }
+
   .scrollCards_all .scrollCard_item:nth-child(7) {
-    top: 76vh;
+    top: 90vh;
   }
 
   .scrollCard_item .card_number {
