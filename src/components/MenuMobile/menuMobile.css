@@ -6,7 +6,7 @@
 @media screen and (max-width: 600px) {
   .menuMobile_container {
     position: absolute;
-    top: 8vh;
+    top: 10vh;
     left: 0;
     display: flex;
     width: 100%;
@@ -22,7 +22,6 @@
   }
 
   .menuMobile_container ul {
-    padding-top: 5vh;
     display: flex;
     width: 100%;
     flex-direction: column;

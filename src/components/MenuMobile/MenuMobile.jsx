@@ -21,7 +21,7 @@ const MenuMobile = ({ expand, setExpand }) => {
           <li key={i} onClick={() => handleMenuClick(item.class)}>
             <a
               href={item.href}
-              className={`${menuItem == item.class && "active"}`}
+              className={`${menuItem === item.class && "active"}`}
             >
               {item.name}
             </a>

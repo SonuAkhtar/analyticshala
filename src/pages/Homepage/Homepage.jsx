@@ -1,17 +1,25 @@
-// Imported components
-import Header from "../../components/Header/Header";
-import Hero from "../../components/Hero/Hero";
-import Skills from "../../components/Skills/Skills";
-import Testimony from "../../components/Testimony/Testimony";
-import Works from "../../components/Works/Works";
-import HomeTeam from "../../components/HomeTeam/HomeTeam";
-import Contact from "../../components/Contact/Contact";
-import Footer from "../../components/Footer/Footer";
-import Projects from "../../components/Projects/Projects";
-import Info from "../../components/Info/Info";
+import { useState } from "react";
 
 // Imported CSS
 import "./homepage.css";
+
+// Imported components
+import Hero from "../../components/Hero/Hero";
+import Courses1 from "../../components/Courses1/Courses1";
+import ScrollCards from "../../components/ScrollCards/ScrollCards";
+import Skills from "../../components/Skills/Skills";
+import Testimony from "../../components/Testimony/Testimony";
+import HomeTeam from "../../components/HomeTeam/HomeTeam";
+import Questions from "../../components/Questions/Questions";
+import Contact from "../../components/Contact/Contact";
+import Download from "../../components/Download/Download";
+
+// import Components
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import Works from "../../components/Works/Works";
+import Projects from "../../components/Projects/Projects";
+import Info from "../../components/Info/Info";
 import RotateText from "../../components/RotateText/RotateText";
 import Reveal from "../../components/Reveal/Reveal";
 import Gallery from "../../components/Gallery/Gallery";
@@ -20,16 +28,15 @@ import Why from "../../components/Why/Why";
 import ScrollText from "../../components/ScrollText/ScrollText";
 import Hero1 from "../../components/Hero1/Hero1";
 import Courses from "../../components/Courses/Courses";
-import Courses1 from "../../components/Courses1/Courses1";
-import Questions from "../../components/Questions/Questions";
-import ScrollCards from "../../components/ScrollCards/ScrollCards";
 
 function Homepage() {
+  const [showDownload, setShowDownload] = useState(false);
   return (
     <>
+      <Download showDownload={showDownload} setShowDownload={setShowDownload} />
       <Hero />
-      <Courses1 />
-      <ScrollCards />
+      <Courses1 setShowDownload={setShowDownload} />
+      <ScrollCards setShowDownload={setShowDownload} />
       <Skills />
       <Testimony />
       <HomeTeam />

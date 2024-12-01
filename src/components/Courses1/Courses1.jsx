@@ -9,7 +9,7 @@ import { coursesData } from "../../../appData";
 
 //import images
 import courseImage from "/assets/courses/visual.jpg";
-const Courses1 = () => {
+const Courses1 = ({ setShowDownload }) => {
   return (
     <section className="courses1" id="courses1">
       <div className="container">
@@ -40,7 +40,7 @@ const Courses1 = () => {
                 </div>
 
                 <div className="course_right_view">
-                  <a href="#">
+                  <a href="#" onClick={() => setShowDownload(true)}>
                     Download Brochure <i className="fas fa-chevron-right" />
                   </a>
                 </div>

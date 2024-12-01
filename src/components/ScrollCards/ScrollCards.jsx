@@ -7,7 +7,7 @@ import { scrollCardsData } from "../../../appData";
 // import Components
 import SectionHeader from "../SectionHeader/SectionHeader";
 
-const ScrollCards = () => {
+const ScrollCards = ({ setShowDownload }) => {
   return (
     <section className="scrollCards">
       <div className="container">
@@ -32,7 +32,9 @@ const ScrollCards = () => {
         </div>
 
         <div className="card_btn">
-          <a href="#courses">Download Brochure</a>
+          <a href="#" onClick={() => setShowDownload(true)}>
+            Download Brochure
+          </a>
         </div>
       </div>
     </section>
