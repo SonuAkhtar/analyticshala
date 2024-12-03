@@ -77,6 +77,12 @@
   gap: 1rem;
 }
 
+.download_wrapper .input_box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
 .download_wrapper form input {
   outline: none;
   border: none;
