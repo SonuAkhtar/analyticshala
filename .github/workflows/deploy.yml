@@ -29,6 +29,6 @@ jobs:
         with:
           server: ftp.analyticshala.in
           username: u500602524.deployanalyticshala
-          password: Analyticshala@1234
+          password: AnalyticShala@1234
           local-dir: dist/
           server-dir: public_html/
