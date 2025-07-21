@@ -31,4 +31,4 @@ jobs:
           username: u500602524.deployanalyticshala
           password: AnalyticShala@1234
           local-dir: dist/
-          server-dir: public_html/
+          server-dir: ./
