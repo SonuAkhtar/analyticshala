@@ -1,16 +1,42 @@
-@import "node_modules/vanilla-infinite-marquee/infinite-marquee.css";
-
 .marq_container {
+  width: 100%;
   padding: 1rem 0;
+  background-color: transparent;
 }
 
-.marq_container .horizontal-marquee-inner {
-  gap: 2rem;
+/* Each item inside marquee */
+.image_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1.5rem;
 }
 
-.image_wrapper img {
+.image_item img {
   height: 50px;
-  width: 50px;
-  border-radius: 0.25rem;
-  object-fit: cover;
+  width: auto;
+  max-width: 100px;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+/* Hover effect */
+.image_item img:hover {
+  transform: scale(1.08);
+  opacity: 0.9;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .image_item {
+    margin: 0 1rem;
+  }
+
+  .image_item img {
+    height: 40px;
+    max-width: 80px;
+  }
 }

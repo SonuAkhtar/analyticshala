@@ -3,14 +3,25 @@ import "./skills.css";
 
 // import Components
 import SectionHeader from "../SectionHeader/SectionHeader";
+import { useEffect, useState } from "react";
 
 const Skills = () => {
+  const [epxYears, setExpYears]=useState(0);
+
+useEffect(()=>{
+  const startYear = 2015;
+  const currentYear = new Date().getFullYear();
+  const totalYears = currentYear-startYear;
+
+  setExpYears(totalYears);
+},[])
+
   return (
     <>
       <section className="skills" id="skills">
         <div className="container">
           <SectionHeader
-            number="05"
+            number="03"
             title="Get the Required"
             subtitle="Skills"
           />
@@ -27,12 +38,12 @@ const Skills = () => {
               <div className="skills_details">
                 <p>
                   The modern tech market dictates its own terms. Today, to be a
-                  competitive spiaclist requires more than professional skills.
+                  competitive specialist requires more than professional skills.
                 </p>
                 <div className="skills_data">
                   <div className="skills_data_item">
                     <div className="skills_number">
-                      8<span>+</span>
+                      {epxYears}<span>+</span>
                     </div>
                     <div className="skills_info">Years Experience</div>
                   </div>
@@ -46,7 +57,7 @@ const Skills = () => {
                   <span className="sperator">|</span>
                   <div className="skills_data_item">
                     <div className="skills_number">
-                      45<span>+</span>
+                      500<span>+</span>
                     </div>
                     <div className="skills_info">Students Trained</div>
                   </div>
@@ -58,18 +69,18 @@ const Skills = () => {
                 <div className="skills_type_item">
                   <i className="fas fa-medal" />
                   <div className="skills_type_points">
-                    <div className="skills_type_title">Leadership</div>
+                    <div className="skills_type_title">Critical Thinking</div>
                     <div className="skills_type_subtitle">
-                      Fully commited to the success company
+                      Empowering students to analyze situations logically and make independent decisions confidently.
                     </div>
                   </div>
                 </div>
                 <div className="skills_type_item">
                   <i className="fas fa-brain" />
                   <div className="skills_type_points">
-                    <div className="skills_type_title">Responsibility</div>
+                    <div className="skills_type_title">Collaboration</div>
                     <div className="skills_type_subtitle">
-                      Fully commited to the success company
+                      Encouraging teamwork, mutual respect to achieve success in academic and real-world challenges.
                     </div>
                   </div>
                 </div>
@@ -77,9 +88,9 @@ const Skills = () => {
                 <div className="skills_type_item">
                   <i className="fas fa-bolt" />
                   <div className="skills_type_points">
-                    <div className="skills_type_title">Flexibility</div>
+                    <div className="skills_type_title">Adaptability</div>
                     <div className="skills_type_subtitle">
-                      Fully commited to the success company
+                     Preparing learners to embrace change, overcome obstacles in fast-paced environments.
                     </div>
                   </div>
                 </div>

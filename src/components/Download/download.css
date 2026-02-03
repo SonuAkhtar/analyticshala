@@ -134,7 +134,7 @@
 }
 
 /* Responsive design */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .download_wrapper {
     height: 90vh;
     width: 90%;

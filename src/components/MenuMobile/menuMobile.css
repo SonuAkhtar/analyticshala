@@ -3,7 +3,7 @@
 }
 
 /* Responsive design for mobile */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .menuMobile_container {
     position: absolute;
     top: 10vh;
@@ -13,7 +13,7 @@
     height: 92vh;
     background-color: #222;
     transition: all 0.5s ease-in-out;
-    transform: translateX(-100vh);
+    transform: translateX(-100vw);
     border-top: 1px solid #fff;
   }
 
@@ -30,7 +30,7 @@
 
   .menuMobile_container ul a {
     position: relative;
-    font-size: 3rem;
+    font-size: 1.5rem;
     padding-left: 10%;
     font-weight: bold;
     letter-spacing: 2px;
