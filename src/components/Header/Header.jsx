@@ -1,44 +1,79 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-
-// import CSS
+import { useState, useEffect } from "react";
+import { NavLink, Link } from "react-router-dom";
 import "./header.css";
-
-// import Component
 import MenuMobile from "../MenuMobile/MenuMobile";
+import { useTheme } from "../../context/ThemeContext";
 
 const Header = () => {
   const [menuClick, setMenuClick] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinkClass = ({ isActive }) => (isActive ? "active" : "");
 
   return (
     <>
-      <header className="header">
-        <nav>
-          <Link className="nav_logo" to="/#hero">
-            AnalyticShala
+      <header className={`header ${scrolled ? "header--scrolled" : ""}`}>
+        <nav className="header__nav">
+          <Link className="header__logo" to="/">
+            <span className="header__logo-mark">A</span>
+            <span className="header__logo-text">nalytic<em>Shala</em></span>
           </Link>
 
-          <div className="nav_items">
-            <Link to="/workshops" className="workshop_btn">Workshops</Link>
-            <Link to="/aboutUs/#reveal">About Us</Link>
-            <Link to="/#courses1">Courses</Link>
-            <Link to="/#faq">FAQ</Link>
-            <Link to="/#contact">Contact</Link>
+          <div className="header__nav-items">
+            <NavLink to="/aboutUs" className={navLinkClass}>
+              About Us
+            </NavLink>
+            <NavLink to="/courses" className={navLinkClass}>
+              Courses
+            </NavLink>
+            <NavLink to="/workshops" className={navLinkClass}>
+              Workshops
+            </NavLink>
+            <NavLink to="/testimony" className={navLinkClass}>
+              Testimony
+            </NavLink>
+            <a href="/#contact">Contact</a>
           </div>
 
-          <div
-            className={`ham_wrapper ${menuClick && "active"}`}
-            onClick={() => setMenuClick(!menuClick)}
-          >
-            <div className="ham_icon">
-              <span></span>
-              <span></span>
-              <span></span>
+          <div className="header__nav-right">
+            <button
+              className="header__theme-toggle"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+            >
+              {theme === "light" ? (
+                <i className="fas fa-moon" />
+              ) : (
+                <i className="fas fa-sun" />
+              )}
+            </button>
+
+            <Link to="/workshops" className="header__cta">
+              Enroll Now
+              <i className="fas fa-arrow-right" />
+            </Link>
+
+            <div
+              className={`header__hamburger ${menuClick ? "header__hamburger--active" : ""}`}
+              onClick={() => setMenuClick(!menuClick)}
+            >
+              <div className="header__hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </div>
           </div>
         </nav>
-        <MenuMobile expand={menuClick} setExpand={setMenuClick} />
       </header>
+      <MenuMobile expand={menuClick} setExpand={setMenuClick} />
     </>
   );
 };

@@ -1,8 +1,14 @@
 import "./app.css";
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
+import { ThemeProvider } from "./context/ThemeContext";
+import PageThemeSync from "./context/PageThemeSync";
+import { AuthProvider, useAuth } from "./contexts/AuthContext";
 
-// import pages
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import ScrollProgress from "./components/ScrollProgress/ScrollProgress";
+import AnnouncementBar from "./components/AnnouncementBar/AnnouncementBar";
 import Header from "./components/Header/Header";
 import Homepage from "./pages/Homepage/Homepage";
 import Workshops from "./pages/Workshops/Workshops";
@@ -12,28 +18,107 @@ import Payment from "./pages/Payment/Payment";
 import PaymentSuccess from "./pages/PaymentSuccess/PaymentSuccess";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Courses from "./pages/Courses/Courses";
+import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
+import TermsOfUse from "./pages/TermsOfUse/TermsOfUse";
+import RefundPolicy from "./pages/RefundPolicy/RefundPolicy";
+import Testimony from "./pages/Testimony/Testimony";
+import CourseDetails from "./pages/CourseDetails/CourseDetails";
+import CourseForm from "./pages/CourseForm/CourseForm";
 import NotFound from "./pages/NotFound/NotFound";
 import Footer from "./components/Footer/Footer";
 
+// Admin
+import AdminLogin from "./pages/Admin/AdminLogin";
+import AdminLayout from "./pages/Admin/AdminLayout";
+import AdminDashboard from "./pages/Admin/AdminDashboard";
+import AdminCourses from "./pages/Admin/AdminCourses";
+import AdminWorkshops from "./pages/Admin/AdminWorkshops";
+import AdminAnnouncements from "./pages/Admin/AdminAnnouncements";
+
+/* ── Guard: redirect to login if not authenticated ────────── */
+const RequireAuth = ({ children }) => {
+  const { user, loading } = useAuth();
+  const location = useLocation();
+
+  if (loading) {
+    return (
+      <div style={{
+        minHeight: "100vh", display: "flex", alignItems: "center",
+        justifyContent: "center", background: "#0f172a",
+        color: "#6366f1", fontSize: "1.5rem"
+      }}>
+        <i className="fas fa-circle-notch fa-spin" />
+      </div>
+    );
+  }
+
+  return user
+    ? children
+    : <Navigate to="/admin" state={{ from: location }} replace />;
+};
+
+/* ── Public layout shell (has header/footer) ──────────────── */
+const PublicShell = () => (
+  <>
+    <ScrollToTop />
+    <ScrollProgress />
+    <PageThemeSync />
+    <AnnouncementBar />
+    <Header />
+    <Routes>
+      <Route path="/"                element={<Homepage />} />
+      <Route path="/workshops"       element={<Workshops />} />
+      <Route path="/workshop-details" element={<WorkshopDetails />} />
+      <Route path="/workshop-form"   element={<WorkshopForm />} />
+      <Route path="/payment"         element={<Payment />} />
+      <Route path="/payment-success" element={<PaymentSuccess />} />
+      <Route path="/aboutUs"         element={<AboutUs />} />
+      <Route path="/courses"         element={<Courses />} />
+      <Route path="/privacy-policy"  element={<PrivacyPolicy />} />
+      <Route path="/terms-of-use"    element={<TermsOfUse />} />
+      <Route path="/refund-policy"   element={<RefundPolicy />} />
+      <Route path="/testimony"       element={<Testimony />} />
+      <Route path="/course-details"  element={<CourseDetails />} />
+      <Route path="/course-form"     element={<CourseForm />} />
+      <Route path="/courses/:slug"   element={<CourseDetails />} />
+      <Route path="/workshops/:slug" element={<WorkshopDetails />} />
+      <Route path="*"                element={<NotFound />} />
+    </Routes>
+    <Footer />
+  </>
+);
+
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/workshops" element={<Workshops />} />
-          <Route path="/workshop-details" element={<WorkshopDetails />} />
-          <Route path="/workshop-form" element={<WorkshopForm />} />
-          <Route path="/payment" element={<Payment />} />
-          <Route path="/payment-success" element={<PaymentSuccess />} />
-          <Route path="/aboutUs" element={<AboutUs />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </>
+    <HelmetProvider>
+      <ThemeProvider>
+        <BrowserRouter>
+          <AuthProvider>
+            <Routes>
+              {/* ── Admin routes (no Header/Footer) ───── */}
+              <Route path="/admin" element={<AdminLogin />} />
+              <Route
+                path="/admin/*"
+                element={
+                  <RequireAuth>
+                    <AdminLayout />
+                  </RequireAuth>
+                }
+              >
+                <Route index element={<Navigate to="/admin/dashboard" replace />} />
+                <Route path="dashboard"     element={<AdminDashboard />} />
+                <Route path="courses"       element={<AdminCourses />} />
+                <Route path="workshops"     element={<AdminWorkshops />} />
+                <Route path="announcements" element={<AdminAnnouncements />} />
+              </Route>
+
+              {/* ── Public routes (with Header/Footer) ─ */}
+              <Route path="/*" element={<PublicShell />} />
+            </Routes>
+          </AuthProvider>
+        </BrowserRouter>
+      </ThemeProvider>
+    </HelmetProvider>
   );
 }
 

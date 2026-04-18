@@ -1,22 +1,17 @@
 import { useEffect, useState } from "react";
-
-// import CSS
 import "./download.css";
 
 const Download = ({ showDownload, setShowDownload }) => {
-  // component states
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
   });
 
-  // Method: invoke on form input value change
   const handleFormChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Method: invoke when submit button is clicked
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
@@ -30,7 +25,6 @@ const Download = ({ showDownload, setShowDownload }) => {
     setShowDownload(false);
   };
 
-  // Method: Download pdf file
   const downloadFile = () => {
     const fileUrl = "/AnalyticShala-Booklet.pdf";
     const link = document.createElement("a");
@@ -42,7 +36,6 @@ const Download = ({ showDownload, setShowDownload }) => {
     document.body.removeChild(link);
   };
 
-  // Method: send notification when file is downloaded
   const sendNotification = async () => {
     const tempFormData = formData;
     tempFormData.access_key = "87ca862d-400f-49cc-be1f-1de878f69bfc";
@@ -64,20 +57,20 @@ const Download = ({ showDownload, setShowDownload }) => {
   };
 
   return (
-    <div className={`download_container ${showDownload ? "show" : ""}`}>
-      <div className="download_wrapper">
-        <button className="close_btn" onClick={() => setShowDownload(false)}>
+    <div className={`download ${showDownload ? "download--visible" : ""}`}>
+      <div className="download__wrapper">
+        <button className="download__close" onClick={() => setShowDownload(false)}>
           <i className="fas fa-times" />
         </button>
 
-        <div className="download_header">
+        <div className="download__header">
           <h1>Download Brochure</h1>
           <h3>Please fill the form to download the Brochure</h3>
         </div>
 
         <form onSubmit={handleFormSubmit}>
-          <div className="input_area">
-            <div className="input_box">
+          <div className="download__fields">
+            <div className="download__field">
               <input
                 type="text"
                 name="name"
@@ -89,7 +82,7 @@ const Download = ({ showDownload, setShowDownload }) => {
                 title="Name should be more than 3 letters"
               />
             </div>
-            <div className="input_box">
+            <div className="download__field">
               <input
                 type="email"
                 name="email"
@@ -100,7 +93,7 @@ const Download = ({ showDownload, setShowDownload }) => {
               />
             </div>
 
-            <div className="input_box">
+            <div className="download__field">
               <input
                 type="text"
                 name="phone"

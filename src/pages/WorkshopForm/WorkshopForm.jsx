@@ -1,256 +1,192 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./WorkshopForm.css";
-import { useNavigate } from "react-router-dom";
+
+import { GOOGLESHEET_WEB_APP_URL } from "../../config";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { workshopData } from "../../../appData";
+import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
+
+const INPUT_FIELDS = [
+  { name: "name",  type: "text",   placeholder: "Full Name"     },
+  { name: "email", type: "text",   placeholder: "Email Address" },
+  { name: "phone", type: "text",   placeholder: "Phone Number"  },
+  { name: "age",   type: "number", placeholder: "Age"           },
+];
+
+const CHOICE_FIELDS = [
+  {
+    key: "status",
+    label: "Professional Status",
+    options: ["Student", "Working Professional", "Graduate", "Career Switcher"],
+  },
+  {
+    key: "mode",
+    label: "Workshop Mode",
+    options: ["Offline", "Online"],
+  },
+  {
+    key: "analyticshalaStudent",
+    label: "Current student of AnalyticShala?",
+    options: ["Yes", "No"],
+  },
+];
+
+const INITIAL_FORM = {
+  name: "", email: "", phone: "", age: "",
+  status: "", mode: "", analyticshalaStudent: "",
+};
 
 const WorkshopForm = () => {
   const navigate = useNavigate();
+  const [params] = useSearchParams();
+  const id = Number(params.get("id"));
+  const workshop =
+    workshopData.upcoming.find((w) => w.id === id) || workshopData.upcoming[0];
 
-  const [formValue, setFormValue] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    age: "",
-    mode: "",
-    about: "",
-  });
+  const [formValue, setFormValue]     = useState(INITIAL_FORM);
+  const [errors, setErrors]           = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
-  const [errors, setErrors] = useState({});
-  const [showSuccess, setShowSuccess] = useState(false);
-
-  useEffect(() => {
-    if (showSuccess) {
-      const timer = setTimeout(() => {
-        setShowSuccess(false);
-      }, 2500);
-
-      return () => clearTimeout(timer);
-    }
-  }, [showSuccess]);
-
-  const handleFormChange = (e) => {
-    setFormValue((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-
-    setErrors((prev) => ({
-      ...prev,
-      [e.target.name]: undefined,
-    }));
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValue((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: value ? undefined : "Required" }));
   };
 
-  const validateForm = () => {
-    const newErrors = {};
+  const handleChoice = (key, value) => {
+    setFormValue((prev) => ({ ...prev, [key]: value }));
+    setErrors((prev) => ({ ...prev, [key]: undefined }));
+  };
 
-    if (!formValue.name.trim()) {
-      newErrors.name = "Full name is required";
-    }
-
-    if (!formValue.email) {
-      newErrors.email = "Email is required";
+  const validate = () => {
+    const err = {};
+    if (!formValue.name.trim()) err.name = "Full name is required";
+    if (!formValue.email.trim()) {
+      err.email = "Email is required";
     } else if (!/^\S+@\S+\.\S+$/.test(formValue.email)) {
-      newErrors.email = "Enter a valid email address";
+      err.email = "Enter a valid email";
     }
-
-    if (!formValue.phone) {
-      newErrors.phone = "Phone number is required";
+    if (!formValue.phone.trim()) {
+      err.phone = "Phone is required";
     } else if (!/^\d{10}$/.test(formValue.phone)) {
-      newErrors.phone = "Phone number must be 10 digits";
+      err.phone = "Enter a valid 10-digit number";
     }
-
-    if (!formValue.mode) {
-      newErrors.mode = "Please select a mode";
-    }
-
-    if (!formValue.about) {
-      newErrors.about = "Please tell us about yourself";
-    }
-
-    return newErrors;
+    if (!formValue.age)                  err.age                  = "Age is required";
+    if (!formValue.status)               err.status               = "Select your status";
+    if (!formValue.mode)                 err.mode                 = "Select a mode";
+    if (!formValue.analyticshalaStudent) err.analyticshalaStudent = "Please select";
+    return err;
   };
 
-  const handleFormSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitError("");
 
-    console.log("Submit clicked");
+    const validation = validate();
+    setErrors(validation);
 
-    const validationErrors = validateForm();
-    setErrors(validationErrors);
+    if (Object.keys(validation).length) {
+      document
+        .querySelector(".workshop-form__input--error, .workshop-form__choice-row--error")
+        ?.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
 
-    if (Object.keys(validationErrors).length !== 0) {
-      console.log("Validation failed", validationErrors);
+    const isDev = import.meta.env.DEV;
+    const isPlaceholder = GOOGLESHEET_WEB_APP_URL?.includes("placeholder");
+
+    if (isDev && isPlaceholder) {
+      navigate("/payment", {
+        state: { orderId: "dev_order_001", amount: 199900, user: formValue },
+      });
       return;
     }
 
     try {
-      console.log("Sending data to backend...", formValue);
+      setIsSubmitting(true);
 
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbw_FXe6DCfl13atbm8fYzDkjP-AbCoj6T19Crr74kWF7Zv7aj6xWD5kF3drGWPeqfjR/exec",
-        {
-          method: "POST",
-          headers: { "Content-Type": "text/plain" },
-          body: JSON.stringify({
-            ...formValue,
-            amount: 9,
-          }),
-        }
-      );
+      const res = await fetch(GOOGLESHEET_WEB_APP_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ action: "createOrder", workshopId: "excel_bootcamp" }),
+      });
 
-      console.log("Response status:", response.status);
-
-      if (!response.ok) {
-        const text = await response.text();
-        console.error("Backend error:", text);
-        throw new Error(`HTTP error! status: ${response.status}`);
+      const contentType = res.headers.get("content-type");
+      if (!contentType?.includes("application/json")) {
+        throw new Error("Server returned non-JSON response");
       }
 
-      const result = await response.json();
-      console.log("Backend result:", result);
+      const result = await res.json();
+      if (!result.success) throw new Error(result.message || "Order creation failed");
 
-      if (result.success) {
-        setShowSuccess(true);
-
-        setTimeout(() => {
-          navigate("/payment", {
-            state: {
-              orderId: result.orderId,
-              amount: result.amount,
-              user: formValue,
-            },
-          });
-        }, 2500);
-      }
-    } catch (error) {
-      console.error("Form submission failed:", error);
-      alert("Submission failed. Please try again.");
+      navigate("/payment", {
+        state: { orderId: result.orderId, amount: result.amount, user: formValue },
+      });
+    } catch (err) {
+      console.error(err);
+      setSubmitError("Unable to connect. Please try again or contact support.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="form_wrapper">
-      <h2 className="form_title">Test title</h2>
+    <>
+      <Breadcrumb items={[
+        { label: "Workshops", href: "/workshops" },
+        { label: workshop.title, href: `/workshop-details?id=${workshop.id}` },
+        { label: "Register" },
+      ]} />
+    <div className="workshop-form" id="workshopForm">
+      <div className="workshop-form__card">
+        <h1>Workshop Registration</h1>
+        <p className="workshop-form__subtitle">Secure your seat in under 30 seconds.</p>
 
-      <form onSubmit={handleFormSubmit} noValidate>
-        <div className="input_group">
-          <label htmlFor="name">Full Name</label>
-          <input
-            id="name"
-            type="text"
-            name="name"
-            value={formValue.name}
-            onChange={handleFormChange}
-            className={errors.name ? "error" : ""}
-          />
-          {errors.name && <small>{errors.name}</small>}
-        </div>
-
-        <div className="input_group">
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            value={formValue.email}
-            onChange={handleFormChange}
-            className={errors.email ? "error" : ""}
-          />
-          {errors.email && <small>{errors.email}</small>}
-        </div>
-
-        <div className="input_group">
-          <label htmlFor="phone">Phone Number</label>
-          <input
-            id="phone"
-            type="text"
-            name="phone"
-            value={formValue.phone}
-            onChange={handleFormChange}
-            className={errors.phone ? "error" : ""}
-          />
-          {errors.phone && <small>{errors.phone}</small>}
-        </div>
-
-        <div className="input_group">
-          <label htmlFor="age">Age</label>
-          <input
-            id="age"
-            type="text"
-            name="age"
-            value={formValue.age}
-            onChange={handleFormChange}
-          />
-        </div>
-
-        <div className="input_group_radio">
-          <div className="input_group">
-            <label>Mode to Attend</label>
-            <div className="radio_group">
-              <label>
+        <form onSubmit={handleSubmit} noValidate>
+          <div className="workshop-form__grid">
+            {INPUT_FIELDS.map(({ name, type, placeholder }) => (
+              <div key={name}>
                 <input
-                  type="radio"
-                  name="mode"
-                  value="offline"
-                  checked={formValue.mode === "offline"}
-                  onChange={handleFormChange}
+                  type={type}
+                  placeholder={placeholder}
+                  name={name}
+                  value={formValue[name]}
+                  onChange={handleChange}
+                  className={errors[name] ? "workshop-form__input--error" : ""}
                 />
-                Offline
-              </label>
-
-              <label>
-                <input
-                  type="radio"
-                  name="mode"
-                  value="online"
-                  checked={formValue.mode === "online"}
-                  onChange={handleFormChange}
-                />
-                Online
-              </label>
-            </div>
-            {errors.mode && <small>{errors.mode}</small>}
+                {errors[name] && <span className="workshop-form__error-text">{errors[name]}</span>}
+              </div>
+            ))}
           </div>
 
-          <div className="input_group">
-            <label>About You</label>
-            <div className="radio_group">
-              <label>
-                <input
-                  type="radio"
-                  name="about"
-                  value="student"
-                  checked={formValue.about === "student"}
-                  onChange={handleFormChange}
-                />
-                Student
-              </label>
-
-              <label>
-                <input
-                  type="radio"
-                  name="about"
-                  value="working"
-                  checked={formValue.about === "working"}
-                  onChange={handleFormChange}
-                />
-                Working Professional
-              </label>
+          {CHOICE_FIELDS.map(({ key, label, options }) => (
+            <div key={key}>
+              <label className="workshop-form__section-label">{label}</label>
+              <div className={`workshop-form__choice-row ${errors[key] ? "workshop-form__choice-row--error" : ""}`}>
+                {options.map((opt) => (
+                  <div
+                    key={opt}
+                    className={`workshop-form__choice-card ${formValue[key] === opt ? "workshop-form__choice-card--active" : ""}`}
+                    onClick={() => handleChoice(key, opt)}
+                  >
+                    {opt}
+                  </div>
+                ))}
+              </div>
+              {errors[key] && <span className="workshop-form__error-text">{errors[key]}</span>}
             </div>
-            {errors.about && <small>{errors.about}</small>}
-          </div>
-        </div>
+          ))}
 
-        <div className="button_wrapper">
-          <button type="submit">Proceed</button>
-        </div>
-      </form>
+          {submitError && <p className="workshop-form__submit-error">{submitError}</p>}
 
-      {showSuccess && (
-        <div className="success_popup">
-          <span>Form submitted successfully!</span>
-        </div>
-      )}
+          <button disabled={isSubmitting}>
+            {isSubmitting ? "Preparing Payment..." : "Continue"}
+          </button>
+        </form>
+      </div>
     </div>
+    </>
   );
 };
 

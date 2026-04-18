@@ -1,0 +1,91 @@
+/* ── Homepage Wave Dividers ───────────────────────────────── */
+
+/* Wave bridge element between sections */
+.hp-wave {
+  position: relative;
+  z-index: 10;
+  line-height: 0;
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.hp-wave svg {
+  display: block;
+  width: 100%;
+  height: 80px;
+}
+
+/* Hero → Cream: cream wave sits at bottom of blue hero */
+.hp-wave--hero-exit {
+  margin-top: -79px;
+}
+
+/* ── Blue Testimony Section ────────────────────────────────── */
+.home-testimony {
+  background: linear-gradient(160deg, #4056a1 0%, #2d3e8a 60%, #1e2d72 100%);
+  position: relative;
+}
+
+/* Cream → Blue divider: sits above testimony, transparent at bottom shows blue */
+.hp-wave--to-blue {
+  background: linear-gradient(160deg, #4056a1 0%, #2d3e8a 60%, #1e2d72 100%);
+}
+
+/* Blue → Cream divider: sits above homeTeam, transparent top reveals cream */
+.hp-wave--to-cream {
+  background: linear-gradient(160deg, #4056a1 0%, #2d3e8a 60%, #1e2d72 100%);
+}
+
+/* Make the testimony inner section transparent so the blue wrapper shows */
+.home-testimony .testimony {
+  background: transparent;
+}
+
+/* SectionHeader inside blue testimony */
+.home-testimony .section-header__eyebrow {
+  color: #d79922;
+}
+
+.home-testimony .section-header__title {
+  color: #efe2ba;
+}
+
+.home-testimony .section-header__subtitle {
+  color: rgba(239, 226, 186, 0.75);
+}
+
+/* Featured blockquote text inside blue testimony */
+.home-testimony .testimony__featured-text {
+  color: #efe2ba;
+}
+
+.home-testimony .testimony__featured-profile strong {
+  color: #efe2ba;
+}
+
+.home-testimony .testimony__featured-profile span {
+  color: #d79922;
+}
+
+/* Swiper pagination dots */
+.home-testimony .swiper-pagination-bullet {
+  background: rgba(239, 226, 186, 0.3) !important;
+  opacity: 1 !important;
+}
+
+.home-testimony .swiper-pagination-bullet-active {
+  background: #d79922 !important;
+}
+
+/* Responsive wave heights */
+@media (max-width: 768px) {
+  .hp-wave svg { height: 50px; }
+  .hp-wave--hero-exit { margin-top: -49px; }
+}
+
+@media (max-width: 480px) {
+  .hp-wave svg { height: 36px; }
+  .hp-wave--hero-exit { margin-top: -35px; }
+}

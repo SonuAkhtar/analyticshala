@@ -1,0 +1,316 @@
+.social-proof {
+  background: var(--bg-secondary);
+  padding: 5rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle light-theme orbs */
+.social-proof::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(22, 163, 74, 0.07) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(60px);
+  top: -100px;
+  left: -100px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.social-proof::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(13, 148, 136, 0.06) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(60px);
+  bottom: -80px;
+  right: -80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.social-proof > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.social-proof__headline {
+  text-align: center;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.social-proof__eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sp-eyebrow-color);
+}
+
+.social-proof__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--sp-title-color);
+  letter-spacing: -0.5px;
+}
+
+.social-proof__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.social-proof__card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  box-shadow: var(--card-shadow);
+}
+
+.social-proof__card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: color-mix(
+    in srgb,
+    var(--sc, var(--page-accent)) 30%,
+    transparent
+  );
+}
+
+.social-proof__card:first-child {
+  padding: 2.5rem 2rem;
+}
+
+.social-proof__card:first-child .social-proof__number {
+  font-size: clamp(2.6rem, 4vw, 3.5rem);
+}
+
+.social-proof__card:first-child .social-proof__icon {
+  width: 64px;
+  height: 64px;
+  font-size: 1.6rem;
+  border-radius: 14px;
+}
+
+.social-proof__glow {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--sc) 0%, transparent 70%);
+  opacity: 0.05;
+  top: -40px;
+  right: -40px;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.social-proof__card:hover .social-proof__glow {
+  opacity: 0.12;
+}
+
+.social-proof__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--sc) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--sc) 22%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  color: var(--sc);
+  margin-bottom: 0.5rem;
+  animation: statIconPulse 3s ease-in-out infinite;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.social-proof__card:hover .social-proof__icon {
+  background: color-mix(in srgb, var(--sc) 22%, transparent);
+  transform: scale(1.1);
+}
+
+.social-proof__card:nth-child(1) .social-proof__icon {
+  animation-delay: 0s;
+}
+.social-proof__card:nth-child(2) .social-proof__icon {
+  animation-delay: 0.75s;
+}
+.social-proof__card:nth-child(3) .social-proof__icon {
+  animation-delay: 1.5s;
+}
+.social-proof__card:nth-child(4) .social-proof__icon {
+  animation-delay: 2.25s;
+}
+
+@keyframes statIconPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--sc) 35%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 8px color-mix(in srgb, var(--sc) 0%, transparent);
+  }
+}
+
+.social-proof__number {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--off-white);
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.social-proof__label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ── Dark theme override ─────────────────────────────────────── */
+[data-theme="dark"] .social-proof {
+  background: var(--dark-section-bg);
+}
+
+[data-theme="dark"] .social-proof::before {
+  background: var(--dark-section-orb-1);
+  filter: blur(80px);
+}
+
+[data-theme="dark"] .social-proof::after {
+  background: var(--dark-section-orb-2);
+  filter: blur(70px);
+}
+
+[data-theme="dark"] .social-proof__card {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="dark"] .social-proof__card:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+  border-color: color-mix(
+    in srgb,
+    var(--sc, var(--page-accent)) 30%,
+    transparent
+  );
+}
+
+[data-theme="dark"] .social-proof__glow {
+  opacity: 0.08;
+}
+[data-theme="dark"] .social-proof__card:hover .social-proof__glow {
+  opacity: 0.18;
+}
+
+[data-theme="dark"] .social-proof__label {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .social-proof__grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .social-proof__card:first-child {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 2.5rem;
+  }
+
+  .social-proof__card:first-child .social-proof__glow {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .social-proof {
+    padding: 4rem 1rem;
+  }
+
+  .social-proof__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .social-proof__card:first-child {
+    grid-column: 1 / -1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem 1.75rem;
+  }
+}
+
+/* ── Mobile carousel: auto-scroll feel, compact cards ───────── */
+@media (max-width: 480px) {
+  .social-proof__grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0.875rem;
+    padding: 0.25rem 0 1rem;
+  }
+
+  .social-proof__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .social-proof__card {
+    flex: 0 0 72%;
+    scroll-snap-align: center;
+    padding: 1.5rem 1.25rem;
+    grid-column: auto !important;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .social-proof__card:first-child {
+    flex: 0 0 80%;
+    padding: 1.75rem 1.5rem;
+  }
+
+  .social-proof__card:last-child {
+    margin-right: 1rem;
+  }
+}
