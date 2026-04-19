@@ -11,11 +11,11 @@ import {
 import { useRef, useCallback } from "react";
 
 const MEMBER_CONFIG = [
-  { accent: "#4056a1", tags: ["Founder", "Analytics Mentor"] },
-  { accent: "#d79922", tags: ["ISB Alumnus", "500+ Alumni"] },
-  { accent: "#f13c20", tags: ["Business Dev", "Partnerships"] },
-  { accent: "#4056a1", tags: ["Business Dev", "Placements"] },
-  { accent: "#d79922", tags: ["Web Dev", "Instructor"] },
+  { accent: "#bb1b21", tags: ["Founder", "Analytics Mentor"] },
+  { accent: "#f97316", tags: ["ISB Alumnus", "500+ Alumni"] },
+  { accent: "#bb1b21", tags: ["Business Dev", "Partnerships"] },
+  { accent: "#7c3aed", tags: ["Business Dev", "Placements"] },
+  { accent: "#f97316", tags: ["Web Dev", "Instructor"] },
 ];
 
 const getInitials = (name) =>

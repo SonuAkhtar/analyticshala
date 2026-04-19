@@ -1,9 +1,13 @@
 import "./courses.css";
 import SectionHeader from "../SectionHeader/SectionHeader";
-import { coursesData } from "../../../appData";
+import { coursesData as allCourses } from "../../../appData";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+
+const coursesData = allCourses
+  .filter((c) => c.homepageOrder !== null)
+  .sort((a, b) => a.homepageOrder - b.homepageOrder);
 
 const Courses = ({ setShowDownload }) => {
   const ref = useRef(null);
@@ -32,7 +36,7 @@ const Courses = ({ setShowDownload }) => {
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
-              <span className="courses__card-num">0{course.id}</span>
+              <span className="courses__card-num">0{index + 1}</span>
 
               <div className="courses__card-header">
                 <div className="courses__card-chip">
@@ -45,7 +49,7 @@ const Courses = ({ setShowDownload }) => {
               </div>
 
               <div className="courses__card-body">
-                <h3 className="courses__card-title">{course.title}</h3>
+                <h3 className="courses__card-title">{course.homepageTitle || course.title}</h3>
                 <p className="courses__card-desc">{course.desc}</p>
               </div>
 
@@ -74,9 +78,12 @@ const Courses = ({ setShowDownload }) => {
               </div>
 
               <div className="courses__card-actions">
-                <a href="/#contact" className="courses__card-btn--primary">
-                  Get Free Counselling <i className="fas fa-arrow-right" />
-                </a>
+                <Link
+                  to={`/courses/${course.slug || course.id}`}
+                  className="courses__card-btn--primary"
+                >
+                  Show Details <i className="fas fa-arrow-right" />
+                </Link>
               </div>
             </motion.div>
           ))}
@@ -84,7 +91,7 @@ const Courses = ({ setShowDownload }) => {
 
         <div className="courses__footer">
           <Link to="/courses" className="courses__view-all">
-            View All Courses <i className="fas fa-arrow-right" />
+            Show all Courses <i className="fas fa-arrow-right" />
           </Link>
           <button
             className="courses__footer-brochure"

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSearchParams, useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
@@ -16,6 +16,59 @@ const fadeUp = {
 };
 
 const parsePrice = (str) => parseInt(str.replace(/[₹,\s]/g, ""), 10);
+
+/* ── Countdown hook ──────────────────────────────────────────── */
+const parseWorkshopDate = (dateStr) => {
+  const months = { January:1,February:2,March:3,April:4,May:5,June:6,
+    July:7,August:8,September:9,October:10,November:11,December:12 };
+  const parts = (dateStr || "").split(", ");
+  const [monthName, dayStr] = (parts[0] || "").split(" ");
+  const month = months[monthName];
+  const day = parseInt(dayStr, 10);
+  if (!month || !day) return null;
+  const d = new Date(new Date().getFullYear(), month - 1, day, 10, 0, 0);
+  if (d < Date.now()) d.setFullYear(d.getFullYear() + 1);
+  return d;
+};
+
+const useCountdown = (targetDate) => {
+  const calc = () => {
+    const diff = (targetDate?.getTime() || 0) - Date.now();
+    if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    return {
+      days:    Math.floor(diff / 86400000),
+      hours:   Math.floor((diff % 86400000) / 3600000),
+      minutes: Math.floor((diff % 3600000) / 60000),
+      seconds: Math.floor((diff % 60000) / 1000),
+    };
+  };
+  const [time, setTime] = useState(calc);
+  useEffect(() => {
+    if (!targetDate) return;
+    const id = setInterval(() => setTime(calc()), 1000);
+    return () => clearInterval(id);
+  }, [targetDate]);
+  return time;
+};
+
+const CountdownTimer = ({ dateStr }) => {
+  const target = parseWorkshopDate(dateStr);
+  const { days, hours, minutes, seconds } = useCountdown(target);
+  if (!target) return null;
+  return (
+    <div className="wd-countdown">
+      <p className="wd-countdown__label"><i className="fas fa-stopwatch" /> Workshop starts in</p>
+      <div className="wd-countdown__units">
+        {[{ v: days, l: "Days" }, { v: hours, l: "Hrs" }, { v: minutes, l: "Min" }, { v: seconds, l: "Sec" }].map(({ v, l }) => (
+          <div key={l} className="wd-countdown__unit">
+            <span className="wd-countdown__num">{String(v).padStart(2, "0")}</span>
+            <span className="wd-countdown__lbl">{l}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 /* Build Google Calendar "Add to Event" URL */
 const buildCalendarUrl = (workshop) => {
@@ -339,6 +392,8 @@ const WorkshopDetails = () => {
               <span className="workshop-details__price-was">{workshop.originalPrice}</span>
               <span className="workshop-details__price-off">{discount}% OFF</span>
             </div>
+
+            <CountdownTimer dateStr={workshop.date} />
 
             <div className="workshop-details__sidebar-meta">
               <div className="workshop-details__sidebar-item">

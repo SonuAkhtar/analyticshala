@@ -1,5 +1,5 @@
 /* ============================================================
-   Courses Page — v3 "Warm Editorial"
+   Courses Page -v3 "Warm Editorial"
    Palette: #d79922 Gold · #efe2ba Cream · #f13c20 Red
             #4056a1 Royal Blue · #c5cbe3 Lavender
    Theme:   Light cream canvas · Dark type · Bold color pops
@@ -42,16 +42,16 @@
 }
 
 /* ═══════════════════════════════════════════════════════════
-   HERO — Royal blue splash, cream text, gold accents
+   HERO -Brand dark red splash, cream text, gold accents
    ═══════════════════════════════════════════════════════════ */
 .courses-page__hero {
   position: relative;
-  background: var(--cp-blue);
+  background: #1a0408;
   padding: 7.5rem 1.5rem 5.5rem;
   overflow: hidden;
 }
 
-/* Diagonal cream stripe — bottom-right decoration */
+/* Rose glow -bottom-right decoration */
 .courses-page__hero::before {
   content: "";
   position: absolute;
@@ -61,14 +61,14 @@
   height: 420px;
   background: radial-gradient(
     ellipse at center,
-    rgba(239, 226, 186, 0.18) 0%,
-    rgba(215, 153, 34, 0.09) 45%,
+    rgba(255, 171, 164, 0.12) 0%,
+    rgba(187, 27, 33, 0.08) 45%,
     transparent 72%
   );
   pointer-events: none;
 }
 
-/* Gold orb — top-left energy burst */
+/* Brand red orb -top-left energy burst */
 .courses-page__hero::after {
   content: "";
   position: absolute;
@@ -78,14 +78,14 @@
   height: 480px;
   background: radial-gradient(
     ellipse at center,
-    rgba(215, 153, 34, 0.22) 0%,
-    rgba(64, 86, 161, 0.08) 50%,
+    rgba(215, 153, 34, 0.18) 0%,
+    rgba(187, 27, 33, 0.06) 50%,
     transparent 72%
   );
   pointer-events: none;
 }
 
-/* Curved bottom edge — the hero "drapes" into the cream section */
+/* Curved bottom edge -the hero "drapes" into the cream section */
 .courses-page__hero-curve {
   position: absolute;
   bottom: -2px;
@@ -265,7 +265,7 @@
 }
 
 /* ═══════════════════════════════════════════════════════════
-   GRID SECTION — Cream bg, white cards
+   GRID SECTION -Cream bg, white cards
    ═══════════════════════════════════════════════════════════ */
 .courses-page__grid-section {
   padding: 5rem 1.5rem 6rem;
@@ -273,7 +273,7 @@
   background: var(--cp-bg);
 }
 
-/* Subtle gold glow blob — curved gradient separation from hero */
+/* Subtle gold glow blob -curved gradient separation from hero */
 .courses-page__grid-section::before {
   content: "";
   position: absolute;
@@ -322,22 +322,22 @@
 }
 
 .courses-page__filter-btn:hover {
-  border-color: var(--cp-blue);
-  color: var(--cp-blue);
-  box-shadow: 0 2px 10px rgba(64, 86, 161, 0.12);
+  border-color: #bb1b21;
+  color: #bb1b21;
+  box-shadow: 0 2px 10px rgba(187, 27, 33, 0.12);
 }
 
 .courses-page__filter-btn--active {
-  background: var(--cp-blue);
-  border-color: var(--cp-blue);
+  background: #bb1b21;
+  border-color: #bb1b21;
   color: #fff;
   font-weight: 700;
-  box-shadow: 0 4px 18px rgba(64, 86, 161, 0.35);
+  box-shadow: 0 4px 18px rgba(187, 27, 33, 0.35);
 }
 
 .courses-page__filter-btn--active:hover {
-  background: var(--cp-blue-lt);
-  border-color: var(--cp-blue-lt);
+  background: #991b1b;
+  border-color: #991b1b;
 }
 
 /* ── 3-column card grid ──────────────────────────────────── */
@@ -349,7 +349,7 @@
   margin: 0 auto;
 }
 
-/* ── Course Card — Vertical, white glass ─────────────────── */
+/* ── Course Card -Vertical, white glass ─────────────────── */
 .courses-page__card {
   display: flex;
   flex-direction: column;
@@ -369,12 +369,12 @@
   box-shadow: 0 20px 50px rgba(28, 25, 23, 0.13);
 }
 
-/* Difficulty top border — palette colours */
+/* Difficulty top border -palette colours */
 .courses-page__card--beginner {
   border-top-color: var(--cp-gold);
 }
 .courses-page__card--intermediate {
-  border-top-color: var(--cp-blue);
+  border-top-color: #bb1b21;
 }
 .courses-page__card--advanced {
   border-top-color: var(--cp-red);
@@ -411,7 +411,7 @@
   );
 }
 
-/* Course icon chip — bottom-left */
+/* Course icon chip -bottom-left */
 .courses-page__card-icon {
   position: absolute;
   bottom: 1rem;
@@ -428,7 +428,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
-/* Category chip — top-left */
+/* Category chip -top-left */
 .courses-page__card-cat-chip {
   position: absolute;
   top: 0.9rem;
@@ -440,11 +440,11 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--cp-blue-dk);
+  color: #532519;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
 }
 
-/* Badge — top-right */
+/* Badge -top-right */
 .courses-page__card-badge {
   position: absolute;
   top: 0.9rem;
@@ -466,13 +466,42 @@
   color: #fff;
 }
 .courses-page__card-badge--blue {
-  background: var(--cp-blue);
+  background: #7c3aed;
   color: #fff;
 }
 .courses-page__card-badge--red,
 .courses-page__card-badge--purple {
   background: var(--cp-red);
   color: #fff;
+}
+.courses-page__card-badge--coming-soon {
+  background: #78716c;
+  color: #fff;
+}
+
+/* Coming-soon card: muted opacity */
+.courses-page__card--coming-soon {
+  opacity: 0.72;
+}
+.courses-page__card--coming-soon .courses-page__card-image img {
+  filter: grayscale(30%);
+}
+
+/* CTA disabled state */
+.courses-page__card-cta--disabled {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  padding: 0.55rem 1.15rem;
+  background: #d6d3d1;
+  color: #78716c;
+  border-radius: 999px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: not-allowed;
 }
 
 /* ── Card body ───────────────────────────────────────────── */
@@ -490,7 +519,7 @@
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--cp-blue);
+  color: #bb1b21;
 }
 
 .courses-page__card-title {
@@ -547,12 +576,12 @@
 
 .courses-page__skill-tag {
   padding: 0.22rem 0.6rem;
-  background: #f0edf8;
-  border: 1px solid var(--cp-lav);
+  background: #f5f0ff;
+  border: 1px solid rgba(124, 58, 237, 0.25);
   border-radius: 4px;
   font-size: 0.68rem;
   font-weight: 600;
-  color: var(--cp-blue);
+  color: #7c3aed;
   letter-spacing: 0.02em;
 }
 
@@ -672,12 +701,12 @@
 }
 
 .courses-page__empty strong {
-  color: var(--cp-blue);
+  color: #bb1b21;
 }
 
 .courses-page__empty button {
   padding: 0.62rem 1.7rem;
-  background: var(--cp-blue);
+  background: #bb1b21;
   color: #fff;
   border: none;
   border-radius: 999px;
@@ -689,57 +718,7 @@
 }
 
 .courses-page__empty button:hover {
-  background: var(--cp-blue-lt);
-}
-
-/* ═══════════════════════════════════════════════════════════
-   LEARNING PATH — Warm toned bg, alternating timeline
-   ═══════════════════════════════════════════════════════════ */
-.courses-page__path-section {
-  padding: 6rem 1.5rem;
-  position: relative;
-  background: var(--cp-bg-alt);
-  overflow: hidden;
-}
-
-/* Curved top edge — path section "rises" from grid */
-.courses-page__path-section::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -5%;
-  right: -5%;
-  height: 80px;
-  background: var(--cp-bg);
-  border-radius: 0 0 50% 50%;
-  pointer-events: none;
-}
-
-/* Subtle blue glow left, red glow right */
-.courses-page__path-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(
-      ellipse 40% 60% at 0% 50%,
-      rgba(64, 86, 161, 0.1) 0%,
-      transparent 65%
-    ),
-    radial-gradient(
-      ellipse 35% 55% at 100% 50%,
-      rgba(241, 60, 32, 0.07) 0%,
-      transparent 65%
-    );
-  pointer-events: none;
-}
-
-.courses-page__path-section .container {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
+  background: #991b1b;
 }
 
 /* Section pill label */
@@ -751,21 +730,12 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--cp-blue);
-  background: rgba(64, 86, 161, 0.1);
-  border: 1px solid rgba(64, 86, 161, 0.22);
+  color: #bb1b21;
+  background: rgba(187, 27, 33, 0.1);
+  border: 1px solid rgba(187, 27, 33, 0.22);
   padding: 0.32rem 0.95rem;
   border-radius: 999px;
   margin-bottom: 1.1rem;
-}
-
-.courses-page__path-section h2 {
-  font-family: "Syne", "Plus Jakarta Sans", sans-serif;
-  font-size: clamp(1.9rem, 4vw, 2.8rem);
-  font-weight: 800;
-  color: var(--cp-ink);
-  margin: 0 0 0.75rem;
-  letter-spacing: -0.03em;
 }
 
 .courses-page__path-subtitle {
@@ -784,7 +754,7 @@
   gap: 0;
 }
 
-/* Gold-to-blue gradient connector */
+/* Gold-to-red gradient connector */
 .courses-page__path-steps::before {
   content: "";
   position: absolute;
@@ -797,7 +767,7 @@
     to bottom,
     transparent 2%,
     var(--cp-gold) 20%,
-    var(--cp-blue) 80%,
+    #bb1b21 80%,
     transparent 98%
   );
   opacity: 0.4;
@@ -868,7 +838,7 @@
 }
 .courses-page__step-icon-wrap--blue {
   background: #eff6ff;
-  color: var(--cp-blue);
+  color: #4056a1;
 }
 .courses-page__step-icon-wrap--green {
   background: #f0fdf4;
@@ -922,7 +892,7 @@
   box-shadow: 0 0 0 3px rgba(215, 153, 34, 0.3);
 }
 .courses-page__step-dot--blue {
-  background: var(--cp-blue-lt);
+  background: #5a72c0;
   box-shadow: 0 0 0 3px rgba(64, 86, 161, 0.3);
 }
 .courses-page__step-dot--green {
@@ -930,7 +900,7 @@
   box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.3);
 }
 .courses-page__step-dot--teal {
-  background: var(--cp-blue);
+  background: #4056a1;
   box-shadow: 0 0 0 3px rgba(64, 86, 161, 0.3);
 }
 .courses-page__step-dot--purple {
@@ -943,16 +913,16 @@
 }
 
 /* ═══════════════════════════════════════════════════════════
-   WHY ANALYTICSHALA — Royal blue bg, cream text
+   WHY ANALYTICSHALA -Brand dark red bg, cream text
    ═══════════════════════════════════════════════════════════ */
 .courses-page__why-section {
   padding: 6.5rem 1.5rem;
-  background: var(--cp-blue);
+  background: #1a0408;
   position: relative;
   overflow: hidden;
 }
 
-/* Cream glow top-right, gold glow bottom-left */
+/* Rose glow top-right, gold glow bottom-left */
 .courses-page__why-section::before {
   content: "";
   position: absolute;
@@ -960,12 +930,12 @@
   background:
     radial-gradient(
       ellipse 55% 55% at 90% 5%,
-      rgba(239, 226, 186, 0.14) 0%,
+      rgba(255, 171, 164, 0.1) 0%,
       transparent 65%
     ),
     radial-gradient(
       ellipse 50% 50% at 10% 95%,
-      rgba(215, 153, 34, 0.16) 0%,
+      rgba(215, 153, 34, 0.14) 0%,
       transparent 65%
     );
   pointer-events: none;
@@ -1103,11 +1073,6 @@
 
   .courses-page__empty {
     grid-column: 1;
-  }
-
-  .courses-page__path-section::before {
-    height: 50px;
-    border-radius: 0 0 50% 50%;
   }
 
   /* Timeline: single left column */

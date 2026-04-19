@@ -24,16 +24,23 @@ const MarqItem = ({ item }) => (
   </div>
 );
 
-const Marq = ({ data }) => {
+const Marq = ({ data, dual = false }) => {
   if (!data || data.length === 0) return null;
 
   return (
-    <div className="marq">
+    <div className={`marq${dual ? " marq--dual" : ""}`}>
       <Marquee speed={38} pauseOnHover gradient={false}>
         {data.map((item) => (
           <MarqItem key={item.id} item={item} />
         ))}
       </Marquee>
+      {dual && (
+        <Marquee speed={28} pauseOnHover gradient={false} direction="right">
+          {[...data].reverse().map((item) => (
+            <MarqItem key={`r-${item.id}`} item={item} />
+          ))}
+        </Marquee>
+      )}
     </div>
   );
 };

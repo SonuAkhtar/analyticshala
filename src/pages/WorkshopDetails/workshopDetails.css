@@ -464,6 +464,61 @@
   border-radius: 50px;
 }
 
+/* ── Countdown Timer ─────────────────────────────────────────── */
+.wd-countdown {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, color-mix(in srgb, var(--page-accent) 5%, var(--bg-secondary)) 100%);
+  border: 1px solid color-mix(in srgb, var(--page-accent) 20%, transparent);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  margin: 0.75rem 0;
+}
+
+.wd-countdown__label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--page-accent);
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.wd-countdown__units {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem;
+}
+
+.wd-countdown__unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 0.5rem 0.25rem;
+  border: 1px solid var(--border);
+}
+
+.wd-countdown__num {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--page-accent);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.wd-countdown__lbl {
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
 .workshop-details__sidebar-meta {
   display: flex;
   flex-direction: column;

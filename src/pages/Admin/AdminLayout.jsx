@@ -5,15 +5,19 @@ import { isSupabaseConfigured } from "../../lib/supabase";
 import "./adminLayout.css";
 
 const NAV = [
-  { to: "/admin/dashboard",      icon: "fas fa-th-large",       label: "Dashboard" },
-  { to: "/admin/courses",        icon: "fas fa-graduation-cap", label: "Courses" },
-  { to: "/admin/workshops",      icon: "fas fa-calendar-alt",   label: "Workshops" },
-  { to: "/admin/announcements",  icon: "fas fa-bullhorn",        label: "Announcements" },
+  { to: "/admin/dashboard", icon: "fas fa-th-large", label: "Dashboard" },
+  { to: "/admin/courses", icon: "fas fa-graduation-cap", label: "Courses" },
+  { to: "/admin/workshops", icon: "fas fa-calendar-alt", label: "Workshops" },
+  {
+    to: "/admin/announcements",
+    icon: "fas fa-bullhorn",
+    label: "Announcements",
+  },
 ];
 
 const AdminLayout = () => {
-  const { user, signOut }  = useAuth();
-  const navigate           = useNavigate();
+  const { user, signOut } = useAuth();
+  const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const handleSignOut = async () => {
@@ -32,7 +36,9 @@ const AdminLayout = () => {
       )}
 
       {/* ── Sidebar ─────────────────────────────────────── */}
-      <aside className={`adm-sidebar ${sidebarOpen ? "adm-sidebar--open" : ""}`}>
+      <aside
+        className={`adm-sidebar ${sidebarOpen ? "adm-sidebar--open" : ""}`}
+      >
         {/* Logo */}
         <div className="adm-sidebar__logo">
           <div className="adm-sidebar__logo-icon">
@@ -45,15 +51,21 @@ const AdminLayout = () => {
         </div>
 
         {/* Supabase status indicator */}
-        <div className={`adm-sidebar__status ${isSupabaseConfigured ? "adm-sidebar__status--live" : "adm-sidebar__status--offline"}`}>
+        <div
+          className={`adm-sidebar__status ${isSupabaseConfigured ? "adm-sidebar__status--live" : "adm-sidebar__status--offline"}`}
+        >
           <span className="adm-sidebar__status-dot" />
-          <span>{isSupabaseConfigured ? "Live — Supabase connected" : "Setup required"}</span>
+          <span>
+            {isSupabaseConfigured
+              ? "Live -Supabase connected"
+              : "Setup required"}
+          </span>
         </div>
 
         {/* Nav */}
         <nav className="adm-sidebar__nav">
           <p className="adm-sidebar__nav-label">Menu</p>
-          {NAV.map(item => (
+          {NAV.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
@@ -75,11 +87,17 @@ const AdminLayout = () => {
               {user?.email?.charAt(0).toUpperCase() || "A"}
             </div>
             <div className="adm-sidebar__user-info">
-              <span className="adm-sidebar__user-email">{user?.email || "admin"}</span>
+              <span className="adm-sidebar__user-email">
+                {user?.email || "admin"}
+              </span>
               <span className="adm-sidebar__user-role">Administrator</span>
             </div>
           </div>
-          <button className="adm-sidebar__signout" onClick={handleSignOut} title="Sign out">
+          <button
+            className="adm-sidebar__signout"
+            onClick={handleSignOut}
+            title="Sign out"
+          >
             <i className="fas fa-sign-out-alt" />
           </button>
         </div>
@@ -91,7 +109,7 @@ const AdminLayout = () => {
         <header className="adm-topbar">
           <button
             className="adm-topbar__menu"
-            onClick={() => setSidebarOpen(v => !v)}
+            onClick={() => setSidebarOpen((v) => !v)}
             aria-label="Toggle menu"
           >
             <i className="fas fa-bars" />

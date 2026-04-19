@@ -5,7 +5,7 @@ import "./adminAnnouncements.css";
 
 const DEFAULT_FORM = {
   badge: "🎉 New",
-  text: "Upcoming Workshop on GenAI for Business — Limited Seats!",
+  text: "Upcoming Workshop on GenAI for Business -Limited Seats!",
   ctaText: "Register Free →",
   ctaHref: "/workshops",
   isActive: true,
@@ -69,8 +69,8 @@ export default function AdminAnnouncements() {
           <div>
             <strong>Supabase not connected</strong>
             <p>
-              Changes here are preview-only. Add <code>VITE_SUPABASE_URL</code> and{" "}
-              <code>VITE_SUPABASE_ANON_KEY</code> to save to the database.
+              Changes here are preview-only. Add <code>VITE_SUPABASE_URL</code>{" "}
+              and <code>VITE_SUPABASE_ANON_KEY</code> to save to the database.
             </p>
           </div>
         </div>
@@ -113,7 +113,7 @@ export default function AdminAnnouncements() {
             <textarea
               rows={3}
               value={form.text}
-              placeholder="Upcoming Workshop on GenAI for Business — Limited Seats!"
+              placeholder="Upcoming Workshop on GenAI for Business -Limited Seats!"
               onChange={(e) => updateForm("text", e.target.value)}
             />
           </div>
@@ -145,7 +145,9 @@ export default function AdminAnnouncements() {
             <button
               className="adm-btn adm-btn--primary"
               disabled={saving || !isSupabaseConfigured}
-              title={!isSupabaseConfigured ? "Connect Supabase to save" : undefined}
+              title={
+                !isSupabaseConfigured ? "Connect Supabase to save" : undefined
+              }
               onClick={handleSave}
             >
               {saving ? (
@@ -177,7 +179,11 @@ export default function AdminAnnouncements() {
               {form.badge && (
                 <span className="adm-ann__bar-badge">{form.badge}</span>
               )}
-              <span className="adm-ann__bar-text">{form.text || <em style={{ opacity: 0.5 }}>Enter a message...</em>}</span>
+              <span className="adm-ann__bar-text">
+                {form.text || (
+                  <em style={{ opacity: 0.5 }}>Enter a message...</em>
+                )}
+              </span>
               {form.ctaText && (
                 <span className="adm-ann__bar-cta">{form.ctaText}</span>
               )}
@@ -194,7 +200,10 @@ export default function AdminAnnouncements() {
                 fontSize: "0.85rem",
               }}
             >
-              <i className="fas fa-eye-slash" style={{ marginRight: "0.5rem" }} />
+              <i
+                className="fas fa-eye-slash"
+                style={{ marginRight: "0.5rem" }}
+              />
               Announcement bar is hidden
             </div>
           )}
@@ -210,15 +219,34 @@ export default function AdminAnnouncements() {
               lineHeight: 1.6,
             }}
           >
-            <strong style={{ color: "var(--adm-text-2)", display: "block", marginBottom: "0.35rem" }}>
-              <i className="fas fa-info-circle" style={{ marginRight: "0.35rem" }} />
+            <strong
+              style={{
+                color: "var(--adm-text-2)",
+                display: "block",
+                marginBottom: "0.35rem",
+              }}
+            >
+              <i
+                className="fas fa-info-circle"
+                style={{ marginRight: "0.35rem" }}
+              />
               Preview Notes
             </strong>
-            This preview reflects exactly how the announcement bar will appear across your site.
-            The gradient and styling match the live site's header bar.
+            This preview reflects exactly how the announcement bar will appear
+            across your site. The gradient and styling match the live site's
+            header bar.
             {!isSupabaseConfigured && (
-              <span style={{ display: "block", marginTop: "0.5rem", color: "var(--adm-warn)" }}>
-                <i className="fas fa-exclamation-triangle" style={{ marginRight: "0.3rem" }} />
+              <span
+                style={{
+                  display: "block",
+                  marginTop: "0.5rem",
+                  color: "var(--adm-warn)",
+                }}
+              >
+                <i
+                  className="fas fa-exclamation-triangle"
+                  style={{ marginRight: "0.3rem" }}
+                />
                 Connect Supabase to persist changes.
               </span>
             )}
@@ -229,7 +257,9 @@ export default function AdminAnnouncements() {
       {/* Toast */}
       {toast && (
         <div className={`adm-toast adm-toast--${toast.type}`}>
-          <i className={`fas fa-${toast.type === "success" ? "check-circle" : "exclamation-circle"}`} />
+          <i
+            className={`fas fa-${toast.type === "success" ? "check-circle" : "exclamation-circle"}`}
+          />
           {toast.msg}
         </div>
       )}

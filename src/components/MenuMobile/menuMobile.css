@@ -4,7 +4,7 @@
 .mob-nav__overlay {
   position: fixed;
   inset: 0;
-  background: rgba(10, 15, 30, 0.65);
+  background: rgba(10, 5, 5, 0.65);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   z-index: 9997;
@@ -25,13 +25,13 @@
   right: 0;
   height: 100dvh;
   width: 100%;
-  max-width: 400px;
+  max-width: min(400px, 100vw);
   z-index: 9998;
   transform: translateX(100%);
   transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
-  background: linear-gradient(150deg, #1e2d72 0%, #2d3e8a 50%, #4056a1 100%);
+  background: linear-gradient(150deg, #1a0305 0%, #2a0408 50%, #3d060c 100%);
   overflow: hidden;
 }
 
@@ -42,7 +42,7 @@
   inset: 0;
   background-image: radial-gradient(
     circle,
-    rgba(239, 226, 186, 0.045) 1px,
+    rgba(255, 211, 205, 0.045) 1px,
     transparent 1px
   );
   background-size: 28px 28px;
@@ -50,7 +50,7 @@
   z-index: 0;
 }
 
-/* Gold orb decoration */
+/* Brand orb decoration */
 .mob-nav::after {
   content: "";
   position: absolute;
@@ -60,7 +60,7 @@
   height: 240px;
   background: radial-gradient(
     circle,
-    rgba(215, 153, 34, 0.18) 0%,
+    rgba(187, 27, 33, 0.2) 0%,
     transparent 70%
   );
   border-radius: 50%;
@@ -80,7 +80,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 1.75rem 1.25rem;
-  border-bottom: 1px solid rgba(197, 203, 227, 0.1);
+  border-bottom: 1px solid rgba(255, 211, 205, 0.12);
   flex-shrink: 0;
 }
 
@@ -89,7 +89,7 @@
   font-size: 1.2rem;
   font-weight: 800;
   letter-spacing: -0.4px;
-  background: linear-gradient(135deg, #d79922, #f0b429);
+  background: linear-gradient(135deg, #ff6b6b, #ffaba4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -104,8 +104,8 @@
   justify-content: center;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(197, 203, 227, 0.15);
-  color: #c5cbe3;
+  border: 1px solid rgba(255, 211, 205, 0.15);
+  color: #ffdbd1;
   font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -113,9 +113,9 @@
 }
 
 .mob-nav__close:hover {
-  background: rgba(215, 153, 34, 0.18);
-  border-color: rgba(215, 153, 34, 0.38);
-  color: #d79922;
+  background: rgba(187, 27, 33, 0.25);
+  border-color: rgba(187, 27, 33, 0.55);
+  color: #ffaba4;
 }
 
 /* ── Nav links ───────────────────────────────────────── */
@@ -141,8 +141,8 @@
   position: relative;
   overflow: hidden;
 
-  /* Closed state — instant reset, no delay */
-  color: rgba(239, 226, 186, 0.65);
+  /* Closed state -instant reset, no delay */
+  color: rgba(255, 211, 205, 0.65);
   opacity: 0;
   transform: translateX(20px);
   transition:
@@ -153,7 +153,7 @@
     color 0.22s ease;
 }
 
-/* Open state — staggered entrance via CSS var --delay */
+/* Open state -staggered entrance via CSS var --delay */
 .mob-nav--open .mob-nav__link {
   opacity: 1;
   transform: translateX(0);
@@ -169,7 +169,7 @@
   font-family: "Syne", sans-serif;
   font-size: 0.68rem;
   font-weight: 700;
-  color: #d79922;
+  color: #ffaba4;
   letter-spacing: 0.1em;
   opacity: 0.75;
   flex-shrink: 0;
@@ -189,7 +189,7 @@
 
 .mob-nav__arrow {
   font-size: 0.75rem;
-  color: rgba(215, 153, 34, 0.45);
+  color: rgba(255, 171, 164, 0.45);
   transition:
     transform 0.25s ease,
     opacity 0.25s ease,
@@ -202,25 +202,25 @@
 /* Hover */
 .mob-nav__link:hover {
   background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(197, 203, 227, 0.12);
-  color: #efe2ba;
+  border-color: rgba(255, 211, 205, 0.12);
+  color: #fff8f6;
 }
 
 .mob-nav__link:hover .mob-nav__arrow {
   transform: translateX(0);
   opacity: 1;
-  color: #d79922;
+  color: #ffaba4;
 }
 
 /* Active / current page */
 .mob-nav__link--active {
-  background: rgba(215, 153, 34, 0.12);
-  border-color: rgba(215, 153, 34, 0.22);
-  color: #d79922;
+  background: rgba(187, 27, 33, 0.2);
+  border-color: rgba(187, 27, 33, 0.35);
+  color: #ffaba4;
 }
 
 .mob-nav__link--active .mob-nav__name {
-  color: #d79922;
+  color: #ffaba4;
 }
 
 .mob-nav__link--active .mob-nav__num {
@@ -230,7 +230,7 @@
 .mob-nav__link--active .mob-nav__arrow {
   transform: translateX(0);
   opacity: 1;
-  color: #d79922;
+  color: #ffaba4;
 }
 
 /* ── Footer / CTA ────────────────────────────────────── */
@@ -238,7 +238,7 @@
   position: relative;
   z-index: 1;
   padding: 1.25rem 1.75rem 2rem;
-  border-top: 1px solid rgba(197, 203, 227, 0.1);
+  border-top: 1px solid rgba(255, 211, 205, 0.12);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -251,7 +251,7 @@
   justify-content: center;
   gap: 0.55rem;
   padding: 1rem 1.5rem;
-  background: linear-gradient(135deg, #d79922, #b07c16);
+  background: linear-gradient(135deg, #bb1b21, #8b0d13);
   color: white !important;
   -webkit-text-fill-color: white;
   font-family: "Syne", sans-serif;
@@ -259,13 +259,15 @@
   font-size: 1rem;
   letter-spacing: 0.1px;
   border-radius: 12px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 4px 20px rgba(215, 153, 34, 0.35);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  box-shadow: 0 4px 20px rgba(187, 27, 33, 0.4);
 }
 
 .mob-nav__cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(215, 153, 34, 0.5);
+  box-shadow: 0 8px 28px rgba(187, 27, 33, 0.55);
 }
 
 .mob-nav__cta i {
@@ -280,7 +282,7 @@
 .mob-nav__tagline {
   text-align: center;
   font-size: 0.7rem;
-  color: rgba(197, 203, 227, 0.35);
+  color: rgba(255, 211, 205, 0.35);
   font-family: var(--font-body);
   letter-spacing: 0.02em;
 }

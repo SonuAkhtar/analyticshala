@@ -91,7 +91,7 @@ export default function AdminCourses() {
       showToast(error.message, "error");
     } else {
       setCourses((prev) =>
-        prev.map((c) => (c.id === editing.id ? { ...editing } : c))
+        prev.map((c) => (c.id === editing.id ? { ...editing } : c)),
       );
       setRegData((prev) => ({ ...prev, [editing.id]: { ...editReg } }));
       showToast("Course saved successfully!", "success");
@@ -114,16 +114,16 @@ export default function AdminCourses() {
       showToast(error.message, "error");
     } else {
       setCourses((prev) =>
-        prev.map((c) => (c.id === courseId ? { ...c, visible: newVisible } : c))
+        prev.map((c) =>
+          c.id === courseId ? { ...c, visible: newVisible } : c,
+        ),
       );
     }
   }
 
   function handleLocalToggle(courseId) {
     setCourses((prev) =>
-      prev.map((c) =>
-        c.id === courseId ? { ...c, visible: !c.visible } : c
-      )
+      prev.map((c) => (c.id === courseId ? { ...c, visible: !c.visible } : c)),
     );
     if (!isSupabaseConfigured) {
       showToast("Connect Supabase to enable editing", "error");
@@ -133,7 +133,10 @@ export default function AdminCourses() {
   function handleDelete(courseId) {
     setCourses((prev) => prev.filter((c) => c.id !== courseId));
     setShowConfirm(null);
-    showToast("Course removed (local only — connect Supabase to persist)", "success");
+    showToast(
+      "Course removed (local only -connect Supabase to persist)",
+      "success",
+    );
   }
 
   function updateEditing(field, value) {
@@ -161,14 +164,22 @@ export default function AdminCourses() {
       <div className="adm-courses__header">
         <div className="adm-courses__title-row">
           <h1>Courses</h1>
-          <span className="adm-badge adm-badge--indigo">{courses.length} total</span>
+          <span className="adm-badge adm-badge--indigo">
+            {courses.length} total
+          </span>
         </div>
         <div className="adm-courses__actions">
           <button
             className="adm-btn adm-btn--primary"
             disabled={!isSupabaseConfigured}
-            title={!isSupabaseConfigured ? "Connect Supabase to add courses" : undefined}
-            onClick={() => showToast("Add course via Supabase dashboard", "success")}
+            title={
+              !isSupabaseConfigured
+                ? "Connect Supabase to add courses"
+                : undefined
+            }
+            onClick={() =>
+              showToast("Add course via Supabase dashboard", "success")
+            }
           >
             <i className="fas fa-plus" /> Add Course
           </button>
@@ -217,7 +228,14 @@ export default function AdminCourses() {
           <tbody>
             {filtered.length === 0 ? (
               <tr>
-                <td colSpan={7} style={{ textAlign: "center", padding: "2rem", color: "var(--adm-text-m)" }}>
+                <td
+                  colSpan={7}
+                  style={{
+                    textAlign: "center",
+                    padding: "2rem",
+                    color: "var(--adm-text-m)",
+                  }}
+                >
                   No courses match your search.
                 </td>
               </tr>
@@ -230,13 +248,20 @@ export default function AdminCourses() {
                         <i className={c.icon} />
                       </div>
                       <div>
-                        <div className="adm-courses__course-name">{c.title}</div>
-                        <div className="adm-courses__course-sub">{c.subtitle}</div>
+                        <div className="adm-courses__course-name">
+                          {c.title}
+                        </div>
+                        <div className="adm-courses__course-sub">
+                          {c.subtitle}
+                        </div>
                       </div>
                     </div>
                   </td>
                   <td>
-                    <span className="adm-badge adm-badge--gray" style={{ fontSize: "0.7rem" }}>
+                    <span
+                      className="adm-badge adm-badge--gray"
+                      style={{ fontSize: "0.7rem" }}
+                    >
                       {c.level}
                     </span>
                   </td>
@@ -248,11 +273,21 @@ export default function AdminCourses() {
                   </td>
                   <td>
                     {c.badge ? (
-                      <span className={`adm-badge ${BADGE_CLASS_MAP[c.badgeColor] || "adm-badge--gray"}`} style={{ fontSize: "0.7rem" }}>
+                      <span
+                        className={`adm-badge ${BADGE_CLASS_MAP[c.badgeColor] || "adm-badge--gray"}`}
+                        style={{ fontSize: "0.7rem" }}
+                      >
                         {c.badge}
                       </span>
                     ) : (
-                      <span style={{ color: "var(--adm-text-m)", fontSize: "0.8rem" }}>—</span>
+                      <span
+                        style={{
+                          color: "var(--adm-text-m)",
+                          fontSize: "0.8rem",
+                        }}
+                      >
+                        —
+                      </span>
                     )}
                   </td>
                   <td>
@@ -311,7 +346,11 @@ export default function AdminCourses() {
                   className={`adm-drawer-tab ${drawerTab === tab ? "adm-drawer-tab--active" : ""}`}
                   onClick={() => setDrawerTab(tab)}
                 >
-                  {tab === "basic" ? "Basic Info" : tab === "pricing" ? "Pricing" : "Content"}
+                  {tab === "basic"
+                    ? "Basic Info"
+                    : tab === "pricing"
+                      ? "Pricing"
+                      : "Content"}
                 </button>
               ))}
             </div>
@@ -329,7 +368,8 @@ export default function AdminCourses() {
                     lineHeight: 1.5,
                   }}
                 >
-                  Connect Supabase to save changes. Your edits are visible in preview only.
+                  Connect Supabase to save changes. Your edits are visible in
+                  preview only.
                 </div>
               )}
 
@@ -351,7 +391,9 @@ export default function AdminCourses() {
                     <input
                       type="text"
                       value={editing.subtitle || ""}
-                      onChange={(e) => updateEditing("subtitle", e.target.value)}
+                      onChange={(e) =>
+                        updateEditing("subtitle", e.target.value)
+                      }
                     />
                   </div>
                   <div className="adm-field">
@@ -359,7 +401,9 @@ export default function AdminCourses() {
                     <textarea
                       rows={4}
                       value={editing.description || ""}
-                      onChange={(e) => updateEditing("description", e.target.value)}
+                      onChange={(e) =>
+                        updateEditing("description", e.target.value)
+                      }
                     />
                   </div>
                   <div className="adm-field-grid">
@@ -379,7 +423,9 @@ export default function AdminCourses() {
                         onChange={(e) => updateEditing("level", e.target.value)}
                       >
                         {LEVEL_OPTIONS.map((l) => (
-                          <option key={l} value={l}>{l}</option>
+                          <option key={l} value={l}>
+                            {l}
+                          </option>
                         ))}
                       </select>
                     </div>
@@ -391,7 +437,9 @@ export default function AdminCourses() {
                         type="text"
                         value={editing.duration || ""}
                         placeholder="8 weeks"
-                        onChange={(e) => updateEditing("duration", e.target.value)}
+                        onChange={(e) =>
+                          updateEditing("duration", e.target.value)
+                        }
                       />
                     </div>
                     <div className="adm-field">
@@ -399,7 +447,9 @@ export default function AdminCourses() {
                       <input
                         type="number"
                         value={editing.modules || ""}
-                        onChange={(e) => updateEditing("modules", Number(e.target.value))}
+                        onChange={(e) =>
+                          updateEditing("modules", Number(e.target.value))
+                        }
                       />
                     </div>
                   </div>
@@ -425,11 +475,15 @@ export default function AdminCourses() {
                       <label>Badge Color</label>
                       <select
                         value={editing.badgeColor || ""}
-                        onChange={(e) => updateEditing("badgeColor", e.target.value)}
+                        onChange={(e) =>
+                          updateEditing("badgeColor", e.target.value)
+                        }
                       >
                         <option value="">None</option>
                         {BADGE_COLOR_OPTIONS.map((o) => (
-                          <option key={o.value} value={o.value}>{o.label}</option>
+                          <option key={o.value} value={o.value}>
+                            {o.label}
+                          </option>
                         ))}
                       </select>
                     </div>
@@ -449,7 +503,9 @@ export default function AdminCourses() {
                         type="text"
                         value={editReg?.regFee || ""}
                         placeholder="₹500"
-                        onChange={(e) => updateEditReg("regFee", e.target.value)}
+                        onChange={(e) =>
+                          updateEditReg("regFee", e.target.value)
+                        }
                       />
                     </div>
                     <div className="adm-field">
@@ -469,7 +525,9 @@ export default function AdminCourses() {
                         type="text"
                         value={editReg?.originalPrice || ""}
                         placeholder="₹19,999"
-                        onChange={(e) => updateEditReg("originalPrice", e.target.value)}
+                        onChange={(e) =>
+                          updateEditReg("originalPrice", e.target.value)
+                        }
                       />
                     </div>
                     <div className="adm-field">
@@ -489,7 +547,9 @@ export default function AdminCourses() {
                         type="text"
                         value={editReg?.nextBatch || ""}
                         placeholder="April 5, 2026"
-                        onChange={(e) => updateEditReg("nextBatch", e.target.value)}
+                        onChange={(e) =>
+                          updateEditReg("nextBatch", e.target.value)
+                        }
                       />
                     </div>
                     <div className="adm-field">
@@ -498,7 +558,9 @@ export default function AdminCourses() {
                         type="text"
                         value={editReg?.batchType || ""}
                         placeholder="Weekend Batch"
-                        onChange={(e) => updateEditReg("batchType", e.target.value)}
+                        onChange={(e) =>
+                          updateEditReg("batchType", e.target.value)
+                        }
                       />
                     </div>
                   </div>
@@ -508,7 +570,9 @@ export default function AdminCourses() {
                       type="text"
                       value={editReg?.instructor || ""}
                       placeholder="Faizan Ansari"
-                      onChange={(e) => updateEditReg("instructor", e.target.value)}
+                      onChange={(e) =>
+                        updateEditReg("instructor", e.target.value)
+                      }
                     />
                   </div>
                 </div>
@@ -523,7 +587,11 @@ export default function AdminCourses() {
                     <label>Skills (one per line)</label>
                     <textarea
                       rows={5}
-                      value={Array.isArray(editing.skills) ? editing.skills.join("\n") : editing.skills || ""}
+                      value={
+                        Array.isArray(editing.skills)
+                          ? editing.skills.join("\n")
+                          : editing.skills || ""
+                      }
                       onChange={(e) =>
                         updateEditing("skills", e.target.value.split("\n"))
                       }
@@ -533,7 +601,11 @@ export default function AdminCourses() {
                     <label>Outcomes (one per line)</label>
                     <textarea
                       rows={5}
-                      value={Array.isArray(editing.outcomes) ? editing.outcomes.join("\n") : editing.outcomes || ""}
+                      value={
+                        Array.isArray(editing.outcomes)
+                          ? editing.outcomes.join("\n")
+                          : editing.outcomes || ""
+                      }
                       onChange={(e) =>
                         updateEditing("outcomes", e.target.value.split("\n"))
                       }
@@ -561,7 +633,9 @@ export default function AdminCourses() {
               <button
                 className="adm-btn adm-btn--primary"
                 disabled={!isSupabaseConfigured}
-                title={!isSupabaseConfigured ? "Connect Supabase to save" : undefined}
+                title={
+                  !isSupabaseConfigured ? "Connect Supabase to save" : undefined
+                }
                 onClick={handleSave}
               >
                 <i className="fas fa-save" /> Save Changes
@@ -583,8 +657,9 @@ export default function AdminCourses() {
             </div>
             <h3>Delete Course?</h3>
             <p>
-              Are you sure you want to remove <strong>{courseToDelete?.title}</strong>? This
-              action cannot be undone.
+              Are you sure you want to remove{" "}
+              <strong>{courseToDelete?.title}</strong>? This action cannot be
+              undone.
             </p>
             <div className="adm-confirm-box__actions">
               <button
@@ -607,7 +682,9 @@ export default function AdminCourses() {
       {/* Toast */}
       {toast && (
         <div className={`adm-toast adm-toast--${toast.type}`}>
-          <i className={`fas fa-${toast.type === "success" ? "check-circle" : "exclamation-circle"}`} />
+          <i
+            className={`fas fa-${toast.type === "success" ? "check-circle" : "exclamation-circle"}`}
+          />
           {toast.msg}
         </div>
       )}

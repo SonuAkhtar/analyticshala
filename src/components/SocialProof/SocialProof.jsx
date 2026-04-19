@@ -1,11 +1,5 @@
 import "./socialProof.css";
-import {
-  motion,
-  useInView,
-  useMotionValue,
-  useTransform,
-  animate,
-} from "framer-motion";
+import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 const stats = [
@@ -13,52 +7,54 @@ const stats = [
     number: 500,
     suffix: "+",
     label: "Students Trained",
+    sub: "and growing every batch",
     icon: "fas fa-users",
-    color: "#c084fc",
-    bg: "linear-gradient(145deg, #0e0620 0%, #1a0835 100%)",
-    border: "rgba(192, 132, 252, 0.2)",
+    color: "#e63946",
+    pale: "#fff0f1",
+    border: "rgba(230,57,70,0.18)",
   },
   {
     number: 4.9,
     suffix: "★",
     label: "Average Rating",
+    sub: "based on 200+ reviews",
     icon: "fas fa-star",
-    color: "#fbbf24",
-    bg: "linear-gradient(145deg, #140e00 0%, #211600 100%)",
-    border: "rgba(251, 191, 36, 0.2)",
+    color: "#f59e0b",
+    pale: "#fffbeb",
+    border: "rgba(245,158,11,0.18)",
   },
   {
     number: 11,
     suffix: "+",
     label: "Years of Excellence",
+    sub: "est. 2013, Gurgaon",
     icon: "fas fa-award",
-    color: "#34d399",
-    bg: "linear-gradient(145deg, #051710 0%, #0c2818 100%)",
-    border: "rgba(52, 211, 153, 0.2)",
+    color: "#7c3aed",
+    pale: "#f5f3ff",
+    border: "rgba(124,58,237,0.18)",
   },
   {
-    number: 10,
-    suffix: "+",
-    label: "Courses Available",
+    number: 7,
+    suffix: "",
+    label: "Course Tracks",
+    sub: "data, AI, web & more",
     icon: "fas fa-graduation-cap",
-    color: "#22d3ee",
-    bg: "linear-gradient(145deg, #021416 0%, #052222 100%)",
-    border: "rgba(34, 211, 238, 0.2)",
+    color: "#0d9488",
+    pale: "#f0fdfa",
+    border: "rgba(13,148,136,0.18)",
   },
 ];
 
-const AnimatedNumber =({ value, suffix, isInView }) => {
+const AnimatedNumber = ({ value, suffix, isInView }) => {
   const count = useMotionValue(0);
   const rounded = useTransform(count, (v) =>
     value % 1 !== 0 ? v.toFixed(1) : Math.floor(v)
   );
-
   useEffect(() => {
     if (!isInView) return;
-    const controls = animate(count, value, { duration: 2, ease: "easeOut" });
-    return controls.stop;
+    const c = animate(count, value, { duration: 2, ease: "easeOut" });
+    return c.stop;
   }, [isInView, count, value]);
-
   return (
     <>
       <motion.span>{rounded}</motion.span>
@@ -69,64 +65,36 @@ const AnimatedNumber =({ value, suffix, isInView }) => {
 
 const SocialProof = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <div className="social-proof" ref={ref}>
+    <div className="sp" ref={ref}>
       <div className="container">
-
-        <div className="social-proof__headline">
-          <motion.span
-            className="social-proof__eyebrow"
-            initial={{ opacity: 0, y: 12 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.45, ease: "easeOut" }}
-          >
-            BY THE NUMBERS
-          </motion.span>
-          <motion.h2
-            className="social-proof__title"
-            initial={{ opacity: 0, y: 18 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-          >
-            Proof, not promises.
-          </motion.h2>
-        </div>
-
-        <div className="social-proof__grid">
-          {stats.map((stat, i) => (
+        <div className="sp__grid">
+          {stats.map((s, i) => (
             <motion.div
               key={i}
-              className="social-proof__card"
-              style={{
-                "--sc": stat.color,
-                background: stat.bg,
-                borderColor: stat.border,
-              }}
-              initial={{ opacity: 0, y: 24 }}
+              className="sp__card"
+              style={{ "--sc": s.color, "--sp": s.pale, "--sb": s.border }}
+              initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
+              transition={{ duration: 0.45, delay: i * 0.09, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="social-proof__icon">
-                <i className={stat.icon} />
+              <div className="sp__icon-wrap">
+                <i className={s.icon} />
               </div>
 
-              <div className="social-proof__number">
-                <AnimatedNumber
-                  value={stat.number}
-                  suffix={stat.suffix}
-                  isInView={isInView}
-                />
+              <div className="sp__num">
+                <AnimatedNumber value={s.number} suffix={s.suffix} isInView={isInView} />
               </div>
 
-              <div className="social-proof__label">{stat.label}</div>
+              <div className="sp__label">{s.label}</div>
+              <div className="sp__sub">{s.sub}</div>
 
-              <div className="social-proof__glow" />
+              <div className="sp__bar" />
             </motion.div>
           ))}
         </div>
-
       </div>
     </div>
   );

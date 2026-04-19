@@ -40,34 +40,52 @@ function Homepage() {
     <>
       <Helmet>
         <title>AnalyticShala | Data Analytics &amp; AI Courses in India</title>
-        <meta name="description" content="Learn Data Analytics, Data Science, AI & ML from industry experts. 94% placement rate. Weekend batches. Real projects. India's most hands-on data education platform." />
-        <meta property="og:title" content="AnalyticShala | Data Analytics & AI Courses in India" />
-        <meta property="og:description" content="94% placement rate. Industry-led curriculum. Join 500+ professionals who built their data careers with AnalyticShala." />
+        <meta
+          name="description"
+          content="Learn Data Analytics, Data Science, AI & ML from industry experts. 94% placement rate. Weekend batches. Real projects. India's most hands-on data education platform."
+        />
+        <meta
+          property="og:title"
+          content="AnalyticShala | Data Analytics & AI Courses in India"
+        />
+        <meta
+          property="og:description"
+          content="94% placement rate. Industry-led curriculum. Join 500+ professionals who built their data careers with AnalyticShala."
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://analyticshala.in" />
         <link rel="canonical" href="https://analyticshala.in" />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "AnalyticShala",
-          "url": "https://analyticshala.in",
-          "description": "India's most hands-on data & AI education platform",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+91-88826-41988",
-            "contactType": "customer service"
-          }
-        })}</script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "AnalyticShala",
+            url: "https://analyticshala.in",
+            description: "India's most hands-on data & AI education platform",
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+91-88826-41988",
+              contactType: "customer service",
+            },
+          })}
+        </script>
       </Helmet>
       <Download showDownload={showDownload} setShowDownload={setShowDownload} />
 
       {/* ── Blue Hero ─────────────────────────────────────── */}
       <Hero />
 
-      {/* Wave: blue hero → cream sections */}
+      {/* Wave: red hero → light sections */}
       <div className="hp-wave hp-wave--hero-exit" aria-hidden="true">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,40 C480,78 960,78 1440,40 L1440,80 L0,80 Z" fill="#faf7f0" />
+        <svg
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0,40 C480,78 960,78 1440,40 L1440,80 L0,80 Z"
+            fill="#fffbfb"
+          />
         </svg>
       </div>
 
@@ -76,25 +94,35 @@ function Homepage() {
       <Courses setShowDownload={setShowDownload} />
       <TrustedBy />
       <ScrollCards />
-      <Skills />
       <LearningPath />
 
-      {/* Wave: cream → blue testimony */}
+      {/* Wave: light → dark testimony */}
       <div className="hp-wave hp-wave--to-blue" aria-hidden="true">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,40 C480,2 960,2 1440,40 L1440,0 L0,0 Z" fill="#faf7f0" />
+        <svg
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0,40 C480,2 960,2 1440,40 L1440,0 L0,0 Z" fill="#fffbfb" />
         </svg>
       </div>
 
-      {/* ── Blue Testimony Section ────────────────────────── */}
+      {/* ── Dark Testimony Section ────────────────────────── */}
       <div className="home-testimony">
         <Testimony />
       </div>
 
-      {/* Wave: blue testimony → cream sections */}
+      {/* Wave: dark → light sections */}
       <div className="hp-wave hp-wave--to-cream" aria-hidden="true">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,40 C480,78 960,78 1440,40 L1440,80 L0,80 Z" fill="#faf7f0" />
+        <svg
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0,40 C480,78 960,78 1440,40 L1440,80 L0,80 Z"
+            fill="#fffbfb"
+          />
         </svg>
       </div>
 

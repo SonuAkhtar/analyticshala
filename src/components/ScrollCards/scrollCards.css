@@ -43,41 +43,43 @@
 }
 
 .scroll-cards__card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   border-color: var(--cc, var(--page-accent));
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 20px 48px color-mix(in srgb, var(--cc, var(--page-accent)) 16%, transparent),
+    0 8px 16px color-mix(in srgb, var(--cc, var(--page-accent)) 08%, transparent);
 }
 
 .scroll-cards__bento .scroll-cards__card:nth-child(1) {
   background: linear-gradient(
     145deg,
-    color-mix(in srgb, var(--bg-card) 93%, #4056a1 7%) 0%,
+    color-mix(in srgb, var(--bg-card) 93%, var(--page-accent) 7%) 0%,
     var(--bg-card) 100%
   );
-  border-color: color-mix(in srgb, #4056a1 20%, transparent);
-  border-top: 4px solid #4056a1;
+  border-color: color-mix(in srgb, var(--page-accent) 20%, transparent);
+  border-top: 4px solid var(--page-accent);
 }
 
 .scroll-cards__bento .scroll-cards__card:nth-child(1):hover {
-  border-color: color-mix(in srgb, #4056a1 42%, transparent);
-  border-top-color: #4056a1;
-  box-shadow: 0 16px 40px color-mix(in srgb, #4056a1 14%, transparent);
+  border-color: color-mix(in srgb, var(--page-accent) 42%, transparent);
+  border-top-color: var(--page-accent);
+  box-shadow: 0 16px 40px color-mix(in srgb, var(--page-accent) 14%, transparent);
 }
 
 .scroll-cards__bento .scroll-cards__card:nth-child(5) {
   background: linear-gradient(
     145deg,
-    color-mix(in srgb, var(--bg-card) 93%, #d79922 7%) 0%,
+    color-mix(in srgb, var(--bg-card) 93%, #7c3aed 7%) 0%,
     var(--bg-card) 100%
   );
-  border-color: color-mix(in srgb, #d79922 20%, transparent);
-  border-top: 4px solid #d79922;
+  border-color: color-mix(in srgb, #7c3aed 20%, transparent);
+  border-top: 4px solid #7c3aed;
 }
 
 .scroll-cards__bento .scroll-cards__card:nth-child(5):hover {
-  border-color: color-mix(in srgb, #d79922 42%, transparent);
-  border-top-color: #d79922;
-  box-shadow: 0 16px 40px color-mix(in srgb, #d79922 14%, transparent);
+  border-color: color-mix(in srgb, #7c3aed 42%, transparent);
+  border-top-color: #7c3aed;
+  box-shadow: 0 16px 40px color-mix(in srgb, #7c3aed 14%, transparent);
 }
 
 .scroll-cards__card--dark {
@@ -85,7 +87,7 @@
 }
 
 .scroll-cards__bento .scroll-cards__card:nth-child(4) {
-  background: color-mix(in srgb, var(--bg-card) 94%, #f13c20 6%);
+  background: color-mix(in srgb, var(--bg-card) 94%, var(--accent-orange) 6%);
 }
 
 .scroll-cards__card-icon {
@@ -195,7 +197,7 @@
 .scroll-cards__cta {
   margin-top: 0;
   padding: 3rem 2.5rem;
-  background: linear-gradient(135deg, #4056a1 0%, #2a3577 100%);
+  background: linear-gradient(135deg, #bb1b21 0%, #6b0e16 100%);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -251,13 +253,14 @@
 .scroll-cards__cta-btn {
   position: relative;
   z-index: 1;
+  overflow: hidden;
   width: max-content;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.875rem 2rem;
-  background: linear-gradient(135deg, #d79922, #b07c16);
-  color: #fff;
+  background: #fff;
+  color: #bb1b21;
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 0.95rem;
@@ -349,7 +352,7 @@
   }
 
   .scroll-cards__bento .scroll-cards__card:nth-child(1) {
-    border-top: 4px solid #4056a1;
+    border-top: 4px solid var(--page-accent);
   }
 
   .scroll-cards {

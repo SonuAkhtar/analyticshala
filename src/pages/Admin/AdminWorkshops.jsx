@@ -63,7 +63,7 @@ export default function AdminWorkshops() {
       showToast(error.message, "error");
     } else {
       setWorkshops((prev) =>
-        prev.map((w) => (w.id === editing.id ? { ...editing } : w))
+        prev.map((w) => (w.id === editing.id ? { ...editing } : w)),
       );
       showToast("Workshop saved successfully!", "success");
       handleClose();
@@ -72,10 +72,15 @@ export default function AdminWorkshops() {
 
   async function adjustSeats(workshopId, delta) {
     const workshop = workshops.find((w) => w.id === workshopId);
-    const newSeats = Math.max(0, Math.min(workshop.totalSeats, workshop.seatsLeft + delta));
+    const newSeats = Math.max(
+      0,
+      Math.min(workshop.totalSeats, workshop.seatsLeft + delta),
+    );
 
     setWorkshops((prev) =>
-      prev.map((w) => (w.id === workshopId ? { ...w, seatsLeft: newSeats } : w))
+      prev.map((w) =>
+        w.id === workshopId ? { ...w, seatsLeft: newSeats } : w,
+      ),
     );
 
     if (isSupabaseConfigured && supabase) {
@@ -85,14 +90,20 @@ export default function AdminWorkshops() {
         .eq("id", workshopId);
       if (error) showToast(error.message, "error");
     } else {
-      showToast("Seat count updated locally — connect Supabase to persist", "error");
+      showToast(
+        "Seat count updated locally -connect Supabase to persist",
+        "error",
+      );
     }
   }
 
   function handleDelete(workshopId) {
     setWorkshops((prev) => prev.filter((w) => w.id !== workshopId));
     setShowConfirm(null);
-    showToast("Workshop removed (local only — connect Supabase to persist)", "success");
+    showToast(
+      "Workshop removed (local only -connect Supabase to persist)",
+      "success",
+    );
   }
 
   function updateEditing(field, value) {
@@ -102,7 +113,10 @@ export default function AdminWorkshops() {
   function toggleEventMode(mode) {
     const current = editing.eventMode || [];
     if (current.includes(mode)) {
-      updateEditing("eventMode", current.filter((m) => m !== mode));
+      updateEditing(
+        "eventMode",
+        current.filter((m) => m !== mode),
+      );
     } else {
       updateEditing("eventMode", [...current, mode]);
     }
@@ -125,14 +139,22 @@ export default function AdminWorkshops() {
       <div className="adm-workshops__header">
         <div className="adm-workshops__title-row">
           <h1>Workshops</h1>
-          <span className="adm-badge adm-badge--indigo">{workshops.length} upcoming</span>
+          <span className="adm-badge adm-badge--indigo">
+            {workshops.length} upcoming
+          </span>
         </div>
         <div className="adm-workshops__actions">
           <button
             className="adm-btn adm-btn--primary"
             disabled={!isSupabaseConfigured}
-            title={!isSupabaseConfigured ? "Connect Supabase to add workshops" : undefined}
-            onClick={() => showToast("Add workshop via Supabase dashboard", "success")}
+            title={
+              !isSupabaseConfigured
+                ? "Connect Supabase to add workshops"
+                : undefined
+            }
+            onClick={() =>
+              showToast("Add workshop via Supabase dashboard", "success")
+            }
           >
             <i className="fas fa-plus" /> Add Workshop
           </button>
@@ -181,19 +203,27 @@ export default function AdminWorkshops() {
           <tbody>
             {filtered.length === 0 ? (
               <tr>
-                <td colSpan={7} style={{ textAlign: "center", padding: "2rem", color: "var(--adm-text-m)" }}>
+                <td
+                  colSpan={7}
+                  style={{
+                    textAlign: "center",
+                    padding: "2rem",
+                    color: "var(--adm-text-m)",
+                  }}
+                >
                   No workshops match your search.
                 </td>
               </tr>
             ) : (
               filtered.map((w) => {
-                const pct = w.totalSeats > 0 ? (w.seatsLeft / w.totalSeats) * 100 : 0;
+                const pct =
+                  w.totalSeats > 0 ? (w.seatsLeft / w.totalSeats) * 100 : 0;
                 const fillClass =
                   w.seatsLeft === 0
                     ? "adm-seats-bar__fill--danger"
                     : pct < 30
-                    ? "adm-seats-bar__fill--warn"
-                    : "adm-seats-bar__fill--ok";
+                      ? "adm-seats-bar__fill--warn"
+                      : "adm-seats-bar__fill--ok";
 
                 return (
                   <tr key={w.id}>
@@ -212,7 +242,9 @@ export default function AdminWorkshops() {
                             style={{ width: `${pct}%` }}
                           />
                         </div>
-                        <span>{w.seatsLeft}/{w.totalSeats} seats</span>
+                        <span>
+                          {w.seatsLeft}/{w.totalSeats} seats
+                        </span>
                       </div>
                     </td>
                     <td>
@@ -228,7 +260,11 @@ export default function AdminWorkshops() {
                         className={`adm-badge ${w.seatsLeft === 0 ? "adm-badge--red" : w.seatsLeft <= 5 ? "adm-badge--orange" : "adm-badge--green"}`}
                         style={{ fontSize: "0.7rem" }}
                       >
-                        {w.seatsLeft === 0 ? "Full" : w.seatsLeft <= 5 ? "Almost Full" : "Live"}
+                        {w.seatsLeft === 0
+                          ? "Full"
+                          : w.seatsLeft <= 5
+                            ? "Almost Full"
+                            : "Live"}
                       </span>
                     </td>
                     <td>
@@ -238,7 +274,10 @@ export default function AdminWorkshops() {
                           defaultChecked={true}
                           onChange={() => {
                             if (!isSupabaseConfigured) {
-                              showToast("Connect Supabase to enable editing", "error");
+                              showToast(
+                                "Connect Supabase to enable editing",
+                                "error",
+                              );
                             }
                           }}
                         />
@@ -246,7 +285,14 @@ export default function AdminWorkshops() {
                       </label>
                     </td>
                     <td>
-                      <div style={{ display: "flex", gap: "0.35rem", alignItems: "center", flexWrap: "wrap" }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          gap: "0.35rem",
+                          alignItems: "center",
+                          flexWrap: "wrap",
+                        }}
+                      >
                         <button
                           className="adm-btn adm-btn--ghost adm-btn--sm"
                           onClick={() => handleEdit(w)}
@@ -307,7 +353,11 @@ export default function AdminWorkshops() {
                   className={`adm-drawer-tab ${drawerTab === tab ? "adm-drawer-tab--active" : ""}`}
                   onClick={() => setDrawerTab(tab)}
                 >
-                  {tab === "basic" ? "Basic Info" : tab === "seats" ? "Seats & Pricing" : "Content"}
+                  {tab === "basic"
+                    ? "Basic Info"
+                    : tab === "seats"
+                      ? "Seats & Pricing"
+                      : "Content"}
                 </button>
               ))}
             </div>
@@ -325,7 +375,8 @@ export default function AdminWorkshops() {
                     lineHeight: 1.5,
                   }}
                 >
-                  Connect Supabase to save changes. Your edits are visible in preview only.
+                  Connect Supabase to save changes. Your edits are visible in
+                  preview only.
                 </div>
               )}
 
@@ -377,7 +428,9 @@ export default function AdminWorkshops() {
                         type="text"
                         value={editing.duration || ""}
                         placeholder="3 Hours"
-                        onChange={(e) => updateEditing("duration", e.target.value)}
+                        onChange={(e) =>
+                          updateEditing("duration", e.target.value)
+                        }
                       />
                     </div>
                     <div className="adm-field">
@@ -385,7 +438,9 @@ export default function AdminWorkshops() {
                       <input
                         type="text"
                         value={editing.instructor || ""}
-                        onChange={(e) => updateEditing("instructor", e.target.value)}
+                        onChange={(e) =>
+                          updateEditing("instructor", e.target.value)
+                        }
                       />
                     </div>
                   </div>
@@ -396,7 +451,9 @@ export default function AdminWorkshops() {
                         type="text"
                         value={editing.category || ""}
                         placeholder="Data Analytics"
-                        onChange={(e) => updateEditing("category", e.target.value)}
+                        onChange={(e) =>
+                          updateEditing("category", e.target.value)
+                        }
                       />
                     </div>
                     <div className="adm-field">
@@ -405,7 +462,9 @@ export default function AdminWorkshops() {
                         type="text"
                         value={editing.categoryColor || ""}
                         placeholder="#16a34a"
-                        onChange={(e) => updateEditing("categoryColor", e.target.value)}
+                        onChange={(e) =>
+                          updateEditing("categoryColor", e.target.value)
+                        }
                       />
                     </div>
                   </div>
@@ -424,23 +483,42 @@ export default function AdminWorkshops() {
                       onChange={(e) => updateEditing("level", e.target.value)}
                     >
                       {LEVEL_OPTIONS.map((l) => (
-                        <option key={l} value={l}>{l}</option>
+                        <option key={l} value={l}>
+                          {l}
+                        </option>
                       ))}
                     </select>
                   </div>
                   <div className="adm-field">
                     <label>Event Mode</label>
-                    <div style={{ display: "flex", gap: "1rem", marginTop: "0.25rem" }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: "1rem",
+                        marginTop: "0.25rem",
+                      }}
+                    >
                       {["Online", "Offline"].map((mode) => (
                         <label
                           key={mode}
-                          style={{ display: "flex", alignItems: "center", gap: "0.4rem", cursor: "pointer", fontSize: "0.875rem", color: "var(--adm-text-2)" }}
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "0.4rem",
+                            cursor: "pointer",
+                            fontSize: "0.875rem",
+                            color: "var(--adm-text-2)",
+                          }}
                         >
                           <input
                             type="checkbox"
                             checked={(editing.eventMode || []).includes(mode)}
                             onChange={() => toggleEventMode(mode)}
-                            style={{ width: "auto", padding: 0, border: "none" }}
+                            style={{
+                              width: "auto",
+                              padding: 0,
+                              border: "none",
+                            }}
                           />
                           {mode}
                         </label>
@@ -471,7 +549,9 @@ export default function AdminWorkshops() {
                         type="text"
                         value={editing.originalPrice || ""}
                         placeholder="₹1,999"
-                        onChange={(e) => updateEditing("originalPrice", e.target.value)}
+                        onChange={(e) =>
+                          updateEditing("originalPrice", e.target.value)
+                        }
                       />
                     </div>
                   </div>
@@ -481,7 +561,9 @@ export default function AdminWorkshops() {
                       <input
                         type="number"
                         value={editing.totalSeats || ""}
-                        onChange={(e) => updateEditing("totalSeats", Number(e.target.value))}
+                        onChange={(e) =>
+                          updateEditing("totalSeats", Number(e.target.value))
+                        }
                       />
                     </div>
                     <div className="adm-field">
@@ -491,7 +573,9 @@ export default function AdminWorkshops() {
                         value={editing.seatsLeft ?? ""}
                         min={0}
                         max={editing.totalSeats}
-                        onChange={(e) => updateEditing("seatsLeft", Number(e.target.value))}
+                        onChange={(e) =>
+                          updateEditing("seatsLeft", Number(e.target.value))
+                        }
                       />
                     </div>
                   </div>
@@ -499,10 +583,17 @@ export default function AdminWorkshops() {
                     <label>Tags (comma-separated)</label>
                     <input
                       type="text"
-                      value={Array.isArray(editing.tags) ? editing.tags.join(", ") : editing.tags || ""}
+                      value={
+                        Array.isArray(editing.tags)
+                          ? editing.tags.join(", ")
+                          : editing.tags || ""
+                      }
                       placeholder="Excel, Pivot Tables, Dashboards"
                       onChange={(e) =>
-                        updateEditing("tags", e.target.value.split(",").map((t) => t.trim()))
+                        updateEditing(
+                          "tags",
+                          e.target.value.split(",").map((t) => t.trim()),
+                        )
                       }
                     />
                   </div>
@@ -518,7 +609,11 @@ export default function AdminWorkshops() {
                     <label>Outcomes (one per line)</label>
                     <textarea
                       rows={5}
-                      value={Array.isArray(editing.outcomes) ? editing.outcomes.join("\n") : editing.outcomes || ""}
+                      value={
+                        Array.isArray(editing.outcomes)
+                          ? editing.outcomes.join("\n")
+                          : editing.outcomes || ""
+                      }
                       onChange={(e) =>
                         updateEditing("outcomes", e.target.value.split("\n"))
                       }
@@ -528,7 +623,11 @@ export default function AdminWorkshops() {
                     <label>Who Is It For (one per line)</label>
                     <textarea
                       rows={5}
-                      value={Array.isArray(editing.whoIsItFor) ? editing.whoIsItFor.join("\n") : editing.whoIsItFor || ""}
+                      value={
+                        Array.isArray(editing.whoIsItFor)
+                          ? editing.whoIsItFor.join("\n")
+                          : editing.whoIsItFor || ""
+                      }
                       onChange={(e) =>
                         updateEditing("whoIsItFor", e.target.value.split("\n"))
                       }
@@ -542,7 +641,9 @@ export default function AdminWorkshops() {
               <button
                 className="adm-btn adm-btn--primary"
                 disabled={!isSupabaseConfigured}
-                title={!isSupabaseConfigured ? "Connect Supabase to save" : undefined}
+                title={
+                  !isSupabaseConfigured ? "Connect Supabase to save" : undefined
+                }
                 onClick={handleSave}
               >
                 <i className="fas fa-save" /> Save Changes
@@ -564,8 +665,9 @@ export default function AdminWorkshops() {
             </div>
             <h3>Delete Workshop?</h3>
             <p>
-              Are you sure you want to remove <strong>{workshopToDelete?.title}</strong>?
-              This action cannot be undone.
+              Are you sure you want to remove{" "}
+              <strong>{workshopToDelete?.title}</strong>? This action cannot be
+              undone.
             </p>
             <div className="adm-confirm-box__actions">
               <button
@@ -588,7 +690,9 @@ export default function AdminWorkshops() {
       {/* Toast */}
       {toast && (
         <div className={`adm-toast adm-toast--${toast.type}`}>
-          <i className={`fas fa-${toast.type === "success" ? "check-circle" : "exclamation-circle"}`} />
+          <i
+            className={`fas fa-${toast.type === "success" ? "check-circle" : "exclamation-circle"}`}
+          />
           {toast.msg}
         </div>
       )}

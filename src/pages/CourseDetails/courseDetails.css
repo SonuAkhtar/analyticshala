@@ -273,7 +273,14 @@
 .course-details__curr-desc {
   font-size: 0.85rem;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.6;
+  margin: 0.35rem 0 0;
+  padding-left: 1.1rem;
+  list-style: disc;
+}
+
+.course-details__curr-desc li {
+  margin-bottom: 0.2rem;
 }
 
 .course-details__who-grid {

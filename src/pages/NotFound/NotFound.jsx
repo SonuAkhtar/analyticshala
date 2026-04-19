@@ -2,11 +2,11 @@ import { Link, useNavigate } from "react-router-dom";
 import "./notFound.css";
 
 const QUICK_LINKS = [
-  { icon: "fas fa-home",            label: "Home",      href: "/" },
-  { icon: "fas fa-graduation-cap",  label: "Courses",   href: "/courses" },
-  { icon: "fas fa-calendar-alt",    label: "Workshops", href: "/workshops" },
-  { icon: "fas fa-star",            label: "Reviews",   href: "/testimony" },
-  { icon: "fas fa-info-circle",     label: "About Us",  href: "/aboutUs" },
+  { icon: "fas fa-home", label: "Home", href: "/" },
+  { icon: "fas fa-graduation-cap", label: "Courses", href: "/courses" },
+  { icon: "fas fa-calendar-alt", label: "Workshops", href: "/workshops" },
+  { icon: "fas fa-star", label: "Reviews", href: "/testimony" },
+  { icon: "fas fa-info-circle", label: "About Us", href: "/aboutUs" },
 ];
 
 const NotFound = () => {
@@ -31,10 +31,10 @@ const NotFound = () => {
 
         {/* Copy */}
         <div className="nf__copy">
-          <h1 className="nf__heading">Oops — data not found</h1>
+          <h1 className="nf__heading">Oops -data not found</h1>
           <p className="nf__sub">
-            Looks like this page got lost in the training set. Even our best model
-            couldn't locate it. Let's get you somewhere useful.
+            Looks like this page got lost in the training set. Even our best
+            model couldn't locate it. Let's get you somewhere useful.
           </p>
         </div>
 

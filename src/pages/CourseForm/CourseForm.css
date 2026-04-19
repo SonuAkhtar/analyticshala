@@ -1,7 +1,9 @@
 /* ── Course Form ──────────────────────────────────────────── */
 .course-form {
-  --accent-purple: #4f46e5;   /* indigo – consistent funnel color */
-  --accent-indigo: #7c3aed;   /* complementary purple */
+  --cf-accent: #bb1b21;
+  --cf-accent-dk: #8b0d13;
+  --cf-accent-lt: rgba(187, 27, 33, 0.12);
+  --cf-accent-ring: rgba(187, 27, 33, 0.18);
   min-height: calc(100vh - 80px);
   background: var(--bg-primary);
   display: flex;
@@ -22,20 +24,21 @@
   z-index: 1;
 }
 
+/* Subtle brand orbs */
 .course-form::before,
 .course-form::after {
   content: "";
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
-  opacity: var(--orb-opacity);
+  filter: blur(100px);
+  opacity: 0.07;
   pointer-events: none;
 }
 
 .course-form::before {
   width: 480px;
   height: 480px;
-  background: var(--accent-purple);
+  background: var(--cf-accent);
   top: -160px;
   right: -120px;
 }
@@ -43,7 +46,7 @@
 .course-form::after {
   width: 360px;
   height: 360px;
-  background: var(--accent-indigo);
+  background: var(--cf-accent-dk);
   bottom: -120px;
   left: -80px;
 }
@@ -57,17 +60,18 @@
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 2.5rem 2.25rem;
-  box-shadow: var(--card-shadow);
+  box-shadow: 0 4px 32px rgba(83, 37, 25, 0.08), 0 1px 4px rgba(83, 37, 25, 0.04);
 }
 
+/* Brand red top border */
 .course-form__card::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent-purple), var(--accent-indigo));
+  height: 4px;
+  background: linear-gradient(90deg, var(--cf-accent), #e84b4b);
   border-radius: 20px 20px 0 0;
 }
 
@@ -76,8 +80,8 @@
   display: flex;
   align-items: flex-start;
   gap: 0.875rem;
-  background: color-mix(in srgb, var(--accent-purple) 8%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent-purple) 20%, transparent);
+  background: rgba(187, 27, 33, 0.05);
+  border: 1px solid rgba(187, 27, 33, 0.18);
   border-radius: 12px;
   padding: 0.875rem 1rem;
   margin-bottom: 1.75rem;
@@ -87,12 +91,12 @@
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background: color-mix(in srgb, var(--accent-purple) 15%, transparent);
+  background: rgba(187, 27, 33, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  color: var(--accent-purple);
+  color: var(--cf-accent);
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -136,7 +140,7 @@
 .course-form__course-price {
   font-size: 0.875rem;
   font-weight: 700;
-  color: var(--accent-purple);
+  color: var(--cf-accent);
   white-space: nowrap;
 }
 
@@ -155,9 +159,9 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #16a34a;
-  background: rgba(22, 163, 74, 0.1);
-  border: 1px solid rgba(22, 163, 74, 0.22);
+  color: var(--cf-accent);
+  background: rgba(187, 27, 33, 0.08);
+  border: 1px solid rgba(187, 27, 33, 0.2);
   padding: 0.2rem 0.6rem;
   border-radius: 999px;
   white-space: nowrap;
@@ -200,14 +204,14 @@
 }
 
 .course-form__step-node--active {
-  background: var(--gradient-brand);
+  background: linear-gradient(135deg, var(--cf-accent), var(--cf-accent-dk));
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 2px 12px rgba(16, 163, 74, 0.35);
+  box-shadow: 0 2px 12px rgba(187, 27, 33, 0.35);
 }
 
 .course-form__step-node--done {
-  background: var(--accent-indigo);
+  background: var(--cf-accent);
   border-color: transparent;
   color: #fff;
 }
@@ -223,7 +227,7 @@
 }
 
 .course-form__step-label--active {
-  color: var(--accent-indigo);
+  color: var(--cf-accent);
 }
 
 .course-form__step-line {
@@ -236,7 +240,7 @@
 }
 
 .course-form__step-line--done {
-  background: var(--accent-indigo);
+  background: var(--cf-accent);
 }
 
 /* ── Step headings ──────────────────────────────────────── */
@@ -273,15 +277,15 @@
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  background: var(--bg-secondary);
-  border: 1.5px solid var(--border);
+  background: #fff;
+  border: 1.5px solid #e4ddd0;
   border-radius: 10px;
   padding: 0 1rem;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .course-form__input-group i {
-  color: var(--text-muted);
+  color: #a8a29e;
   font-size: 0.82rem;
   flex-shrink: 0;
   width: 14px;
@@ -290,22 +294,22 @@
 }
 
 .course-form__input-group:focus-within {
-  border-color: var(--accent-purple);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-purple) 15%, transparent);
+  border-color: var(--cf-accent);
+  box-shadow: 0 0 0 3px var(--cf-accent-ring);
 }
 
 .course-form__input-group:focus-within i {
-  color: var(--accent-purple);
+  color: var(--cf-accent);
 }
 
 .course-form__input-group--error {
-  border-color: var(--accent-red);
+  border-color: #ef4444;
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
 }
 
 .course-form__input-group input {
   flex: 1;
-  padding: 0.78rem 0;
+  padding: 0.82rem 0;
   background: transparent;
   border: none;
   outline: none;
@@ -316,7 +320,7 @@
 }
 
 .course-form__input-group input::placeholder {
-  color: var(--text-muted);
+  color: #c4bdb5;
 }
 
 /* ── Step 2 – choice fields ─────────────────────────────── */
@@ -339,20 +343,20 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   padding: 0.75rem;
-  background: var(--bg-secondary);
-  border: 1.5px solid var(--border);
+  background: #fff;
+  border: 1.5px solid #e4ddd0;
   border-radius: 10px;
   transition: border-color 0.2s;
 }
 
 .course-form__choice-row--error {
-  border-color: var(--accent-red);
+  border-color: #ef4444;
 }
 
 .course-form__choice-card {
   padding: 0.45rem 1rem;
   border-radius: 999px;
-  border: 1.5px solid var(--border);
+  border: 1.5px solid #e4ddd0;
   background: var(--bg-card);
   color: var(--text-secondary);
   font-size: 0.855rem;
@@ -363,14 +367,14 @@
 }
 
 .course-form__choice-card:hover {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
+  border-color: var(--cf-accent);
+  color: var(--cf-accent);
 }
 
 .course-form__choice-card--active {
-  background: color-mix(in srgb, var(--accent-purple) 12%, transparent);
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
+  background: rgba(187, 27, 33, 0.08);
+  border-color: var(--cf-accent);
+  color: var(--cf-accent);
   font-weight: 600;
 }
 
@@ -380,7 +384,7 @@
   align-items: center;
   gap: 0.3rem;
   font-size: 0.75rem;
-  color: var(--accent-red);
+  color: #ef4444;
 }
 
 .course-form__error-text i { font-size: 0.7rem; }
@@ -390,7 +394,7 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 0.875rem;
-  color: var(--accent-red);
+  color: #ef4444;
   background: rgba(239, 68, 68, 0.08);
   border: 1px solid rgba(239, 68, 68, 0.2);
   border-radius: 8px;
@@ -402,7 +406,7 @@
 .course-form__next-btn {
   width: 100%;
   padding: 0.9rem 1.5rem;
-  background: linear-gradient(135deg, var(--accent-purple), var(--accent-indigo));
+  background: linear-gradient(135deg, var(--cf-accent), var(--cf-accent-dk));
   color: white;
   font-family: var(--font-heading);
   font-size: 1rem;
@@ -415,12 +419,12 @@
   justify-content: center;
   gap: 0.5rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 18px color-mix(in srgb, var(--accent-purple) 32%, transparent);
+  box-shadow: 0 4px 18px rgba(187, 27, 33, 0.3);
 }
 
 .course-form__next-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px color-mix(in srgb, var(--accent-purple) 45%, transparent);
+  box-shadow: 0 8px 28px rgba(187, 27, 33, 0.45);
 }
 
 .course-form__next-btn i { transition: transform 0.2s; }
@@ -428,6 +432,7 @@
 
 .course-form__step2-actions {
   display: flex;
+  align-items: stretch;
   gap: 0.75rem;
   margin-top: 1.5rem;
 }
@@ -435,10 +440,13 @@
 .course-form__back-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.4rem;
-  padding: 0.9rem 1.25rem;
-  background: var(--bg-secondary);
-  border: 1.5px solid var(--border);
+  padding: 0.9rem 1.4rem;
+  flex: 0 0 auto;
+  width: auto;
+  background: #fff;
+  border: 1.5px solid #e4ddd0;
   border-radius: 10px;
   color: var(--text-secondary);
   font-family: var(--font-heading);
@@ -446,18 +454,19 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
-  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .course-form__back-btn:hover {
-  border-color: var(--accent-indigo);
-  color: var(--accent-indigo);
+  border-color: var(--cf-accent);
+  color: var(--cf-accent);
 }
 
 .course-form__submit-btn {
   flex: 1;
+  min-width: 0;
   padding: 0.9rem 1.25rem;
-  background: linear-gradient(135deg, var(--accent-purple), var(--accent-indigo));
+  background: linear-gradient(135deg, var(--cf-accent), var(--cf-accent-dk));
   color: white;
   font-family: var(--font-heading);
   font-size: 0.95rem;
@@ -466,12 +475,15 @@
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 18px color-mix(in srgb, var(--accent-purple) 32%, transparent);
+  box-shadow: 0 4px 18px rgba(187, 27, 33, 0.3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .course-form__submit-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px color-mix(in srgb, var(--accent-purple) 45%, transparent);
+  box-shadow: 0 8px 28px rgba(187, 27, 33, 0.45);
 }
 
 .course-form__submit-btn:disabled {

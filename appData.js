@@ -12,13 +12,7 @@ export const socialIconsData = [
 ];
 
 export const menuMobileData = [
-  {
-    id: 0,
-    class: "one",
-    icon: "fas fa-home",
-    name: "Home",
-    href: "/",
-  },
+  { id: 0, class: "one", icon: "fas fa-home", name: "Home", href: "/" },
   {
     id: 1,
     class: "two",
@@ -100,6 +94,1271 @@ export const heroMarqData = [
   { id: 14, name: "ML / AI", icon: "fas fa-brain", color: "#9333EA" },
 ];
 
+/* ----- Course Data ----- */
+
+export const coursesData = [
+  /* -- 1. Data Analytics & Visualisation (Complete Bundle) -- */
+  {
+    id: "analytics",
+    slug: "data-analytics",
+
+    /* Homepage */
+    homepageOrder: 1,
+    homepageTitle: "Data Analytics & Visualisation",
+    badge: "Most Popular",
+    badgeColor: "badge-green",
+    accent: "#e63946",
+    chapters: ["Excel", "SQL", "Python", "Power BI", "Tableau", "Capstone"],
+    desc: "The complete analytics bundle -Excel, SQL, Python, Power BI & Tableau in one fast-track program. The fastest route to a data analyst role.",
+
+    /* Courses page */
+    category: "Data Analytics",
+    categoryLabel: "Data",
+    bannerImage:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80&auto=format&fit=crop",
+    icon: "fas fa-chart-bar",
+    level: "Beginner → Intermediate",
+    duration: "10 weeks",
+    modules: 10,
+    color: "card-red",
+    enrolledCount: 312,
+    title: "Data Analytics Bundle",
+    subtitle: "Complete Analyst Toolkit -Excel, SQL, Python, BI",
+    description:
+      "The complete data analytics program covering Excel, SQL, Python, Power BI, and Tableau in one structured fast-track bundle. Covers the same tools as the individual deep-dive courses but as a focused analyst career program -ideal for those who want the full toolkit without separate enrollments.",
+    skills: [
+      "Excel & Pivot Tables",
+      "SQL for Analytics",
+      "Python & Pandas",
+      "Power BI Dashboards",
+      "Tableau Visualizations",
+      "End-to-End Analytics Projects",
+    ],
+    outcomes: [
+      "Master all major data analyst tools in one program",
+      "Build interactive dashboards in both Power BI and Tableau",
+      "Perform exploratory data analysis (EDA) with Python",
+      "Present data insights confidently to stakeholders",
+    ],
+
+    /* Registration */
+    regFee: "₹500",
+    price: "₹10,999",
+    originalPrice: "₹16,999",
+    emi: "₹917/mo",
+    nextBatch: "April 5, 2026",
+    batchType: "Weekend Batch",
+    instructor: "Faizan Ansari",
+    includes: [
+      "10 weeks of live weekend sessions",
+      "Recorded sessions & datasets",
+      "10 real-world analytics projects",
+      "Power BI & Tableau starter templates",
+      "Course completion certificate",
+      "Career placement support",
+    ],
+    whoIsItFor: [
+      "Freshers targeting data analyst roles at top companies",
+      "Excel users who want to level up to Python and BI tools",
+      "Business professionals who work with data daily",
+      "Students who want the full analytics toolkit in one program",
+    ],
+    curriculum: [
+      {
+        week: "Week 1",
+        title: "Excel Foundations & Advanced Formulas",
+        desc: "Core functions, VLOOKUP, INDEX-MATCH, pivot tables, slicers, and dashboard design fundamentals",
+      },
+      {
+        week: "Week 2",
+        title: "SQL for Analytics",
+        desc: "SELECT, JOINs, GROUP BY, window functions (ROW_NUMBER, LAG, LEAD), CTEs, and business query patterns",
+      },
+      {
+        week: "Week 3–4",
+        title: "Python for Data Analysis",
+        desc: "NumPy, pandas -data loading, cleaning, transformation, EDA, and working with real-world datasets",
+      },
+      {
+        week: "Week 5",
+        title: "Statistical Analysis",
+        desc: "Descriptive statistics, hypothesis testing, A/B testing, distributions, and statistical thinking for analysts",
+      },
+      {
+        week: "Week 6–7",
+        title: "Power BI -Data Modeling & Dashboards",
+        desc: "Connecting data sources, star schema modeling, DAX measures (CALCULATE, SUMX, time intelligence), and interactive executive dashboards",
+      },
+      {
+        week: "Week 8–9",
+        title: "Tableau -Visualization & Storytelling",
+        desc: "Core chart types, calculated fields, LOD expressions, actions, and building interactive Tableau dashboards",
+      },
+      {
+        week: "Week 10",
+        title: "Capstone Project",
+        desc: "End-to-end analytics project using all 5 tools -collect, clean, analyse, visualize, and present insights to stakeholders",
+      },
+    ],
+  },
+
+  /* -- 2. Data Analytics with Python -- */
+  {
+    id: "datascience",
+    slug: "data-science",
+
+    /* Homepage */
+    homepageOrder: 2,
+    homepageTitle: "Data Analytics with Python",
+    badge: null,
+    badgeColor: "",
+    accent: "#0d9488",
+    chapters: ["Python", "NumPy", "Pandas", "EDA", "Matplotlib", "Seaborn"],
+    desc: "Learn how to analyze real-world data using Python and turn it into meaningful business insights -from cleaning to visualization.",
+
+    /* Courses page */
+    category: "Data Science",
+    categoryLabel: "Data",
+    bannerImage:
+      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&q=80&auto=format&fit=crop",
+    icon: "fas fa-flask",
+    level: "Intermediate",
+    duration: "8 weeks",
+    modules: 8,
+    color: "card-green",
+    enrolledCount: 198,
+    title: "Data Analytics with Python",
+    subtitle: "From Raw Data to Business Insights",
+    description:
+      "Learn how to analyze real-world data using Python and turn it into meaningful business insights. Focuses on practical data workflows -cleaning, processing, EDA, and impactful visualizations.",
+    skills: [
+      "Python for Data Analysis",
+      "NumPy & Pandas",
+      "Data Cleaning & Transformation",
+      "Exploratory Data Analysis (EDA)",
+      "Matplotlib & Seaborn",
+      "End-to-End Analytics Workflows",
+    ],
+    outcomes: [
+      "Analyze and interpret real datasets with confidence",
+      "Perform data cleaning, transformation, and exploration",
+      "Build clear and impactful visualizations",
+      "Solve real-world business problems using data",
+      "Create portfolio-ready data analysis projects",
+    ],
+
+    /* Registration */
+    regFee: "₹500",
+    price: "₹15,999",
+    originalPrice: "₹24,999",
+    emi: "₹1,334/mo",
+    nextBatch: "May 3, 2026",
+    batchType: "Weekend Batch",
+    instructor: "Faizan Ansari",
+    includes: [
+      "8 weeks of live weekend sessions",
+      "Recorded lectures & Jupyter notebooks",
+      "8 end-to-end analytics projects",
+      "Real-world dataset collection",
+      "Course completion certificate",
+      "1-on-1 career mentorship session",
+    ],
+    whoIsItFor: [
+      "Students looking to build strong data analysis skills",
+      "Professionals transitioning into data analytics roles",
+      "Anyone who knows basic Python and wants to apply it to real data",
+      "Aspiring data analysts who want hands-on, practical experience",
+    ],
+    curriculum: [
+      {
+        week: "Week 1",
+        title: "Python for Data Analytics (Quick Foundation)",
+        desc: "Python essentials for data analysis, Jupyter Notebook, data structures, functions, and introduction to analytics workflow",
+      },
+      {
+        week: "Week 2",
+        title: "NumPy for Data Processing",
+        desc: "Arrays, vectorized operations, indexing, slicing, reshaping, and mathematical operations on datasets",
+      },
+      {
+        week: "Week 3",
+        title: "Pandas – Data Handling",
+        desc: "Series & DataFrames, importing data (CSV, Excel, APIs), exploring datasets, filtering & selection",
+      },
+      {
+        week: "Week 4",
+        title: "Data Cleaning & Preparation",
+        desc: "Handling missing values, removing duplicates, data type conversions, feature engineering (binning, encoding), transformation techniques",
+      },
+      {
+        week: "Week 5",
+        title: "Exploratory Data Analysis (EDA)",
+        desc: "Understanding data distributions, summary statistics, correlation & relationships, grouping & aggregation, identifying patterns & trends",
+      },
+      {
+        week: "Week 6",
+        title: "Data Visualization with Python",
+        desc: "Matplotlib & Seaborn -bar, line, scatter, histogram, heatmaps, pairplots, data storytelling, and best practices",
+      },
+      {
+        week: "Week 7",
+        title: "Advanced Analysis & Real-World Scenarios",
+        desc: "Working with large datasets, applying functions across datasets, time series basics, business problem-solving, end-to-end workflows",
+      },
+      {
+        week: "Week 8",
+        title: "Case Studies & Projects",
+        desc: "Real-world data analysis project: data cleaning → analysis → visualization → business insights generation and portfolio presentation",
+      },
+    ],
+  },
+
+  /* -- 3. Generative AI Development -- */
+  {
+    id: "ai",
+    slug: "artificial-intelligence",
+
+    /* Homepage */
+    homepageOrder: 3,
+    homepageTitle: "Generative AI Development",
+    badge: "Trending",
+    badgeColor: "badge-orange",
+    accent: "#7c3aed",
+    chapters: [
+      "Python",
+      "LLMs",
+      "LangChain",
+      "Prompt Engineering",
+      "OpenAI API",
+      "RAG",
+    ],
+    desc: "Build real-world AI applications with LLMs, LangChain, and modern GenAI tools. Designed for developers ready to go beyond the basics.",
+
+    /* Courses page */
+    category: "Generative AI",
+    categoryLabel: "AI & ML",
+    bannerImage:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80&auto=format&fit=crop",
+    icon: "fas fa-brain",
+    level: "Beginner → Advanced",
+    duration: "8 weeks",
+    modules: 8,
+    color: "card-green",
+    enrolledCount: 284,
+    title: "Applied AI",
+    subtitle: "From ML Foundations to GenAI Applications",
+    description:
+      "Build real-world AI applications -from ML fundamentals and neural networks to LLMs, RAG pipelines, and deployed AI tools. The complete applied AI journey.",
+    skills: [
+      "Python, NumPy & Pandas",
+      "Machine Learning (scikit-learn)",
+      "Neural Networks & Deep Learning",
+      "Generative AI & LLMs",
+      "RAG & Vector Databases",
+      "AI App Deployment",
+    ],
+    outcomes: [
+      "Build and train ML models from scratch",
+      "Work with LLMs and prompt engineering",
+      "Build document Q&A systems with RAG",
+      "Deploy AI applications with Streamlit/Gradio",
+    ],
+
+    /* Registration */
+    regFee: "₹500",
+    price: "₹12,999",
+    originalPrice: "₹19,999",
+    emi: "₹1,083/mo",
+    nextBatch: "April 5, 2026",
+    batchType: "Weekend Batch",
+    instructor: "Faizan Ansari",
+    includes: [
+      "8 weeks of live weekend sessions",
+      "Recorded lectures for all modules",
+      "8 hands-on projects & case studies",
+      "Doubt resolution support",
+      "Course completion certificate",
+      "Lifetime community access",
+    ],
+    whoIsItFor: [
+      "Developers who want to build AI-powered applications",
+      "Data professionals exploring Generative AI",
+      "Engineers looking to upskill in modern AI tools",
+      "Tech enthusiasts who want hands-on AI experience",
+    ],
+    curriculum: [
+      {
+        week: "Week 1–2",
+        title: "ML Foundations & Python for AI",
+        desc: "Python, NumPy, pandas, ML basics with scikit-learn, train/test splits, and your first ML model",
+      },
+      {
+        week: "Week 3",
+        title: "Deep Learning Fundamentals",
+        desc: "Neural networks basics, backpropagation, and CNN introduction (practical, not heavy theory)",
+      },
+      {
+        week: "Week 4",
+        title: "Generative AI & LLMs",
+        desc: "What are LLMs, prompt engineering, OpenAI / HuggingFace APIs, and build a simple chatbot",
+      },
+      {
+        week: "Week 5",
+        title: "RAG & AI Systems",
+        desc: "Embeddings, vector DB with FAISS, document Q&A system, LangChain / LlamaIndex basics",
+      },
+      {
+        week: "Week 6",
+        title: "Applied AI Use Cases",
+        desc: "Chatbots, recommendation systems, and text classification on real datasets",
+      },
+      {
+        week: "Week 7",
+        title: "Deployment",
+        desc: "Streamlit / Gradio apps, deploy LLM applications, API + UI integration",
+      },
+      {
+        week: "Week 8",
+        title: "Capstone Project",
+        desc: "Build one of: AI chatbot with memory, document Q&A system, or business AI use-case (sales / HR / analytics AI)",
+      },
+    ],
+  },
+
+  /* -- 4. Agentic AI (courses page only) -- */
+  {
+    id: "agentic",
+    slug: "agentic-ai",
+
+    /* Homepage */
+    homepageOrder: null,
+    badge: "New",
+    badgeColor: "badge-purple",
+    accent: "#7c3aed",
+    chapters: [
+      "LangChain",
+      "LangGraph",
+      "AutoGen",
+      "CrewAI",
+      "Tool Use",
+      "Multi-Agent Systems",
+    ],
+    desc: "Design, build, and deploy autonomous AI agents using LangChain, LangGraph, AutoGen, and modern agentic frameworks.",
+
+    /* Courses page */
+    category: "Generative AI",
+    categoryLabel: "AI & ML",
+    bannerImage:
+      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80&auto=format&fit=crop",
+    icon: "fas fa-robot",
+    level: "Intermediate → Advanced",
+    duration: "8 weeks",
+    modules: 8,
+    color: "card-purple",
+    enrolledCount: 143,
+    title: "Agentic AI",
+    subtitle: "Build Autonomous AI Agents",
+    description:
+      "Design, build, and deploy autonomous AI agents using LangChain, LangGraph, AutoGen, and modern agentic frameworks. Go beyond chatbots -build systems that reason, plan, and act.",
+    skills: [
+      "LLM APIs & Prompt Engineering",
+      "LangChain & LangGraph",
+      "RAG & Vector Databases",
+      "Tool Use & Function Calling",
+      "Multi-Agent Systems (AutoGen / CrewAI)",
+      "Evaluation, Guardrails & Deployment",
+    ],
+    outcomes: [
+      "Design multi-step agentic workflows",
+      "Build agents that use tools and APIs autonomously",
+      "Create multi-agent collaboration pipelines",
+      "Add monitoring, guardrails, and deploy production-ready AI agents",
+    ],
+
+    /* Registration */
+    regFee: "₹500",
+    price: "₹14,999",
+    originalPrice: "₹22,999",
+    emi: "₹1,250/mo",
+    nextBatch: "April 12, 2026",
+    batchType: "Weekend Batch",
+    instructor: "Faizan Ansari",
+    includes: [
+      "8 weeks of live weekend sessions",
+      "Recorded sessions & code notebooks",
+      "8 agentic AI projects (one per week)",
+      "LangChain & LangGraph starter kits",
+      "Course completion certificate",
+      "Access to private Discord community",
+    ],
+    whoIsItFor: [
+      "AI/ML engineers who want to go beyond chatbots",
+      "Developers already familiar with Python and LLMs",
+      "Product managers exploring agentic AI architectures",
+      "Builders who want to create autonomous AI workflows",
+    ],
+    curriculum: [
+      {
+        week: "Week 1",
+        title: "LLM Foundations & Prompting",
+        desc: "How LLMs work, OpenAI / Anthropic APIs, prompt engineering (zero-shot, few-shot, CoT), structured outputs (JSON), and hallucination handling",
+      },
+      {
+        week: "Week 2",
+        title: "From LLM Apps to Agents",
+        desc: "LLM app vs agent vs workflow, ReAct pattern, tool calling basics, function calling, and when NOT to use agents",
+      },
+      {
+        week: "Week 3",
+        title: "RAG -Retrieval-Augmented Generation",
+        desc: "Embeddings, vector DB (FAISS), chunking strategies, semantic search, and context injection -build a document Q&A agent",
+      },
+      {
+        week: "Week 4",
+        title: "LangChain as an Enabler",
+        desc: "Chains vs agents, memory types, tools integration, LCEL basics -build a conversational agent with memory & tools",
+      },
+      {
+        week: "Week 5",
+        title: "LangGraph & Stateful Agents",
+        desc: "Stateless vs stateful agents, graph-based workflows, multi-step reasoning pipelines, error handling & retries",
+      },
+      {
+        week: "Week 6",
+        title: "Multi-Agent Systems",
+        desc: "AutoGen / CrewAI, agent roles (planner, researcher, executor), communication patterns, cost & latency tradeoffs",
+      },
+      {
+        week: "Week 7",
+        title: "Evaluation, Debugging & Guardrails",
+        desc: "Why agents fail, debugging reasoning traces, observability (LangSmith / logs), output validation, safety checks, and prompt versioning",
+      },
+      {
+        week: "Week 8",
+        title: "Deployment & Capstone",
+        desc: "FastAPI backend, Streamlit / Gradio UI, API + UI integration, cost optimization -build and deploy a full autonomous agent system",
+      },
+    ],
+  },
+
+  /* -- 5. RAG Systems (courses page only) -- */
+  {
+    id: "rag",
+    slug: "rag-systems",
+
+    /* Homepage */
+    homepageOrder: null,
+    badge: "Hot",
+    badgeColor: "badge-red",
+    accent: "#0d9488",
+    chapters: [
+      "Vector Databases",
+      "Embeddings",
+      "Pinecone",
+      "Chroma / FAISS",
+      "OpenAI API",
+      "Hybrid Search",
+    ],
+    desc: "Build powerful RAG pipelines using vector databases, embeddings, and LLMs. Make AI systems smarter with your own private data.",
+
+    /* Courses page */
+    category: "Generative AI",
+    categoryLabel: "AI & ML",
+    bannerImage:
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80&auto=format&fit=crop",
+    icon: "fas fa-layer-group",
+    level: "Intermediate → Advanced",
+    duration: "4 weeks",
+    modules: 4,
+    color: "card-teal",
+    enrolledCount: 97,
+    title: "Advanced RAG",
+    subtitle: "Production-Grade Retrieval-Augmented Generation",
+    description:
+      "Go beyond basic RAG. Build production-ready RAG systems with hybrid search, advanced retrieval strategies, agentic RAG, and full evaluation pipelines.",
+    skills: [
+      "RAG Architecture & Chunking Strategies",
+      "Hybrid Search (BM25 + Vector)",
+      "Query Transformation & Re-ranking",
+      "Multi-hop & Agentic RAG",
+      "RAG Evaluation (Retrieval & Answer Quality)",
+      "Latency, Caching & Cost Optimization",
+    ],
+    outcomes: [
+      "Build and optimize production-grade RAG pipelines",
+      "Implement hybrid search and advanced retrieval strategies",
+      "Evaluate RAG systems using retrieval precision & answer quality metrics",
+      "Deploy a full RAG system with UI, observability, and cost controls",
+    ],
+
+    /* Registration */
+    regFee: "₹500",
+    price: "₹9,999",
+    originalPrice: "₹14,999",
+    emi: "₹834/mo",
+    nextBatch: "April 19, 2026",
+    batchType: "Weekend Batch",
+    instructor: "Faizan Ansari",
+    includes: [
+      "4 weeks of live weekend sessions",
+      "Recorded sessions & Jupyter notebooks",
+      "4 production-grade RAG projects",
+      "Vector DB & evaluation framework starter kits",
+      "Course completion certificate",
+      "Lifetime community access",
+    ],
+    whoIsItFor: [
+      "AI engineers who want to build knowledge-base chatbots",
+      "Developers integrating private data into LLM applications",
+      "Data engineers building production-grade AI pipelines",
+      "Anyone who wants to go beyond naive, generic RAG systems",
+    ],
+    curriculum: [
+      {
+        week: "Week 1",
+        title: "RAG Foundations Done Right",
+        desc: "RAG anatomy (Ingestion → Chunking → Embeddings → Retrieval → Generation), chunking strategies (fixed vs semantic vs hierarchical), embedding quality, FAISS hands-on, and why naive RAG fails",
+      },
+      {
+        week: "Week 2",
+        title: "Retrieval Optimization",
+        desc: "Hybrid search (BM25 + vector), metadata filtering, query transformation (rewriting, multi-query generation), re-ranking with cross-encoders, and context optimization (top-k tuning, token budgeting)",
+      },
+      {
+        week: "Week 3",
+        title: "Advanced RAG Architectures",
+        desc: "Multi-hop RAG, agentic RAG (RAG + tools), knowledge graphs intro, structured + unstructured data blending, and long-context handling (sliding windows, hierarchical retrieval)",
+      },
+      {
+        week: "Week 4",
+        title: "Evaluation, Scaling & Production",
+        desc: "RAG evaluation (retrieval precision/recall, answer quality), debugging retrieval vs generation failures, latency optimization, caching, cost control, observability -capstone: production-ready RAG system with Streamlit UI",
+      },
+    ],
+  },
+
+  /* -- 6. SQL Mastery (courses page only) -- */
+  {
+    id: "sql",
+    slug: "sql-for-data-analysis",
+
+    /* Homepage */
+    homepageOrder: null,
+    badge: "Essential",
+    badgeColor: "badge-blue",
+    accent: "#4169E1",
+    chapters: [
+      "SELECT & JOINs",
+      "Window Functions",
+      "CTEs & Subqueries",
+      "Query Optimization",
+      "PostgreSQL / MySQL",
+    ],
+    desc: "Go from basic SELECT statements to advanced window functions, query optimization, and database design.",
+
+    /* Courses page */
+    category: "Data Analytics",
+    categoryLabel: "Tools & SQL",
+    bannerImage:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80&auto=format&fit=crop",
+    icon: "fas fa-server",
+    level: "Beginner → Advanced",
+    duration: "8 weeks",
+    modules: 8,
+    color: "card-teal",
+    enrolledCount: 426,
+    title: "SQL Mastery",
+    subtitle: "From Queries to Query Optimization",
+    description:
+      "Master SQL for querying, analyzing, and managing data in real-world systems -from basic SELECT statements to advanced window functions, stored procedures, and query optimization.",
+    skills: [
+      "SELECT, WHERE, ORDER BY & Aggregations",
+      "JOINs & Relationships",
+      "Subqueries, CTEs & UNION",
+      "Window Functions (ROW_NUMBER, RANK, LAG, LEAD)",
+      "Query Optimization & Indexing",
+      "Stored Procedures & User-Defined Functions",
+    ],
+    outcomes: [
+      "Extract insights from databases with complex queries",
+      "Write advanced window functions and analytics queries",
+      "Work with and optimize large datasets",
+      "Write production-level SQL and ace data interviews",
+    ],
+
+    /* Registration */
+    regFee: "₹500",
+    price: "₹6,999",
+    originalPrice: "₹10,999",
+    emi: "₹584/mo",
+    nextBatch: "April 12, 2026",
+    batchType: "Weekend Batch",
+    instructor: "Faizan Ansari",
+    includes: [
+      "8 weeks of live weekend sessions",
+      "Recorded sessions & query workbooks",
+      "8 real-world SQL projects",
+      "PostgreSQL & MySQL practice datasets",
+      "Course completion certificate",
+      "SQL interview question bank (200+)",
+    ],
+    whoIsItFor: [
+      "Beginners who have never written a SQL query before",
+      "Analysts who want to write faster, more complex queries",
+      "Developers who want to understand database design",
+      "Anyone preparing for data analyst or BI engineer interviews",
+    ],
+    curriculum: [
+      {
+        week: "Week 1",
+        title: "Introduction to Databases & SQL",
+        desc: "What is SQL and why it's used, RDBMS concepts, database design fundamentals (schema, ER diagrams), data types, NULL values, constraints, and installing SQL Server & tools",
+      },
+      {
+        week: "Week 2",
+        title: "Getting Started with SQL Queries",
+        desc: "SELECT statements, filtering data (WHERE), sorting (ORDER BY), removing duplicates (DISTINCT), and basic logical & relational operators",
+      },
+      {
+        week: "Week 3",
+        title: "Data Manipulation & Aggregation",
+        desc: "INSERT, UPDATE, DELETE statements, GROUP BY & HAVING, aggregate functions (SUM, COUNT, AVG, MIN, MAX), multiple conditions, data summarization",
+      },
+      {
+        week: "Week 4",
+        title: "Working with Multiple Tables",
+        desc: "INNER, LEFT, RIGHT, FULL JOINs, cross joins & self joins, combining datasets, primary & foreign keys, real-world data modeling",
+      },
+      {
+        week: "Week 5",
+        title: "Advanced Querying Techniques",
+        desc: "Subqueries (nested queries), inline views, UNION / UNION ALL, INTERSECT & EXCEPT, query structuring for readability",
+      },
+      {
+        week: "Week 6",
+        title: "Window Functions & Analytics",
+        desc: "ROW_NUMBER, RANK, DENSE_RANK, LEAD & LAG, partitioning & ordering, running totals, cumulative calculations, analytical queries",
+      },
+      {
+        week: "Week 7",
+        title: "Optimization & Real-World Usage",
+        desc: "Query optimization techniques, indexing basics, stored procedures, user-defined functions, and working with large datasets",
+      },
+      {
+        week: "Week 8",
+        title: "Case Studies & Projects",
+        desc: "End-to-end SQL project, business problem-solving using SQL, data extraction for analytics, production-level queries, and interview preparation",
+      },
+    ],
+  },
+
+  /* -- 7. Advanced Excel (courses page only) -- */
+  {
+    id: "excel",
+    slug: "advanced-excel",
+
+    /* Homepage */
+    homepageOrder: null,
+    badge: null,
+    badgeColor: "",
+    accent: "#217346",
+    chapters: [
+      "XLOOKUP / INDEX-MATCH",
+      "Pivot Tables",
+      "Power Query",
+      "Dynamic Arrays",
+      "VBA Macros",
+      "Dashboard Design",
+    ],
+    desc: "Unlock Excel's full potential -from advanced formulas and pivot tables to Power Query automation and VBA macros.",
+
+    /* Courses page */
+    category: "Data Analytics",
+    categoryLabel: "Tools & SQL",
+    bannerImage:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80&auto=format&fit=crop",
+    icon: "fas fa-table",
+    level: "Beginner → Advanced",
+    duration: "8 weeks",
+    modules: 8,
+    color: "card-orange",
+    enrolledCount: 389,
+    title: "Excel & Advanced Excel",
+    subtitle: "From Fundamentals to Data Dashboards",
+    description:
+      "Master Excel for data analysis, reporting, and dashboard creation -from basic navigation and core functions to advanced pivot tables, dashboards, and dynamic interactive reports.",
+    skills: [
+      "Core Functions (SUM, IF, VLOOKUP, INDEX-MATCH)",
+      "Advanced Formulas & Lookup Techniques",
+      "Data Cleaning & Transformation",
+      "Pivot Tables & Reporting",
+      "Data Visualization & Chart Design",
+      "Interactive Dashboard Design",
+    ],
+    outcomes: [
+      "Automate reports and analyze business data efficiently",
+      "Build interactive, executive-ready dashboards",
+      "Master advanced formulas and data analysis techniques",
+      "Create portfolio-worthy business Excel projects",
+    ],
+
+    /* Registration */
+    regFee: "₹500",
+    price: "₹4,999",
+    originalPrice: "₹7,999",
+    emi: "₹417/mo",
+    nextBatch: "April 5, 2026",
+    batchType: "Weekend Batch",
+    instructor: "Faizan Ansari",
+    includes: [
+      "8 weeks of live weekend sessions",
+      "Recorded sessions & Excel workbooks",
+      "8 dashboard & automation projects",
+      "Excel template starter kit",
+      "Course completion certificate",
+      "Excel interview question bank",
+    ],
+    whoIsItFor: [
+      "Beginners who want to build strong Excel fundamentals",
+      "Working professionals who use Excel but haven't mastered it",
+      "Finance, operations, and marketing professionals",
+      "Anyone who wants to automate and visualize data in Excel",
+    ],
+    curriculum: [
+      {
+        week: "Week 1",
+        title: "Excel Fundamentals",
+        desc: "Introduction to Excel environment, basic navigation & interface, data entry & formatting, sorting, filtering, data validation, and understanding data types",
+      },
+      {
+        week: "Week 2",
+        title: "Core Functions & Data Handling",
+        desc: "SUM, COUNT, AVERAGE; logical functions (IF, AND, OR, NOT); text functions (LEFT, RIGHT, MID, TRIM); date & time functions; named ranges & structured references",
+      },
+      {
+        week: "Week 3",
+        title: "Advanced Functions & Lookups",
+        desc: "VLOOKUP, HLOOKUP (use cases & limitations), INDEX-MATCH (advanced lookup), nested functions, dynamic formulas, and introduction to data modeling in Excel",
+      },
+      {
+        week: "Week 4",
+        title: "Data Analysis & Transformation",
+        desc: "Data cleaning techniques, handling large datasets, conditional formatting, data manipulation using formulas, and preparing data for analysis",
+      },
+      {
+        week: "Week 5",
+        title: "Pivot Tables & Reporting",
+        desc: "Introduction to pivot tables, rows/columns/values/filters, data summarization & aggregation, creating summary reports, and cross-tab analysis",
+      },
+      {
+        week: "Week 6",
+        title: "Advanced Pivot & Data Analysis",
+        desc: "Calculated fields in pivot tables, grouping & binning, slicers & timelines, changing report layouts, and advanced data analysis techniques",
+      },
+      {
+        week: "Week 7",
+        title: "Data Visualization & Dashboarding",
+        desc: "Chart types (bar, line, pie, scatter, etc.), choosing the right chart, chart formatting & customization, introduction to dashboards, and designing interactive dashboards",
+      },
+      {
+        week: "Week 8",
+        title: "Advanced Dashboarding & Project",
+        desc: "Building dynamic dashboards using pivot controls, slicers, timelines, and interactivity; advanced charts (waterfall, thermometer); dashboard design best practices; end-to-end business dashboard project",
+      },
+    ],
+  },
+
+  /* -- 8. Python (Foundation + Data) -- */
+  {
+    id: "python",
+    slug: "python-foundation",
+
+    /* Homepage */
+    homepageOrder: null,
+    badge: "Foundation",
+    badgeColor: "badge-blue",
+    accent: "#3776AB",
+    chapters: [
+      "Python Basics",
+      "OOP",
+      "NumPy",
+      "Pandas",
+      "Data Cleaning",
+      "Case Studies",
+    ],
+    desc: "Learn Python from scratch and use it to solve real-world data problems, automate workflows, and build analytical solutions.",
+
+    /* Courses page */
+    category: "Data Analytics",
+    categoryLabel: "Data",
+    bannerImage:
+      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&q=80&auto=format&fit=crop",
+    icon: "fab fa-python",
+    level: "Beginner",
+    duration: "8 weeks",
+    modules: 8,
+    color: "card-teal",
+    enrolledCount: 210,
+    title: "Python (Foundation + Data)",
+    subtitle: "Python from Scratch to Real-World Data",
+    description:
+      "Learn Python from scratch and use it to solve real-world data problems, automate workflows, and build analytical solutions. Covers fundamentals, OOP, NumPy, and Pandas.",
+    skills: [
+      "Python Fundamentals & Logic",
+      "Data Structures & Functions",
+      "Object-Oriented Programming (OOP)",
+      "NumPy for Numerical Computing",
+      "Pandas for Data Analysis",
+      "Data Cleaning & Transformation",
+    ],
+    outcomes: [
+      "Write production-ready Python code",
+      "Analyze and manipulate real datasets",
+      "Automate repetitive tasks",
+      "Build reusable data pipelines",
+    ],
+
+    /* Registration */
+    regFee: "₹500",
+    price: "₹8,999",
+    originalPrice: "₹13,999",
+    emi: "₹750/mo",
+    nextBatch: "May 10, 2026",
+    batchType: "Weekend Batch",
+    instructor: "Faizan Ansari",
+    includes: [
+      "8 weeks of live weekend sessions",
+      "Recorded sessions & Jupyter notebooks",
+      "8 hands-on data projects",
+      "Python & pandas starter workbooks",
+      "Course completion certificate",
+      "Career placement support",
+    ],
+    whoIsItFor: [
+      "Beginners with zero programming experience",
+      "Data aspirants who want to start with Python",
+      "Professionals looking to automate workflows with Python",
+      "Anyone who wants a strong Python foundation before moving to ML or AI",
+    ],
+    curriculum: [
+      {
+        week: "Week 1",
+        title: "Getting Started with Python",
+        desc: "Introduction to Python & its applications in data science, setting up environment (Anaconda, Jupyter), Python IDEs, packages & libraries, basic syntax & first programs",
+      },
+      {
+        week: "Week 2",
+        title: "Python Fundamentals",
+        desc: "Data types & data structures (strings, lists, tuples, dictionaries), basic operations (mathematical, string, date), control flow (if-else, loops), list & dictionary comprehensions",
+      },
+      {
+        week: "Week 3",
+        title: "Functions & Programming Concepts",
+        desc: "Built-in functions (text, numeric, date, utility), user-defined functions, lambda functions, apply functions, functional programming basics, debugging & code profiling",
+      },
+      {
+        week: "Week 4",
+        title: "Object-Oriented Programming (OOP)",
+        desc: "Python objects & OOP concepts, classes & objects, modules & reusable code, writing structured and scalable Python programs",
+      },
+      {
+        week: "Week 5",
+        title: "NumPy – Numerical Computing",
+        desc: "Introduction to NumPy, arrays & data structures, array creation & initialization, indexing, slicing, reshaping, mathematical operations with NumPy",
+      },
+      {
+        week: "Week 6",
+        title: "Pandas – Data Handling",
+        desc: "Introduction to Pandas, Series & DataFrames, data import (CSV, Excel, files), basic data exploration, filtering, slicing, indexing",
+      },
+      {
+        week: "Week 7",
+        title: "Data Cleaning & Transformation",
+        desc: "Handling missing values, duplicates, outliers; sorting & indexing; data type conversions; column operations; feature engineering (binning, dummy variables); applying functions across datasets",
+      },
+      {
+        week: "Week 8",
+        title: "Case Studies & Projects",
+        desc: "End-to-end data analysis project -real-world dataset handling, data cleaning + transformation + insights, project presentation & best practices",
+      },
+    ],
+  },
+
+  /* -- 9. Tableau -- */
+  {
+    id: "tableau",
+    slug: "tableau-dashboarding",
+
+    /* Homepage */
+    homepageOrder: null,
+    badge: null,
+    badgeColor: "",
+    accent: "#E97627",
+    chapters: [
+      "Tableau Basics",
+      "Calculated Fields",
+      "LOD Expressions",
+      "Dashboards",
+      "Data Storytelling",
+      "Real Projects",
+    ],
+    desc: "Learn how to turn raw data into powerful dashboards that drive decisions -from visualization principles to advanced interactive Tableau dashboards.",
+
+    /* Courses page */
+    category: "Data Analytics",
+    categoryLabel: "Tools & SQL",
+    bannerImage:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80&auto=format&fit=crop",
+    icon: "fas fa-chart-bar",
+    level: "Beginner → Intermediate",
+    duration: "8 weeks",
+    modules: 8,
+    color: "card-orange",
+    enrolledCount: 174,
+    title: "Tableau Dashboarding",
+    subtitle: "Data Visualization & Storytelling",
+    description:
+      "Learn how to turn raw data into powerful dashboards that drive decisions. Covers visualization principles, design ethics, Tableau fundamentals, advanced calculations, and end-to-end dashboard projects.",
+    skills: [
+      "Data Visualization Principles",
+      "Tableau Workspace & Core Charts",
+      "Calculated Fields & Table Calculations",
+      "LOD (Level of Detail) Expressions",
+      "Interactive Dashboards & Actions",
+      "Data Storytelling & Presentation",
+    ],
+    outcomes: [
+      "Build professional interactive dashboards in Tableau",
+      "Present insights clearly with data storytelling",
+      "Design effective, ethical visualizations",
+      "Complete real-world business dashboard projects",
+    ],
+
+    /* Registration */
+    regFee: "₹500",
+    price: "₹7,999",
+    originalPrice: "₹12,999",
+    emi: "₹667/mo",
+    nextBatch: "May 17, 2026",
+    batchType: "Weekend Batch",
+    instructor: "Faizan Ansari",
+    includes: [
+      "8 weeks of live weekend sessions",
+      "Recorded sessions & Tableau workbooks",
+      "8 dashboard design projects",
+      "Tableau dashboard template kit",
+      "Course completion certificate",
+      "Career placement support",
+    ],
+    whoIsItFor: [
+      "Analysts and business professionals moving beyond Excel charts",
+      "Anyone who needs to present data insights to stakeholders",
+      "Beginners in visualization looking for a structured path",
+      "BI professionals wanting to master Tableau",
+    ],
+    curriculum: [
+      {
+        week: "Week 1",
+        title: "Introduction to Data Visualization",
+        desc: "Importance and benefits of data visualization, types (exploratory vs explanatory), basic principles (clarity, simplicity, accuracy), and how data tells a story",
+      },
+      {
+        week: "Week 2",
+        title: "Design Principles for Effective Visualizations",
+        desc: "Gestalt principles, whitespace & alignment, color theory & effective palettes, typography & readability, avoiding clutter (chartjunk)",
+      },
+      {
+        week: "Week 3",
+        title: "Visualization Ethics & Tools Overview",
+        desc: "Common pitfalls (misleading charts, truncation, scaling), ethical visualization practices (bias, transparency, accuracy), overview of tools (Excel, Tableau, Power BI)",
+      },
+      {
+        week: "Week 4",
+        title: "Getting Started with Tableau",
+        desc: "Introduction to Tableau & its architecture, workspace overview, connecting to data sources, dimensions vs measures, data types & properties, shelves, marks card, and Show Me",
+      },
+      {
+        week: "Week 5",
+        title: "Core Visualizations in Tableau",
+        desc: "Bar charts, line charts, scatter plots, tree maps, cross-tabs, tables; sorting, filtering, grouping; totals & aggregations; trend lines, reference lines, forecasting",
+      },
+      {
+        week: "Week 6",
+        title: "Advanced Tableau Concepts",
+        desc: "Sets, bins, hierarchies, context filters, drill-down & drill-through, data blending & joins, working with large datasets",
+      },
+      {
+        week: "Week 7",
+        title: "Calculations & Interactivity",
+        desc: "Calculated fields, table calculations, LOD (Level of Detail) expressions, parameters & what-if analysis, actions (filter, highlight, URL), building dynamic dashboards",
+      },
+      {
+        week: "Week 8",
+        title: "Dashboarding & Real-World Project",
+        desc: "Dashboard design principles, combining multiple visualizations, interactive dashboard creation, performance optimization, end-to-end project (sales/business dashboard), and storytelling presentation",
+      },
+    ],
+  },
+
+  /* -- 10. GenAI Development -- */
+  {
+    id: "genai",
+    slug: "generative-ai-development",
+
+    /* Homepage */
+    homepageOrder: null,
+    badge: "Trending",
+    badgeColor: "badge-purple",
+    accent: "#7c3aed",
+    chapters: [
+      "LLM Foundations",
+      "Prompt Engineering",
+      "LLM APIs",
+      "Chatbots",
+      "RAG Systems",
+      "AI Agents",
+      "Deployment",
+    ],
+    desc: "Learn how to build real-world applications using Generative AI and LLMs -from prompt engineering to deploying AI-powered apps with RAG and agents.",
+
+    /* Courses page */
+    category: "Generative AI",
+    categoryLabel: "AI & ML",
+    bannerImage:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80&auto=format&fit=crop",
+    icon: "fas fa-microchip",
+    level: "Beginner → Advanced",
+    duration: "16 weeks",
+    modules: 16,
+    color: "card-purple",
+    enrolledCount: 128,
+    title: "GenAI Development",
+    subtitle: "Build Real-World AI Applications with LLMs",
+    description:
+      "Learn how to build real-world applications using Generative AI and Large Language Models. Goes beyond theory -from prompt engineering to building advanced chatbots, RAG pipelines, and AI agents, all the way to production deployment.",
+    skills: [
+      "Generative AI & LLM Fundamentals",
+      "Prompt Engineering Techniques",
+      "OpenAI & LLM APIs",
+      "Chatbots & AI-Powered Applications",
+      "Embeddings, Vector DBs & RAG",
+      "AI Agents & Automation Workflows",
+    ],
+    outcomes: [
+      "Build real-world AI applications using LLMs",
+      "Design intelligent chatbots and assistants",
+      "Integrate AI into web apps and workflows",
+      "Work with embeddings, vector search, and RAG systems",
+      "Create portfolio-ready AI projects and deploy them",
+    ],
+
+    /* Registration */
+    regFee: "₹500",
+    price: "₹24,999",
+    originalPrice: "₹34,999",
+    emi: "₹2,084/mo",
+    nextBatch: "May 10, 2026",
+    batchType: "Weekend Batch",
+    instructor: "Faizan Ansari",
+    includes: [
+      "16 weeks of live weekend sessions",
+      "Recorded lectures for all modules",
+      "16 hands-on build-along projects",
+      "LLM API starter kits & vector DB guides",
+      "Course completion certificate",
+      "Lifetime community access",
+    ],
+    whoIsItFor: [
+      "Developers who want to build AI-powered applications",
+      "Data professionals exploring Generative AI",
+      "Engineers looking to upskill in modern AI tools",
+      "Tech enthusiasts who want hands-on AI experience",
+      "Anyone who wants to stay ahead in the AI-driven future",
+    ],
+    curriculum: [
+      {
+        week: "Week 1–2",
+        title: "Foundations of Generative AI",
+        desc: "Introduction to AI, ML, and Generative AI; understanding LLMs (GPT, Claude, etc.); use cases across industries; AI tools ecosystem overview",
+      },
+      {
+        week: "Week 3–4",
+        title: "Prompt Engineering",
+        desc: "Basics of prompting, zero-shot & few-shot prompting, chain-of-thought prompting, prompt optimization techniques, and real-world prompt design",
+      },
+      {
+        week: "Week 5–6",
+        title: "Working with LLM APIs",
+        desc: "OpenAI API (or equivalent), handling requests & responses, token usage & cost optimization, building simple AI applications",
+      },
+      {
+        week: "Week 7–8",
+        title: "Building AI Applications",
+        desc: "Chatbots & assistants, text-based applications, integrating AI into workflows, error handling & reliability",
+      },
+      {
+        week: "Week 9–10",
+        title: "Embeddings & Vector Databases",
+        desc: "What are embeddings, semantic search, vector databases (FAISS / Pinecone / Chroma), building search-based applications",
+      },
+      {
+        week: "Week 11–12",
+        title: "Retrieval-Augmented Generation (RAG)",
+        desc: "RAG architecture, document ingestion & chunking, building knowledge-based AI systems, improving response accuracy",
+      },
+      {
+        week: "Week 13–14",
+        title: "AI Agents & Automation",
+        desc: "Introduction to AI agents, tool usage & orchestration, multi-step reasoning systems, automating workflows using AI",
+      },
+      {
+        week: "Week 15",
+        title: "Deployment & Scaling",
+        desc: "Deploying AI applications, APIs & backend integration, performance & cost optimization, monitoring AI systems",
+      },
+      {
+        week: "Week 16",
+        title: "Capstone Project",
+        desc: "End-to-end AI application with a real-world use case -project presentation and portfolio preparation",
+      },
+    ],
+  },
+
+  /* -- 11. Web Development (homepage only, coming soon) -- */
+  {
+    id: "webdev",
+    slug: "web-development",
+    comingSoon: false,
+
+    /* Homepage */
+    homepageOrder: 4,
+    homepageTitle: "Web Development",
+    badge: null,
+    badgeColor: "",
+    accent: "#f97316",
+    chapters: ["HTML", "CSS", "JavaScript", "ReactJS", "NextJS", "NodeJS"],
+    desc: "Build production-ready web apps from scratch. Learn modern frontend and full-stack development with React and Next.js.",
+
+    /* Courses page */
+    category: "Web Development",
+    categoryLabel: "Web",
+    icon: "fas fa-code",
+    level: "Beginner",
+    duration: "4–5 Months",
+    modules: null,
+    color: "card-orange",
+    enrolledCount: null,
+    title: "Web Development",
+    subtitle: "Modern Full-Stack Development",
+    description:
+      "Build production-ready web apps from scratch. Learn modern frontend and full-stack development with React, Next.js, and Node.js.",
+    skills: [
+      "HTML & CSS",
+      "JavaScript (ES6+)",
+      "ReactJS",
+      "Next.js",
+      "Node.js & Express",
+      "REST APIs",
+    ],
+    outcomes: [
+      "Build responsive, accessible web interfaces",
+      "Create full-stack web applications",
+      "Work with APIs and databases",
+      "Deploy projects to production",
+    ],
+
+    /* Registration -coming soon */
+    regFee: null,
+    price: null,
+    originalPrice: null,
+    emi: null,
+    nextBatch: "Coming Soon",
+    batchType: null,
+    instructor: "Riyaz Akhtar",
+    includes: [],
+    whoIsItFor: [],
+    curriculum: [],
+  },
+
+  /* -- 12. Data Science & AI for Leaders (homepage, coming soon) -- */
+  {
+    id: "leaders",
+    slug: "data-science-for-leaders",
+    comingSoon: true,
+
+    /* Homepage */
+    homepageOrder: 5,
+    homepageTitle: "Data Science & AI for Leaders",
+    badge: "New",
+    badgeColor: "badge-purple",
+    accent: "#ec4899",
+    chapters: ["ML Strategy", "Model Evaluation", "AI Ethics", "Case Studies"],
+    desc: "Designed for managers and senior professionals. Understand AI strategy, model evaluation, and data-driven decision making at scale.",
+
+    /* Courses page */
+    category: "Data Science",
+    categoryLabel: "Data",
+    icon: "fas fa-brain",
+    level: "Advanced",
+    duration: "Coming Soon",
+    modules: null,
+    color: "card-purple",
+    enrolledCount: null,
+    title: "Data Science & AI for Leaders",
+    subtitle: "Strategic AI for Decision Makers",
+    description:
+      "Designed for managers and senior professionals. Understand AI strategy, model evaluation, and data-driven decision making at scale.",
+    skills: [
+      "ML Strategy",
+      "Model Evaluation",
+      "AI Ethics",
+      "Case Studies",
+      "AI for Business",
+    ],
+    outcomes: [
+      "Evaluate AI models and tools critically",
+      "Build data-driven strategy for your team",
+      "Understand AI limitations and risks",
+      "Lead AI-powered business transformations",
+    ],
+
+    /* Registration -coming soon */
+    regFee: null,
+    price: null,
+    originalPrice: null,
+    emi: null,
+    nextBatch: "Coming Soon",
+    batchType: null,
+    instructor: "Faizan Ansari",
+    includes: [],
+    whoIsItFor: [],
+    curriculum: [],
+  },
+];
+
+export const courseListData = coursesData.filter(
+  (c) => c.price && c.curriculum.length > 0,
+);
+
+export const courseRegData = Object.fromEntries(
+  courseListData.map((c) => [
+    c.id,
+    {
+      regFee: c.regFee,
+      price: c.price,
+      originalPrice: c.originalPrice,
+      emi: c.emi,
+      nextBatch: c.nextBatch,
+      batchType: c.batchType,
+      instructor: c.instructor,
+      includes: c.includes,
+      whoIsItFor: c.whoIsItFor,
+      curriculum: c.curriculum,
+    },
+  ]),
+);
+
+/* ----- WORKSHOPS DATA ----- */
 export const workshopData = {
   upcoming: [
     {
@@ -133,7 +1392,7 @@ export const workshopData = {
         {
           time: "10:00 – 10:45",
           title: "Excel Foundations & Formula Mastery",
-          desc: "VLOOKUP, INDEX-MATCH, IF nesting, SUMIFS - formulas every analyst needs",
+          desc: "VLOOKUP, INDEX-MATCH, IF nesting, SUMIFS -formulas every analyst needs",
         },
         {
           time: "10:45 – 11:30",
@@ -172,7 +1431,7 @@ export const workshopData = {
       categoryColor: "#16a34a",
       level: "Intermediate",
       title: "SQL Masterclass for Analysts",
-      desc: "From SELECT to advanced window functions - become the SQL analyst every data team wants to hire.",
+      desc: "From SELECT to advanced window functions -become the SQL analyst every data team wants to hire.",
       tags: ["SQL", "Window Functions", "Query Optimization", "PostgreSQL"],
       date: "April 5, Saturday",
       time: "11:00 AM – 2:00 PM",
@@ -185,7 +1444,7 @@ export const workshopData = {
       originalPrice: "₹2,499",
       outcomes: [
         "Write complex multi-table JOINs with full confidence",
-        "Use window functions - ROW_NUMBER, RANK, LAG, LEAD - like a pro",
+        "Use window functions -ROW_NUMBER, RANK, LAG, LEAD -like a pro",
         "Understand query execution and speed up slow, costly queries",
         "Master CTEs, subqueries, and conditional aggregations",
         "Solve the SQL problems that come up in real analyst interviews",
@@ -265,7 +1524,7 @@ export const workshopData = {
         {
           time: "11:15 – 12:00",
           title: "DAX Formulas & Custom Measures",
-          desc: "CALCULATE, FILTER, SUMX, time intelligence - build real KPIs",
+          desc: "CALCULATE, FILTER, SUMX, time intelligence -build real KPIs",
         },
         {
           time: "12:00 – 12:45",
@@ -294,7 +1553,7 @@ export const workshopData = {
       categoryColor: "#0d9488",
       level: "Intermediate",
       title: "Python for Data Science",
-      desc: "pandas, NumPy, Matplotlib, and Seaborn - learn the entire Python data stack in one intensive day.",
+      desc: "pandas, NumPy, Matplotlib, and Seaborn -learn the entire Python data stack in one intensive day.",
       tags: ["Python", "Pandas", "NumPy", "Matplotlib"],
       date: "April 19, Saturday",
       time: "10:00 AM – 4:00 PM",
@@ -387,7 +1646,7 @@ export const workshopData = {
         {
           time: "10:45 – 11:45",
           title: "Regression Models",
-          desc: "Linear regression, Ridge, Lasso - theory, implementation, and tuning",
+          desc: "Linear regression, Ridge, Lasso -theory, implementation, and tuning",
         },
         {
           time: "11:45 – 12:45",
@@ -421,7 +1680,7 @@ export const workshopData = {
       categoryColor: "#7c3aed",
       level: "Beginner",
       title: "GenAI for Business Professionals",
-      desc: "Use ChatGPT, Copilot, and AI tools to automate reports, analyse data, and make smarter decisions - no coding needed.",
+      desc: "Use ChatGPT, Copilot, and AI tools to automate reports, analyse data, and make smarter decisions -no coding needed.",
       tags: ["ChatGPT", "Copilot", "Prompt Engineering", "AI Tools"],
       date: "May 3, Saturday",
       time: "11:00 AM – 2:00 PM",
@@ -435,7 +1694,7 @@ export const workshopData = {
       outcomes: [
         "Use ChatGPT and Copilot to automate reports, emails, and presentations",
         "Write effective prompts that produce reliable, high-quality AI outputs",
-        "Analyse data and generate insights with AI - no coding required",
+        "Analyse data and generate insights with AI -no coding required",
         "Build AI-powered workflows to 10x your daily productivity",
         "Understand AI limitations and avoid common costly mistakes",
       ],
@@ -443,12 +1702,12 @@ export const workshopData = {
         {
           time: "11:00 – 11:40",
           title: "Introduction to Generative AI",
-          desc: "How LLMs work, ChatGPT vs Gemini vs Copilot - the real differences",
+          desc: "How LLMs work, ChatGPT vs Gemini vs Copilot -the real differences",
         },
         {
           time: "11:40 – 12:10",
           title: "Prompt Engineering Essentials",
-          desc: "Zero-shot, few-shot, chain-of-thought - write prompts that actually work",
+          desc: "Zero-shot, few-shot, chain-of-thought -write prompts that actually work",
         },
         {
           time: "12:10 – 12:40",
@@ -458,7 +1717,7 @@ export const workshopData = {
         {
           time: "12:40 – 13:10",
           title: "Automating Business Workflows",
-          desc: "Emails, proposals, meeting notes, SOPs - automate the boring parts",
+          desc: "Emails, proposals, meeting notes, SOPs -automate the boring parts",
         },
         {
           time: "13:10 – 14:00",
@@ -530,14 +1789,14 @@ export const workshopData = {
   ],
 };
 
+/* ----- TEAM DATA ----- */
 export const teamData = [
   {
     id: 1,
     name: "Waseem Ahmad",
     position: "Founder",
-    profile: "WASEEM",
     image: "/assets/hobbies/dev_2.jpg",
-    bio: "Founder of AnalyticShala and career analytics mentor. With years of hands-on experience in data, Waseem built AnalyticShala to make industry-grade data education accessible to everyone - not just those who can afford premium institutes.",
+    bio: "Founder of AnalyticShala and career analytics mentor. With years of hands-on experience in data, Waseem built AnalyticShala to make industry-grade data education accessible to everyone -not just those who can afford premium institutes.",
     social: [
       {
         href: "https://www.linkedin.com/in/waseem-ahmad-59386617a/",
@@ -545,13 +1804,11 @@ export const teamData = [
       },
     ],
   },
-
   {
     id: 2,
     name: "Faizan Ansari",
     position: "Data Science & AI Trainer, Career Coach",
     college: "ISB Alumnus",
-    profile: "FAIZAN",
     image: "/assets/hobbies/dev_2.jpg",
     bio: "ISB alumnus and Data Science & AI Trainer with 8+ years of industry experience. Has trained 500+ professionals at Fortune 500 companies and mentored dozens of candidates into top data roles at Accenture, Deloitte, and more.",
     social: [
@@ -565,7 +1822,6 @@ export const teamData = [
     id: 3,
     name: "Aishvarya Joshi",
     position: "Business Development Manager",
-    profile: "AISHVARYA",
     image: "/assets/hobbies/dev_1.jpg",
     bio: "Drives growth and partnerships at AnalyticShala, connecting aspiring data professionals with the right programs and career opportunities.",
     social: [],
@@ -574,22 +1830,18 @@ export const teamData = [
     id: 4,
     name: "Tanfiz Hussain",
     position: "Business Development Manager",
-    profile: "TANFIZ",
     image: "/assets/hobbies/dev_3.jpg",
-    bio: "Helps learners navigate the AnalyticShala ecosystem - from program selection to placement support - ensuring every student gets the most out of their learning journey.",
+    bio: "Helps learners navigate the AnalyticShala ecosystem -from program selection to placement support -ensuring every student gets the most out of their learning journey.",
     social: [],
   },
   {
     id: 5,
     name: "Riyaz Akhtar",
-    position: "Web Developer, Trainer",
-    profile: "RIYAZ",
+    position: "Web Developer & Trainer",
     image: "/assets/hobbies/dev_3.jpg",
+    bio: "Full-stack developer and web technology trainer at AnalyticShala. Builds and maintains the platform while teaching modern web development to the next generation of developers.",
     social: [
-      {
-        href: "https://github.com/SonuAkhtar",
-        iconClass: "fab fa-github",
-      },
+      { href: "https://github.com/SonuAkhtar", iconClass: "fab fa-github" },
       {
         href: "https://www.linkedin.com/in/riyaz-akhtar-03bb59129/",
         iconClass: "fab fa-linkedin-in",
@@ -598,6 +1850,7 @@ export const teamData = [
   },
 ];
 
+/* ----- CONTACT DATA ----- */
 export const contactData = [
   {
     id: 0,
@@ -619,11 +1872,12 @@ export const contactData = [
     id: 2,
     icon: "/assets/contact/location.gif",
     name: "Location",
-    info: "Gurgaon - India",
+    info: "Gurgaon, India",
     alt: "location",
   },
 ];
 
+/* ----- TESTIMONIALS ----- */
 export const testimonyData = [
   {
     id: 1,
@@ -631,7 +1885,7 @@ export const testimonyData = [
     review:
       "I had a highly positive experience completing the SQL course with AnalyticShala. The instructor is very knowledgeable, clear and responsive, ensuring an engaging and effective learning experience. I look forward to enrolling in future courses.",
     name: "Sameer",
-    position: "Data Analyst @Infosys",
+    position: "Data Analyst @ Infosys",
   },
   {
     id: 2,
@@ -639,133 +1893,62 @@ export const testimonyData = [
     review:
       "I recently took Data Analytics using Python classes with AnalyticShala, and my experience was exceptional. The course provided a deep and practical understanding of the subject, with the instructor's knowledge and clear teaching style making complex concepts easy to grasp.",
     name: "Neha",
-    position: "Manager @genpact",
+    position: "Manager @ Genpact",
   },
   {
     id: 3,
     image: "/assets/testimony/boy.jpg",
     review:
-      "I received excellent support from AnalyticShala in my Analytics career. The support was helpful and responsive, with clear explanations throughout. The online format allowed me to learn at my own pace and complete assignments easily. The course content was concise.",
+      "I received excellent support from AnalyticShala in my analytics career. The support was helpful and responsive, with clear explanations throughout. The online format allowed me to learn at my own pace. The course content was concise and highly practical.",
     name: "Tabjeel",
-    position: "Data Analyst @Wipro",
+    position: "Data Analyst @ Wipro",
   },
   {
     id: 4,
     image: "/assets/testimony/girl.webp",
     review:
-      "Thank you AnalyticShala, for providing an outstanding learning experience. The trainer's enthusiasm and passion for Data Science and AI made complex concepts easy to understand, while keeping the sessions engaging and enjoyable.",
+      "Thank you AnalyticShala for providing an outstanding learning experience. The trainer's enthusiasm and passion for Data Science and AI made complex concepts easy to understand, while keeping the sessions engaging and enjoyable.",
     name: "Tavleen",
-    position: "Business Analyst @accenture",
+    position: "Business Analyst @ Accenture",
   },
 ];
 
-export const coursesData = [
-  {
-    id: 1,
-    title: "Generative AI Development",
-    category: "Generative AI",
-    icon: "fas fa-robot",
-    accent: "#7c3aed",
-    level: "Intermediate",
-    duration: "3–4 Months",
-    desc: "Build real-world AI applications with LLMs, LangChain, and modern GenAI tools. Designed for developers ready to go beyond the basics.",
-    chapters: [
-      "Python",
-      "LLMs",
-      "LangChain",
-      "Prompt Engineering",
-      "OpenAI API",
-      "RAG",
-    ],
-  },
-  {
-    id: 2,
-    title: "Data Analytics & Visualisation",
-    category: "Data Analytics",
-    icon: "fas fa-chart-bar",
-    accent: "#16a34a",
-    level: "Beginner",
-    duration: "2–3 Months",
-    badge: "Most Popular",
-    desc: "Master the complete analytics stack - from raw data to executive dashboards. The fastest route to a data analyst role.",
-    chapters: [
-      "Advanced Excel",
-      "SQL",
-      "Power BI",
-      "Tableau",
-      "Principles of Visualisation",
-    ],
-  },
-  {
-    id: 3,
-    title: "Data Analytics with Python",
-    category: "Data Analytics",
-    icon: "fas fa-python",
-    accent: "#0d9488",
-    level: "Intermediate",
-    duration: "3 Months",
-    desc: "Go beyond Excel and SQL. Use Python to clean, analyse, and visualise data at scale with industry tools.",
-    chapters: ["SQL", "Python", "Pandas", "NumPy", "Seaborn", "Matplotlib"],
-  },
-  {
-    id: 4,
-    title: "Web Development",
-    category: "Web Development",
-    icon: "fas fa-code",
-    accent: "#f97316",
-    level: "Beginner",
-    duration: "4–5 Months",
-    desc: "Build production-ready web apps from scratch. Learn modern frontend and full-stack development with React and Next.js.",
-    chapters: ["HTML", "CSS", "JavaScript", "ReactJS", "NextJS", "NodeJS"],
-  },
-  {
-    id: 5,
-    title: "Data Science & AI for Leaders",
-    category: "Data Science",
-    icon: "fas fa-brain",
-    accent: "#ec4899",
-    level: "Advanced",
-    duration: "Coming Soon",
-    badge: "New",
-    desc: "Designed for managers and senior professionals. Understand AI strategy, model evaluation, and data-driven decision making at scale.",
-    chapters: ["ML Strategy", "Model Evaluation", "AI Ethics", "Case Studies"],
-  },
-];
-
+/* ----- FAQ DATA ----- */
 export const questionsData = [
   {
     id: 1,
     question:
-      "Can I join these classes even if I am from a non-technical background with no former experience in programming?",
+      "Can I join these classes even if I am from a non-technical background?",
     answer:
-      "Yes, absolutely. AnalyticShala is open to everyone, regardless of their technical background. We use straightforward teaching methods to help students understand analytics easily and develop a strong interest in the subject. Our aim is to make analytics accessible and enjoyable for all participants, regardless of their initial knowledge level.",
+      "Yes, absolutely. AnalyticShala is open to everyone, regardless of their technical background. We use straightforward teaching methods to help students understand analytics easily and develop a strong interest in the subject. Our aim is to make analytics accessible and enjoyable for all participants.",
   },
   {
     id: 2,
     question: "What if I miss a class?",
     answer:
-      "All live sessions are recorded and shared with enrolled students within 24 hours, so you never miss out on course content. Comprehensive notes are also provided for every session. We do recommend attending live classes for the interactive Q&A, but life happens - the recordings have you covered.",
+      "All live sessions are recorded and shared with enrolled students within 24 hours, so you never miss out on course content. Comprehensive notes are also provided for every session. We do recommend attending live classes for the interactive Q&A, but life happens -the recordings have you covered.",
   },
   {
     id: 3,
-    question: "Can I be assured of a guaranteed placement?",
+    question: "Do you offer placement assistance?",
     answer:
-      "At AnalyticShala, we aim to make you self-sufficient. We provide all the necessary study material, and try to make the student confident enough to crack interviews of all sorts.",
+      "Yes. We provide resume reviews, LinkedIn profile audits, mock interviews, and introductions to our hiring partners. Our career team stays with you until you land the role. We focus on making every student interview-ready and confident enough to crack data roles at top companies.",
   },
   {
     id: 4,
     question:
-      "Will I be able to manage and understand these classes alongside my office work?",
+      "Will I be able to manage these classes alongside my office work?",
     answer:
-      "Our classes are held on weekends only. Apart from this, if you take out just an hour everyday for revision, you should be good to go.",
+      "Absolutely. Our classes are held on weekends only, and recorded sessions are shared after every class. With just 1 hour of daily revision on weekdays, you can comfortably keep pace. Most of our students are working professionals who successfully complete the course alongside their jobs.",
   },
 ];
 
+/* ----- WHY US -SCROLL CARDS ----- */
 export const scrollCardsData = [
   {
     id: 1,
     title: "Live Weekend Batches",
-    info: "Join live classes every weekend led by working data professionals - not just teachers. Get real-time feedback, doubt resolution, and a structured learning environment that fits your schedule.",
+    info: "Join live classes every weekend led by working data professionals -not just teachers. Get real-time feedback, doubt resolution, and a structured learning environment that fits your schedule.",
   },
   {
     id: 2,
@@ -775,588 +1958,20 @@ export const scrollCardsData = [
   {
     id: 3,
     title: "Interview Prep & Mock Tests",
-    info: "We simulate real data analyst and data science interviews - from SQL rounds and case studies to Python coding challenges. Graduate ready to ace your first interview.",
+    info: "We simulate real data analyst and data science interviews -from SQL rounds and case studies to Python coding challenges. Graduate ready to ace your first interview.",
   },
   {
     id: 4,
     title: "Real-World Capstone Projects",
-    info: "Build a portfolio employers will notice. Work on actual datasets from e-commerce, finance, and healthcare domains - the kind of projects you can demo in your next job interview.",
+    info: "Build a portfolio employers will notice. Work on actual datasets from e-commerce, finance, and healthcare domains -the kind of projects you can demo in your next job interview.",
   },
   {
     id: 5,
     title: "Career Support & Alumni Network",
-    info: "From resume reviews to LinkedIn profile audits and introductions to hiring partners - our career team stays with you until you land the role, and beyond.",
+    info: "From resume reviews to LinkedIn profile audits and introductions to hiring partners -our career team stays with you until you land the role, and beyond.",
   },
 ];
 
-export const courseListData = [
-  {
-    id: "ai",
-    slug: "artificial-intelligence",
-    icon: "fas fa-brain",
-    badge: "Trending",
-    badgeColor: "badge-orange",
-    title: "Artificial Intelligence",
-    subtitle: "From Fundamentals to Applied AI",
-    level: "Beginner → Advanced",
-    duration: "8 weeks",
-    modules: 12,
-    color: "card-green",
-    description:
-      "Master the foundations of AI including machine learning, neural networks, and real-world AI deployment. Build intelligent systems that solve actual business problems.",
-    skills: [
-      "Machine Learning",
-      "Neural Networks",
-      "TensorFlow / PyTorch",
-      "Model Deployment",
-      "Computer Vision",
-      "NLP Basics",
-    ],
-    outcomes: [
-      "Build and train ML models from scratch",
-      "Implement neural networks for classification & regression",
-      "Deploy AI models to production environments",
-      "Apply AI to solve real business problems",
-    ],
-  },
-  {
-    id: "agentic",
-    slug: "agentic-ai",
-    icon: "fas fa-robot",
-    badge: "New",
-    badgeColor: "badge-purple",
-    title: "Agentic AI",
-    subtitle: "Build Autonomous AI Agents",
-    level: "Intermediate → Advanced",
-    duration: "6 weeks",
-    modules: 10,
-    color: "card-purple",
-    description:
-      "Design, build, and deploy autonomous AI agents using LangChain, LangGraph, AutoGen, and modern agentic frameworks. Go beyond chatbots.",
-    skills: [
-      "LangChain & LangGraph",
-      "AutoGen / CrewAI",
-      "Tool Use & Function Calling",
-      "Multi-Agent Systems",
-      "ReAct & CoT Prompting",
-      "Memory & Planning",
-    ],
-    outcomes: [
-      "Design multi-step agentic workflows",
-      "Build agents that use tools and APIs autonomously",
-      "Create multi-agent collaboration pipelines",
-      "Deploy production-ready AI agents",
-    ],
-  },
-  {
-    id: "rag",
-    slug: "rag-systems",
-    icon: "fas fa-layer-group",
-    badge: "Hot",
-    badgeColor: "badge-red",
-    title: "RAG Systems",
-    subtitle: "Retrieval-Augmented Generation",
-    level: "Intermediate",
-    duration: "5 weeks",
-    modules: 8,
-    color: "card-teal",
-    description:
-      "Build powerful RAG pipelines using vector databases, embeddings, and LLMs. Make AI systems smarter with your own private data.",
-    skills: [
-      "Vector Databases",
-      "Text Embeddings",
-      "Pinecone / Chroma / FAISS",
-      "OpenAI & Anthropic APIs",
-      "Chunking Strategies",
-      "Hybrid Search",
-    ],
-    outcomes: [
-      "Build end-to-end RAG pipelines",
-      "Optimize retrieval accuracy and relevance",
-      "Create custom knowledge base chatbots",
-      "Evaluate and improve RAG performance",
-    ],
-  },
-  {
-    id: "analytics",
-    slug: "data-analytics",
-    icon: "fas fa-chart-bar",
-    badge: "Popular",
-    badgeColor: "badge-green",
-    title: "Data Analytics",
-    subtitle: "Turn Data into Business Insights",
-    level: "Beginner → Intermediate",
-    duration: "7 weeks",
-    modules: 11,
-    color: "card-blue",
-    description:
-      "Collect, clean, analyze, and visualize data to drive business decisions. Learn the tools and thinking used by top analysts worldwide.",
-    skills: [
-      "Python & Pandas",
-      "Tableau / Power BI",
-      "Statistical Analysis",
-      "Data Visualization",
-      "KPI Dashboards",
-      "A/B Testing",
-    ],
-    outcomes: [
-      "Build interactive dashboards and reports",
-      "Perform exploratory data analysis (EDA)",
-      "Identify trends, patterns, and anomalies",
-      "Present data insights to stakeholders",
-    ],
-  },
-  {
-    id: "datascience",
-    slug: "data-science",
-    icon: "fas fa-flask",
-    badge: null,
-    badgeColor: "",
-    title: "Data Science",
-    subtitle: "End-to-End Data Science Projects",
-    level: "Intermediate → Advanced",
-    duration: "10 weeks",
-    modules: 14,
-    color: "card-green",
-    description:
-      "Master the full data science lifecycle - from problem framing and data collection to modeling, evaluation, and deployment in production.",
-    skills: [
-      "Python & Scikit-learn",
-      "Feature Engineering",
-      "Model Evaluation",
-      "Time Series Analysis",
-      "ML Pipelines",
-      "MLOps Basics",
-    ],
-    outcomes: [
-      "Execute complete data science projects end-to-end",
-      "Build predictive and classification models",
-      "Handle real-world messy datasets confidently",
-      "Deploy models as REST APIs",
-    ],
-  },
-  {
-    id: "sql",
-    slug: "sql-for-data-analysis",
-    icon: "fas fa-server",
-    badge: "Essential",
-    badgeColor: "badge-blue",
-    title: "SQL Mastery",
-    subtitle: "From Queries to Query Optimization",
-    level: "Beginner → Advanced",
-    duration: "5 weeks",
-    modules: 9,
-    color: "card-teal",
-    description:
-      "Go from basic SELECT statements to advanced window functions, query optimization, and database design with rigorous hands-on practice.",
-    skills: [
-      "SELECT, JOIN, GROUP BY",
-      "Window Functions",
-      "CTEs & Subqueries",
-      "Index & Query Optimization",
-      "Database Design & Normalization",
-      "PostgreSQL / MySQL",
-    ],
-    outcomes: [
-      "Write complex multi-table queries with confidence",
-      "Optimize slow queries for large datasets",
-      "Design clean, normalized database schemas",
-      "Analyze large datasets entirely in SQL",
-    ],
-  },
-  {
-    id: "excel",
-    slug: "advanced-excel",
-    icon: "fas fa-table",
-    badge: null,
-    badgeColor: "",
-    title: "Advanced Excel",
-    subtitle: "Power Tools for Data Professionals",
-    level: "Intermediate → Advanced",
-    duration: "4 weeks",
-    modules: 8,
-    color: "card-orange",
-    description:
-      "Unlock Excel's full potential - from advanced formulas and pivot tables to Power Query automation, dynamic dashboards, and VBA macros.",
-    skills: [
-      "XLOOKUP / INDEX-MATCH",
-      "Pivot Tables & Charts",
-      "Power Query (M Language)",
-      "Dynamic Arrays & LAMBDA",
-      "VBA & Macro Automation",
-      "Executive Dashboard Design",
-    ],
-    outcomes: [
-      "Automate repetitive tasks with VBA macros",
-      "Build executive-ready interactive dashboards",
-      "Transform and clean data with Power Query",
-      "Master advanced formulas and dynamic arrays",
-    ],
-  },
-];
-
-export const courseRegData = {
-  ai: {
-    regFee: "₹500",
-    price: "₹12,999",
-    originalPrice: "₹19,999",
-    emi: "₹1,083/mo",
-    nextBatch: "April 5, 2026",
-    batchType: "Weekend Batch",
-    instructor: "Faizan Ansari",
-    includes: [
-      "8 weeks of live weekend sessions",
-      "Recorded lectures for all modules",
-      "12 hands-on projects & case studies",
-      "Doubt resolution support",
-      "Course completion certificate",
-      "Lifetime community access",
-    ],
-    whoIsItFor: [
-      "Developers and engineers looking to add AI to their skillset",
-      "Data professionals transitioning to AI/ML roles",
-      "Freshers aiming for AI/ML engineer positions",
-      "Tech enthusiasts who want to build and deploy real AI systems",
-    ],
-    curriculum: [
-      {
-        week: "Week 1–2",
-        title: "ML Foundations & Python for AI",
-        desc: "NumPy, pandas, scikit-learn, train/test splits, and your first ML model",
-      },
-      {
-        week: "Week 3–4",
-        title: "Neural Networks & Deep Learning",
-        desc: "Perceptrons, backprop, CNNs, RNNs - built with TensorFlow & PyTorch",
-      },
-      {
-        week: "Week 5–6",
-        title: "Computer Vision & NLP Basics",
-        desc: "Image classification, object detection, text classification, and embeddings",
-      },
-      {
-        week: "Week 7",
-        title: "Model Evaluation & Tuning",
-        desc: "Cross-validation, hyperparameter tuning, metrics, and avoiding overfitting",
-      },
-      {
-        week: "Week 8",
-        title: "Deployment & Capstone Project",
-        desc: "Deploy your AI model as a REST API; build and present a full end-to-end project",
-      },
-    ],
-  },
-  agentic: {
-    regFee: "₹500",
-    price: "₹14,999",
-    originalPrice: "₹22,999",
-    emi: "₹1,250/mo",
-    nextBatch: "April 12, 2026",
-    batchType: "Weekend Batch",
-    instructor: "Faizan Ansari",
-    includes: [
-      "6 weeks of live weekend sessions",
-      "Recorded sessions & code notebooks",
-      "10 agentic AI mini-projects",
-      "LangChain & LangGraph starter kits",
-      "Course completion certificate",
-      "Access to private Discord community",
-    ],
-    whoIsItFor: [
-      "AI/ML engineers who want to go beyond chatbots",
-      "Developers already familiar with Python and LLMs",
-      "Product managers exploring agentic AI architectures",
-      "Builders who want to create autonomous AI workflows",
-    ],
-    curriculum: [
-      {
-        week: "Week 1",
-        title: "LLM APIs & Prompt Engineering",
-        desc: "OpenAI, Anthropic APIs; zero-shot, few-shot, chain-of-thought techniques",
-      },
-      {
-        week: "Week 2",
-        title: "LangChain Fundamentals",
-        desc: "Chains, memory, agents, tools, and the LangChain Expression Language (LCEL)",
-      },
-      {
-        week: "Week 3",
-        title: "LangGraph & Stateful Agents",
-        desc: "Build stateful, multi-step agentic workflows with LangGraph graphs",
-      },
-      {
-        week: "Week 4",
-        title: "Tool Use & Function Calling",
-        desc: "Give your agents real tools - web search, code execution, APIs, and more",
-      },
-      {
-        week: "Week 5",
-        title: "Multi-Agent Systems",
-        desc: "AutoGen, CrewAI - build teams of agents that collaborate on complex tasks",
-      },
-      {
-        week: "Week 6",
-        title: "Production & Capstone",
-        desc: "Deploy your agent, add monitoring, and present your autonomous AI system",
-      },
-    ],
-  },
-  rag: {
-    regFee: "₹500",
-    price: "₹9,999",
-    originalPrice: "₹14,999",
-    emi: "₹834/mo",
-    nextBatch: "April 19, 2026",
-    batchType: "Weekend Batch",
-    instructor: "Faizan Ansari",
-    includes: [
-      "5 weeks of live weekend sessions",
-      "Recorded sessions & Jupyter notebooks",
-      "8 RAG pipeline projects",
-      "Vector DB starter kits (Pinecone, Chroma)",
-      "Course completion certificate",
-      "Lifetime community access",
-    ],
-    whoIsItFor: [
-      "AI engineers who want to build knowledge-base chatbots",
-      "Developers integrating private data into LLM applications",
-      "Data engineers building production-grade AI pipelines",
-      "Anyone who wants to go beyond generic AI responses",
-    ],
-    curriculum: [
-      {
-        week: "Week 1",
-        title: "LLMs, Embeddings & Vector Search",
-        desc: "How LLMs work, text embeddings, cosine similarity, and vector indices",
-      },
-      {
-        week: "Week 2",
-        title: "Vector Databases",
-        desc: "Pinecone, Chroma, FAISS - setup, indexing, and query optimization",
-      },
-      {
-        week: "Week 3",
-        title: "RAG Pipeline Architecture",
-        desc: "Document loading, chunking strategies, retrieval, and augmented generation",
-      },
-      {
-        week: "Week 4",
-        title: "Advanced RAG Techniques",
-        desc: "Hybrid search, re-ranking, HyDE, and improving retrieval accuracy",
-      },
-      {
-        week: "Week 5",
-        title: "Evaluation & Capstone",
-        desc: "Evaluate your RAG pipeline with RAGAS; build and deploy a full RAG chatbot",
-      },
-    ],
-  },
-  analytics: {
-    regFee: "₹500",
-    price: "₹10,999",
-    originalPrice: "₹16,999",
-    emi: "₹917/mo",
-    nextBatch: "April 5, 2026",
-    batchType: "Weekend Batch",
-    instructor: "Faizan Ansari",
-    includes: [
-      "7 weeks of live weekend sessions",
-      "Recorded sessions & datasets",
-      "11 real-world analytics projects",
-      "Power BI & Tableau starter templates",
-      "Course completion certificate",
-      "Career placement support",
-    ],
-    whoIsItFor: [
-      "Freshers targeting data analyst roles at top companies",
-      "Excel users who want to level up to Python and BI tools",
-      "Business professionals who work with data daily",
-      "Students preparing for analytics and data roles",
-    ],
-    curriculum: [
-      {
-        week: "Week 1",
-        title: "Excel & Data Fundamentals",
-        desc: "Advanced Excel formulas, pivot tables, and dashboarding",
-      },
-      {
-        week: "Week 2",
-        title: "SQL for Analytics",
-        desc: "JOINs, window functions, CTEs, and business query patterns",
-      },
-      {
-        week: "Week 3–4",
-        title: "Python for Data Analysis",
-        desc: "pandas, NumPy, EDA, and data cleaning with real datasets",
-      },
-      {
-        week: "Week 5",
-        title: "Statistical Analysis",
-        desc: "Descriptive stats, hypothesis testing, A/B testing, and distributions",
-      },
-      {
-        week: "Week 6",
-        title: "Data Visualization",
-        desc: "Tableau and Power BI - build interactive, executive-ready dashboards",
-      },
-      {
-        week: "Week 7",
-        title: "Capstone Project",
-        desc: "End-to-end analytics project: collect, clean, analyse, and present insights",
-      },
-    ],
-  },
-  datascience: {
-    regFee: "₹500",
-    price: "₹15,999",
-    originalPrice: "₹24,999",
-    emi: "₹1,334/mo",
-    nextBatch: "May 3, 2026",
-    batchType: "Weekend Batch",
-    instructor: "Faizan Ansari",
-    includes: [
-      "10 weeks of live weekend sessions",
-      "Recorded lectures & Jupyter notebooks",
-      "14 end-to-end DS projects",
-      "ML model deployment guide",
-      "Course completion certificate",
-      "1-on-1 career mentorship session",
-    ],
-    whoIsItFor: [
-      "Python developers transitioning into data science",
-      "Data analysts looking to add ML to their toolkit",
-      "Students targeting data scientist and ML engineer roles",
-      "Professionals who want to build and deploy predictive models",
-    ],
-    curriculum: [
-      {
-        week: "Week 1–2",
-        title: "Python, EDA & Feature Engineering",
-        desc: "Advanced pandas, missing value treatment, outlier handling, feature creation",
-      },
-      {
-        week: "Week 3–4",
-        title: "Supervised ML Models",
-        desc: "Linear & logistic regression, decision trees, random forests, gradient boosting",
-      },
-      {
-        week: "Week 5",
-        title: "Model Evaluation & Tuning",
-        desc: "Cross-validation, GridSearchCV, ROC-AUC, precision-recall, learning curves",
-      },
-      {
-        week: "Week 6–7",
-        title: "Unsupervised Learning & NLP Basics",
-        desc: "Clustering, dimensionality reduction, text vectorization, sentiment analysis",
-      },
-      {
-        week: "Week 8–9",
-        title: "Time Series & ML Pipelines",
-        desc: "ARIMA, Prophet, sklearn pipelines, and MLOps fundamentals",
-      },
-      {
-        week: "Week 10",
-        title: "Deployment & Capstone",
-        desc: "Flask/FastAPI REST APIs, Docker basics, and full DS project presentation",
-      },
-    ],
-  },
-  sql: {
-    regFee: "₹500",
-    price: "₹6,999",
-    originalPrice: "₹10,999",
-    emi: "₹584/mo",
-    nextBatch: "April 12, 2026",
-    batchType: "Weekend Batch",
-    instructor: "Faizan Ansari",
-    includes: [
-      "5 weeks of live weekend sessions",
-      "Recorded sessions & query workbooks",
-      "9 real-world SQL projects",
-      "PostgreSQL & MySQL practice datasets",
-      "Course completion certificate",
-      "SQL interview question bank (200+)",
-    ],
-    whoIsItFor: [
-      "Beginners who have never written a SQL query before",
-      "Analysts who want to write faster, more complex queries",
-      "Developers who want to understand database design",
-      "Anyone preparing for data analyst or BI engineer interviews",
-    ],
-    curriculum: [
-      {
-        week: "Week 1",
-        title: "SQL Foundations",
-        desc: "SELECT, WHERE, ORDER BY, LIMIT, aggregate functions, and GROUP BY",
-      },
-      {
-        week: "Week 2",
-        title: "JOINs & Relationships",
-        desc: "INNER, LEFT, RIGHT, FULL OUTER, SELF JOINs, and relationship design",
-      },
-      {
-        week: "Week 3",
-        title: "CTEs, Subqueries & CASE",
-        desc: "WITH clauses, nested queries, conditional logic, and UNION operations",
-      },
-      {
-        week: "Week 4",
-        title: "Window Functions & Analytics",
-        desc: "ROW_NUMBER, RANK, LEAD, LAG, running totals, and moving averages",
-      },
-      {
-        week: "Week 5",
-        title: "Query Optimization & Capstone",
-        desc: "Index basics, EXPLAIN plans, query rewrites, and interview SQL challenges",
-      },
-    ],
-  },
-  excel: {
-    regFee: "₹500",
-    price: "₹4,999",
-    originalPrice: "₹7,999",
-    emi: "₹417/mo",
-    nextBatch: "April 5, 2026",
-    batchType: "Weekend Batch",
-    instructor: "Faizan Ansari",
-    includes: [
-      "4 weeks of live weekend sessions",
-      "Recorded sessions & Excel workbooks",
-      "8 dashboard & automation projects",
-      "VBA macro starter kit",
-      "Course completion certificate",
-      "Excel interview question bank",
-    ],
-    whoIsItFor: [
-      "Working professionals who use Excel but haven't mastered it",
-      "Freshers who want an analyst-ready Excel skillset",
-      "Finance, operations, and marketing professionals",
-      "Anyone who wants to automate and visualize data in Excel",
-    ],
-    curriculum: [
-      {
-        week: "Week 1",
-        title: "Advanced Formulas & Lookup Functions",
-        desc: "XLOOKUP, INDEX-MATCH, dynamic arrays, LAMBDA, and formula auditing",
-      },
-      {
-        week: "Week 2",
-        title: "Pivot Tables, Charts & Dashboards",
-        desc: "Pivot tables, slicers, dynamic charts, and interactive dashboard design",
-      },
-      {
-        week: "Week 3",
-        title: "Power Query & Data Transformation",
-        desc: "ETL with Power Query (M Language), merging tables, and data shaping",
-      },
-      {
-        week: "Week 4",
-        title: "VBA Macros & Capstone",
-        desc: "Automate tasks with VBA, build a real business automation, and final project",
-      },
-    ],
-  },
-};
-
+/* ----- ABOUT US ----- */
 export const aboutUsText =
-  "At AnalyticShala, we empower learners to thrive in today’s data-driven and AI-powered world. We offer industry-focused courses in Data Analytics, Data Science, Artificial Intelligence, Generative AI, Data Visualization, and Web Development, designed to turn concepts into real-world skills. Our programs blend hands-on learning, practical projects, and real-life use cases, helping you build strong foundations and stay ahead in a rapidly evolving tech landscape.";
+  "At AnalyticShala, we empower learners to thrive in today's data-driven and AI-powered world. We offer industry-focused courses in Data Analytics, Data Science, Artificial Intelligence, Generative AI, Data Visualization, and Web Development, designed to turn concepts into real-world skills. Our programs blend hands-on learning, practical projects, and real-life use cases, helping you build strong foundations and stay ahead in a rapidly evolving tech landscape.";

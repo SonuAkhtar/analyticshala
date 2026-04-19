@@ -833,7 +833,7 @@
   transform: translateY(-1px);
 }
 
-/* Waitlist variant — button not anchor */
+/* Waitlist variant -button not anchor */
 .workshops-page__ticket-cta--waitlist {
   background: transparent;
   border: 1.5px solid var(--page-accent);

@@ -5,6 +5,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "./context/ThemeContext";
 import PageThemeSync from "./context/PageThemeSync";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
+import { AnimatePresence, motion } from "framer-motion";
 
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import ScrollProgress from "./components/ScrollProgress/ScrollProgress";
@@ -57,36 +58,49 @@ const RequireAuth = ({ children }) => {
     : <Navigate to="/admin" state={{ from: location }} replace />;
 };
 
+const pageVariants = {
+  initial: { opacity: 0, y: 12 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] } },
+  exit:    { opacity: 0, y: -8, transition: { duration: 0.18, ease: "easeIn" } },
+};
+
 /* ── Public layout shell (has header/footer) ──────────────── */
-const PublicShell = () => (
-  <>
-    <ScrollToTop />
-    <ScrollProgress />
-    <PageThemeSync />
-    <AnnouncementBar />
-    <Header />
-    <Routes>
-      <Route path="/"                element={<Homepage />} />
-      <Route path="/workshops"       element={<Workshops />} />
-      <Route path="/workshop-details" element={<WorkshopDetails />} />
-      <Route path="/workshop-form"   element={<WorkshopForm />} />
-      <Route path="/payment"         element={<Payment />} />
-      <Route path="/payment-success" element={<PaymentSuccess />} />
-      <Route path="/aboutUs"         element={<AboutUs />} />
-      <Route path="/courses"         element={<Courses />} />
-      <Route path="/privacy-policy"  element={<PrivacyPolicy />} />
-      <Route path="/terms-of-use"    element={<TermsOfUse />} />
-      <Route path="/refund-policy"   element={<RefundPolicy />} />
-      <Route path="/testimony"       element={<Testimony />} />
-      <Route path="/course-details"  element={<CourseDetails />} />
-      <Route path="/course-form"     element={<CourseForm />} />
-      <Route path="/courses/:slug"   element={<CourseDetails />} />
-      <Route path="/workshops/:slug" element={<WorkshopDetails />} />
-      <Route path="*"                element={<NotFound />} />
-    </Routes>
-    <Footer />
-  </>
-);
+const PublicShell = () => {
+  const location = useLocation();
+  return (
+    <>
+      <ScrollToTop />
+      <ScrollProgress />
+      <PageThemeSync />
+      <AnnouncementBar />
+      <Header />
+      <AnimatePresence mode="wait">
+        <motion.div key={location.pathname} variants={pageVariants} initial="initial" animate="animate" exit="exit">
+          <Routes location={location}>
+            <Route path="/"                element={<Homepage />} />
+            <Route path="/workshops"       element={<Workshops />} />
+            <Route path="/workshop-details" element={<WorkshopDetails />} />
+            <Route path="/workshop-form"   element={<WorkshopForm />} />
+            <Route path="/payment"         element={<Payment />} />
+            <Route path="/payment-success" element={<PaymentSuccess />} />
+            <Route path="/aboutUs"         element={<AboutUs />} />
+            <Route path="/courses"         element={<Courses />} />
+            <Route path="/privacy-policy"  element={<PrivacyPolicy />} />
+            <Route path="/terms-of-use"    element={<TermsOfUse />} />
+            <Route path="/refund-policy"   element={<RefundPolicy />} />
+            <Route path="/testimony"       element={<Testimony />} />
+            <Route path="/course-details"  element={<CourseDetails />} />
+            <Route path="/course-form"     element={<CourseForm />} />
+            <Route path="/courses/:slug"   element={<CourseDetails />} />
+            <Route path="/workshops/:slug" element={<WorkshopDetails />} />
+            <Route path="*"               element={<NotFound />} />
+          </Routes>
+        </motion.div>
+      </AnimatePresence>
+      <Footer />
+    </>
+  );
+};
 
 function App() {
   return (

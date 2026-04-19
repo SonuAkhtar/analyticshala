@@ -1,136 +1,249 @@
-import "./learningPath.css";
-import SectionHeader from "../SectionHeader/SectionHeader";
-import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import "./learningPath.css";
 
-const steps = [
+gsap.registerPlugin(ScrollTrigger);
+
+const roadmapSteps = [
   {
-    step: "01",
-    phase: "Foundation",
-    duration: "Weeks 1–3",
-    icon: "fas fa-seedling",
-    color: "#6366f1",
-    title: "Build Your Base",
-    items: [
-      "Python Basics & Logic",
-      "Excel for Data Analysis",
-      "Statistics & Probability",
-      "SQL Fundamentals",
+    phase: "Phase 01",
+    icon: "fas fa-compass",
+    color: "#e63946",
+    colorNext: "#f97316",
+    weeks: "Week 1",
+    title: "Set Your Direction",
+    desc: "Begin with a free 1:1 counselling call. We understand your current skills, map your career goals, and build a personalised 90-day plan just for you.",
+    highlights: [
+      "Free 30-min counselling call",
+      "Career goal & skill-gap analysis",
+      "Personalised 90-day learning plan",
+      "Industry mentor assigned",
     ],
   },
   {
-    step: "02",
-    phase: "Core Analytics",
-    duration: "Weeks 4–7",
-    icon: "fas fa-chart-line",
-    color: "#06b6d4",
-    title: "Analyse & Explore",
-    items: [
-      "Pandas & NumPy",
-      "Data Cleaning & EDA",
-      "Advanced SQL Queries",
-      "Power BI Dashboards",
+    phase: "Phase 02",
+    icon: "fas fa-laptop-code",
+    color: "#f97316",
+    colorNext: "#7c3aed",
+    weeks: "Weeks 2–10",
+    title: "Learn By Doing",
+    desc: "Weekend live classes with industry experts, real-world datasets, and graded assignments -you practise with the same tools professionals actually use on the job.",
+    highlights: [
+      "Live weekend batches",
+      "Real industry datasets",
+      "Weekly graded assignments",
+      "All sessions recorded & accessible",
     ],
   },
   {
-    step: "03",
-    phase: "Advanced Skills",
-    duration: "Weeks 8–11",
-    icon: "fas fa-brain",
-    color: "#a855f7",
-    title: "Go Deeper",
-    items: [
-      "Machine Learning Algorithms",
-      "Model Building & Evaluation",
-      "Tableau & Visualization",
-      "NLP & AI Concepts",
+    phase: "Phase 03",
+    icon: "fas fa-project-diagram",
+    color: "#7c3aed",
+    colorNext: "#10b981",
+    weeks: "Weeks 11–12",
+    title: "Build Your Portfolio",
+    desc: "Solve a real business problem through a capstone project. This becomes the centrepiece of your portfolio -the piece that makes recruiters take notice.",
+    highlights: [
+      "End-to-end capstone project",
+      "GitHub portfolio setup",
+      "LinkedIn profile optimisation",
+      "1:1 project review with mentor",
     ],
   },
   {
-    step: "04",
-    phase: "Career Ready",
-    duration: "Weeks 12–13",
-    icon: "fas fa-briefcase",
+    phase: "Phase 04",
+    icon: "fas fa-handshake",
     color: "#10b981",
-    title: "Land the Role",
-    items: [
-      "Capstone Project",
-      "Portfolio Building",
-      "Interview Simulations",
-      "Placement Support",
+    colorNext: "#10b981",
+    weeks: "Week 13 onwards",
+    title: "Land the Job",
+    desc: "Mock interviews, resume workshops, and direct recruiter connections. We don't stop supporting you until you receive and accept the right offer.",
+    highlights: [
+      "Mock interview simulations",
+      "Resume & cover letter review",
+      "Direct recruiter connections",
+      "Offer negotiation coaching",
     ],
   },
 ];
 
 const LearningPath = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const sectionRef = useRef(null);
+  const nodeRefs = useRef([]);
+  const connectorRefs = useRef([]);
+  const cardRefs = useRef([]);
+
+  useGSAP(
+    () => {
+      if (window.innerWidth < 768) return;
+
+      const nodes = nodeRefs.current;
+      const connectors = connectorRefs.current;
+      const cards = cardRefs.current;
+
+      // ── Initial states ──────────────────────────────────
+      nodes
+        .slice(1)
+        .forEach((n) => gsap.set(n, { opacity: 0.25, scale: 0.75 }));
+      connectors.forEach((c) =>
+        gsap.set(c, { scaleY: 0, transformOrigin: "top center" }),
+      );
+      cards.forEach((c, i) =>
+        gsap.set(c, { autoAlpha: i === 0 ? 1 : 0, y: i === 0 ? 0 : 80 }),
+      );
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "+=290%",
+          pin: true,
+          scrub: 1.5,
+          anticipatePin: 1,
+        },
+      });
+
+      // ── 3 transitions (step 0→1, 1→2, 2→3) ─────────────
+      for (let i = 0; i < roadmapSteps.length - 1; i++) {
+        const b = i; // chapter base position
+        tl.to(connectors[i], { scaleY: 1, ease: "none", duration: 0.5 }, b);
+        tl.to(
+          nodes[i + 1],
+          { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(1.5)" },
+          b + 0.38,
+        );
+        tl.to(
+          cards[i],
+          { autoAlpha: 0, y: -22, duration: 0.2, ease: "power2.in" },
+          b + 0.5,
+        );
+        tl.to(
+          cards[i + 1],
+          { autoAlpha: 1, y: 0, duration: 0.35, ease: "power3.out" },
+          b + 0.68,
+        );
+      }
+    },
+    { scope: sectionRef },
+  );
 
   return (
-    <section className="learning-path" id="learning-path">
-      <div className="container">
-        <SectionHeader
-          eyebrow="YOUR ROADMAP"
-          title="Go from Zero to Job-Ready in 90 Days"
-          subtitle="A structured, mentor-guided journey that takes you from absolute beginner to confident data professional - step by step."
-        />
-
-        <div className="learning-path__track" ref={ref}>
-          {steps.map((s, i) => (
-            <motion.div
-              key={i}
-              className="learning-path__step"
-              style={{ "--step-color": s.color }}
-              initial={{ opacity: 0, y: 40 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                duration: 0.55,
-                delay: i * 0.15,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-            >
-              <div className="learning-path__step-number">{s.step}</div>
-
-              <div className="learning-path__step-header">
-                <div className="learning-path__step-icon">
-                  <i className={s.icon} />
-                </div>
-                <div className="learning-path__step-meta">
-                  <span className="learning-path__phase">{s.phase}</span>
-                  <span className="learning-path__duration">{s.duration}</span>
-                </div>
-              </div>
-
-              <h3 className="learning-path__step-title">{s.title}</h3>
-
-              <ul className="learning-path__items">
-                {s.items.map((item, j) => (
-                  <li key={j}>
-                    <i className="fas fa-check" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+    <section className="lp" id="learning-path" ref={sectionRef}>
+      <div className="lp__inner">
+        {/* ── Header ──────────────────────────────────────── */}
+        <div className="lp__top">
+          <span className="lp__eyebrow">YOUR ROADMAP</span>
+          <h2 className="lp__heading">
+            Go from Zero to <span className="lp__heading-em">Job-Ready</span> in
+            90 Days
+          </h2>
+          <p className="lp__subhead">
+            A structured, mentor-guided journey -step by step, skill by skill,
+            from your first lesson to your first offer.
+          </p>
         </div>
 
-        <motion.div
-          className="learning-path__cta"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.7 }}
-        >
-          <div className="learning-path__cta-content">
-            <p>
-              Ready to follow this roadmap? Book a <strong>free counselling call</strong> and
-              we&apos;ll build your personalised learning plan.
-            </p>
+        {/* ── Main content ─────────────────────────────────── */}
+        <div className="lp__body">
+          {/* Left: progress rail */}
+          <div className="lp__rail">
+            {roadmapSteps.map((step, i) => (
+              <div key={i} className="lp__rail-item">
+                <div className="lp__rail-node-col">
+                  <div
+                    className="lp__node"
+                    ref={(el) => (nodeRefs.current[i] = el)}
+                    style={{ "--nc": step.color }}
+                  >
+                    <i className={step.icon} />
+                  </div>
+                  {i < roadmapSteps.length - 1 && (
+                    <div
+                      className="lp__connector"
+                      ref={(el) => (connectorRefs.current[i] = el)}
+                      style={{
+                        "--nc": step.color,
+                        "--nc-next": step.colorNext,
+                      }}
+                    />
+                  )}
+                </div>
+
+                <div className="lp__rail-content">
+                  <span
+                    className="lp__rail-phase"
+                    style={{ color: step.color }}
+                  >
+                    {step.phase}
+                  </span>
+                  <span className="lp__rail-title">{step.title}</span>
+                  <span className="lp__rail-weeks">{step.weeks}</span>
+
+                  {/* Mobile-only inline detail */}
+                  <div className="lp__inline-detail">
+                    <p className="lp__inline-desc">{step.desc}</p>
+                    <ul className="lp__inline-list">
+                      {step.highlights.map((h, j) => (
+                        <li key={j}>
+                          <i className="fas fa-check-circle" />
+                          {h}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-          <a href="/#contact" className="learning-path__cta-btn">
+
+          {/* Right: detail cards (desktop only) */}
+          <div className="lp__detail">
+            {roadmapSteps.map((step, i) => (
+              <div
+                key={i}
+                className="lp__card"
+                ref={(el) => (cardRefs.current[i] = el)}
+                style={{ "--sc": step.color }}
+              >
+                <div className="lp__card-badge">
+                  <div className="lp__card-badge-icon">
+                    <i className={step.icon} />
+                  </div>
+                  <div>
+                    <span className="lp__card-badge-phase">{step.phase}</span>
+                    <span className="lp__card-badge-weeks">{step.weeks}</span>
+                  </div>
+                </div>
+
+                <h3 className="lp__card-title">{step.title}</h3>
+                <p className="lp__card-desc">{step.desc}</p>
+
+                <ul className="lp__card-list">
+                  {step.highlights.map((h, j) => (
+                    <li key={j}>
+                      <i className="fas fa-check-circle" />
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+
+                <span className="lp__card-num">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── CTA row ─────────────────────────────────────── */}
+        <div className="lp__cta-row">
+          <p>Ready to start your journey?</p>
+          <a href="/#contact" className="lp__cta-btn">
             Book Free Counselling <i className="fas fa-arrow-right" />
           </a>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

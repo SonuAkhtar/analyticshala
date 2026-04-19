@@ -38,7 +38,7 @@ const Download = ({ showDownload, setShowDownload }) => {
 
   const sendNotification = async () => {
     const tempFormData = formData;
-    tempFormData.access_key = "87ca862d-400f-49cc-be1f-1de878f69bfc";
+    tempFormData.access_key = import.meta.env.VITE_WEB3FORMS_KEY;
 
     const json = JSON.stringify(tempFormData);
 

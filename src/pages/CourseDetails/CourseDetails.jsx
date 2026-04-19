@@ -5,6 +5,21 @@ import { courseListData, courseRegData, teamData, testimonyData } from "../../..
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import "./courseDetails.css";
 
+/* Split desc by commas, skipping commas inside parentheses, strip leading "and " */
+const splitBullets = (desc) => {
+  const parts = [];
+  let current = "";
+  let depth = 0;
+  for (const ch of desc) {
+    if (ch === "(") { depth++; current += ch; }
+    else if (ch === ")") { depth--; current += ch; }
+    else if (ch === "," && depth === 0) { parts.push(current.trim()); current = ""; }
+    else { current += ch; }
+  }
+  if (current.trim()) parts.push(current.trim());
+  return parts.map((s) => s.replace(/^and\s+/i, "").trim()).filter(Boolean);
+};
+
 const ENROLLED_COUNT = {
   ai: 284, agentic: 143, rag: 97,
   analytics: 312, datascience: 198,
@@ -36,11 +51,6 @@ const CourseDetails = () => {
     (1 - parsePrice(reg.price) / parsePrice(reg.originalPrice)) * 100
   );
   const enrolledCount = ENROLLED_COUNT[course.id] || 120;
-
-  const handlePreviewClick = () => {
-    const msg = encodeURIComponent(`Hi! I'd like to watch a preview for the "${course.title}" course. Can you share a sample lesson?`);
-    window.open(`https://wa.me/918882641988?text=${msg}`, "_blank", "noopener,noreferrer");
-  };
 
   return (
     <div className="course-details">
@@ -175,7 +185,13 @@ const CourseDetails = () => {
                   <div className="course-details__curr-week">{item.week}</div>
                   <div className="course-details__curr-body">
                     <div className="course-details__curr-title">{item.title}</div>
-                    {item.desc && <div className="course-details__curr-desc">{item.desc}</div>}
+                    {item.desc && (
+                      <ul className="course-details__curr-desc">
+                        {splitBullets(item.desc).map((point, j) => (
+                          <li key={j}>{point}</li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </motion.div>
               ))}
@@ -275,22 +291,6 @@ const CourseDetails = () => {
         </main>
 
         <aside className="course-details__sidebar">
-          {/* Preview video placeholder – click opens WhatsApp to request sample lesson */}
-          <div className="course-details__preview-card" onClick={handlePreviewClick}>
-            <div className="course-details__preview-thumb">
-              <div className="course-details__preview-overlay" />
-              <div className="course-details__preview-play">
-                <i className="fas fa-play" />
-              </div>
-              <div className="course-details__preview-icon-bg">
-                <i className={course.icon} />
-              </div>
-              <div className="course-details__preview-label">
-                <i className="fab fa-whatsapp" /> Request a Sample Lesson
-              </div>
-            </div>
-          </div>
-
           <div className="course-details__price-card">
             <div className="course-details__price-row">
               <span className="course-details__price-now">{reg.price}</span>

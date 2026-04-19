@@ -101,9 +101,10 @@
 }
 
 .questions__item-toggle {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 8px;
   background: color-mix(in srgb, var(--page-accent) 10%, transparent);
   display: flex;
   align-items: center;
@@ -114,6 +115,18 @@
   transition:
     background 0.25s ease,
     color 0.25s ease;
+  cursor: pointer;
+  /* Larger touch target via pseudo-element */
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .questions__item-toggle {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 10px;
+  }
 }
 
 .questions__item--active .questions__item-toggle {

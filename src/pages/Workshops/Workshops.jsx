@@ -314,40 +314,60 @@ const PastCard = ({ workshop }) => (
 /* ── Waitlist Modal ──────────────────────────────────────── */
 const WaitlistModal = ({ workshop, onClose }) => {
   const [email, setEmail] = useState("");
-  const [done, setDone]   = useState(false);
-  const [err, setErr]     = useState(false);
+  const [done, setDone] = useState(false);
+  const [err, setErr] = useState(false);
 
   const submit = (e) => {
     e.preventDefault();
-    if (!email || !/^\S+@\S+\.\S+$/.test(email)) { setErr(true); return; }
+    if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+      setErr(true);
+      return;
+    }
     // Fire-and-forget to WhatsApp (no backend yet)
-    const msg = encodeURIComponent(`Hi! I'd like to join the waitlist for "${workshop.title}". My email: ${email}`);
-    window.open(`https://wa.me/918882641988?text=${msg}`, "_blank", "noopener,noreferrer");
+    const msg = encodeURIComponent(
+      `Hi! I'd like to join the waitlist for "${workshop.title}". My email: ${email}`,
+    );
+    window.open(
+      `https://wa.me/918882641988?text=${msg}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
     setDone(true);
   };
 
   return (
     <div className="wl-overlay" onClick={onClose}>
       <div className="wl-modal" onClick={(e) => e.stopPropagation()}>
-        <button className="wl-modal__close" onClick={onClose}><i className="fas fa-times" /></button>
+        <button className="wl-modal__close" onClick={onClose}>
+          <i className="fas fa-times" />
+        </button>
         {done ? (
           <div className="wl-modal__done">
             <i className="fas fa-check-circle" />
-            <p>You&apos;re on the list! We&apos;ll ping you when seats open for <strong>{workshop.title}</strong>.</p>
+            <p>
+              You&apos;re on the list! We&apos;ll ping you when seats open for{" "}
+              <strong>{workshop.title}</strong>.
+            </p>
           </div>
         ) : (
           <>
-            <div className="wl-modal__icon"><i className="fas fa-bell" /></div>
+            <div className="wl-modal__icon">
+              <i className="fas fa-bell" />
+            </div>
             <h3 className="wl-modal__title">Join the Waitlist</h3>
             <p className="wl-modal__sub">
-              <strong>{workshop.title}</strong> is currently full. Drop your email and we&apos;ll notify you when seats open.
+              <strong>{workshop.title}</strong> is currently full. Drop your
+              email and we&apos;ll notify you when seats open.
             </p>
             <form className="wl-modal__form" onSubmit={submit} noValidate>
               <input
                 type="email"
                 placeholder="your@email.com"
                 value={email}
-                onChange={(e) => { setEmail(e.target.value); setErr(false); }}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setErr(false);
+                }}
                 className={err ? "wl-modal__input--error" : ""}
                 aria-label="Email for waitlist"
               />
@@ -355,7 +375,11 @@ const WaitlistModal = ({ workshop, onClose }) => {
                 Notify Me <i className="fas fa-arrow-right" />
               </button>
             </form>
-            {err && <p className="wl-modal__err"><i className="fas fa-exclamation-circle" /> Enter a valid email.</p>}
+            {err && (
+              <p className="wl-modal__err">
+                <i className="fas fa-exclamation-circle" /> Enter a valid email.
+              </p>
+            )}
           </>
         )}
       </div>
@@ -369,21 +393,34 @@ const Workshops = () => {
   const featured = workshopData.upcoming[0];
 
   /* Derive unique categories */
-  const allCategories = ["All", ...new Set(workshopData.upcoming.map((w) => w.category).filter(Boolean))];
+  const allCategories = [
+    "All",
+    ...new Set(workshopData.upcoming.map((w) => w.category).filter(Boolean)),
+  ];
   const [activeFilter, setActiveFilter] = useState("All");
   const [waitlistWorkshop, setWaitlistWorkshop] = useState(null);
 
-  const filteredWorkshops = activeFilter === "All"
-    ? workshopData.upcoming
-    : workshopData.upcoming.filter((w) => w.category === activeFilter);
+  const filteredWorkshops =
+    activeFilter === "All"
+      ? workshopData.upcoming
+      : workshopData.upcoming.filter((w) => w.category === activeFilter);
 
   return (
     <div className="workshops-page">
       <Helmet>
         <title>Live Workshops &amp; Bootcamps | AnalyticShala</title>
-        <meta name="description" content="Join live weekend workshops in Data Analytics, Python, SQL, Power BI & AI. Small batches, real projects, industry experts. Register for upcoming bootcamps." />
-        <meta property="og:title" content="Live Workshops & Bootcamps | AnalyticShala" />
-        <meta property="og:description" content="Hands-on workshops led by industry professionals. Small batches. Real projects. Job-ready results. Upcoming sessions filling fast." />
+        <meta
+          name="description"
+          content="Join live weekend workshops in Data Analytics, Python, SQL, Power BI & AI. Small batches, real projects, industry experts. Register for upcoming bootcamps."
+        />
+        <meta
+          property="og:title"
+          content="Live Workshops & Bootcamps | AnalyticShala"
+        />
+        <meta
+          property="og:description"
+          content="Hands-on workshops led by industry professionals. Small batches. Real projects. Job-ready results. Upcoming sessions filling fast."
+        />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://analyticshala.in/workshops" />
       </Helmet>
@@ -517,15 +554,12 @@ const Workshops = () => {
             Enroll Before Seats Fill Up
           </motion.h2>
           <motion.p className="workshops-page__section-sub" {...fadeUp(0.12)}>
-            All workshops run in small batches — ensuring personalised attention
+            All workshops run in small batches -ensuring personalised attention
             and a high-quality experience for every participant.
           </motion.p>
 
           {/* Category filter bar */}
-          <motion.div
-            className="workshops-page__filter-bar"
-            {...fadeUp(0.16)}
-          >
+          <motion.div className="workshops-page__filter-bar" {...fadeUp(0.16)}>
             {allCategories.map((cat) => (
               <button
                 key={cat}
@@ -540,7 +574,10 @@ const Workshops = () => {
           {filteredWorkshops.length === 0 ? (
             <div className="workshops-page__empty">
               <i className="fas fa-calendar-times" />
-              <p>No upcoming workshops in <strong>{activeFilter}</strong> right now.</p>
+              <p>
+                No upcoming workshops in <strong>{activeFilter}</strong> right
+                now.
+              </p>
               <button
                 className="workshops-page__filter-chip"
                 onClick={() => setActiveFilter("All")}
