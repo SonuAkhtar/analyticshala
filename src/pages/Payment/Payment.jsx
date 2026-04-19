@@ -6,32 +6,37 @@ import { useLocation, useNavigate } from "react-router-dom";
 const toINR = (paise) => (paise / 100).toLocaleString("en-IN");
 
 const TRUST_BADGES = [
-  { icon: "fas fa-lock",        label: "256-bit SSL" },
-  { icon: "fas fa-shield-alt",  label: "Secure Payment" },
-  { icon: "fas fa-undo",        label: "24-hr Refund" },
+  { icon: "fas fa-lock", label: "256-bit SSL" },
+  { icon: "fas fa-shield-alt", label: "Secure Payment" },
+  { icon: "fas fa-undo", label: "24-hr Refund" },
 ];
 
 const ENROLLED_COUNT = {
-  ai: 284, agentic: 143, rag: 97,
-  analytics: 312, datascience: 198,
-  sql: 426, excel: 389,
+  ai: 284,
+  agentic: 143,
+  rag: 97,
+  analytics: 312,
+  datascience: 198,
+  sql: 426,
+  excel: 389,
 };
 
 const Payment = () => {
   const { state } = useLocation();
-  const navigate  = useNavigate();
+  const navigate = useNavigate();
 
   if (!state) {
     navigate("/");
     return null;
   }
 
-  const itemTitle = state.user?.courseTitle
-    || state.user?.workshopTitle
-    || "AnalyticShala Program";
-  const amountINR  = toINR(state.amount);          // registration fee (what is paid now)
-  const coursePrice = state.coursePrice || null;    // full course price string e.g. "₹12,999"
-  const courseId    = state.user?.courseId;
+  const itemTitle =
+    state.user?.courseTitle ||
+    state.user?.workshopTitle ||
+    "AnalyticShala Program";
+  const amountINR = toINR(state.amount); // registration fee (what is paid now)
+  const coursePrice = state.coursePrice || null; // full course price string e.g. "₹12,999"
+  const courseId = state.user?.courseId;
   const enrolledNum = ENROLLED_COUNT[courseId] || 142;
 
   const openRazorpay = () => {
@@ -41,17 +46,17 @@ const Payment = () => {
     }
 
     const options = {
-      key:         RAZORPAY_KEY_ID,
-      amount:      state.amount,
-      currency:    "INR",
-      name:        "AnalyticShala",
+      key: RAZORPAY_KEY_ID,
+      amount: state.amount,
+      currency: "INR",
+      name: "AnalyticShala",
       description: itemTitle,
-      order_id:    state.orderId,
-      image:       "/favicon.ico",
+      ...(state.orderId ? { order_id: state.orderId } : {}),
+      image: "/favicon.ico",
 
       prefill: {
-        name:    state.user.name,
-        email:   state.user.email,
+        name: state.user.name,
+        email: state.user.email,
         contact: state.user.phone,
       },
 
@@ -60,16 +65,16 @@ const Payment = () => {
           await fetch(GOOGLESHEET_WEB_APP_URL, {
             method: "POST",
             body: new URLSearchParams({
-              action:               "saveRegistration",
-              name:                 state.user.name,
-              email:                state.user.email,
-              phone:                state.user.phone,
-              age:                  state.user.age      || "",
-              status:               state.user.status   || "",
-              mode:                 state.user.mode     || "",
+              action: "saveRegistration",
+              name: state.user.name,
+              email: state.user.email,
+              phone: state.user.phone,
+              age: state.user.age || "",
+              status: state.user.status || "",
+              mode: state.user.mode || "",
               analyticshalaStudent: state.user.analyticshalaStudent || "",
-              courseId:             state.user.courseId || "",
-              paymentId:            response.razorpay_payment_id,
+              courseId: state.user.courseId || "",
+              paymentId: response.razorpay_payment_id,
             }),
           });
         } catch (err) {
@@ -77,7 +82,7 @@ const Payment = () => {
         }
         navigate("/payment-success", {
           state: {
-            name:  state.user.name,
+            name: state.user.name,
             email: state.user.email,
             title: itemTitle,
             paymentId: response.razorpay_payment_id,
@@ -108,7 +113,9 @@ const Payment = () => {
             </div>
             <div className="payment__summary-item-info">
               <span className="payment__summary-item-label">Program</span>
-              <strong className="payment__summary-item-name">{itemTitle}</strong>
+              <strong className="payment__summary-item-name">
+                {itemTitle}
+              </strong>
             </div>
           </div>
 
@@ -116,12 +123,16 @@ const Payment = () => {
 
           <div className="payment__summary-lines">
             <div className="payment__summary-line">
-              <span>Registration Fee <em>(due today)</em></span>
+              <span>
+                Registration Fee <em>(due today)</em>
+              </span>
               <span className="payment__summary-line-amount">₹{amountINR}</span>
             </div>
             {coursePrice && (
               <div className="payment__summary-line payment__summary-line--muted">
-                <span>Full Course Fee <em>(on batch start)</em></span>
+                <span>
+                  Full Course Fee <em>(on batch start)</em>
+                </span>
                 <span>{coursePrice}</span>
               </div>
             )}
@@ -167,8 +178,7 @@ const Payment = () => {
           <p className="payment__methods">
             <i className="fab fa-google-pay" /> Google Pay &nbsp;·&nbsp;
             <i className="fas fa-credit-card" /> Card &nbsp;·&nbsp;
-            <i className="fas fa-university" /> Netbanking &nbsp;·&nbsp;
-            UPI
+            <i className="fas fa-university" /> Netbanking &nbsp;·&nbsp; UPI
           </p>
 
           {/* Trust badges */}

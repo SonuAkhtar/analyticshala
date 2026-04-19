@@ -19,8 +19,11 @@ const CHOICE_FIELDS = [
 ];
 
 const INITIAL_FORM = {
-  name: "", email: "", phone: "",
-  experience: "", goal: "",
+  name: "",
+  email: "",
+  phone: "",
+  experience: "",
+  goal: "",
 };
 
 const STEPS = [
@@ -33,14 +36,15 @@ const CourseForm = () => {
   const [params] = useSearchParams();
   const courseId = params.get("id") || "analytics";
 
-  const course = courseListData.find((c) => c.id === courseId) || courseListData[0];
+  const course =
+    courseListData.find((c) => c.id === courseId) || courseListData[0];
   const reg = courseRegData[course.id] || courseRegData[courseListData[0].id];
 
-  const [step, setStep]                  = useState(1);
-  const [formValue, setFormValue]        = useState(INITIAL_FORM);
-  const [errors, setErrors]              = useState({});
-  const [isSubmitting, setIsSubmitting]  = useState(false);
-  const [submitError, setSubmitError]    = useState("");
+  const [step, setStep] = useState(1);
+  const [formValue, setFormValue] = useState(INITIAL_FORM);
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -72,7 +76,7 @@ const CourseForm = () => {
   const validateStep2 = () => {
     const err = {};
     if (!formValue.experience) err.experience = "Select your experience";
-    if (!formValue.goal)       err.goal       = "Select your learning goal";
+    if (!formValue.goal) err.goal = "Select your learning goal";
     return err;
   };
 
@@ -97,13 +101,15 @@ const CourseForm = () => {
     if (Object.keys(validation).length) return;
 
     const isDev = import.meta.env.DEV;
-    const isPlaceholder = GOOGLESHEET_WEB_APP_URL?.includes("placeholder");
+    const isPlaceholder =
+      !GOOGLESHEET_WEB_APP_URL ||
+      GOOGLESHEET_WEB_APP_URL.includes("placeholder");
 
-    if (isDev && isPlaceholder) {
+    if (isPlaceholder) {
       const priceNum = parseInt(reg.regFee.replace(/[₹,\s]/g, ""), 10);
       navigate("/payment", {
         state: {
-          orderId: `dev_course_${courseId}`,
+          orderId: ``,
           amount: priceNum * 100,
           coursePrice: reg.price,
           user: { ...formValue, courseId, courseTitle: course.title },
@@ -126,7 +132,8 @@ const CourseForm = () => {
       }
 
       const result = await res.json();
-      if (!result.success) throw new Error(result.message || "Order creation failed");
+      if (!result.success)
+        throw new Error(result.message || "Order creation failed");
 
       navigate("/payment", {
         state: {
@@ -146,11 +153,13 @@ const CourseForm = () => {
 
   return (
     <div className="course-form">
-      <Breadcrumb items={[
-        { label: "Courses", href: "/courses" },
-        { label: course.title, href: `/courses/${course.slug || course.id}` },
-        { label: "Register" },
-      ]} />
+      <Breadcrumb
+        items={[
+          { label: "Courses", href: "/courses" },
+          { label: course.title, href: `/courses/${course.slug || course.id}` },
+          { label: "Register" },
+        ]}
+      />
       <div className="course-form__body">
         <div className="course-form__card">
           {/* Course strip */}
@@ -185,11 +194,7 @@ const CourseForm = () => {
                         : ""
                   }`}
                 >
-                  {step > s.num ? (
-                    <i className="fas fa-check" />
-                  ) : (
-                    s.num
-                  )}
+                  {step > s.num ? <i className="fas fa-check" /> : s.num}
                 </div>
                 <span
                   className={`course-form__step-label ${
@@ -219,12 +224,29 @@ const CourseForm = () => {
 
               <div className="course-form__grid">
                 {[
-                  { name: "name",  type: "text",  placeholder: "Full Name",       icon: "fas fa-user" },
-                  { name: "email", type: "email", placeholder: "Email Address",   icon: "fas fa-envelope" },
-                  { name: "phone", type: "tel",   placeholder: "Phone Number (10 digits)", icon: "fas fa-phone" },
+                  {
+                    name: "name",
+                    type: "text",
+                    placeholder: "Full Name",
+                    icon: "fas fa-user",
+                  },
+                  {
+                    name: "email",
+                    type: "email",
+                    placeholder: "Email Address",
+                    icon: "fas fa-envelope",
+                  },
+                  {
+                    name: "phone",
+                    type: "tel",
+                    placeholder: "Phone Number (10 digits)",
+                    icon: "fas fa-phone",
+                  },
                 ].map(({ name, type, placeholder, icon }) => (
                   <div key={name} className="course-form__input-wrap">
-                    <div className={`course-form__input-group${errors[name] ? " course-form__input-group--error" : ""}`}>
+                    <div
+                      className={`course-form__input-group${errors[name] ? " course-form__input-group--error" : ""}`}
+                    >
                       <i className={icon} />
                       <input
                         type={type}
@@ -232,12 +254,19 @@ const CourseForm = () => {
                         name={name}
                         value={formValue[name]}
                         onChange={handleChange}
-                        autoComplete={name === "name" ? "name" : name === "email" ? "email" : "tel"}
+                        autoComplete={
+                          name === "name"
+                            ? "name"
+                            : name === "email"
+                              ? "email"
+                              : "tel"
+                        }
                       />
                     </div>
                     {errors[name] && (
                       <span className="course-form__error-text">
-                        <i className="fas fa-exclamation-circle" /> {errors[name]}
+                        <i className="fas fa-exclamation-circle" />{" "}
+                        {errors[name]}
                       </span>
                     )}
                   </div>
@@ -255,7 +284,8 @@ const CourseForm = () => {
             <form onSubmit={handleSubmit} noValidate>
               <h1>Your Learning Goals</h1>
               <p className="course-form__subtitle">
-                Help us understand you better so we can personalise your experience.
+                Help us understand you better so we can personalise your
+                experience.
               </p>
 
               {CHOICE_FIELDS.map(({ key, label, options }) => (
@@ -270,12 +300,16 @@ const CourseForm = () => {
                       <div
                         key={opt}
                         className={`course-form__choice-card${
-                          formValue[key] === opt ? " course-form__choice-card--active" : ""
+                          formValue[key] === opt
+                            ? " course-form__choice-card--active"
+                            : ""
                         }`}
                         onClick={() => handleChoice(key, opt)}
                         role="button"
                         tabIndex={0}
-                        onKeyDown={(e) => e.key === "Enter" && handleChoice(key, opt)}
+                        onKeyDown={(e) =>
+                          e.key === "Enter" && handleChoice(key, opt)
+                        }
                       >
                         {opt}
                       </div>
@@ -319,7 +353,8 @@ const CourseForm = () => {
 
         {/* Trust note below card */}
         <p className="course-form__trust-note">
-          <i className="fas fa-lock" /> Secure payment &nbsp;·&nbsp; 24-hr refund &nbsp;·&nbsp; No spam
+          <i className="fas fa-lock" /> Secure payment &nbsp;·&nbsp; 24-hr
+          refund &nbsp;·&nbsp; No spam
         </p>
         <a
           href={`https://wa.me/918882641988?text=${encodeURIComponent(`Hi! I have a question about enrolling in ${course.title}.`)}`}
