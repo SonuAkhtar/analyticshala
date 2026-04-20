@@ -1,6 +1,8 @@
 import "./Payment.css";
 
-import { RAZORPAY_KEY_ID } from "../../config";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import { RAZORPAY_KEY_ID, EMAILJS_SERVICE_ID, EMAILJS_REG_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from "../../config";
 import { supabase } from "../../lib/supabase";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -21,6 +23,7 @@ const ENROLLED_COUNT = {
 const Payment = () => {
   const { state } = useLocation();
   const navigate  = useNavigate();
+  const [isProcessing, setIsProcessing] = useState(false);
 
   if (!state) {
     navigate("/");
@@ -57,6 +60,7 @@ const Payment = () => {
       },
 
       handler: async function (response) {
+        setIsProcessing(true);
         try {
           if (supabase) {
             await supabase.from("registrations").insert({
@@ -79,11 +83,33 @@ const Payment = () => {
         } catch (err) {
           console.error("Supabase save failed:", err);
         }
+
+        // Send confirmation email to student (fire-and-forget)
+        if (EMAILJS_SERVICE_ID && EMAILJS_REG_TEMPLATE_ID && EMAILJS_PUBLIC_KEY) {
+          emailjs.send(
+            EMAILJS_SERVICE_ID,
+            EMAILJS_REG_TEMPLATE_ID,
+            {
+              to_name:    state.user.name,
+              to_email:   state.user.email,
+              program:    itemTitle,
+              type:       state.user.courseId ? "Course" : "Workshop",
+              amount:     amountINR,
+              payment_id: response.razorpay_payment_id,
+              phone:      state.user.phone,
+              date:       new Date().toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" }),
+            },
+            EMAILJS_PUBLIC_KEY,
+          ).catch((err) => console.error("Confirmation email failed:", err));
+        }
+
         navigate("/payment-success", {
           state: {
-            name:  state.user.name,
-            email: state.user.email,
-            title: itemTitle,
+            name:      state.user.name,
+            email:     state.user.email,
+            phone:     state.user.phone,
+            title:     itemTitle,
+            amountINR,
             paymentId: response.razorpay_payment_id,
           },
         });
@@ -97,6 +123,16 @@ const Payment = () => {
   };
 
   return (
+    <>
+    {isProcessing && (
+      <div className="payment__processing">
+        <div className="payment__processing-inner">
+          <div className="payment__processing-spinner" />
+          <p>Confirming your enrollment…</p>
+          <span>Please wait, do not close this page</span>
+        </div>
+      </div>
+    )}
     <div className="payment">
       <div className="payment__wrap">
         {/* ── Order Summary ─────────────────────────────── */}
@@ -205,6 +241,7 @@ const Payment = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

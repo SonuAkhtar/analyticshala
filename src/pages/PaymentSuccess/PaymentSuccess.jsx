@@ -1,5 +1,4 @@
-import { useEffect, useRef } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./PaymentSuccess.css";
 
 const STEPS = [
@@ -57,25 +56,32 @@ const Confetti = () => {
 };
 
 const PaymentSuccess = () => {
-  const navigate = useNavigate();
   const { state } = useLocation();
-  const hasRedirected = useRef(false);
 
-  const name = state?.name || "Student";
-  const email = state?.email || "";
-  const title = state?.title || "your program";
+  const name      = state?.name      || "Student";
+  const email     = state?.email     || "";
+  const phone     = state?.phone     || "";
+  const title     = state?.title     || "your program";
+  const amountINR = state?.amountINR || "";
   const paymentId = state?.paymentId || "";
 
-  // Copy referral link
-  const copyReferral = () => {
-    navigator.clipboard.writeText(window.location.origin + "/courses");
-  };
+  const notifyWhatsApp = () => {
+    const lines = [
+      `🎉 New Registration at AnalyticShala!`,
+      ``,
+      `👤 Name: ${name}`,
+      email  ? `📧 Email: ${email}`           : null,
+      phone  ? `📱 Phone: ${phone}`           : null,
+      `📚 Program: ${title}`,
+      amountINR ? `💰 Amount Paid: ₹${amountINR}` : null,
+      paymentId ? `🆔 Payment ID: ${paymentId}`   : null,
+    ].filter(Boolean).join("\n");
 
-  const shareWhatsApp = () => {
-    const msg = encodeURIComponent(
-      `Just enrolled in ${title} at AnalyticShala! 🎉 Use this link to check it out: ${window.location.origin}/courses`,
+    window.open(
+      `https://wa.me/918882641988?text=${encodeURIComponent(lines)}`,
+      "_blank",
+      "noopener,noreferrer",
     );
-    window.open(`https://wa.me/?text=${msg}`, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -94,8 +100,12 @@ const PaymentSuccess = () => {
         <div className="ps__heading-group">
           <h1 className="ps__heading">You&apos;re Enrolled!</h1>
           <p className="ps__sub">
-            Welcome to AnalyticShala, <strong>{name.split(" ")[0]}</strong>! 🎉
+            Welcome to AnalyticShala, <strong>{name.split(" ")[0]}</strong>!
           </p>
+          <div className="ps__program-badge">
+            <i className="fas fa-graduation-cap" />
+            {title}
+          </div>
           {email && (
             <p className="ps__email-note">
               <i className="fas fa-envelope" /> Confirmation sent to{" "}
@@ -109,12 +119,21 @@ const PaymentSuccess = () => {
           )}
         </div>
 
+        {/* WhatsApp notification */}
+        <button className="ps__wa-notify" onClick={notifyWhatsApp}>
+          <i className="fab fa-whatsapp" />
+          <div className="ps__wa-notify-text">
+            <strong>Notify AnalyticShala Team</strong>
+            <span>Send your enrollment details on WhatsApp</span>
+          </div>
+          <i className="fas fa-arrow-right ps__wa-notify-arrow" />
+        </button>
+
         {/* Next steps */}
         <div className="ps__steps">
           <h3 className="ps__steps-title">What happens next?</h3>
           {STEPS.map((step, i) => (
             <div key={i} className="ps__step">
-              <div className="ps__step-num">{i + 1}</div>
               <div className="ps__step-icon">
                 <i className={step.icon} />
               </div>
@@ -135,31 +154,6 @@ const PaymentSuccess = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Refer a friend */}
-        <div className="ps__refer">
-          <div className="ps__refer-text">
-            <i className="fas fa-gift" />
-            <div>
-              <strong>Tell a friend - both get ₹200 off</strong>
-              <span>Share your enrollment and earn rewards</span>
-            </div>
-          </div>
-          <div className="ps__refer-actions">
-            <button
-              className="ps__refer-btn ps__refer-btn--copy"
-              onClick={copyReferral}
-            >
-              <i className="fas fa-copy" /> Copy Link
-            </button>
-            <button
-              className="ps__refer-btn ps__refer-btn--wa"
-              onClick={shareWhatsApp}
-            >
-              <i className="fab fa-whatsapp" /> Share
-            </button>
-          </div>
         </div>
 
         {/* Bottom actions */}

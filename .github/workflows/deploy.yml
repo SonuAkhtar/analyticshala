@@ -11,12 +11,13 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
@@ -29,13 +30,8 @@ jobs:
           VITE_WEB3FORMS_KEY: ${{ secrets.VITE_WEB3FORMS_KEY }}
         run: npm run build
 
-      - name: Inject Razorpay credentials into PHP file
-        run: |
-          sed -i "s|rzp_live_PASTE_YOUR_KEY_ID_HERE|${{ secrets.RZP_KEY_ID }}|g" dist/api/create-order.php
-          sed -i "s|PASTE_YOUR_KEY_SECRET_HERE|${{ secrets.RZP_KEY_SECRET }}|g" dist/api/create-order.php
-
       - name: Deploy to Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}

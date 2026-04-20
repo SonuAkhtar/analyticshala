@@ -163,6 +163,81 @@
   font-size: 0.7rem;
 }
 
+.ps__program-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: color-mix(in srgb, #4f46e5 10%, var(--bg-secondary));
+  border: 1px solid color-mix(in srgb, #4f46e5 20%, transparent);
+  color: #4f46e5;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  margin: 0.5rem auto 0.85rem;
+  max-width: 100%;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* ── WhatsApp notify button ───────────────────────────────── */
+.ps__wa-notify {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(37,211,102,0.1), rgba(37,211,102,0.05));
+  border: 1.5px solid rgba(37, 211, 102, 0.35);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.18s;
+  text-align: left;
+  margin-bottom: 1.25rem;
+}
+
+.ps__wa-notify:hover {
+  background: linear-gradient(135deg, rgba(37,211,102,0.18), rgba(37,211,102,0.09));
+  border-color: rgba(37, 211, 102, 0.6);
+  transform: translateY(-1px);
+}
+
+.ps__wa-notify > .fab {
+  font-size: 1.9rem;
+  color: #25d366;
+  flex-shrink: 0;
+}
+
+.ps__wa-notify-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.ps__wa-notify-text strong {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.ps__wa-notify-text span {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.ps__wa-notify-arrow {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.ps__wa-notify:hover .ps__wa-notify-arrow {
+  transform: translateX(3px);
+  color: #25d366;
+}
+
 /* ── Next steps ───────────────────────────────────────────── */
 .ps__steps {
   background: var(--bg-secondary);

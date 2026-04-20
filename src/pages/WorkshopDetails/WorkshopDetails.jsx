@@ -432,7 +432,7 @@ const WorkshopDetails = () => {
               </span>
             </div>
 
-            <Link to="/workshop-form" className="workshop-details__enroll-btn">
+            <Link to={`/workshop-form?id=${workshop.id}`} className="workshop-details__enroll-btn">
               Secure Your Seat <i className="fas fa-arrow-right" />
             </Link>
 

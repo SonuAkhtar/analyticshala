@@ -24,7 +24,7 @@ export const courseFees = {
 export const workshopFees = {
   1001: { price: 999, originalPrice: 1999 }, // Excel for Data Analysis
   1002: { price: 1499, originalPrice: 2499 }, // SQL Masterclass
-  1007: { price: 1, originalPrice: 299 }, // Web Dev Intro (test)
+  1007: { price: 10, originalPrice: 299 }, // Web Dev Intro (test)
 };
 
 /* ── Helpers ─────────────────────────────────────────────── */
