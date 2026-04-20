@@ -48,6 +48,9 @@ jobs:
           set net:timeout 60
           set net:max-retries 5
           set net:reconnect-interval-base 5
+          pwd
+          ls
+          ls public_html/
           mirror --reverse --delete --verbose --ignore-time dist/ /public_html/
           bye
           LFTP_COMMANDS
