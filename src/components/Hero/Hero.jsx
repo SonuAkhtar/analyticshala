@@ -256,11 +256,14 @@ const MacCarousel = () => {
     touchStartX.current = e.touches[0].clientX;
   }, []);
 
-  const handleTouchEnd = useCallback((e) => {
-    const diff = touchStartX.current - e.changedTouches[0].clientX;
-    if (diff > 50) goTo((current + 1) % SLIDES.length);
-    if (diff < -50) goTo((current - 1 + SLIDES.length) % SLIDES.length);
-  }, [current, goTo]);
+  const handleTouchEnd = useCallback(
+    (e) => {
+      const diff = touchStartX.current - e.changedTouches[0].clientX;
+      if (diff > 50) goTo((current + 1) % SLIDES.length);
+      if (diff < -50) goTo((current - 1 + SLIDES.length) % SLIDES.length);
+    },
+    [current, goTo],
+  );
 
   const ActiveSlide = SLIDES[current].component;
 
@@ -310,7 +313,9 @@ const MacCarousel = () => {
             onClick={() => goTo(i)}
             aria-label={`Go to slide: ${s.windowTitle}`}
           >
-            {i < current && <div className="hero__mac-prog-fill hero__mac-prog-fill--past" />}
+            {i < current && (
+              <div className="hero__mac-prog-fill hero__mac-prog-fill--past" />
+            )}
             {i === current && <ProgressFill key={animKey} />}
           </button>
         ))}
@@ -381,27 +386,6 @@ const Hero = () => {
               & land your first data role in 90 days.
             </motion.p>
           </div>
-
-          <motion.div
-            className="hero__social-strip"
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            custom={2.5}
-          >
-            <div className="hero__avatars">
-              {avatarInitials.map((init, i) => (
-                <span key={i} className="hero__avatar">
-                  {init}
-                </span>
-              ))}
-            </div>
-            <p className="hero__social-text">
-              <strong>500+</strong> students already enrolled&nbsp;
-              <span className="hero__social-stars">★★★★★</span>
-              <span>4.9</span>
-            </p>
-          </motion.div>
 
           <motion.div
             className="hero__urgency"
