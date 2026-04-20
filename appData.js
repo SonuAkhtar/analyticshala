@@ -1,3 +1,5 @@
+import { courseFees, workshopFees, fmt, emi } from "./pricingConfig.js";
+
 export const socialIconsData = [
   {
     id: 1,
@@ -1341,22 +1343,28 @@ export const courseListData = coursesData.filter(
 );
 
 export const courseRegData = Object.fromEntries(
-  courseListData.map((c) => [
-    c.id,
-    {
-      regFee: c.regFee,
-      price: c.price,
-      originalPrice: c.originalPrice,
-      emi: c.emi,
-      nextBatch: c.nextBatch,
-      batchType: c.batchType,
-      instructor: c.instructor,
-      includes: c.includes,
-      whoIsItFor: c.whoIsItFor,
-      curriculum: c.curriculum,
-    },
-  ]),
+  courseListData.map((c) => {
+    const fees = courseFees[c.id];
+    return [
+      c.id,
+      {
+        regFee:        fees ? fmt(fees.regFee)        : c.regFee,
+        price:         fees ? fmt(fees.price)         : c.price,
+        originalPrice: fees ? fmt(fees.originalPrice) : c.originalPrice,
+        emi:           fees ? emi(fees.price)         : c.emi,
+        nextBatch:  c.nextBatch,
+        batchType:  c.batchType,
+        instructor: c.instructor,
+        includes:   c.includes,
+        whoIsItFor: c.whoIsItFor,
+        curriculum: c.curriculum,
+      },
+    ];
+  }),
 );
+
+/* Re-export so WorkshopForm / WorkshopDetails can read live fees */
+export { workshopFees, fmt as fmtPrice };
 
 /* ----- WORKSHOPS DATA ----- */
 export const workshopData = {

@@ -1,9 +1,8 @@
 import { useState } from "react";
 import "./WorkshopForm.css";
 
-import { GOOGLESHEET_WEB_APP_URL } from "../../config";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { workshopData } from "../../../appData";
+import { workshopData, workshopFees } from "../../../appData";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 
 const INPUT_FIELDS = [
@@ -43,9 +42,8 @@ const WorkshopForm = () => {
   const workshop =
     workshopData.upcoming.find((w) => w.id === id) || workshopData.upcoming[0];
 
-  const [formValue, setFormValue]     = useState(INITIAL_FORM);
-  const [errors, setErrors]           = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formValue, setFormValue] = useState(INITIAL_FORM);
+  const [errors, setErrors]       = useState({});
   const [submitError, setSubmitError] = useState("");
 
   const handleChange = (e) => {
@@ -93,42 +91,17 @@ const WorkshopForm = () => {
       return;
     }
 
-    const isDev = import.meta.env.DEV;
-    const isPlaceholder = GOOGLESHEET_WEB_APP_URL?.includes("placeholder");
+    const fees = workshopFees[workshop.id];
+    const priceINR = fees?.price ?? parseInt(workshop.price.replace(/[₹,\s]/g, ""), 10);
 
-    if (isDev && isPlaceholder) {
-      navigate("/payment", {
-        state: { orderId: "dev_order_001", amount: 199900, user: formValue },
-      });
-      return;
-    }
-
-    try {
-      setIsSubmitting(true);
-
-      const res = await fetch(GOOGLESHEET_WEB_APP_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({ action: "createOrder", workshopId: "excel_bootcamp" }),
-      });
-
-      const contentType = res.headers.get("content-type");
-      if (!contentType?.includes("application/json")) {
-        throw new Error("Server returned non-JSON response");
-      }
-
-      const result = await res.json();
-      if (!result.success) throw new Error(result.message || "Order creation failed");
-
-      navigate("/payment", {
-        state: { orderId: result.orderId, amount: result.amount, user: formValue },
-      });
-    } catch (err) {
-      console.error(err);
-      setSubmitError("Unable to connect. Please try again or contact support.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    navigate("/payment", {
+      state: {
+        orderId: "",
+        amount: priceINR * 100,
+        coursePrice: null,
+        user: { ...formValue, workshopId: String(workshop.id), workshopTitle: workshop.title },
+      },
+    });
   };
 
   return (
@@ -180,9 +153,7 @@ const WorkshopForm = () => {
 
           {submitError && <p className="workshop-form__submit-error">{submitError}</p>}
 
-          <button disabled={isSubmitting}>
-            {isSubmitting ? "Preparing Payment..." : "Continue"}
-          </button>
+          <button type="submit">Continue</button>
         </form>
       </div>
     </div>
