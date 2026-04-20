@@ -35,11 +35,18 @@ jobs:
           sed -i "s|rzp_live_PASTE_YOUR_KEY_ID_HERE|${{ secrets.RZP_KEY_ID }}|g" dist/api/create-order.php
           sed -i "s|PASTE_YOUR_KEY_SECRET_HERE|${{ secrets.RZP_KEY_SECRET }}|g" dist/api/create-order.php
 
-      - name: Deploy to Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist/
-          server-dir: /public_html/
+      - name: Deploy to Hostinger via lftp
+        env:
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+          FTP_HOST: ${{ secrets.FTP_SERVER }}
+        run: |
+          sudo apt-get install -y lftp
+          lftp -u "$FTP_USER,$FTP_PASS" "ftp://$FTP_HOST" << 'LFTP_COMMANDS'
+          set ftp:passive-mode true
+          set net:timeout 60
+          set net:max-retries 5
+          set net:reconnect-interval-base 5
+          mirror --reverse --delete --verbose --parallel=2 dist/ /public_html/
+          bye
+          LFTP_COMMANDS
