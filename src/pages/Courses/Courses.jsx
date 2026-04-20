@@ -260,7 +260,6 @@ const Courses = () => {
           rel="stylesheet"
         />
       </Helmet>
-      {/* ── Hero ──────────────────────────────────────────── */}
       <section className="courses-page__hero">
         {/* SVG wave -blue hero melts into cream grid section */}
         <div className="courses-page__hero-curve" aria-hidden="true">
@@ -332,7 +331,6 @@ const Courses = () => {
         </div>
       </section>
 
-      {/* ── Grid Section ──────────────────────────────────── */}
       <section className="courses-page__grid-section">
         <div className="container">
           {/* Filter pills */}
@@ -368,7 +366,6 @@ const Courses = () => {
         </div>
       </section>
 
-      {/* ── Why AnalyticShala - Dark Violet ───────────────── */}
       <section className="courses-page__why-section">
         <div className="container">
           <div className="courses-page__section-label courses-page__section-label--inv">

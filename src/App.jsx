@@ -109,7 +109,6 @@ function App() {
         <BrowserRouter>
           <AuthProvider>
             <Routes>
-              {/* ── Admin routes (no Header/Footer) ───── */}
               <Route path="/admin" element={<AdminLogin />} />
               <Route
                 path="/admin/*"
@@ -126,7 +125,6 @@ function App() {
                 <Route path="announcements" element={<AdminAnnouncements />} />
               </Route>
 
-              {/* ── Public routes (with Header/Footer) ─ */}
               <Route path="/*" element={<PublicShell />} />
             </Routes>
           </AuthProvider>

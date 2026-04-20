@@ -27,7 +27,6 @@ const AdminLayout = () => {
 
   return (
     <div className="adm-layout">
-      {/* ── Mobile overlay ──────────────────────────────── */}
       {sidebarOpen && (
         <div
           className="adm-layout__mob-overlay"
@@ -35,7 +34,6 @@ const AdminLayout = () => {
         />
       )}
 
-      {/* ── Sidebar ─────────────────────────────────────── */}
       <aside
         className={`adm-sidebar ${sidebarOpen ? "adm-sidebar--open" : ""}`}
       >
@@ -103,7 +101,6 @@ const AdminLayout = () => {
         </div>
       </aside>
 
-      {/* ── Main area ───────────────────────────────────── */}
       <div className="adm-main">
         {/* Top bar */}
         <header className="adm-topbar">

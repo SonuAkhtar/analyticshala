@@ -33,8 +33,8 @@ const Payment = () => {
   const itemTitle = state.user?.courseTitle
     || state.user?.workshopTitle
     || "AnalyticShala Program";
-  const amountINR  = toINR(state.amount);          // registration fee (what is paid now)
-  const coursePrice = state.coursePrice || null;    // full course price string e.g. "₹12,999"
+  const amountINR  = toINR(state.amount);
+  const coursePrice = state.coursePrice || null;
   const courseId    = state.user?.courseId;
   const enrolledNum = ENROLLED_COUNT[courseId] || 142;
 
@@ -61,6 +61,8 @@ const Payment = () => {
 
       handler: async function (response) {
         setIsProcessing(true);
+        const waDate = new Date().toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" });
+
         try {
           if (supabase) {
             await supabase.from("registrations").insert({
@@ -84,7 +86,6 @@ const Payment = () => {
           console.error("Supabase save failed:", err);
         }
 
-        // Send confirmation email to student (fire-and-forget)
         if (EMAILJS_SERVICE_ID && EMAILJS_REG_TEMPLATE_ID && EMAILJS_PUBLIC_KEY) {
           emailjs.send(
             EMAILJS_SERVICE_ID,
@@ -97,7 +98,7 @@ const Payment = () => {
               amount:     amountINR,
               payment_id: response.razorpay_payment_id,
               phone:      state.user.phone,
-              date:       new Date().toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" }),
+              date:       waDate,
             },
             EMAILJS_PUBLIC_KEY,
           ).catch((err) => console.error("Confirmation email failed:", err));
@@ -135,7 +136,6 @@ const Payment = () => {
     )}
     <div className="payment">
       <div className="payment__wrap">
-        {/* ── Order Summary ─────────────────────────────── */}
         <div className="payment__summary">
           <div className="payment__summary-header">
             <i className="fas fa-receipt" />
@@ -172,14 +172,12 @@ const Payment = () => {
             <strong>₹{amountINR}</strong>
           </div>
 
-          {/* Social proof - course specific */}
           <div className="payment__summary-proof">
             <i className="fas fa-users" />
             <span>{enrolledNum}+ learners already enrolled in this course</span>
           </div>
         </div>
 
-        {/* ── Checkout Card ─────────────────────────────── */}
         <div className="payment__card">
           <div className="payment__card-header">
             <h2>Complete Your Enrollment</h2>
@@ -188,7 +186,6 @@ const Payment = () => {
             </p>
           </div>
 
-          {/* Student info recap */}
           <div className="payment__student-recap">
             <div className="payment__student-avatar">
               {state.user.name?.charAt(0).toUpperCase() || "U"}
@@ -211,7 +208,6 @@ const Payment = () => {
             UPI
           </p>
 
-          {/* Trust badges */}
           <div className="payment__trust-badges">
             {TRUST_BADGES.map((b, i) => (
               <div key={i} className="payment__trust-badge">
@@ -221,7 +217,6 @@ const Payment = () => {
             ))}
           </div>
 
-          {/* WhatsApp escape hatch */}
           <a
             href={`https://wa.me/918882641988?text=${encodeURIComponent("Hi! I have a question about my enrollment for " + itemTitle + ".")}`}
             target="_blank"

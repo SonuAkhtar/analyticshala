@@ -83,7 +83,6 @@ const LearningPath = () => {
       const connectors = connectorRefs.current;
       const cards = cardRefs.current;
 
-      // ── Initial states ──────────────────────────────────
       nodes
         .slice(1)
         .forEach((n) => gsap.set(n, { opacity: 0.25, scale: 0.75 }));
@@ -105,7 +104,6 @@ const LearningPath = () => {
         },
       });
 
-      // ── 3 transitions (step 0→1, 1→2, 2→3) ─────────────
       for (let i = 0; i < roadmapSteps.length - 1; i++) {
         const b = i; // chapter base position
         tl.to(connectors[i], { scaleY: 1, ease: "none", duration: 0.5 }, b);
@@ -132,7 +130,6 @@ const LearningPath = () => {
   return (
     <section className="lp" id="learning-path" ref={sectionRef}>
       <div className="lp__inner">
-        {/* ── Header ──────────────────────────────────────── */}
         <div className="lp__top">
           <span className="lp__eyebrow">YOUR ROADMAP</span>
           <h2 className="lp__heading">
@@ -145,7 +142,6 @@ const LearningPath = () => {
           </p>
         </div>
 
-        {/* ── Main content ─────────────────────────────────── */}
         <div className="lp__body">
           {/* Left: progress rail */}
           <div className="lp__rail">
@@ -237,7 +233,6 @@ const LearningPath = () => {
           </div>
         </div>
 
-        {/* ── CTA row ─────────────────────────────────────── */}
         <div className="lp__cta-row">
           <p>Ready to start your journey?</p>
           <a href="/#contact" className="lp__cta-btn">

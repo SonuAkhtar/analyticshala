@@ -85,7 +85,6 @@ const Testimony = () => {
 
   return (
     <div className="testimony-page">
-      {/* ── Hero - full-width centered ───────────────────── */}
       <section className="testimony-page__hero">
         <div className="testimony-page__hero-glow" />
         <div className="container testimony-page__hero-inner">
@@ -172,7 +171,6 @@ const Testimony = () => {
         </div>
       </section>
 
-      {/* ── Stats bar ────────────────────────────────────── */}
       <div className="testimony-page__stats-bar">
         <div className="container testimony-page__stats-inner">
           {heroStats.map((s, i) => (
@@ -185,7 +183,6 @@ const Testimony = () => {
         </div>
       </div>
 
-      {/* ── Masonry Reviews ──────────────────────────────── */}
       <section className="testimony-page__reviews">
         <div className="container">
           <motion.span className="testimony-page__eyebrow" {...fadeUp(0)}>
@@ -210,7 +207,6 @@ const Testimony = () => {
         </div>
       </section>
 
-      {/* ── Alumni Company Strip ─────────────────────────── */}
       <div className="testimony-page__alumni-strip">
         <div className="container testimony-page__alumni-inner">
           <span className="testimony-page__alumni-label">
@@ -226,7 +222,6 @@ const Testimony = () => {
         </div>
       </div>
 
-      {/* ── Trust Strip ──────────────────────────────────── */}
       <section className="testimony-page__trust">
         <div className="container testimony-page__trust-inner">
           {trustItems.map((item, i) => (
@@ -247,7 +242,6 @@ const Testimony = () => {
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────── */}
       <section className="testimony-page__cta">
         <div className="container testimony-page__cta-inner">
           <motion.div className="testimony-page__cta-pills" {...fadeUp(0)}>

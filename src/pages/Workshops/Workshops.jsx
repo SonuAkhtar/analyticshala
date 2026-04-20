@@ -424,7 +424,6 @@ const Workshops = () => {
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://analyticshala.in/workshops" />
       </Helmet>
-      {/* ── Hero ────────────────────────────────────────── */}
       <section className="workshops-page__hero">
         <div className="workshops-page__hero-orb" />
 
@@ -493,7 +492,6 @@ const Workshops = () => {
         </div>
       </section>
 
-      {/* ── Countdown strip ─────────────────────────────── */}
       <div className="workshops-page__countdown">
         <span className="workshops-page__countdown-label-main">
           <i className="fas fa-circle" /> NEXT WORKSHOP STARTS IN
@@ -513,7 +511,6 @@ const Workshops = () => {
         </div>
       </div>
 
-      {/* ── Trust strip ─────────────────────────────────── */}
       <div className="workshops-page__trust">
         <div className="container workshops-page__trust-inner">
           {trustPoints.map((t, i) => (
@@ -537,7 +534,6 @@ const Workshops = () => {
         </div>
       </div>
 
-      {/* ── Upcoming Workshops ───────────────────────────── */}
       <section className="workshops-page__upcoming" id="upcoming">
         <div className="container">
           <motion.span
@@ -607,7 +603,6 @@ const Workshops = () => {
         </div>
       </section>
 
-      {/* ── Community Strip ─────────────────────────────── */}
       <div className="workshops-page__community">
         <div className="container workshops-page__community-inner">
           <div className="workshops-page__avatar-stack">
@@ -629,7 +624,6 @@ const Workshops = () => {
         </div>
       </div>
 
-      {/* ── Past Workshops ───────────────────────────────── */}
       <section className="workshops-page__past">
         <div className="container">
           <motion.span
@@ -678,7 +672,6 @@ const Workshops = () => {
         </div>
       </section>
 
-      {/* ── Dark amber CTA ───────────────────────────────── */}
       <section className="workshops-page__cta">
         <div className="container workshops-page__cta-inner">
           <motion.span

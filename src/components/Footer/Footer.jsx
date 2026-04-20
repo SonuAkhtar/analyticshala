@@ -7,7 +7,6 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      {/* ── CTA + Nav -unified background ─────────────────── */}
       <div className="footer__body">
         <div className="footer__body-inner">
           {/* CTA Band */}
@@ -137,7 +136,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* ── Bottom Bar ──────────────────────────────────────── */}
       <div className="footer__bottom">
         <div className="footer__bottom-inner">
           <span>© {currentYear} AnalyticShala. All rights reserved.</span>

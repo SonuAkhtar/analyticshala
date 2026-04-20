@@ -190,7 +190,6 @@ const CourseForm = () => {
             ))}
           </div>
 
-          {/* ── Step 1: Personal Info ────────────────────── */}
           {step === 1 && (
             <form onSubmit={handleNext} noValidate>
               <h1>Your Details</h1>
@@ -231,7 +230,6 @@ const CourseForm = () => {
             </form>
           )}
 
-          {/* ── Step 2: Learning Preferences ────────────── */}
           {step === 2 && (
             <form onSubmit={handleSubmit} noValidate>
               <h1>Your Learning Goals</h1>

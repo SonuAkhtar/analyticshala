@@ -72,7 +72,6 @@ function Homepage() {
       </Helmet>
       <Download showDownload={showDownload} setShowDownload={setShowDownload} />
 
-      {/* ── Blue Hero ─────────────────────────────────────── */}
       <Hero />
 
       {/* Wave: red hero → light sections */}
@@ -89,7 +88,6 @@ function Homepage() {
         </svg>
       </div>
 
-      {/* ── Cream Sections ────────────────────────────────── */}
       <SocialProof />
       <Courses setShowDownload={setShowDownload} />
       <TrustedBy />
@@ -107,7 +105,6 @@ function Homepage() {
         </svg>
       </div>
 
-      {/* ── Dark Testimony Section ────────────────────────── */}
       <div className="home-testimony">
         <Testimony />
       </div>
@@ -126,7 +123,6 @@ function Homepage() {
         </svg>
       </div>
 
-      {/* ── Cream Sections ────────────────────────────────── */}
       <HomeTeam />
       <Questions />
       <Contact />

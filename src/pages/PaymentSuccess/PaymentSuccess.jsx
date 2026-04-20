@@ -65,24 +65,6 @@ const PaymentSuccess = () => {
   const amountINR = state?.amountINR || "";
   const paymentId = state?.paymentId || "";
 
-  const notifyWhatsApp = () => {
-    const lines = [
-      `🎉 New Registration at AnalyticShala!`,
-      ``,
-      `👤 Name: ${name}`,
-      email  ? `📧 Email: ${email}`           : null,
-      phone  ? `📱 Phone: ${phone}`           : null,
-      `📚 Program: ${title}`,
-      amountINR ? `💰 Amount Paid: ₹${amountINR}` : null,
-      paymentId ? `🆔 Payment ID: ${paymentId}`   : null,
-    ].filter(Boolean).join("\n");
-
-    window.open(
-      `https://wa.me/918882641988?text=${encodeURIComponent(lines)}`,
-      "_blank",
-      "noopener,noreferrer",
-    );
-  };
 
   return (
     <div className="ps">
@@ -120,14 +102,6 @@ const PaymentSuccess = () => {
         </div>
 
         {/* WhatsApp notification */}
-        <button className="ps__wa-notify" onClick={notifyWhatsApp}>
-          <i className="fab fa-whatsapp" />
-          <div className="ps__wa-notify-text">
-            <strong>Notify AnalyticShala Team</strong>
-            <span>Send your enrollment details on WhatsApp</span>
-          </div>
-          <i className="fas fa-arrow-right ps__wa-notify-arrow" />
-        </button>
 
         {/* Next steps */}
         <div className="ps__steps">

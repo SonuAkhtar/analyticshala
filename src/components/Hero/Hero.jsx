@@ -328,7 +328,6 @@ const Hero = () => {
       <div className="hero__orb hero__orb--3" />
 
       <main className="hero__main">
-        {/* ── Left Column ─────────────────────────────────── */}
         <div className="hero__left">
           <motion.div
             className="hero__badge"
@@ -463,7 +462,6 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* ── Right Column: Mac Carousel ───────────────────── */}
         <motion.div
           className="hero__right"
           initial={{ opacity: 0, x: 48 }}
