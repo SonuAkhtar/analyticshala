@@ -1,6 +1,8 @@
 const RAZORPAY_KEY_ID = import.meta.env.VITE_RAZORPAY_KEY_ID || "";
+export const BUILD_TS = "2026-04-20";
 
-const GOOGLESHEET_WEB_APP_URL = import.meta.env.VITE_GOOGLESHEET_WEB_APP_URL || "";
+const GOOGLESHEET_WEB_APP_URL =
+  import.meta.env.VITE_GOOGLESHEET_WEB_APP_URL || "";
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "";
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "";
