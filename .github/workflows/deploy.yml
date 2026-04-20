@@ -35,12 +35,13 @@ jobs:
           sed -i "s|rzp_live_PASTE_YOUR_KEY_ID_HERE|${{ secrets.RZP_KEY_ID }}|g" dist/api/create-order.php
           sed -i "s|PASTE_YOUR_KEY_SECRET_HERE|${{ secrets.RZP_KEY_SECRET }}|g" dist/api/create-order.php
 
-      - name: Deploy to Hostinger via FTP
+      - name: Deploy to Hostinger via SFTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: sftp
+          port: 22
           local-dir: dist/
-          server-dir: /public_html/
-          dangerous-clean-slate: true
+          server-dir: public_html/
