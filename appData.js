@@ -125,7 +125,7 @@ export const coursesData = [
     color: "card-red",
     enrolledCount: 312,
     title: "Data Analytics Bundle",
-    subtitle: "Complete Analyst Toolkit -Excel, SQL, Python, Power BI",
+    subtitle: "Complete Analyst Toolkit - Excel, SQL, Python, Power BI",
     description:
       "The complete data analytics program covering Excel, SQL, Python, Power BI, and Tableau in one structured fast-track bundle. Covers the same tools as the individual deep-dive courses but as a focused analyst career program -ideal for those who want the full toolkit without separate enrollments.",
     skills: [
