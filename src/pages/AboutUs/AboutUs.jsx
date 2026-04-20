@@ -152,7 +152,7 @@ const AboutUs = () => {
           </motion.h1>
 
           <motion.p className="about__hero-sub" {...fadeUp(0.16)}>
-            We are a Gurgaon-based data education company on a mission to bridge
+            We are a Gurgaon based data education company on a mission to bridge
             the gap between ambition and opportunity - one data career at a
             time.
           </motion.p>
