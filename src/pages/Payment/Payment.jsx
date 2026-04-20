@@ -100,28 +100,35 @@ const Payment = () => {
           console.error("Supabase save failed:", err);
         }
 
+        console.log("[EmailJS] service:", EMAILJS_SERVICE_ID || "MISSING", "| template:", EMAILJS_REG_TEMPLATE_ID || "MISSING", "| key:", EMAILJS_PUBLIC_KEY ? "set" : "MISSING");
+
         if (
           EMAILJS_SERVICE_ID &&
           EMAILJS_REG_TEMPLATE_ID &&
           EMAILJS_PUBLIC_KEY
         ) {
-          emailjs
-            .send(
+          try {
+            await emailjs.send(
               EMAILJS_SERVICE_ID,
               EMAILJS_REG_TEMPLATE_ID,
               {
-                to_name: state.user.name,
-                to_email: state.user.email,
-                program: itemTitle,
-                type: state.user.courseId ? "Course" : "Workshop",
-                amount: amountINR,
+                to_name:    state.user.name,
+                to_email:   state.user.email,
+                program:    itemTitle,
+                type:       state.user.courseId ? "Course" : "Workshop",
+                amount:     amountINR,
                 payment_id: response.razorpay_payment_id,
-                phone: state.user.phone,
-                date: waDate,
+                phone:      state.user.phone,
+                date:       waDate,
               },
               EMAILJS_PUBLIC_KEY,
-            )
-            .catch((err) => console.error("Confirmation email failed:", err));
+            );
+            console.log("[EmailJS] confirmation sent to", state.user.email);
+          } catch (err) {
+            console.error("[EmailJS] send failed:", err?.text || err?.message || err);
+          }
+        } else {
+          console.warn("[EmailJS] skipped — one or more credentials are missing");
         }
 
         navigate("/payment-success", {
