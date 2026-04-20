@@ -17,12 +17,14 @@ export const courseFees = {
   python:      { regFee: 500,  price: 8999,  originalPrice: 13999 },
   tableau:     { regFee: 500,  price: 7999,  originalPrice: 12999 },
   genai:       { regFee: 500,  price: 24999, originalPrice: 39999 },
+  webdev:      { regFee: 10,   price: 10,    originalPrice: 199   },
 };
 
 /* ── Workshop Fees ───────────────────────────────────────── */
 export const workshopFees = {
   1001: { price: 999,  originalPrice: 1999 },   // Excel for Data Analysis
   1002: { price: 1499, originalPrice: 2499 },   // SQL Masterclass
+  1007: { price: 10,   originalPrice: 299  },   // Web Dev Intro (test)
 };
 
 /* ── Helpers ─────────────────────────────────────────────── */
