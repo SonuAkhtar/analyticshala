@@ -6,10 +6,10 @@ import { workshopData, workshopFees } from "../../../appData";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 
 const INPUT_FIELDS = [
-  { name: "name",  type: "text",   placeholder: "Full Name"     },
-  { name: "email", type: "text",   placeholder: "Email Address" },
-  { name: "phone", type: "text",   placeholder: "Phone Number"  },
-  { name: "age",   type: "number", placeholder: "Age"           },
+  { name: "name", type: "text", placeholder: "Full Name" },
+  { name: "email", type: "text", placeholder: "Email Address" },
+  { name: "phone", type: "text", placeholder: "Phone Number" },
+  { name: "age", type: "number", placeholder: "Age" },
 ];
 
 const CHOICE_FIELDS = [
@@ -31,8 +31,13 @@ const CHOICE_FIELDS = [
 ];
 
 const INITIAL_FORM = {
-  name: "", email: "", phone: "", age: "",
-  status: "", mode: "", analyticshalaStudent: "",
+  name: "",
+  email: "",
+  phone: "",
+  age: "",
+  status: "",
+  mode: "",
+  analyticshalaStudent: "",
 };
 
 const WorkshopForm = () => {
@@ -42,8 +47,8 @@ const WorkshopForm = () => {
   const workshop =
     workshopData.upcoming.find((w) => w.id === id) || workshopData.upcoming[0];
 
-  const [formValue, setFormValue]     = useState(INITIAL_FORM);
-  const [errors, setErrors]           = useState({});
+  const [formValue, setFormValue] = useState(INITIAL_FORM);
+  const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
@@ -71,10 +76,11 @@ const WorkshopForm = () => {
     } else if (!/^\d{10}$/.test(formValue.phone)) {
       err.phone = "Enter a valid 10-digit number";
     }
-    if (!formValue.age)                  err.age                  = "Age is required";
-    if (!formValue.status)               err.status               = "Select your status";
-    if (!formValue.mode)                 err.mode                 = "Select a mode";
-    if (!formValue.analyticshalaStudent) err.analyticshalaStudent = "Please select";
+    if (!formValue.age) err.age = "Age is required";
+    if (!formValue.status) err.status = "Select your status";
+    if (!formValue.mode) err.mode = "Select a mode";
+    if (!formValue.analyticshalaStudent)
+      err.analyticshalaStudent = "Please select";
     return err;
   };
 
@@ -87,31 +93,45 @@ const WorkshopForm = () => {
 
     if (Object.keys(validation).length) {
       document
-        .querySelector(".workshop-form__input--error, .workshop-form__choice-row--error")
+        .querySelector(
+          ".workshop-form__input--error, .workshop-form__choice-row--error",
+        )
         ?.scrollIntoView({ behavior: "smooth", block: "center" });
       return;
     }
 
     const fees = workshopFees[workshop.id];
-    const priceINR = fees?.price ?? parseInt(workshop.price.replace(/[₹,\s]/g, ""), 10);
+    const priceINR =
+      fees?.price ?? parseInt(workshop.price.replace(/[₹,\s]/g, ""), 10);
 
     try {
       setIsSubmitting(true);
       const res = await fetch("/api/create-order.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount: priceINR * 100, itemId: String(workshop.id) }),
+        body: JSON.stringify({
+          amount: priceINR * 100,
+          itemId: String(workshop.id),
+        }),
       });
 
       const result = await res.json();
-      if (!result.success) throw new Error(result.message || "Order creation failed");
+      if (!result.success)
+        throw new Error(result.message || "Order creation failed");
 
       navigate("/payment", {
         state: {
           orderId: result.orderId,
           amount: result.amount,
           coursePrice: null,
-          user: { ...formValue, workshopId: String(workshop.id), workshopTitle: workshop.title },
+          user: {
+            ...formValue,
+            workshopId: String(workshop.id),
+            workshopTitle: workshop.title,
+            workshopDate: workshop.date,
+            workshopTime: workshop.time,
+            workshopMode: workshop.eventMode?.join(" / ") || "",
+          },
         },
       });
     } catch (err) {
@@ -124,59 +144,80 @@ const WorkshopForm = () => {
 
   return (
     <>
-      <Breadcrumb items={[
-        { label: "Workshops", href: "/workshops" },
-        { label: workshop.title, href: `/workshop-details?id=${workshop.id}` },
-        { label: "Register" },
-      ]} />
-    <div className="workshop-form" id="workshopForm">
-      <div className="workshop-form__card">
-        <h1>Workshop Registration</h1>
-        <p className="workshop-form__subtitle">Secure your seat in under 30 seconds.</p>
+      <Breadcrumb
+        items={[
+          { label: "Workshops", href: "/workshops" },
+          {
+            label: workshop.title,
+            href: `/workshop-details?id=${workshop.id}`,
+          },
+          { label: "Register" },
+        ]}
+      />
+      <div className="workshop-form" id="workshopForm">
+        <div className="workshop-form__card">
+          <h1>Workshop Registration</h1>
+          <p className="workshop-form__subtitle">
+            Secure your seat in under 30 seconds.
+          </p>
 
-        <form onSubmit={handleSubmit} noValidate>
-          <div className="workshop-form__grid">
-            {INPUT_FIELDS.map(({ name, type, placeholder }) => (
-              <div key={name}>
-                <input
-                  type={type}
-                  placeholder={placeholder}
-                  name={name}
-                  value={formValue[name]}
-                  onChange={handleChange}
-                  className={errors[name] ? "workshop-form__input--error" : ""}
-                />
-                {errors[name] && <span className="workshop-form__error-text">{errors[name]}</span>}
+          <form onSubmit={handleSubmit} noValidate>
+            <div className="workshop-form__grid">
+              {INPUT_FIELDS.map(({ name, type, placeholder }) => (
+                <div key={name}>
+                  <input
+                    type={type}
+                    placeholder={placeholder}
+                    name={name}
+                    value={formValue[name]}
+                    onChange={handleChange}
+                    className={
+                      errors[name] ? "workshop-form__input--error" : ""
+                    }
+                  />
+                  {errors[name] && (
+                    <span className="workshop-form__error-text">
+                      {errors[name]}
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {CHOICE_FIELDS.map(({ key, label, options }) => (
+              <div key={key}>
+                <label className="workshop-form__section-label">{label}</label>
+                <div
+                  className={`workshop-form__choice-row ${errors[key] ? "workshop-form__choice-row--error" : ""}`}
+                >
+                  {options.map((opt) => (
+                    <div
+                      key={opt}
+                      className={`workshop-form__choice-card ${formValue[key] === opt ? "workshop-form__choice-card--active" : ""}`}
+                      onClick={() => handleChoice(key, opt)}
+                    >
+                      {opt}
+                    </div>
+                  ))}
+                </div>
+                {errors[key] && (
+                  <span className="workshop-form__error-text">
+                    {errors[key]}
+                  </span>
+                )}
               </div>
             ))}
-          </div>
 
-          {CHOICE_FIELDS.map(({ key, label, options }) => (
-            <div key={key}>
-              <label className="workshop-form__section-label">{label}</label>
-              <div className={`workshop-form__choice-row ${errors[key] ? "workshop-form__choice-row--error" : ""}`}>
-                {options.map((opt) => (
-                  <div
-                    key={opt}
-                    className={`workshop-form__choice-card ${formValue[key] === opt ? "workshop-form__choice-card--active" : ""}`}
-                    onClick={() => handleChoice(key, opt)}
-                  >
-                    {opt}
-                  </div>
-                ))}
-              </div>
-              {errors[key] && <span className="workshop-form__error-text">{errors[key]}</span>}
-            </div>
-          ))}
+            {submitError && (
+              <p className="workshop-form__submit-error">{submitError}</p>
+            )}
 
-          {submitError && <p className="workshop-form__submit-error">{submitError}</p>}
-
-          <button type="submit" disabled={isSubmitting}>
-            {isSubmitting ? "Preparing Payment..." : "Continue"}
-          </button>
-        </form>
+            <button type="submit" disabled={isSubmitting}>
+              {isSubmitting ? "Preparing Payment..." : "Continue"}
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
     </>
   );
 };
