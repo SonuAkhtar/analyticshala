@@ -96,33 +96,15 @@ const CourseForm = () => {
     setErrors(validation);
     if (Object.keys(validation).length) return;
 
-    const isPlaceholder = !GOOGLESHEET_WEB_APP_URL || GOOGLESHEET_WEB_APP_URL.includes("placeholder");
-
-    if (isPlaceholder) {
-      const priceNum = parseInt(reg.regFee.replace(/[₹,\s]/g, ""), 10);
-      navigate("/payment", {
-        state: {
-          orderId: "",
-          amount: priceNum * 100,
-          coursePrice: reg.price,
-          user: { ...formValue, courseId, courseTitle: course.title },
-        },
-      });
-      return;
-    }
+    const priceNum = parseInt(reg.regFee.replace(/[₹,\s]/g, ""), 10);
 
     try {
       setIsSubmitting(true);
-      const res = await fetch(GOOGLESHEET_WEB_APP_URL, {
+      const res = await fetch("/api/create-order.php", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({ action: "createCourseOrder", courseId }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ amount: priceNum * 100, itemId: courseId }),
       });
-
-      const contentType = res.headers.get("content-type");
-      if (!contentType?.includes("application/json")) {
-        throw new Error("Server returned non-JSON response");
-      }
 
       const result = await res.json();
       if (!result.success) throw new Error(result.message || "Order creation failed");

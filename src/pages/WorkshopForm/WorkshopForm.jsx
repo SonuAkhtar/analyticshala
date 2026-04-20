@@ -42,8 +42,9 @@ const WorkshopForm = () => {
   const workshop =
     workshopData.upcoming.find((w) => w.id === id) || workshopData.upcoming[0];
 
-  const [formValue, setFormValue] = useState(INITIAL_FORM);
-  const [errors, setErrors]       = useState({});
+  const [formValue, setFormValue]     = useState(INITIAL_FORM);
+  const [errors, setErrors]           = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
   const handleChange = (e) => {
@@ -94,14 +95,31 @@ const WorkshopForm = () => {
     const fees = workshopFees[workshop.id];
     const priceINR = fees?.price ?? parseInt(workshop.price.replace(/[₹,\s]/g, ""), 10);
 
-    navigate("/payment", {
-      state: {
-        orderId: "",
-        amount: priceINR * 100,
-        coursePrice: null,
-        user: { ...formValue, workshopId: String(workshop.id), workshopTitle: workshop.title },
-      },
-    });
+    try {
+      setIsSubmitting(true);
+      const res = await fetch("/api/create-order.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ amount: priceINR * 100, itemId: String(workshop.id) }),
+      });
+
+      const result = await res.json();
+      if (!result.success) throw new Error(result.message || "Order creation failed");
+
+      navigate("/payment", {
+        state: {
+          orderId: result.orderId,
+          amount: result.amount,
+          coursePrice: null,
+          user: { ...formValue, workshopId: String(workshop.id), workshopTitle: workshop.title },
+        },
+      });
+    } catch (err) {
+      console.error(err);
+      setSubmitError("Unable to connect. Please try again or contact support.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -153,7 +171,9 @@ const WorkshopForm = () => {
 
           {submitError && <p className="workshop-form__submit-error">{submitError}</p>}
 
-          <button type="submit">Continue</button>
+          <button type="submit" disabled={isSubmitting}>
+            {isSubmitting ? "Preparing Payment..." : "Continue"}
+          </button>
         </form>
       </div>
     </div>
