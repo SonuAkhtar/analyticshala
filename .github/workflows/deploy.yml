@@ -11,13 +11,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: 20
-          cache: npm
+          node-version: 18
 
       - name: Install dependencies
         run: npm ci
@@ -35,19 +34,11 @@ jobs:
           sed -i "s|rzp_live_PASTE_YOUR_KEY_ID_HERE|${{ secrets.RZP_KEY_ID }}|g" dist/api/create-order.php
           sed -i "s|PASTE_YOUR_KEY_SECRET_HERE|${{ secrets.RZP_KEY_SECRET }}|g" dist/api/create-order.php
 
-      - name: Deploy to Hostinger via lftp
-        env:
-          FTP_USER: ${{ secrets.FTP_USERNAME }}
-          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
-          FTP_HOST: ${{ secrets.FTP_SERVER }}
-        run: |
-          sudo apt-get install -y lftp
-          lftp -u "$FTP_USER,$FTP_PASS" "ftp://$FTP_HOST" << 'LFTP_COMMANDS'
-          set ftp:passive-mode true
-          set ssl:verify-certificate false
-          set net:timeout 60
-          set net:max-retries 5
-          set net:reconnect-interval-base 5
-          mirror --reverse --delete --verbose --ignore-time dist/ ./
-          bye
-          LFTP_COMMANDS
+      - name: Deploy to Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: dist/
+          server-dir: ./
