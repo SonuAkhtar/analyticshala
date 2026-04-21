@@ -1,6 +1,6 @@
 .footer {
   font-family: var(--font-body);
-  background: #1a0508;
+  background: var(--footer-bg, var(--dark-navy));
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -8,10 +8,10 @@
 .footer__body {
   background: linear-gradient(
     155deg,
-    #e63946 0%,
-    #c1121f 28%,
-    #6b0e16 62%,
-    #1a0508 100%
+    var(--brand-red) 0%,
+    var(--brand-red-dark) 28%,
+    var(--dark-navy-blue) 62%,
+    var(--dark-navy) 100%
   );
 }
 
@@ -48,7 +48,7 @@
 }
 
 .footer__cta-highlight {
-  background: linear-gradient(90deg, #ffd6da, #ffffff);
+  background: linear-gradient(90deg, var(--brand-red-rose), #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -74,7 +74,7 @@
   gap: 0.5rem;
   padding: 0.875rem 1.75rem;
   background: #ffffff;
-  color: #c1121f;
+  color: var(--brand-red-dark);
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 0.95rem;
@@ -85,7 +85,7 @@
 }
 
 .footer__cta-btn:hover {
-  background: #fff0f1;
+  background: var(--brand-red-blush);
   transform: translateY(-2px);
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
 }
@@ -227,12 +227,12 @@
 .footer__social-link:hover {
   background: rgba(255, 255, 255, 0.95);
   border-color: transparent;
-  color: #c1121f;
+  color: var(--brand-red-dark);
   transform: translateY(-3px);
 }
 
 .footer__social-link--wa:hover {
-  background: #25d366;
+  background: var(--color-whatsapp);
   color: #ffffff;
 }
 
@@ -302,7 +302,7 @@ a.footer__contact-item:hover i {
 }
 
 .footer__contact-item--wa i {
-  color: #4ade80 !important;
+  color: var(--status-success-icon) !important;
 }
 
 /* ── Bottom Bar ─────────────────────────────────────── */

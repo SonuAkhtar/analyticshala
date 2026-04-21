@@ -1,12 +1,12 @@
 /* ============================================================
    Testimony Page - BEM stylesheet
    Identity: Emerald · Editorial masonry · Centered hero
-   Accent: #10b981 (emerald-500)
+   Accent: var(--accent-green) (emerald-500)
    ============================================================ */
 
 /* ── Page-level design tokens ───────────────────────────── */
 .testimony-page {
-  --page-accent: #10b981;
+  --page-accent: var(--accent-green);
   --page-accent-dark: #059669;
   --page-accent-light: #34d399;
   --page-accent-glow: rgba(16, 185, 129, 0.1);
@@ -268,7 +268,7 @@
   margin-left: auto;
   display: flex;
   gap: 0.15rem;
-  color: #f59e0b;
+  color: var(--accent-gold);
   font-size: 0.8rem;
 }
 
@@ -420,7 +420,7 @@
 .testimony-page__stars {
   display: flex;
   gap: 0.2rem;
-  color: #f59e0b;
+  color: var(--accent-gold);
   font-size: 0.78rem;
   margin-bottom: 0.85rem;
 }

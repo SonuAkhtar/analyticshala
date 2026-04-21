@@ -76,8 +76,8 @@
 }
 
 .workshop-details__level-badge--advanced {
-  background: #fee2e2;
-  color: #991b1b;
+  background: var(--status-danger-bg);
+  color: var(--brand-red-dark);
 }
 
 .workshop-details__hero-content h1 {
@@ -380,7 +380,7 @@
 }
 
 .workshop-details__testi-stars {
-  color: #f59e0b;
+  color: var(--accent-gold);
   font-size: 0.75rem;
   display: flex;
   gap: 0.2rem;
@@ -564,7 +564,7 @@
 }
 
 .workshop-details__seat-fill--urgent {
-  background: linear-gradient(90deg, #f97316, #ef4444);
+  background: linear-gradient(90deg, var(--accent-blue), var(--brand-red));
 }
 
 .workshop-details__seat-txt {
@@ -573,7 +573,7 @@
 }
 
 .workshop-details__seat-txt--urgent {
-  color: #ef4444;
+  color: var(--status-error);
   font-weight: 600;
 }
 
@@ -605,8 +605,8 @@
   gap: 0.5rem;
   padding: 0.75rem;
   border-radius: 0.75rem;
-  border: 1.5px solid #25d366;
-  color: #25d366;
+  border: 1.5px solid var(--color-whatsapp);
+  color: var(--color-whatsapp);
   font-weight: 600;
   font-size: 0.9rem;
   text-decoration: none;
@@ -614,7 +614,7 @@
 }
 
 .workshop-details__wa-btn:hover {
-  background: #25d366;
+  background: var(--color-whatsapp);
   color: white;
 }
 
@@ -679,8 +679,8 @@
 }
 
 .workshop-details__share-btn--wa:hover {
-  background: #25d366;
-  border-color: #25d366;
+  background: var(--color-whatsapp);
+  border-color: var(--color-whatsapp);
   color: #fff;
 }
 
@@ -714,7 +714,7 @@
 
 [data-theme="dark"] .workshop-details__price-off {
   background: rgba(245, 158, 11, 0.15);
-  color: #fcd34d;
+  color: var(--accent-gold);
 }
 
 @media (max-width: 980px) {

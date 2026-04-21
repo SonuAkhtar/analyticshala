@@ -201,12 +201,11 @@ const Courses = () => {
 
   const categoryMap = {
     all: [
-      "ai",
-      "agentic",
-      "rag",
-      "genai",
-      "analytics",
-      "datascience",
+      "applied-ai",
+      "agentic-ai",
+      "advanced-rag",
+      "genai-development",
+      "data-analytics-python",
       "python",
       "sql",
       "excel",
@@ -214,8 +213,8 @@ const Courses = () => {
       "webdev",
       "leaders",
     ],
-    ai: ["ai", "agentic", "rag", "genai", "leaders"],
-    data: ["analytics", "datascience", "python"],
+    ai: ["applied-ai", "agentic-ai", "advanced-rag", "genai-development", "leaders"],
+    data: ["data-analytics-python", "python"],
     tools: ["sql", "excel", "tableau", "webdev"],
   };
 

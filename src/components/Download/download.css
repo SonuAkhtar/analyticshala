@@ -48,9 +48,9 @@
 }
 
 .download__close:hover {
-  background: #ef4444;
+  background: var(--status-error);
   color: white;
-  border-color: #ef4444;
+  border-color: var(--status-error);
 }
 
 .download__header {

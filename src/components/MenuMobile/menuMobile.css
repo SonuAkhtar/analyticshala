@@ -31,7 +31,7 @@
   transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
-  background: linear-gradient(150deg, #1a0305 0%, #2a0408 50%, #3d060c 100%);
+  background: linear-gradient(150deg, var(--dark-navy) 0%, var(--dark-navy-mid) 50%, var(--dark-navy-deep) 100%);
   overflow: hidden;
 }
 
@@ -42,7 +42,7 @@
   inset: 0;
   background-image: radial-gradient(
     circle,
-    rgba(255, 211, 205, 0.045) 1px,
+    rgba(196, 219, 246, 0.045) 1px,
     transparent 1px
   );
   background-size: 28px 28px;
@@ -60,7 +60,7 @@
   height: 240px;
   background: radial-gradient(
     circle,
-    rgba(187, 27, 33, 0.2) 0%,
+    rgba(178, 56, 80, 0.2) 0%,
     transparent 70%
   );
   border-radius: 50%;
@@ -80,7 +80,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 1.75rem 1.25rem;
-  border-bottom: 1px solid rgba(255, 211, 205, 0.12);
+  border-bottom: 1px solid rgba(196, 219, 246, 0.12);
   flex-shrink: 0;
 }
 
@@ -89,7 +89,7 @@
   font-size: 1.2rem;
   font-weight: 800;
   letter-spacing: -0.4px;
-  background: linear-gradient(135deg, #ff6b6b, #ffaba4);
+  background: linear-gradient(135deg, var(--brand-red-pale), var(--border-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -104,8 +104,8 @@
   justify-content: center;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 211, 205, 0.15);
-  color: #ffdbd1;
+  border: 1px solid rgba(196, 219, 246, 0.15);
+  color: var(--border-light);
   font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -113,9 +113,9 @@
 }
 
 .mob-nav__close:hover {
-  background: rgba(187, 27, 33, 0.25);
-  border-color: rgba(187, 27, 33, 0.55);
-  color: #ffaba4;
+  background: rgba(178, 56, 80, 0.25);
+  border-color: rgba(178, 56, 80, 0.55);
+  color: var(--brand-red-pale);
 }
 
 /* ── Nav links ───────────────────────────────────────── */
@@ -142,7 +142,7 @@
   overflow: hidden;
 
   /* Closed state -instant reset, no delay */
-  color: rgba(255, 211, 205, 0.65);
+  color: rgba(196, 219, 246, 0.65);
   opacity: 0;
   transform: translateX(20px);
   transition:
@@ -169,7 +169,7 @@
   font-family: "Syne", sans-serif;
   font-size: 0.68rem;
   font-weight: 700;
-  color: #ffaba4;
+  color: var(--brand-red-pale);
   letter-spacing: 0.1em;
   opacity: 0.75;
   flex-shrink: 0;
@@ -202,25 +202,25 @@
 /* Hover */
 .mob-nav__link:hover {
   background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(255, 211, 205, 0.12);
+  border-color: rgba(196, 219, 246, 0.12);
   color: #fff8f6;
 }
 
 .mob-nav__link:hover .mob-nav__arrow {
   transform: translateX(0);
   opacity: 1;
-  color: #ffaba4;
+  color: var(--brand-red-pale);
 }
 
 /* Active / current page */
 .mob-nav__link--active {
-  background: rgba(187, 27, 33, 0.2);
-  border-color: rgba(187, 27, 33, 0.35);
-  color: #ffaba4;
+  background: rgba(178, 56, 80, 0.2);
+  border-color: rgba(178, 56, 80, 0.35);
+  color: var(--brand-red-pale);
 }
 
 .mob-nav__link--active .mob-nav__name {
-  color: #ffaba4;
+  color: var(--brand-red-pale);
 }
 
 .mob-nav__link--active .mob-nav__num {
@@ -230,7 +230,7 @@
 .mob-nav__link--active .mob-nav__arrow {
   transform: translateX(0);
   opacity: 1;
-  color: #ffaba4;
+  color: var(--brand-red-pale);
 }
 
 /* ── Footer / CTA ────────────────────────────────────── */
@@ -238,7 +238,7 @@
   position: relative;
   z-index: 1;
   padding: 1.25rem 1.75rem 2rem;
-  border-top: 1px solid rgba(255, 211, 205, 0.12);
+  border-top: 1px solid rgba(196, 219, 246, 0.12);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -251,7 +251,7 @@
   justify-content: center;
   gap: 0.55rem;
   padding: 1rem 1.5rem;
-  background: linear-gradient(135deg, #bb1b21, #8b0d13);
+  background: linear-gradient(135deg, var(--brand-red), var(--brand-red-dark));
   color: white !important;
   -webkit-text-fill-color: white;
   font-family: "Syne", sans-serif;
@@ -262,12 +262,12 @@
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
-  box-shadow: 0 4px 20px rgba(187, 27, 33, 0.4);
+  box-shadow: 0 4px 20px rgba(178, 56, 80, 0.4);
 }
 
 .mob-nav__cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(187, 27, 33, 0.55);
+  box-shadow: 0 8px 28px rgba(178, 56, 80, 0.55);
 }
 
 .mob-nav__cta i {
@@ -282,7 +282,7 @@
 .mob-nav__tagline {
   text-align: center;
   font-size: 0.7rem;
-  color: rgba(255, 211, 205, 0.35);
+  color: rgba(196, 219, 246, 0.35);
   font-family: var(--font-body);
   letter-spacing: 0.02em;
 }

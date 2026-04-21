@@ -1,19 +1,11 @@
 <?php
-// ─────────────────────────────────────────────────────────────
-//  Razorpay Order Creator  –  runs on Hostinger (PHP)
-//  Called by the React app to get a server-signed order_id.
-//  NEVER put your Key Secret in the React / frontend code.
-// ─────────────────────────────────────────────────────────────
-
 header('Content-Type: application/json');
 
-// ── Allow only your domain ───────────────────────────────────
-$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+$origin  = $_SERVER['HTTP_ORIGIN'] ?? '';
 $allowed = ['https://analyticshala.in', 'https://www.analyticshala.in'];
 if (in_array($origin, $allowed, true)) {
     header("Access-Control-Allow-Origin: $origin");
 } else {
-    // Allow during local dev
     header('Access-Control-Allow-Origin: http://localhost:5173');
 }
 header('Access-Control-Allow-Methods: POST, OPTIONS');
@@ -21,15 +13,11 @@ header('Access-Control-Allow-Headers: Content-Type');
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { exit(0); }
 
-// ── YOUR RAZORPAY CREDENTIALS ────────────────────────────────
-// Paste your live Key ID and Key Secret here.
-// These stay on the server — never in the React app.
 define('RZP_KEY_ID',     'rzp_live_PASTE_YOUR_KEY_ID_HERE');
 define('RZP_KEY_SECRET', 'PASTE_YOUR_KEY_SECRET_HERE');
 
-// ─────────────────────────────────────────────────────────────
 $input  = json_decode(file_get_contents('php://input'), true) ?? [];
-$amount = intval($input['amount'] ?? 0);   // paise (e.g. 50000 = ₹500)
+$amount = intval($input['amount'] ?? 0);
 $itemId = preg_replace('/[^a-zA-Z0-9_-]/', '', $input['itemId'] ?? 'order');
 
 if ($amount <= 0) {

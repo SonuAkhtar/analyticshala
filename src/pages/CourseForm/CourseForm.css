@@ -1,9 +1,9 @@
 /* ── Course Form ──────────────────────────────────────────── */
 .course-form {
-  --cf-accent: #bb1b21;
-  --cf-accent-dk: #8b0d13;
-  --cf-accent-lt: rgba(187, 27, 33, 0.12);
-  --cf-accent-ring: rgba(187, 27, 33, 0.18);
+  --cf-accent: var(--brand-red);
+  --cf-accent-dk: var(--brand-red-dark);
+  --cf-accent-lt: rgba(178, 56, 80, 0.12);
+  --cf-accent-ring: rgba(178, 56, 80, 0.18);
   min-height: calc(100vh - 80px);
   background: var(--bg-primary);
   display: flex;
@@ -60,7 +60,7 @@
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 2.5rem 2.25rem;
-  box-shadow: 0 4px 32px rgba(83, 37, 25, 0.08), 0 1px 4px rgba(83, 37, 25, 0.04);
+  box-shadow: 0 4px 32px rgba(30, 31, 46, 0.08), 0 1px 4px rgba(30, 31, 46, 0.04);
 }
 
 /* Brand red top border */
@@ -71,7 +71,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--cf-accent), #e84b4b);
+  background: linear-gradient(90deg, var(--cf-accent), var(--brand-red-pale));
   border-radius: 20px 20px 0 0;
 }
 
@@ -80,8 +80,8 @@
   display: flex;
   align-items: flex-start;
   gap: 0.875rem;
-  background: rgba(187, 27, 33, 0.05);
-  border: 1px solid rgba(187, 27, 33, 0.18);
+  background: rgba(178, 56, 80, 0.05);
+  border: 1px solid rgba(178, 56, 80, 0.18);
   border-radius: 12px;
   padding: 0.875rem 1rem;
   margin-bottom: 1.75rem;
@@ -91,7 +91,7 @@
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background: rgba(187, 27, 33, 0.1);
+  background: rgba(178, 56, 80, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -160,8 +160,8 @@
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--cf-accent);
-  background: rgba(187, 27, 33, 0.08);
-  border: 1px solid rgba(187, 27, 33, 0.2);
+  background: rgba(178, 56, 80, 0.08);
+  border: 1px solid rgba(178, 56, 80, 0.2);
   padding: 0.2rem 0.6rem;
   border-radius: 999px;
   white-space: nowrap;
@@ -207,7 +207,7 @@
   background: linear-gradient(135deg, var(--cf-accent), var(--cf-accent-dk));
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 2px 12px rgba(187, 27, 33, 0.35);
+  box-shadow: 0 2px 12px rgba(178, 56, 80, 0.35);
 }
 
 .course-form__step-node--done {
@@ -278,14 +278,14 @@
   align-items: center;
   gap: 0.65rem;
   background: #fff;
-  border: 1.5px solid #e4ddd0;
+  border: 1.5px solid var(--input-border);
   border-radius: 10px;
   padding: 0 1rem;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .course-form__input-group i {
-  color: #a8a29e;
+  color: var(--input-placeholder);
   font-size: 0.82rem;
   flex-shrink: 0;
   width: 14px;
@@ -303,7 +303,7 @@
 }
 
 .course-form__input-group--error {
-  border-color: #ef4444;
+  border-color: var(--status-error);
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
 }
 
@@ -320,7 +320,7 @@
 }
 
 .course-form__input-group input::placeholder {
-  color: #c4bdb5;
+  color: var(--input-placeholder);
 }
 
 /* ── Step 2 – choice fields ─────────────────────────────── */
@@ -344,19 +344,19 @@
   gap: 0.5rem;
   padding: 0.75rem;
   background: #fff;
-  border: 1.5px solid #e4ddd0;
+  border: 1.5px solid var(--input-border);
   border-radius: 10px;
   transition: border-color 0.2s;
 }
 
 .course-form__choice-row--error {
-  border-color: #ef4444;
+  border-color: var(--status-error);
 }
 
 .course-form__choice-card {
   padding: 0.45rem 1rem;
   border-radius: 999px;
-  border: 1.5px solid #e4ddd0;
+  border: 1.5px solid var(--input-border);
   background: var(--bg-card);
   color: var(--text-secondary);
   font-size: 0.855rem;
@@ -372,7 +372,7 @@
 }
 
 .course-form__choice-card--active {
-  background: rgba(187, 27, 33, 0.08);
+  background: rgba(178, 56, 80, 0.08);
   border-color: var(--cf-accent);
   color: var(--cf-accent);
   font-weight: 600;
@@ -384,7 +384,7 @@
   align-items: center;
   gap: 0.3rem;
   font-size: 0.75rem;
-  color: #ef4444;
+  color: var(--status-error);
 }
 
 .course-form__error-text i { font-size: 0.7rem; }
@@ -394,7 +394,7 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 0.875rem;
-  color: #ef4444;
+  color: var(--status-error);
   background: rgba(239, 68, 68, 0.08);
   border: 1px solid rgba(239, 68, 68, 0.2);
   border-radius: 8px;
@@ -419,12 +419,12 @@
   justify-content: center;
   gap: 0.5rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 18px rgba(187, 27, 33, 0.3);
+  box-shadow: 0 4px 18px rgba(178, 56, 80, 0.3);
 }
 
 .course-form__next-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(187, 27, 33, 0.45);
+  box-shadow: 0 8px 28px rgba(178, 56, 80, 0.45);
 }
 
 .course-form__next-btn i { transition: transform 0.2s; }
@@ -446,7 +446,7 @@
   flex: 0 0 auto;
   width: auto;
   background: #fff;
-  border: 1.5px solid #e4ddd0;
+  border: 1.5px solid var(--input-border);
   border-radius: 10px;
   color: var(--text-secondary);
   font-family: var(--font-heading);
@@ -475,7 +475,7 @@
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 18px rgba(187, 27, 33, 0.3);
+  box-shadow: 0 4px 18px rgba(178, 56, 80, 0.3);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -483,7 +483,7 @@
 
 .course-form__submit-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(187, 27, 33, 0.45);
+  box-shadow: 0 8px 28px rgba(178, 56, 80, 0.45);
 }
 
 .course-form__submit-btn:disabled {
@@ -503,7 +503,7 @@
 }
 
 .course-form__trust-note i {
-  color: #16a34a;
+  color: var(--accent-green);
   font-size: 0.72rem;
 }
 
@@ -516,7 +516,7 @@
   margin-top: 0.5rem;
   font-size: 0.8rem;
   font-weight: 600;
-  color: #25d366;
+  color: var(--color-whatsapp);
   text-decoration: none;
   transition: opacity 0.2s;
 }

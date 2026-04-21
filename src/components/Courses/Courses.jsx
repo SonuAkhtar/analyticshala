@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 
 const coursesData = allCourses
   .filter((c) => c.homepageOrder !== null)
-  .sort((a, b) => a.homepageOrder - b.homepageOrder);
+  .sort((a, b) => a.homepageOrder - b.homepageOrder)
+  .slice(0, 5);
 
 const Courses = ({ setShowDownload }) => {
   const ref = useRef(null);

@@ -184,7 +184,7 @@
   100% { background-position: -200% center; }
 }
 
-.home-team__card-college-badge i { font-size: 0.6rem; color: #fcd34d; }
+.home-team__card-college-badge i { font-size: 0.6rem; color: var(--accent-gold); }
 .home-team__card:hover .home-team__card-college-badge {
   opacity: 1;
   transform: translateY(0);

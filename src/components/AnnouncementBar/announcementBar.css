@@ -2,8 +2,8 @@
 .ann-bar {
   position: relative;
   width: 100%;
-  background: linear-gradient(90deg, #7f1d1d 0%, #991b1b 30%, #bb1b21 55%, #991b1b 80%, #7f1d1d 100%);
-  color: #fff1ed;
+  background: linear-gradient(90deg, var(--brand-red-deeper) 0%, var(--brand-red-dark) 30%, var(--brand-red) 55%, var(--brand-red-dark) 80%, var(--brand-red-deeper) 100%);
+  color: #fff;
   padding: 0.6rem 3rem 0.6rem 1.5rem;
   display: flex;
   align-items: center;
@@ -11,7 +11,7 @@
   gap: 0.85rem;
   z-index: 10000;
   animation: annFadeIn 0.4s ease both;
-  border-bottom: 1px solid rgba(187, 27, 33, 0.4);
+  border-bottom: 1px solid rgba(178, 56, 80, 0.4);
   overflow: hidden;
 }
 
@@ -62,14 +62,14 @@
   font-weight: 700;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: #ffdbd1;
+  color: var(--border-light);
   white-space: nowrap;
   flex-shrink: 0;
   backdrop-filter: blur(8px);
 }
 
 .ann-bar__badge i {
-  color: #ffaba4;
+  color: var(--brand-red-pale);
   font-size: 0.6rem;
 }
 
@@ -86,7 +86,7 @@
 }
 
 .ann-bar__link {
-  color: #ffaba4;
+  color: var(--brand-red-pale);
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
@@ -96,8 +96,8 @@
 }
 
 .ann-bar__link:hover {
-  color: #ffdbd1;
-  border-bottom-color: #ffdbd1;
+  color: var(--border-light);
+  border-bottom-color: var(--border-light);
 }
 
 .ann-bar__close {

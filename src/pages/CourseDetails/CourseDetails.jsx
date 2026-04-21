@@ -5,20 +5,6 @@ import { courseListData, courseRegData, teamData, testimonyData } from "../../..
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import "./courseDetails.css";
 
-/* Split desc by commas, skipping commas inside parentheses, strip leading "and " */
-const splitBullets = (desc) => {
-  const parts = [];
-  let current = "";
-  let depth = 0;
-  for (const ch of desc) {
-    if (ch === "(") { depth++; current += ch; }
-    else if (ch === ")") { depth--; current += ch; }
-    else if (ch === "," && depth === 0) { parts.push(current.trim()); current = ""; }
-    else { current += ch; }
-  }
-  if (current.trim()) parts.push(current.trim());
-  return parts.map((s) => s.replace(/^and\s+/i, "").trim()).filter(Boolean);
-};
 
 const ENROLLED_COUNT = {
   ai: 284, agentic: 143, rag: 97,
@@ -185,9 +171,9 @@ const CourseDetails = () => {
                   <div className="course-details__curr-week">{item.week}</div>
                   <div className="course-details__curr-body">
                     <div className="course-details__curr-title">{item.title}</div>
-                    {item.desc && (
+                    {item.topics?.length > 0 && (
                       <ul className="course-details__curr-desc">
-                        {splitBullets(item.desc).map((point, j) => (
+                        {item.topics.map((point, j) => (
                           <li key={j}>{point}</li>
                         ))}
                       </ul>

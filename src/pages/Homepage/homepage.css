@@ -24,18 +24,18 @@
 
 /* ── Dark Red Testimony Section ────────────────────────────── */
 .home-testimony {
-  background: linear-gradient(160deg, #2a0408 0%, #1a0305 50%, #2a0408 100%);
+  background: linear-gradient(160deg, var(--dark-navy) 0%, var(--dark-navy-deep) 50%, var(--dark-navy) 100%);
   position: relative;
 }
 
 /* Cream → Dark Red divider */
 .hp-wave--to-blue {
-  background: linear-gradient(160deg, #2a0408 0%, #1a0305 50%, #2a0408 100%);
+  background: linear-gradient(160deg, var(--dark-navy) 0%, var(--dark-navy-deep) 50%, var(--dark-navy) 100%);
 }
 
 /* Dark Red → Cream divider */
 .hp-wave--to-cream {
-  background: linear-gradient(160deg, #2a0408 0%, #1a0305 50%, #2a0408 100%);
+  background: linear-gradient(160deg, var(--dark-navy) 0%, var(--dark-navy-deep) 50%, var(--dark-navy) 100%);
 }
 
 /* Make the testimony inner section transparent so wrapper shows */
@@ -45,28 +45,28 @@
 
 /* SectionHeader inside dark testimony */
 .home-testimony .section-header__eyebrow {
-  color: #ffaba4;
+  color: var(--brand-red-pale);
 }
 
 .home-testimony .section-header__title {
-  color: #fff8f6;
+  color: var(--off-white);
 }
 
 .home-testimony .section-header__subtitle {
-  color: rgba(255, 219, 209, 0.75);
+  color: rgba(196, 219, 246, 0.75);
 }
 
 /* Featured blockquote text */
 .home-testimony .testimony__featured-text {
-  color: #fff8f6;
+  color: var(--off-white);
 }
 
 .home-testimony .testimony__featured-profile strong {
-  color: #fff8f6;
+  color: var(--off-white);
 }
 
 .home-testimony .testimony__featured-profile span {
-  color: #ffaba4;
+  color: var(--brand-red-pale);
 }
 
 /* Glassmorphic cards inside dark section */
@@ -74,12 +74,12 @@
   background: rgba(255, 255, 255, 0.07);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(255, 219, 209, 0.14);
+  border: 1px solid rgba(196, 219, 246, 0.14);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
 }
 
 .home-testimony .testimony__card .testimony__name {
-  color: #fff8f6;
+  color: var(--off-white);
 }
 
 .home-testimony .testimony__card .testimony__position {
@@ -91,7 +91,7 @@
 }
 
 .home-testimony .testimony__card .testimony__stars i {
-  color: #ffaba4;
+  color: var(--brand-red-pale);
 }
 
 /* Featured section glassmorphic treatment */
@@ -99,17 +99,17 @@
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(255, 219, 209, 0.14);
+  border: 1px solid rgba(196, 219, 246, 0.14);
 }
 
 /* Swiper pagination dots */
 .home-testimony .swiper-pagination-bullet {
-  background: rgba(255, 219, 209, 0.30) !important;
+  background: rgba(196, 219, 246, 0.30) !important;
   opacity: 1 !important;
 }
 
 .home-testimony .swiper-pagination-bullet-active {
-  background: #ffaba4 !important;
+  background: var(--brand-red-pale) !important;
 }
 
 /* Responsive wave heights */

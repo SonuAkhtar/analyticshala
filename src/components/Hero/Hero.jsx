@@ -382,38 +382,6 @@ const Hero = () => {
           </div>
 
           <motion.div
-            className="hero__social-strip"
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            custom={2.5}
-          >
-            <div className="hero__avatars">
-              {avatarInitials.map((init, i) => (
-                <span key={i} className="hero__avatar">
-                  {init}
-                </span>
-              ))}
-            </div>
-            <p className="hero__social-text">
-              <strong>500+</strong> students already enrolled&nbsp;
-              <span className="hero__social-stars">★★★★★</span>
-              <span>4.9</span>
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="hero__urgency"
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            custom={2.8}
-          >
-            <span className="hero__urgency-dot" />
-            Next batch starts <strong>May 5, 2026</strong> · Only 12 seats left
-          </motion.div>
-
-          <motion.div
             className="hero__buttons"
             variants={fadeUp}
             initial="hidden"
@@ -494,9 +462,11 @@ const Hero = () => {
             <i className="fas fa-certificate" /> Certified Courses
           </motion.div>
         </motion.div>
-
-        <Marq data={heroMarqData} />
       </main>
+
+      <div className="hero__marq-strip">
+        <Marq data={heroMarqData} />
+      </div>
     </section>
   );
 };

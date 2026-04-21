@@ -6,6 +6,27 @@
   overflow: hidden;
 }
 
+/* Inside hero: invert item colours to suit dark red background */
+.hero__marq-strip .marq {
+  border-top: 1px solid rgba(255, 214, 218, 0.2);
+  margin-top: 0;
+}
+
+.hero__marq-strip .marq__item {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 214, 218, 0.25);
+  box-shadow: none;
+}
+
+.hero__marq-strip .marq__item:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 214, 218, 0.55);
+}
+
+.hero__marq-strip .marq__label {
+  color: rgba(255, 214, 218, 0.92);
+}
+
 .marq--dual {
   padding: 1rem 0;
   display: flex;

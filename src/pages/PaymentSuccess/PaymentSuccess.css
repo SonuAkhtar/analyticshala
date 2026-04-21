@@ -61,7 +61,7 @@
   width: 520px;
   height: 520px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(79, 70, 229, 0.1), transparent 65%);
+  background: radial-gradient(circle, rgba(178, 56, 80, 0.1), transparent 65%);
   top: -200px;
   left: 50%;
   transform: translateX(-50%);
@@ -78,7 +78,7 @@
   max-width: 540px;
   width: 100%;
   box-shadow:
-    0 8px 40px rgba(79, 70, 229, 0.1),
+    0 8px 40px rgba(178, 56, 80, 0.1),
     0 2px 10px rgba(0, 0, 0, 0.06);
   animation: psSlideUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -94,7 +94,7 @@
   width: 88px;
   height: 88px;
   border-radius: 50%;
-  border: 2px solid rgba(79, 70, 229, 0.25);
+  border: 2px solid rgba(178, 56, 80, 0.25);
   left: 50%;
   transform: translateX(-50%);
   margin-top: -6px;
@@ -119,14 +119,14 @@
   width: 76px;
   height: 76px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  background: linear-gradient(135deg, var(--brand-red), var(--brand-red-light));
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   font-size: 2rem;
   margin: 0 auto 1.1rem;
-  box-shadow: 0 6px 24px rgba(79, 70, 229, 0.38);
+  box-shadow: 0 6px 24px rgba(178, 56, 80, 0.38);
   animation: iconPop 0.5s 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
@@ -166,8 +166,8 @@
   flex-direction: column;
   align-items: center;
   gap: 0.3rem;
-  background: color-mix(in srgb, #4f46e5 8%, var(--bg-secondary));
-  border: 1px solid color-mix(in srgb, #4f46e5 18%, transparent);
+  background: color-mix(in srgb, var(--brand-red) 8%, var(--bg-secondary));
+  border: 1px solid color-mix(in srgb, var(--brand-red) 18%, transparent);
   border-radius: 14px;
   padding: 0.9rem 1.25rem;
   margin-bottom: 1.4rem;
@@ -179,7 +179,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #4f46e5;
+  color: var(--brand-red);
 }
 
 .ps__course-program-name {
@@ -227,7 +227,7 @@
 }
 
 .ps__course-meta-value--green {
-  color: #16a34a;
+  color: var(--accent-green);
 }
 
 .ps__course-payment-id {
@@ -279,13 +279,13 @@
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: color-mix(in srgb, #4f46e5 10%, var(--bg-card));
-  border: 1px solid color-mix(in srgb, #4f46e5 20%, var(--border));
+  background: color-mix(in srgb, var(--brand-red) 10%, var(--bg-card));
+  border: 1px solid color-mix(in srgb, var(--brand-red) 20%, var(--border));
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.9rem;
-  color: #4f46e5;
+  color: var(--brand-red);
   flex-shrink: 0;
 }
 
@@ -314,7 +314,7 @@
   gap: 0.35rem;
   margin-top: 0.45rem;
   padding: 0.4rem 0.9rem;
-  background: #22c55e;
+  background: var(--accent-green);
   color: #fff;
   border-radius: 999px;
   font-size: 0.78rem;
@@ -327,7 +327,7 @@
 }
 
 .ps__course-step-cta:hover {
-  background: #16a34a;
+  background: var(--accent-green);
   transform: translateY(-1px);
 }
 
@@ -357,14 +357,14 @@
 }
 
 .ps__course-btn--primary {
-  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  background: linear-gradient(135deg, var(--brand-red), var(--brand-red-light));
   color: #fff;
-  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.32);
+  box-shadow: 0 4px 16px rgba(178, 56, 80, 0.32);
 }
 
 .ps__course-btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 22px rgba(79, 70, 229, 0.46);
+  box-shadow: 0 6px 22px rgba(178, 56, 80, 0.46);
 }
 
 .ps__course-btn--ghost {
@@ -374,8 +374,8 @@
 }
 
 .ps__course-btn--ghost:hover {
-  border-color: #4f46e5;
-  color: #4f46e5;
+  border-color: var(--brand-red);
+  color: var(--brand-red);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -388,7 +388,7 @@
   width: 520px;
   height: 520px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(249, 115, 22, 0.1), transparent 65%);
+  background: radial-gradient(circle, rgba(59, 139, 235, 0.1), transparent 65%);
   top: -200px;
   left: 50%;
   transform: translateX(-50%);
@@ -405,7 +405,7 @@
   max-width: 520px;
   width: 100%;
   box-shadow:
-    0 8px 40px rgba(249, 115, 22, 0.1),
+    0 8px 40px rgba(59, 139, 235, 0.1),
     0 2px 10px rgba(0, 0, 0, 0.06);
   animation: psSlideUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -420,14 +420,14 @@
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #f97316, #ea580c);
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-blue-dark));
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   font-size: 1.6rem;
   margin: 0 auto 1rem;
-  box-shadow: 0 6px 24px rgba(249, 115, 22, 0.38);
+  box-shadow: 0 6px 24px rgba(59, 139, 235, 0.38);
   animation: iconPop 0.5s 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
@@ -436,7 +436,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #f97316;
+  color: var(--accent-blue);
   margin: 0 0 0.4rem;
 }
 
@@ -463,17 +463,17 @@
 .ps__ws-ticket {
   background: linear-gradient(
     135deg,
-    color-mix(in srgb, #f97316 10%, var(--bg-secondary)),
-    color-mix(in srgb, #f97316 5%, var(--bg-secondary))
+    color-mix(in srgb, var(--accent-blue) 10%, var(--bg-secondary)),
+    color-mix(in srgb, var(--accent-blue) 5%, var(--bg-secondary))
   );
-  border: 1.5px solid color-mix(in srgb, #f97316 25%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--accent-blue) 25%, transparent);
   border-radius: 18px;
   margin-bottom: 1.5rem;
   overflow: hidden;
 }
 
 .ps__ws-ticket-perforation {
-  border-top: 2px dashed color-mix(in srgb, #f97316 30%, var(--border));
+  border-top: 2px dashed color-mix(in srgb, var(--accent-blue) 30%, var(--border));
   margin: 0 1rem;
 }
 
@@ -506,7 +506,7 @@
 }
 
 .ps__ws-ticket-detail i {
-  color: #f97316;
+  color: var(--accent-blue);
   font-size: 0.85rem;
   flex-shrink: 0;
   width: 14px;
@@ -523,7 +523,7 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   padding-top: 0.85rem;
-  border-top: 1px solid color-mix(in srgb, #f97316 20%, var(--border));
+  border-top: 1px solid color-mix(in srgb, var(--accent-blue) 20%, var(--border));
 }
 
 .ps__ws-amount {
@@ -544,7 +544,7 @@
   font-family: var(--font-heading);
   font-size: 1.3rem;
   font-weight: 800;
-  color: #f97316;
+  color: var(--accent-blue);
 }
 
 .ps__ws-payment-id {
@@ -588,13 +588,13 @@
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: color-mix(in srgb, #f97316 10%, var(--bg-card));
-  border: 1px solid color-mix(in srgb, #f97316 20%, var(--border));
+  background: color-mix(in srgb, var(--accent-blue) 10%, var(--bg-card));
+  border: 1px solid color-mix(in srgb, var(--accent-blue) 20%, var(--border));
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.9rem;
-  color: #f97316;
+  color: var(--accent-blue);
   flex-shrink: 0;
 }
 
@@ -623,7 +623,7 @@
   gap: 0.35rem;
   margin-top: 0.45rem;
   padding: 0.4rem 0.9rem;
-  background: #22c55e;
+  background: var(--accent-green);
   color: #fff;
   border-radius: 999px;
   font-size: 0.78rem;
@@ -636,7 +636,7 @@
 }
 
 .ps__ws-step-cta:hover {
-  background: #16a34a;
+  background: var(--accent-green);
   transform: translateY(-1px);
 }
 
@@ -666,14 +666,14 @@
 }
 
 .ps__ws-btn--primary {
-  background: linear-gradient(135deg, #f97316, #ea580c);
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-blue-dark));
   color: #fff;
-  box-shadow: 0 4px 16px rgba(249, 115, 22, 0.32);
+  box-shadow: 0 4px 16px rgba(59, 139, 235, 0.32);
 }
 
 .ps__ws-btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 22px rgba(249, 115, 22, 0.46);
+  box-shadow: 0 6px 22px rgba(59, 139, 235, 0.46);
 }
 
 .ps__ws-btn--ghost {
@@ -683,8 +683,8 @@
 }
 
 .ps__ws-btn--ghost:hover {
-  border-color: #f97316;
-  color: #f97316;
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
 }
 
 @media (max-width: 480px) {
