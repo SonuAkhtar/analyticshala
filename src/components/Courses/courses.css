@@ -366,6 +366,10 @@
   transform: translateX(4px);
 }
 
+.courses__dots {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .courses__grid {
     grid-template-columns: 1fr;
@@ -430,5 +434,34 @@
 
   .courses__card-num {
     font-size: 4.5rem;
+  }
+
+  .courses__card-num {
+    top: auto;
+    bottom: 0;
+    right: 0.75rem;
+  }
+
+  .courses__dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.25rem;
+  }
+
+  .courses__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--border);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .courses__dot--active {
+    width: 20px;
+    border-radius: 3px;
+    background: var(--page-accent);
   }
 }

@@ -1,9 +1,9 @@
 .workshop-form {
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3rem 1.25rem;
+  padding: calc(var(--ann-bar-height, 0px) + 6rem) 1.25rem 3rem;
   background: var(--bg-primary);
   font-family: var(--font-body);
   position: relative;

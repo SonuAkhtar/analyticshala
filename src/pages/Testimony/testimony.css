@@ -1,11 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Prosto+One&display=swap");
+
 /* ============================================================
    Testimony Page - BEM stylesheet
    Identity: Emerald · Editorial masonry · Centered hero
    Accent: var(--accent-green) (emerald-500)
    ============================================================ */
 
-/* ── Page-level design tokens ───────────────────────────── */
+.testimony-page h1,
+.testimony-page h2,
+.testimony-page h3,
+.testimony-page h4,
+.testimony-page h5,
+.testimony-page h6,
+.testimony-page p,
+.testimony-page span:not(.fas):not(.far):not(.fab),
+.testimony-page a,
+.testimony-page button {
+  font-family: "Prosto One", sans-serif !important;
+}
+
 .testimony-page {
+  font-family: "Prosto One", sans-serif;
+  --font-heading: "Prosto One", sans-serif;
+  --font-body: "Prosto One", sans-serif;
   --page-accent: var(--accent-green);
   --page-accent-dark: #059669;
   --page-accent-light: #34d399;
@@ -18,7 +35,6 @@
   font-family: var(--font-body);
 }
 
-/* ── Shared utilities ────────────────────────────────────── */
 .testimony-page__eyebrow {
   display: inline-flex;
   align-items: center;
@@ -66,7 +82,6 @@
   margin-bottom: 2.5rem;
 }
 
-/* ── Buttons ─────────────────────────────────────────────── */
 .testimony-page__btn {
   display: inline-flex;
   align-items: center;
@@ -103,12 +118,15 @@
   color: var(--page-accent);
 }
 
-/* ── Hero - full-width centered editorial ────────────────── */
 .testimony-page__hero {
   position: relative;
-  padding: 7rem 1.5rem 4rem;
+  padding: 9rem 1.5rem 6rem;
   overflow: hidden;
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .testimony-page__hero-glow {
@@ -272,9 +290,13 @@
   font-size: 0.8rem;
 }
 
-/* ── Stats Bar ───────────────────────────────────────────── */
 .testimony-page__stats-bar {
-  background: linear-gradient(135deg, #0d1f18 0%, #0f2a1f 50%, #0d1f18 100%);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--page-accent-dark) 28%, var(--dark-navy)) 0%,
+    color-mix(in srgb, var(--page-accent-dark) 40%, var(--dark-navy)) 50%,
+    color-mix(in srgb, var(--page-accent-dark) 28%, var(--dark-navy)) 100%
+  );
   border-top: 1px solid rgba(16, 185, 129, 0.15);
   border-bottom: 1px solid rgba(16, 185, 129, 0.15);
   padding: 0;
@@ -359,7 +381,6 @@
   color: rgba(255, 255, 255, 0.45);
 }
 
-/* ── Masonry Reviews Grid ────────────────────────────────── */
 .testimony-page__reviews {
   padding: 5rem 1.5rem 4.5rem;
 }
@@ -369,7 +390,6 @@
   column-gap: 1.25rem;
 }
 
-/* ── Testimony Card - Editorial ──────────────────────────── */
 .testimony-page__card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -397,7 +417,7 @@
   position: absolute;
   top: -0.6rem;
   left: 1.2rem;
-  font-family: Georgia, serif;
+  font-family: var(--font-body);
   font-size: 6.5rem;
   line-height: 1;
   color: var(--page-accent);
@@ -492,7 +512,6 @@
   text-transform: capitalize;
 }
 
-/* ── Alumni Company Strip ────────────────────────────────── */
 .testimony-page__alumni-strip {
   background: var(--bg-primary);
   border-top: 1px solid var(--border);
@@ -552,7 +571,6 @@
   font-size: 0.78rem;
 }
 
-/* ── Trust Strip ─────────────────────────────────────────── */
 .testimony-page__trust {
   background: var(--bg-secondary);
   border-top: 1px solid var(--border);
@@ -591,7 +609,6 @@
   flex-shrink: 0;
 }
 
-/* ── CTA - sage section ──────────────────────────────────── */
 .testimony-page__cta {
   padding: 5.5rem 1.5rem;
   background: linear-gradient(160deg, #c8e6d8 0%, #a2d4bf 100%);
@@ -699,16 +716,35 @@
   transform: translateY(-2px);
 }
 
-/* ── Responsive ──────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .testimony-page__grid {
     column-count: 2;
   }
 }
 
+[data-theme="dark"] .testimony-page__hero-quote {
+  border-color: var(--border-light);
+  box-shadow:
+    0 4px 24px rgba(16, 185, 129, 0.1),
+    0 1px 6px rgba(0, 0, 0, 0.28);
+}
+
+[data-theme="dark"] .testimony-page__card {
+  border-color: var(--border-light);
+}
+
+[data-theme="dark"] .testimony-page__card--featured {
+  background: color-mix(in srgb, var(--page-accent) 6%, var(--bg-card));
+  border-left-color: var(--page-accent);
+}
+
+[data-theme="dark"] .testimony-page__author-img-wrap {
+  border-color: color-mix(in srgb, var(--page-accent) 70%, transparent);
+}
+
 @media (max-width: 768px) {
   .testimony-page__hero {
-    padding: 5.5rem 1.25rem 3rem;
+    padding: calc(var(--ann-bar-height, 0px) + 5.75rem) 1.25rem 3rem;
   }
 
   .testimony-page__hero-heading {

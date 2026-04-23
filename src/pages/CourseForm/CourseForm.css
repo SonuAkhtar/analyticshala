@@ -1,10 +1,10 @@
-/* ── Course Form ──────────────────────────────────────────── */
 .course-form {
   --cf-accent: var(--brand-red);
   --cf-accent-dk: var(--brand-red-dark);
   --cf-accent-lt: rgba(178, 56, 80, 0.12);
   --cf-accent-ring: rgba(178, 56, 80, 0.18);
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
+  padding-top: calc(var(--ann-bar-height, 0px) + 5rem);
   background: var(--bg-primary);
   display: flex;
   flex-direction: column;
@@ -51,7 +51,6 @@
   left: -80px;
 }
 
-/* ── Card ───────────────────────────────────────────────── */
 .course-form__card {
   position: relative;
   width: 100%;
@@ -75,7 +74,6 @@
   border-radius: 20px 20px 0 0;
 }
 
-/* ── Course strip ───────────────────────────────────────── */
 .course-form__course-strip {
   display: flex;
   align-items: flex-start;
@@ -167,7 +165,6 @@
   white-space: nowrap;
 }
 
-/* ── Step indicator ─────────────────────────────────────── */
 .course-form__steps {
   display: flex;
   align-items: center;
@@ -243,7 +240,6 @@
   background: var(--cf-accent);
 }
 
-/* ── Step headings ──────────────────────────────────────── */
 .course-form__card h1 {
   font-family: var(--font-heading);
   font-size: 1.5rem;
@@ -259,7 +255,6 @@
   line-height: 1.55;
 }
 
-/* ── Step 1 – input fields ──────────────────────────────── */
 .course-form__grid {
   display: flex;
   flex-direction: column;
@@ -323,7 +318,6 @@
   color: var(--input-placeholder);
 }
 
-/* ── Step 2 – choice fields ─────────────────────────────── */
 .course-form__field-group {
   margin-bottom: 1.1rem;
 }
@@ -378,7 +372,6 @@
   font-weight: 600;
 }
 
-/* ── Error & submit error ───────────────────────────────── */
 .course-form__error-text {
   display: flex;
   align-items: center;
@@ -402,7 +395,6 @@
   margin-bottom: 0.75rem;
 }
 
-/* ── Buttons ────────────────────────────────────────────── */
 .course-form__next-btn {
   width: 100%;
   padding: 0.9rem 1.5rem;
@@ -492,7 +484,6 @@
   transform: none;
 }
 
-/* ── Trust note ─────────────────────────────────────────── */
 .course-form__trust-note {
   margin-top: 1rem;
   font-size: 0.78rem;
@@ -507,7 +498,6 @@
   font-size: 0.72rem;
 }
 
-/* ── WhatsApp escape link ───────────────────────────────── */
 .course-form__wa-help {
   display: flex;
   align-items: center;
@@ -529,7 +519,6 @@
   font-size: 0.95rem;
 }
 
-/* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 540px) {
   .course-form__body {
     padding: 2rem 1rem 4rem;

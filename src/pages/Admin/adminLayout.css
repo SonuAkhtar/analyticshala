@@ -1,12 +1,10 @@
-/* ── Admin Layout Shell ──────────────────────────────────── */
 .adm-layout {
   display: flex;
   min-height: 100vh;
   background: var(--adm-bg);
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-body);
 }
 
-/* ── Sidebar ─────────────────────────────────────────────── */
 .adm-sidebar {
   width: var(--adm-sidebar-w);
   flex-shrink: 0;
@@ -49,7 +47,7 @@
 
 .adm-sidebar__logo-name {
   display: block;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.9rem;
   font-weight: 800;
   color: #fff;
@@ -195,7 +193,7 @@
   border-radius: 50%;
   background: linear-gradient(135deg, #6366f1, #8b5cf6);
   color: #fff;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   font-weight: 800;
   font-size: 0.82rem;
   display: flex;
@@ -245,7 +243,6 @@
   border-color: transparent;
 }
 
-/* ── Main area ───────────────────────────────────────────── */
 .adm-main {
   flex: 1;
   margin-left: var(--adm-sidebar-w);
@@ -317,7 +314,7 @@
   border-radius: 50%;
   background: linear-gradient(135deg, #6366f1, #8b5cf6);
   color: #fff;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   font-weight: 800;
   font-size: 0.85rem;
   display: flex;
@@ -340,7 +337,6 @@
   z-index: 190;
 }
 
-/* ── Responsive ──────────────────────────────────────────── */
 @media (max-width: 768px) {
   .adm-sidebar {
     transform: translateX(-100%);

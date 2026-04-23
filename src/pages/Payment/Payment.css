@@ -1,11 +1,10 @@
-/* ── Payment Page ─────────────────────────────────────────── */
 .payment {
   --accent-indigo: var(--brand-red);   /* brand rose */
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 1.25rem;
+  padding: calc(var(--ann-bar-height, 0px) + 6rem) 1.25rem 4rem;
   background: var(--bg-primary);
   font-family: var(--font-body);
   position: relative;
@@ -36,7 +35,6 @@
   pointer-events: none;
 }
 
-/* ── Two-column layout ────────────────────────────────────── */
 .payment__wrap {
   position: relative;
   z-index: 1;
@@ -53,7 +51,6 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Order Summary (left) ─────────────────────────────────── */
 .payment__summary {
   flex: 1;
   background: var(--bg-card);
@@ -193,7 +190,6 @@
   font-size: 0.8rem;
 }
 
-/* ── Checkout card (right) ────────────────────────────────── */
 .payment__card {
   width: 340px;
   flex-shrink: 0;
@@ -416,7 +412,6 @@
   text-decoration: underline;
 }
 
-/* ── Processing overlay ───────────────────────────────────── */
 .payment__processing {
   position: fixed;
   inset: 0;
@@ -467,7 +462,6 @@
   color: var(--text-muted);
 }
 
-/* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 720px) {
   .payment__wrap {
     flex-direction: column;

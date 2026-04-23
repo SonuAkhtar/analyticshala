@@ -285,6 +285,10 @@
   transform: translateX(3px);
 }
 
+.scroll-cards__dots {
+  display: none;
+}
+
 @media (max-width: 1100px) {
   .scroll-cards__bento {
     grid-template-columns: repeat(4, 1fr);
@@ -360,14 +364,35 @@
   }
 
   .scroll-cards .container::after {
-    content: "← swipe →";
-    display: block;
-    text-align: center;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-top: 0.25rem;
+    display: none;
+  }
+
+  .scroll-cards__card-number {
+    top: auto;
+    bottom: 0.75rem;
+  }
+
+  .scroll-cards__dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0;
+    padding-top: 0.25rem;
+  }
+
+  .scroll-cards__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--border);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .scroll-cards__dot--active {
+    width: 20px;
+    border-radius: 3px;
+    background: var(--page-accent);
   }
 }

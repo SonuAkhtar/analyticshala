@@ -1,11 +1,9 @@
-/* ── AdminWorkshops ─────────────────────────────────────────── */
 .adm-workshops {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-/* ── Header ─────────────────────────────────────────────────── */
 .adm-workshops__header {
   display: flex;
   align-items: center;
@@ -30,7 +28,6 @@
   gap: 0.75rem;
 }
 
-/* ── Search ─────────────────────────────────────────────────── */
 .adm-workshops__search {
   display: flex;
   align-items: center;
@@ -59,7 +56,7 @@
   border: none;
   outline: none;
   font-size: 0.875rem;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-body);
   color: var(--adm-text);
   background: transparent;
 }
@@ -68,7 +65,6 @@
   color: var(--adm-text-m);
 }
 
-/* ── Table Wrapper ──────────────────────────────────────────── */
 .adm-workshops__table-wrap {
   background: var(--adm-card);
   border: 1px solid var(--adm-border);
@@ -77,7 +73,6 @@
   box-shadow: var(--adm-shadow);
 }
 
-/* ── Workshop Cell ──────────────────────────────────────────── */
 .adm-workshop-cell {
   display: flex;
   flex-direction: column;
@@ -96,7 +91,6 @@
   color: var(--adm-text-m);
 }
 
-/* ── Seats Bar ──────────────────────────────────────────────── */
 .adm-seats-bar {
   display: flex;
   flex-direction: column;
@@ -127,7 +121,6 @@
   color: var(--adm-text-m);
 }
 
-/* ── Seats Controls ─────────────────────────────────────────── */
 .adm-seats-controls {
   display: flex;
   align-items: center;
@@ -161,7 +154,6 @@
   cursor: not-allowed;
 }
 
-/* ── Drawer Tabs (reuse from courses) ──────────────────────── */
 .adm-drawer-tabs {
   display: flex;
   border-bottom: 1px solid var(--adm-border);
@@ -181,7 +173,7 @@
   border-left: none;
   border-right: none;
   transition: color 0.2s, border-bottom-color 0.2s;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-heading);
   white-space: nowrap;
 }
 

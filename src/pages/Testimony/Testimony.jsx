@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./testimony.css";
 import { testimonyData } from "../../../appData";
 
-/* ── Animation helpers ───────────────────────────────────── */
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 26 },
   whileInView: { opacity: 1, y: 0 },
@@ -11,12 +10,11 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.58, delay, ease: [0.22, 1, 0.36, 1] },
 });
 
-/* ── Static data ─────────────────────────────────────────── */
 const heroStats = [
-  { num: "500+", label: "Students Trained",  icon: "fas fa-graduation-cap" },
-  { num: "4.9★", label: "Average Rating",    icon: "fas fa-star" },
-  { num: "94%",  label: "Placement Rate",    icon: "fas fa-briefcase" },
-  { num: "11+",  label: "Years Teaching",    icon: "fas fa-chalkboard-teacher" },
+  { num: "500+", label: "Students Trained", icon: "fas fa-graduation-cap" },
+  { num: "4.9★", label: "Average Rating", icon: "fas fa-star" },
+  { num: "94%", label: "Placement Rate", icon: "fas fa-briefcase" },
+  { num: "11+", label: "Years Teaching", icon: "fas fa-chalkboard-teacher" },
 ];
 
 const trustItems = [
@@ -36,7 +34,6 @@ const alumniCompanies = [
   { icon: "fas fa-building", name: "IBM" },
 ];
 
-/* ── Parse position string ───────────────────────────────── */
 const parsePosition = (pos = "") => {
   const [role, company] = pos.split("@");
   return {
@@ -45,7 +42,6 @@ const parsePosition = (pos = "") => {
   };
 };
 
-/* ── Components ──────────────────────────────────────────── */
 
 const TestimonyCard = ({ t, featured = false }) => {
   const { role, company } = parsePosition(t.position);
@@ -79,7 +75,6 @@ const TestimonyCard = ({ t, featured = false }) => {
   );
 };
 
-/* ── Main Page ────────────────────────────────────────────── */
 const Testimony = () => {
   const featured = testimonyData[0];
 
@@ -88,10 +83,6 @@ const Testimony = () => {
       <section className="testimony-page__hero">
         <div className="testimony-page__hero-glow" />
         <div className="container testimony-page__hero-inner">
-          <motion.span className="testimony-page__eyebrow" {...fadeUp(0)}>
-            <i className="fas fa-star" /> Student Stories
-          </motion.span>
-
           <motion.h1 className="testimony-page__hero-heading" {...fadeUp(0.07)}>
             Real People.
             <br />

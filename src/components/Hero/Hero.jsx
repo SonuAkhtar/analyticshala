@@ -56,7 +56,6 @@ const featuredCourses = coursesData
 const nextWorkshop = workshopData.upcoming[0];
 const featuredTestimony = testimonyData[0];
 
-/* ── Mac Slide Content ──────────────────────────────────────── */
 const SlideTracker = ({ animate }) => (
   <div className="mac-slide mac-slide--tracker">
     <div className="mac-tracker-stats">
@@ -211,7 +210,6 @@ const SlideStack = () => (
   </div>
 );
 
-/* ── Progress bar (remounts on each slide to restart animation) ─ */
 const ProgressFill = memo(() => <div className="hero__mac-prog-fill" />);
 
 const SLIDES = [
@@ -234,7 +232,6 @@ const SLIDES = [
   { id: "stack", windowTitle: "Skills You'll Master", component: SlideStack },
 ];
 
-/* ── Mac Window Carousel ────────────────────────────────────── */
 const MacCarousel = () => {
   const [current, setCurrent] = useState(0);
   const [animKey, setAnimKey] = useState(0);
@@ -319,7 +316,6 @@ const MacCarousel = () => {
   );
 };
 
-/* ── Main Hero Component ────────────────────────────────────── */
 const Hero = () => {
   return (
     <section className="hero" id="hero">

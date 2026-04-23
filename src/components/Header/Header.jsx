@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate, useLocation } from "react-router-dom";
 import "./header.css";
 import MenuMobile from "../MenuMobile/MenuMobile";
 import { useTheme } from "../../context/ThemeContext";
@@ -8,12 +8,23 @@ const Header = () => {
   const [menuClick, setMenuClick] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleContact = (e) => {
+    e.preventDefault();
+    if (location.pathname === "/") {
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/", { state: { scrollTo: "#contact" } });
+    }
+  };
 
   const navLinkClass = ({ isActive }) => (isActive ? "active" : "");
 
@@ -39,7 +50,7 @@ const Header = () => {
             <NavLink to="/testimony" className={navLinkClass}>
               Testimony
             </NavLink>
-            <a href="/#contact">Contact</a>
+            <a href="/#contact" onClick={handleContact}>Contact</a>
           </div>
 
           <div className="header__nav-right">

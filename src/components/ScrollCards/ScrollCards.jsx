@@ -2,7 +2,7 @@ import "./scrollCards.css";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import { scrollCardsData } from "../../../appData";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const cardMeta = [
   { icon: "fas fa-chalkboard-teacher", color: "#4ade80", dark: true },
@@ -16,6 +16,16 @@ const ScrollCards = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
+  const [activeCard, setActiveCard] = useState(0);
+
+  const handleBentoScroll = (e) => {
+    const { scrollLeft, scrollWidth, clientWidth } = e.currentTarget;
+    const maxScroll = scrollWidth - clientWidth;
+    if (maxScroll <= 0) return;
+    const idx = Math.round((scrollLeft / maxScroll) * (scrollCardsData.length - 1));
+    setActiveCard(idx);
+  };
+
   return (
     <section className="scroll-cards">
       <div className="container">
@@ -25,7 +35,7 @@ const ScrollCards = () => {
           subtitle="We're not just another online course. Here's what makes us the go-to choice for data careers in India."
         />
 
-        <div className="scroll-cards__bento" ref={ref}>
+        <div className="scroll-cards__bento" ref={ref} onScroll={handleBentoScroll}>
           {scrollCardsData.map((card, index) => (
             <motion.div
               key={card.id}
@@ -46,6 +56,12 @@ const ScrollCards = () => {
               <h3 className="scroll-cards__card-title">{card.title}</h3>
               <p className="scroll-cards__card-desc">{card.info}</p>
             </motion.div>
+          ))}
+        </div>
+
+        <div className="scroll-cards__dots">
+          {scrollCardsData.map((_, i) => (
+            <div key={i} className={`scroll-cards__dot${i === activeCard ? " scroll-cards__dot--active" : ""}`} />
           ))}
         </div>
 

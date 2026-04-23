@@ -1,7 +1,7 @@
 .workshop-details {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 1.25rem 6rem;
+  padding: calc(var(--ann-bar-height, 0px) + 5.5rem) 1.25rem 6rem;
 }
 
 .workshop-details__hero {
@@ -464,7 +464,6 @@
   border-radius: 50px;
 }
 
-/* ── Countdown Timer ─────────────────────────────────────────── */
 .wd-countdown {
   background: linear-gradient(135deg, var(--bg-secondary) 0%, color-mix(in srgb, var(--page-accent) 5%, var(--bg-secondary)) 100%);
   border: 1px solid color-mix(in srgb, var(--page-accent) 20%, transparent);
@@ -618,7 +617,6 @@
   color: white;
 }
 
-/* ── Add to Calendar button ────────────────────────────── */
 .workshop-details__cal-btn {
   display: flex;
   align-items: center;
@@ -645,7 +643,6 @@
   color: #4285f4;
 }
 
-/* ── Social share bar ──────────────────────────────────── */
 .workshop-details__share-bar {
   display: flex;
   align-items: center;

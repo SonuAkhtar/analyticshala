@@ -2,7 +2,7 @@ import "./courses.css";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import { coursesData as allCourses } from "../../../appData";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const coursesData = allCourses
@@ -14,6 +14,16 @@ const Courses = ({ setShowDownload }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
+  const [activeCard, setActiveCard] = useState(0);
+
+  const handleGridScroll = (e) => {
+    const { scrollLeft, scrollWidth, clientWidth } = e.currentTarget;
+    const maxScroll = scrollWidth - clientWidth;
+    if (maxScroll <= 0) return;
+    const idx = Math.round((scrollLeft / maxScroll) * (coursesData.length - 1));
+    setActiveCard(idx);
+  };
+
   return (
     <section className="courses" id="courses">
       <div className="container">
@@ -23,7 +33,7 @@ const Courses = ({ setShowDownload }) => {
           subtitle="Structured, job-focused curricula built by practitioners - not just educators."
         />
 
-        <div className="courses__grid" ref={ref}>
+        <div className="courses__grid" ref={ref} onScroll={handleGridScroll}>
           {coursesData.map((course, index) => (
             <motion.div
               key={course.id}
@@ -87,6 +97,12 @@ const Courses = ({ setShowDownload }) => {
                 </Link>
               </div>
             </motion.div>
+          ))}
+        </div>
+
+        <div className="courses__dots">
+          {coursesData.map((_, i) => (
+            <div key={i} className={`courses__dot${i === activeCard ? " courses__dot--active" : ""}`} />
           ))}
         </div>
 

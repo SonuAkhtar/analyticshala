@@ -39,7 +39,6 @@
   z-index: 1;
 }
 
-/* ─── Form wrap ─────────────────────────────────────────────── */
 
 .contact__form-wrap {
   background: var(--bg-card);
@@ -123,7 +122,6 @@
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--page-accent) 12%, transparent);
 }
 
-/* ─── Submit button ──────────────────────────────────────────── */
 
 .contact__form-submit {
   display: flex;
@@ -161,7 +159,6 @@
   margin-top: -0.25rem;
 }
 
-/* ─── Success state ──────────────────────────────────────────── */
 
 .contact__success {
   display: flex;
@@ -222,7 +219,6 @@
   color: var(--page-accent);
 }
 
-/* ─── Info / chips side ──────────────────────────────────────── */
 
 .contact__info-wrap {
   display: flex;
@@ -295,7 +291,6 @@ a.contact__chip-value:hover {
   color: var(--page-accent);
 }
 
-/* ─── QR divider ─────────────────────────────────────────────── */
 
 .contact__qr-divider {
   display: flex;
@@ -326,7 +321,6 @@ a.contact__chip-value:hover {
   color: var(--page-accent);
 }
 
-/* ─── QR cards ───────────────────────────────────────────────── */
 
 .contact__qr-grid {
   display: grid;
@@ -458,7 +452,6 @@ a.contact__chip-value:hover {
   color: var(--text-muted);
 }
 
-/* ─── Dark theme override ────────────────────────────────────── */
 [data-theme="dark"] .contact {
   background: var(--dark-section-bg);
   border-top-color: rgba(255, 255, 255, 0.06);
@@ -540,7 +533,6 @@ a.contact__chip-value:hover {
 [data-theme="dark"] .contact__qr-platform-text strong { color: var(--off-white); }
 [data-theme="dark"] .contact__qr-platform-text span   { color: rgba(255, 255, 255, 0.45); }
 
-/* ─── Responsive ─────────────────────────────────────────────── */
 
 @media (max-width: 960px) {
   .contact__grid {

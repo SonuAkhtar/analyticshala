@@ -1,4 +1,3 @@
-/* ── AdminDashboard ─────────────────────────────────────────── */
 .adm-dash {
   display: flex;
   flex-direction: column;
@@ -23,7 +22,6 @@
   margin: 0;
 }
 
-/* ── Stat Cards ─────────────────────────────────────────────── */
 .adm-dash__stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -104,7 +102,6 @@
   margin-top: 0.15rem;
 }
 
-/* ── Sections ───────────────────────────────────────────────── */
 .adm-dash__section h2 {
   font-size: 1rem;
   font-weight: 700;
@@ -114,7 +111,6 @@
   margin: 0 0 1rem;
 }
 
-/* ── Action Cards ───────────────────────────────────────────── */
 .adm-dash__actions {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -164,7 +160,6 @@
   line-height: 1.4;
 }
 
-/* ── Tables ─────────────────────────────────────────────────── */
 .adm-table {
   width: 100%;
   border-collapse: collapse;
@@ -199,14 +194,12 @@
   color: var(--adm-text-2);
 }
 
-/* ── Tables Layout ──────────────────────────────────────────── */
 .adm-dash__tables {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
 }
 
-/* ── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .adm-dash__tables {
     grid-template-columns: 1fr;

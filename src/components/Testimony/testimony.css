@@ -311,3 +311,31 @@
     gap: 1.5rem;
   }
 }
+
+[data-theme="dark"] .testimony {
+  background: var(--bg-primary);
+}
+
+[data-theme="dark"] .testimony__featured,
+[data-theme="dark"] .testimony__rating-summary {
+  background: var(--bg-card);
+  border-color: var(--border-light);
+}
+
+[data-theme="dark"] .testimony__card {
+  background: var(--bg-card);
+  border-color: var(--border-light);
+}
+
+[data-theme="dark"] .testimony__card:hover {
+  border-color: var(--page-accent);
+  background: var(--bg-card-hover);
+}
+
+[data-theme="dark"] .testimony__profile {
+  border-top-color: var(--border-light);
+}
+
+[data-theme="dark"] .testimony__rating-score {
+  border-bottom-color: var(--border-light);
+}

@@ -5,7 +5,6 @@ import { Helmet } from "react-helmet-async";
 import "./workshops.css";
 import { workshopData } from "../../../appData";
 
-/* ── Helpers ─────────────────────────────────────────────── */
 const parseDate = (dateStr = "") => {
   // "March 29, Saturday"  →  { day:"29", month:"MAR", dayName:"SAT" }
   const parts = dateStr.split(", ");
@@ -33,7 +32,6 @@ const getNextSaturday = () => {
 
 const pad = (n) => String(n).padStart(2, "0");
 
-/* ── Countdown hook ──────────────────────────────────────── */
 const useCountdown = (target) => {
   const calc = () => {
     const diff = Math.max(0, target - Date.now());
@@ -52,7 +50,6 @@ const useCountdown = (target) => {
   return time;
 };
 
-/* ── Static data ─────────────────────────────────────────── */
 const AVATAR_SEEDS = [
   "https://i.pravatar.cc/40?img=1",
   "https://i.pravatar.cc/40?img=2",
@@ -91,7 +88,6 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.48, delay, ease: [0.22, 1, 0.36, 1] },
 });
 
-/* ── Featured Ticket (hero right side) ───────────────────── */
 const FeaturedTicket = ({ workshop }) => {
   const { month, day, dayName } = parseDate(workshop.date);
   const pct = getSeatPct(workshop.seatsLeft, workshop.totalSeats);
@@ -155,7 +151,6 @@ const FeaturedTicket = ({ workshop }) => {
   );
 };
 
-/* ── Ticket Card (upcoming list) ─────────────────────────── */
 const TicketCard = ({ workshop, onWaitlist }) => {
   const { month, day, dayName } = parseDate(workshop.date);
   const pct = getSeatPct(workshop.seatsLeft, workshop.totalSeats);
@@ -272,7 +267,6 @@ const TicketCard = ({ workshop, onWaitlist }) => {
   );
 };
 
-/* ── Past Card (compact) ─────────────────────────────────── */
 const PastCard = ({ workshop }) => (
   <div className="workshops-page__past-card">
     <div className="workshops-page__past-img">
@@ -281,6 +275,20 @@ const PastCard = ({ workshop }) => (
       <span className="workshops-page__status workshops-page__status--past workshops-page__status--abs">
         PAST
       </span>
+      {(workshop.attendees || workshop.rating) && (
+        <div className="workshops-page__past-img-stats">
+          {workshop.attendees && (
+            <span className="workshops-page__past-img-stat">
+              <i className="fas fa-users" /> {workshop.attendees} attended
+            </span>
+          )}
+          {workshop.rating && (
+            <span className="workshops-page__past-img-stat workshops-page__past-img-stat--gold">
+              <i className="fas fa-star" /> {workshop.rating}
+            </span>
+          )}
+        </div>
+      )}
     </div>
     <div className="workshops-page__past-body">
       <span className="workshops-page__past-cat">{workshop.category}</span>
@@ -295,23 +303,10 @@ const PastCard = ({ workshop }) => (
           </span>
         )}
       </div>
-      <div className="workshops-page__past-stats">
-        {workshop.attendees && (
-          <span>
-            <i className="fas fa-users" /> {workshop.attendees} attended
-          </span>
-        )}
-        {workshop.rating && (
-          <span className="workshops-page__past-rating">
-            <i className="fas fa-star" /> {workshop.rating}
-          </span>
-        )}
-      </div>
     </div>
   </div>
 );
 
-/* ── Waitlist Modal ──────────────────────────────────────── */
 const WaitlistModal = ({ workshop, onClose }) => {
   const [email, setEmail] = useState("");
   const [done, setDone] = useState(false);
@@ -387,7 +382,6 @@ const WaitlistModal = ({ workshop, onClose }) => {
   );
 };
 
-/* ── Main Page ────────────────────────────────────────────── */
 const Workshops = () => {
   const countdown = useCountdown(getNextSaturday().getTime());
   const featured = workshopData.upcoming[0];

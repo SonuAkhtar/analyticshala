@@ -22,44 +22,6 @@ const stats = [
   { icon: "fas fa-certificate", value: "100%", label: "Certificate Included" },
 ];
 
-const pathSteps = [
-  {
-    step: "01",
-    icon: "fas fa-table",
-    title: "Excel & SQL",
-    desc: "Build strong data foundations with the tools every analyst uses daily.",
-    color: "orange",
-  },
-  {
-    step: "02",
-    icon: "fas fa-chart-bar",
-    title: "Data Analytics",
-    desc: "Learn to find insights, build dashboards, and communicate data stories.",
-    color: "blue",
-  },
-  {
-    step: "03",
-    icon: "fas fa-flask",
-    title: "Data Science",
-    desc: "Go deeper into Python, ML models, and the full science lifecycle.",
-    color: "green",
-  },
-  {
-    step: "04",
-    icon: "fas fa-brain",
-    title: "AI & RAG",
-    desc: "Master AI fundamentals, build retrieval systems, and work with LLMs.",
-    color: "teal",
-  },
-  {
-    step: "05",
-    icon: "fas fa-robot",
-    title: "Agentic AI",
-    desc: "Build autonomous agents that plan, reason, and take actions.",
-    color: "purple",
-  },
-];
-
 const whyItems = [
   {
     icon: "fas fa-laptop-code",
@@ -83,7 +45,6 @@ const whyItems = [
   },
 ];
 
-/* ── Course Card - Horizontal Bento ──────────────────────── */
 const CourseCard = ({ course }) => {
   const bannerImg = course.bannerImage || DEFAULT_IMAGE;
   const diffClass = getDifficultyClass(course.level || "beginner");
@@ -187,17 +148,16 @@ const CourseCard = ({ course }) => {
   );
 };
 
-/* ── Main Page ────────────────────────────────────────────── */
 const Courses = () => {
   const [filter, setFilter] = useState("all");
-  const [search, setSearch] = useState("");
+  const [activeWhyCard, setActiveWhyCard] = useState(0);
 
-  const categories = [
-    { key: "all", label: "All Courses" },
-    { key: "ai", label: "AI & ML" },
-    { key: "data", label: "Data" },
-    { key: "tools", label: "Tools & SQL" },
-  ];
+  const handleWhyScroll = (e) => {
+    const { scrollLeft, scrollWidth, clientWidth } = e.currentTarget;
+    const maxScroll = scrollWidth - clientWidth;
+    if (maxScroll <= 0) return;
+    setActiveWhyCard(Math.round((scrollLeft / maxScroll) * (whyItems.length - 1)));
+  };
 
   const categoryMap = {
     all: [
@@ -218,17 +178,21 @@ const Courses = () => {
     tools: ["sql", "excel", "tableau", "webdev"],
   };
 
-  const filtered = courses.filter((c) => {
-    const inCategory = categoryMap[filter].includes(c.id);
-    const q = search.trim().toLowerCase();
-    const matchesSearch =
-      !q ||
-      c.title.toLowerCase().includes(q) ||
-      c.subtitle.toLowerCase().includes(q) ||
-      c.description.toLowerCase().includes(q) ||
-      c.skills.some((s) => s.toLowerCase().includes(q));
-    return inCategory && matchesSearch;
-  });
+  const categoryCounts = Object.fromEntries(
+    Object.entries(categoryMap).map(([key, ids]) => [
+      key,
+      courses.filter((c) => ids.includes(c.id)).length,
+    ])
+  );
+
+  const categories = [
+    { key: "all",   label: "All Courses" },
+    { key: "ai",    label: "AI & ML"     },
+    { key: "data",  label: "Data"        },
+    { key: "tools", label: "Tools & SQL" },
+  ];
+
+  const filtered = courses.filter((c) => categoryMap[filter].includes(c.id));
 
   return (
     <div className="courses-page">
@@ -248,16 +212,6 @@ const Courses = () => {
         />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://analyticshala.in/courses" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
-          rel="stylesheet"
-        />
       </Helmet>
       <section className="courses-page__hero">
         {/* SVG wave -blue hero melts into cream grid section */}
@@ -269,7 +223,7 @@ const Courses = () => {
           >
             <path
               d="M0,0 C360,64 1080,64 1440,0 L1440,64 L0,64 Z"
-              fill="#faf7f0"
+              className="courses-page__hero-curve-path"
             />
           </svg>
         </div>
@@ -295,27 +249,6 @@ const Courses = () => {
             &ldquo;Because &apos;I know Excel&apos; doesn&apos;t cut it anymore
             😄&rdquo;
           </p>
-
-          {/* Search bar */}
-          <div className="courses-page__search">
-            <i className="fas fa-search courses-page__search-icon" />
-            <input
-              type="text"
-              placeholder="Search courses, skills, topics…"
-              className="courses-page__search-input"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-            {search && (
-              <button
-                className="courses-page__search-clear"
-                onClick={() => setSearch("")}
-                aria-label="Clear search"
-              >
-                <i className="fas fa-times" />
-              </button>
-            )}
-          </div>
 
           {/* Stat chips */}
           <div className="courses-page__stat-chips">
@@ -343,6 +276,9 @@ const Courses = () => {
                 onClick={() => setFilter(cat.key)}
               >
                 {cat.label}
+                <span className="courses-page__filter-count">
+                  {categoryCounts[cat.key]}
+                </span>
               </button>
             ))}
           </div>
@@ -355,11 +291,8 @@ const Courses = () => {
             </div>
           ) : (
             <div className="courses-page__empty">
-              <i className="fas fa-search" />
-              <p>
-                No courses match <strong>&ldquo;{search}&rdquo;</strong>
-              </p>
-              <button onClick={() => setSearch("")}>Clear search</button>
+              <i className="fas fa-book-open" />
+              <p>No courses in this category yet.</p>
             </div>
           )}
         </div>
@@ -378,7 +311,7 @@ const Courses = () => {
             <em>(No cape required.)</em>
           </p>
 
-          <div className="courses-page__why-grid">
+          <div className="courses-page__why-grid" onScroll={handleWhyScroll}>
             {whyItems.map((item, i) => (
               <div key={i} className="courses-page__why-card">
                 <div className="courses-page__why-icon">
@@ -387,6 +320,15 @@ const Courses = () => {
                 <h4>{item.title}</h4>
                 <p>{item.desc}</p>
               </div>
+            ))}
+          </div>
+
+          <div className="courses-page__why-dots">
+            {whyItems.map((_, i) => (
+              <div
+                key={i}
+                className={`courses-page__why-dot${i === activeWhyCard ? " courses-page__why-dot--active" : ""}`}
+              />
             ))}
           </div>
         </div>

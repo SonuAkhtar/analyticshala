@@ -9,9 +9,13 @@
 .course-details__hero {
   position: relative;
   overflow: hidden;
-  padding: 7rem 1.5rem 4rem;
+  padding: 9rem 1.5rem 4rem;
   background: var(--bg-primary);
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .course-details__hero-orb {
@@ -468,7 +472,6 @@
 
 .course-details__sidebar::-webkit-scrollbar { display: none; }
 
-/* ── Preview card ─────────────────────────────────────────── */
 .course-details__preview-card {
   margin-bottom: 1rem;
   border-radius: 16px;
@@ -687,7 +690,6 @@
   font-size: 0.75rem;
 }
 
-/* ── Social proof / urgency block above enroll CTA ──────────── */
 .course-details__enroll-context {
   display: flex;
   flex-direction: column;

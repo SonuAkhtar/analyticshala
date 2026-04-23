@@ -1,11 +1,10 @@
-/* ── 404 Page ─────────────────────────────────────────────── */
 .nf {
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
   background: var(--bg-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 1.5rem;
+  padding: calc(var(--ann-bar-height, 0px) + 6rem) 1.5rem 4rem;
   font-family: var(--font-body);
   position: relative;
   overflow: hidden;
@@ -44,7 +43,6 @@
   transform: translateX(-50%);
 }
 
-/* ── Inner container ────────────────────────────────────── */
 .nf__inner {
   position: relative;
   z-index: 1;
@@ -59,7 +57,6 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── 4_4 code display ───────────────────────────────────── */
 .nf__code-wrap {
   display: flex;
   align-items: center;
@@ -102,7 +99,6 @@
   66%       { transform: translateY(-4px) rotate(3deg); }
 }
 
-/* ── Copy ───────────────────────────────────────────────── */
 .nf__copy {
   margin-bottom: 2.25rem;
 }
@@ -124,7 +120,6 @@
   margin: 0 auto;
 }
 
-/* ── Quick links grid ───────────────────────────────────── */
 .nf__links {
   display: flex;
   flex-wrap: wrap;
@@ -166,7 +161,6 @@
   color: var(--accent-indigo);
 }
 
-/* ── Primary button ─────────────────────────────────────── */
 .nf__btn {
   display: inline-flex;
   align-items: center;
@@ -192,7 +186,6 @@
 
 .nf__btn:active { transform: translateY(0); }
 
-/* ── Help line ──────────────────────────────────────────── */
 .nf__help {
   font-size: 0.85rem;
   color: var(--text-muted);
@@ -211,7 +204,6 @@
   text-decoration: underline;
 }
 
-/* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 480px) {
   .nf {
     padding: 3rem 1.25rem;

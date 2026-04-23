@@ -1,11 +1,9 @@
-/* ── AdminAnnouncements ─────────────────────────────────────── */
 .adm-ann {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-/* ── Header ─────────────────────────────────────────────────── */
 .adm-ann__header h1 {
   font-size: 1.5rem;
   font-weight: 800;
@@ -19,7 +17,6 @@
   margin: 0;
 }
 
-/* ── Layout ─────────────────────────────────────────────────── */
 .adm-ann__layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -27,7 +24,6 @@
   align-items: start;
 }
 
-/* ── Cards ──────────────────────────────────────────────────── */
 .adm-ann__form-card {
   background: var(--adm-card);
   border: 1px solid var(--adm-border);
@@ -46,7 +42,6 @@
   top: 80px;
 }
 
-/* ── Preview Label ──────────────────────────────────────────── */
 .adm-ann__preview-label {
   font-size: 0.72rem;
   font-weight: 700;
@@ -56,7 +51,6 @@
   margin-bottom: 0.1rem;
 }
 
-/* ── Announcement Bar Preview ───────────────────────────────── */
 .adm-ann__bar {
   display: flex;
   align-items: center;
@@ -106,7 +100,6 @@
   background: rgba(255, 255, 255, 0.12);
 }
 
-/* ── Toggle Row ─────────────────────────────────────────────── */
 .adm-ann__toggle-row {
   display: flex;
   align-items: center;
@@ -135,7 +128,6 @@
   color: var(--adm-text-m);
 }
 
-/* ── Save Row ───────────────────────────────────────────────── */
 .adm-ann__save-row {
   display: flex;
   gap: 0.75rem;
@@ -143,7 +135,6 @@
   flex-wrap: wrap;
 }
 
-/* ── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .adm-ann__layout {
     grid-template-columns: 1fr;

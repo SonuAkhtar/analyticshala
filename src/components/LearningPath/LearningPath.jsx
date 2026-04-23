@@ -77,8 +77,6 @@ const LearningPath = () => {
 
   useGSAP(
     () => {
-      if (window.innerWidth < 768) return;
-
       const nodes = nodeRefs.current;
       const connectors = connectorRefs.current;
       const cards = cardRefs.current;
@@ -105,7 +103,7 @@ const LearningPath = () => {
       });
 
       for (let i = 0; i < roadmapSteps.length - 1; i++) {
-        const b = i; // chapter base position
+        const b = i;
         tl.to(connectors[i], { scaleY: 1, ease: "none", duration: 0.5 }, b);
         tl.to(
           nodes[i + 1],

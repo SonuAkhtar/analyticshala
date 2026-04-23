@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./stickyEnroll.css";
+import { Link } from "react-router-dom";
 
 const StickyEnroll = () => {
   const [visible, setVisible] = useState(false);
@@ -24,7 +25,8 @@ const StickyEnroll = () => {
         <i className="fas fa-fire" /> Limited seats left!
       </span>
       <button className="sticky-enroll__cta" onClick={handleClick}>
-        <i className="fas fa-graduation-cap" /> Enroll Now
+        <i className="fas fa-graduation-cap" />
+        <Link to="/courses">Enroll Now</Link>
       </button>
     </div>
   );

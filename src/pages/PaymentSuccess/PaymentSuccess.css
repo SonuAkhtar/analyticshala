@@ -1,9 +1,9 @@
 .ps {
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: 4rem 1.25rem 5rem;
+  padding: calc(var(--ann-bar-height, 0px) + 6rem) 1.25rem 5rem;
   background: var(--bg-primary);
   font-family: var(--font-body);
   position: relative;
@@ -231,7 +231,7 @@
 }
 
 .ps__course-payment-id {
-  font-family: monospace;
+  font-family: var(--font-mono);
   font-size: 0.78rem;
   font-weight: 600;
   color: var(--text-secondary);
@@ -548,7 +548,7 @@
 }
 
 .ps__ws-payment-id {
-  font-family: monospace;
+  font-family: var(--font-mono);
   font-size: 0.7rem;
   color: var(--text-muted);
   background: var(--bg-card);
