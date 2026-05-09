@@ -602,7 +602,7 @@
   font-family: var(--font-heading);
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--cp-gold-dk);
+  color: var(--cp-red);
 }
 
 .courses-page__card-price-was {
@@ -611,13 +611,13 @@
   text-decoration: line-through;
 }
 
-/* Gold CTA button */
+/* Primary CTA button */
 .courses-page__card-cta {
   display: inline-flex;
   align-items: center;
   gap: 0.42rem;
   padding: 0.55rem 1.15rem;
-  background: var(--cp-gold);
+  background: var(--cp-red);
   color: #fff;
   border-radius: 999px;
   font-family: var(--font-body);
@@ -627,13 +627,13 @@
   transition: all 0.22s ease;
   white-space: nowrap;
   flex-shrink: 0;
-  box-shadow: 0 3px 14px rgba(244, 210, 80, 0.32);
+  box-shadow: 0 3px 14px rgba(178, 56, 80, 0.28);
 }
 
 .courses-page__card-cta:hover {
-  background: var(--cp-gold-dk);
+  background: #8f2a3e;
   transform: translateY(-1px);
-  box-shadow: 0 6px 22px rgba(244, 210, 80, 0.45);
+  box-shadow: 0 6px 22px rgba(178, 56, 80, 0.42);
 }
 
 .courses-page__card-cta i {

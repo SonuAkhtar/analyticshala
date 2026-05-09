@@ -122,10 +122,7 @@ const CourseCard = ({ course }) => {
             {reg && (
               <div className="courses-page__card-price">
                 <span className="courses-page__card-price-now">
-                  {reg.price}
-                </span>
-                <span className="courses-page__card-price-was">
-                  {reg.originalPrice}
+                  {reg.regFee} <em style={{ fontWeight: 400, fontSize: "0.78em", opacity: 0.7 }}>reg fee</em>
                 </span>
               </div>
             )}

@@ -1,38 +1,32 @@
-@import url("https://fonts.googleapis.com/css2?family=Prosto+One&display=swap");
-
 /* ============================================================
    Testimony Page - BEM stylesheet
    Identity: Emerald · Editorial masonry · Centered hero
    Accent: var(--accent-green) (emerald-500)
    ============================================================ */
 
-.testimony-page h1,
-.testimony-page h2,
-.testimony-page h3,
-.testimony-page h4,
-.testimony-page h5,
-.testimony-page h6,
-.testimony-page p,
-.testimony-page span:not(.fas):not(.far):not(.fab),
-.testimony-page a,
-.testimony-page button {
-  font-family: "Prosto One", sans-serif !important;
-}
-
 .testimony-page {
-  font-family: "Prosto One", sans-serif;
-  --font-heading: "Prosto One", sans-serif;
-  --font-body: "Prosto One", sans-serif;
   --page-accent: var(--accent-green);
   --page-accent-dark: #059669;
   --page-accent-light: #34d399;
   --page-accent-glow: rgba(16, 185, 129, 0.1);
   --page-bg: #fffdf9;
   --page-bg-alt: #f0fdf4;
+  --t-hero-bg: #eaf7f1;
+  --t-reviews-bg: var(--bg-primary);
+  --t-alumni-bg: #f0fdf4;
+  --t-trust-bg: #dff0e8;
+  --t-cta-bg: linear-gradient(155deg, #16a085 0%, #0d6b57 100%);
 
   background: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-body);
+}
+
+[data-theme="dark"] .testimony-page {
+  --t-hero-bg: #0e1f18;
+  --t-reviews-bg: var(--bg-primary);
+  --t-alumni-bg: #0a1a12;
+  --t-trust-bg: #0d1f17;
 }
 
 .testimony-page__eyebrow {
@@ -127,6 +121,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: var(--t-hero-bg);
 }
 
 .testimony-page__hero-glow {
@@ -383,6 +378,7 @@
 
 .testimony-page__reviews {
   padding: 5rem 1.5rem 4.5rem;
+  background: var(--t-reviews-bg);
 }
 
 .testimony-page__grid {
@@ -513,9 +509,9 @@
 }
 
 .testimony-page__alumni-strip {
-  background: var(--bg-primary);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  background: var(--t-alumni-bg);
+  border-top: 1px solid rgba(16, 185, 129, 0.18);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.18);
   padding: 1.75rem 1.5rem;
 }
 
@@ -572,8 +568,8 @@
 }
 
 .testimony-page__trust {
-  background: var(--bg-secondary);
-  border-top: 1px solid var(--border);
+  background: var(--t-trust-bg);
+  border-top: 1px solid rgba(16, 185, 129, 0.18);
   padding: 2.5rem 1.5rem;
 }
 
@@ -611,7 +607,7 @@
 
 .testimony-page__cta {
   padding: 5.5rem 1.5rem;
-  background: linear-gradient(160deg, #c8e6d8 0%, #a2d4bf 100%);
+  background: var(--t-cta-bg);
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -642,7 +638,7 @@
   border-radius: 999px;
   font-size: 0.82rem;
   font-weight: 600;
-  color: #1a3d2b;
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   transition: background 0.2s;
 }
@@ -671,7 +667,7 @@
   font-family: var(--font-heading);
   font-size: clamp(1.8rem, 3.5vw, 2.7rem);
   font-weight: 800;
-  color: #1a3d2b;
+  color: #ffffff;
   letter-spacing: -0.02em;
   line-height: 1.15;
   margin: 0 0 1rem;
@@ -679,7 +675,7 @@
 
 .testimony-page__cta-sub {
   font-size: 0.97rem;
-  color: rgba(26, 61, 43, 0.72);
+  color: rgba(255, 255, 255, 0.78);
   line-height: 1.7;
   margin-bottom: 2.25rem;
 }
@@ -705,14 +701,14 @@
 
 /* CTA frosted outline button */
 .testimony-page__btn--cta-outline {
-  background: rgba(255, 255, 255, 0.45);
-  color: #1a3d2b;
-  border: 1.5px solid rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(6px);
 }
 
 .testimony-page__btn--cta-outline:hover {
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.28);
   transform: translateY(-2px);
 }
 

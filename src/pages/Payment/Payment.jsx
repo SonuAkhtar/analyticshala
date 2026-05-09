@@ -44,7 +44,6 @@ const Payment = () => {
     state.user?.workshopTitle ||
     "AnalyticShala Program";
   const amountINR = toINR(state.amount);
-  const coursePrice = state.coursePrice || null;
   const courseId = state.user?.courseId;
   const enrolledNum = ENROLLED_COUNT[courseId] || 142;
 
@@ -196,14 +195,6 @@ const Payment = () => {
                   ₹{amountINR}
                 </span>
               </div>
-              {coursePrice && (
-                <div className="payment__summary-line payment__summary-line--muted">
-                  <span>
-                    Full Course Fee <em>(on batch start)</em>
-                  </span>
-                  <span>{coursePrice}</span>
-                </div>
-              )}
             </div>
 
             <div className="payment__summary-total">

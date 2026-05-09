@@ -21,8 +21,6 @@ const fadeUp = {
   }),
 };
 
-const parsePrice = (str) => parseInt(str.replace(/[₹,\s]/g, ""), 10);
-
 const CourseDetails = () => {
   const [params] = useSearchParams();
   const { slug } = useParams();
@@ -33,9 +31,6 @@ const CourseDetails = () => {
 
   const instructor = teamData.find((t) => t.name === reg.instructor) || teamData[1];
 
-  const discount = Math.round(
-    (1 - parsePrice(reg.price) / parsePrice(reg.originalPrice)) * 100
-  );
   const enrolledCount = ENROLLED_COUNT[course.id] || 120;
 
   return (
@@ -279,13 +274,9 @@ const CourseDetails = () => {
         <aside className="course-details__sidebar">
           <div className="course-details__price-card">
             <div className="course-details__price-row">
-              <span className="course-details__price-now">{reg.price}</span>
-              <span className="course-details__price-was">{reg.originalPrice}</span>
-              <span className="course-details__price-off">{discount}% OFF</span>
+              <span className="course-details__price-now">{reg.regFee}</span>
+              <span style={{ fontSize: "0.82rem", color: "var(--text-muted)", fontWeight: 500 }}>Registration Fee</span>
             </div>
-            <p className="course-details__emi-note">
-              <i className="fas fa-credit-card" /> EMI from {reg.emi}
-            </p>
 
             <div className="course-details__sidebar-meta">
               <div className="course-details__sb-item">

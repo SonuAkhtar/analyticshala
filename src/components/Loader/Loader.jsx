@@ -35,8 +35,6 @@ const Loader = ({ onDone }) => {
         setTimeout(() => {
           if (cancelled) return;
           setExiting(true);
-          // A-zoom lasts 0.9 s + background fade 0.5 s (starts at 0.5 s delay)
-          // Unmount at ~1.1 s so the page appears cleanly
           setTimeout(() => {
             if (cancelled) return;
             setGone(true);
@@ -72,23 +70,6 @@ const Loader = ({ onDone }) => {
       >
         AnalyticShala
       </motion.p>
-
-      {/* The A that zooms full-screen the moment loading ends */}
-      {exiting && (
-        <div className="page-loader__exit-wrap" aria-hidden="true">
-          <motion.span
-            className="page-loader__exit-a"
-            initial={{ scale: 1, opacity: 0.88 }}
-            animate={{ scale: 90, opacity: 0 }}
-            transition={{
-              scale:   { duration: 0.9, ease: [0.42, 0, 0.82, 1] },
-              opacity: { duration: 0.9, ease: [0.6,  0, 1,    1] },
-            }}
-          >
-            A
-          </motion.span>
-        </div>
-      )}
 
       {/* Counter — bottom left */}
       <motion.div
