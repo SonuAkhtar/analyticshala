@@ -273,11 +273,6 @@ const CourseDetails = () => {
 
         <aside className="course-details__sidebar">
           <div className="course-details__price-card">
-            <div className="course-details__price-row">
-              <span className="course-details__price-now">{reg.regFee}</span>
-              <span style={{ fontSize: "0.82rem", color: "var(--text-muted)", fontWeight: 500 }}>Registration Fee</span>
-            </div>
-
             <div className="course-details__sidebar-meta">
               <div className="course-details__sb-item">
                 <i className="fas fa-calendar-alt" />

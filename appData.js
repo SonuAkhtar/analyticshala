@@ -1,4 +1,4 @@
-import { courseFees, workshopFees, fmt, emi } from "./pricingConfig.js";
+import { courseFees, workshopFees, fmt } from "./pricingConfig.js";
 
 export const socialIconsData = [
   {
@@ -10,38 +10,6 @@ export const socialIconsData = [
     id: 2,
     class: "fab fa-instagram",
     href: "https://www.instagram.com/analyticshala/",
-  },
-];
-
-export const menuMobileData = [
-  { id: 0, class: "one", icon: "fas fa-home", name: "Home", href: "/" },
-  {
-    id: 1,
-    class: "two",
-    icon: "fas fa-user",
-    name: "About Us",
-    href: "/aboutUs",
-  },
-  {
-    id: 2,
-    class: "three",
-    icon: "fas fa-file-code",
-    name: "Courses",
-    href: "/courses",
-  },
-  {
-    id: 3,
-    class: "four",
-    icon: "fas fa-briefcase",
-    name: "FAQ",
-    href: "/#faq",
-  },
-  {
-    id: 4,
-    class: "five",
-    icon: "fas fa-project-diagram",
-    name: "Contact Us",
-    href: "/#contact",
   },
 ];
 
@@ -99,650 +67,13 @@ export const heroMarqData = [
 /* ----- Course Data ----- */
 
 export const coursesData = [
-  /* -- 1. Python (Foundation + Data) -- */
-  {
-    id: "python",
-    slug: "python-foundation-data",
-
-    /* Homepage */
-    homepageOrder: 1,
-    homepageTitle: "Python (Foundation + Data)",
-    badge: "High Demand",
-    badgeColor: "badge-blue",
-    accent: "#457b9d",
-    chapters: [
-      "Python Basics",
-      "Data Structures",
-      "NumPy",
-      "Pandas",
-      "Data Cleaning",
-      "Projects",
-    ],
-    desc: "Learn Python from scratch and use it to solve real-world data problems, automate workflows, and build analytical solutions.",
-
-    /* Courses page */
-    category: "Programming",
-    categoryLabel: "Python",
-    bannerImage:
-      "https://images.unsplash.com/photo-1526378722484-bd91ca387e72?w=600&q=80&auto=format&fit=crop",
-    icon: "fas fa-code",
-    level: "Beginner → Intermediate",
-    duration: "8 weeks",
-    modules: 8,
-    color: "card-blue",
-    enrolledCount: 210,
-    title: "Python (Foundation + Data)",
-    subtitle:
-      "Learn Python for Data Analysis, Automation & Real-World Projects",
-    description:
-      "Learn Python from scratch and apply it to real-world data problems, automation, and analytical workflows.",
-    skills: [
-      "Python fundamentals & logic building",
-      "Data structures & functions",
-      "NumPy & Pandas for data analysis",
-      "Data cleaning & transformation",
-      "Real-world data workflows",
-    ],
-    outcomes: [
-      "Write production-ready Python code",
-      "Analyze and manipulate real datasets",
-      "Automate repetitive tasks",
-      "Build reusable data pipelines",
-    ],
-
-    /* Registration */
-    regFee: "₹500",
-    price: "₹6,999",
-    originalPrice: "₹9,999",
-    emi: "₹583/mo",
-    nextBatch: "April 5, 2026",
-    batchType: "Weekend Batch",
-    instructor: "Faizan Ansari",
-    includes: [
-      "8 weeks of live weekend sessions",
-      "Recorded sessions & datasets",
-      "Hands-on projects & case studies",
-      "Assignments & practice exercises",
-      "Course completion certificate",
-      "Career guidance support",
-    ],
-    whoIsItFor: [
-      "Beginners",
-      "Data aspirants",
-      "Professionals working with data",
-    ],
-    curriculum: [
-      {
-        week: "Week 1",
-        title: "Getting Started with Python",
-        topics: [
-          "Introduction to Python & its applications in data science",
-          "Setting up environment (Anaconda, Python installation)",
-          "Python IDEs (Jupyter Notebook, IPython)",
-          "Understanding packages & libraries",
-          "Basic syntax & first programs",
-        ],
-      },
-      {
-        week: "Week 2",
-        title: "Python Fundamentals",
-        topics: [
-          "Data types & data structures (Strings, Lists, Tuples, Dictionaries)",
-          "Basic operations (mathematical, string, date)",
-          "Control flow (if-else, loops)",
-          "List & dictionary comprehensions",
-        ],
-      },
-      {
-        week: "Week 3",
-        title: "Functions & Programming Concepts",
-        topics: [
-          "Built-in functions (text, numeric, date, utility)",
-          "User-defined functions",
-          "Lambda functions",
-          "Apply functions & functional programming basics",
-          "Debugging & code profiling",
-        ],
-      },
-      {
-        week: "Week 4",
-        title: "Object-Oriented Programming (OOP)",
-        topics: [
-          "Python objects & OOP concepts",
-          "Classes & objects",
-          "Modules & reusable code",
-          "Writing structured and scalable Python programs",
-        ],
-      },
-      {
-        week: "Week 5",
-        title: "NumPy – Numerical Computing",
-        topics: [
-          "Introduction to NumPy",
-          "Arrays & data structures",
-          "Array creation & initialization",
-          "Indexing, slicing, reshaping",
-          "Mathematical operations with NumPy",
-        ],
-      },
-      {
-        week: "Week 6",
-        title: "Pandas – Data Handling",
-        topics: [
-          "Introduction to Pandas",
-          "Series & DataFrames",
-          "Data import (CSV, Excel, files)",
-          "Basic data exploration",
-          "Filtering, slicing, indexing",
-        ],
-      },
-      {
-        week: "Week 7",
-        title: "Data Cleaning & Transformation",
-        topics: [
-          "Handling missing values, duplicates, outliers",
-          "Sorting & indexing",
-          "Data type conversions",
-          "Column operations (add, delete, rename)",
-          "Feature engineering (binning, dummy variables)",
-          "Applying functions across datasets",
-        ],
-      },
-      {
-        week: "Week 8",
-        title: "Case Studies & Projects",
-        topics: [
-          "End-to-end data analysis project",
-          "Real-world dataset handling",
-          "Data cleaning + transformation + insights",
-          "Project presentation & best practices",
-        ],
-      },
-    ],
-  },
-
-  /* -- 2. Tableau (Visualization & Dashboarding) -- */
-  {
-    id: "tableau",
-    slug: "tableau-visualization-dashboarding",
-
-    /* Homepage */
-    homepageOrder: 2,
-    homepageTitle: "Tableau (Visualization & Dashboarding)",
-    badge: "Trending",
-    badgeColor: "badge-purple",
-    accent: "#6a4c93",
-    chapters: [
-      "Visualization Basics",
-      "Design Principles",
-      "Tableau Fundamentals",
-      "Advanced Tableau",
-      "Dashboards",
-      "Projects",
-    ],
-    desc: "Learn how to turn raw data into powerful dashboards that drive decisions using Tableau and visualization best practices.",
-
-    /* Courses page */
-    category: "Data Visualization",
-    categoryLabel: "BI Tools",
-    bannerImage:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80&auto=format&fit=crop",
-    icon: "fas fa-chart-pie",
-    level: "Beginner → Intermediate",
-    duration: "8 weeks",
-    modules: 8,
-    color: "card-purple",
-    enrolledCount: 185,
-    title: "Tableau (Visualization & Dashboarding)",
-    subtitle: "Master Data Visualization, Dashboard Design & Storytelling",
-    description:
-      "Learn how to transform raw data into meaningful insights through powerful visualizations and interactive dashboards.",
-    skills: [
-      "Data visualization principles",
-      "Tableau fundamentals",
-      "Dashboard design",
-      "Data storytelling",
-      "Interactive dashboards",
-    ],
-    outcomes: [
-      "Build professional dashboards",
-      "Present insights clearly",
-      "Design effective visualizations",
-    ],
-
-    /* Registration */
-    regFee: "₹500",
-    price: "₹5,999",
-    originalPrice: "₹8,999",
-    emi: "₹499/mo",
-    nextBatch: "April 5, 2026",
-    batchType: "Weekend Batch",
-    instructor: "Faizan Ansari",
-    includes: [
-      "8 weeks of live weekend sessions",
-      "Recorded sessions & datasets",
-      "Hands-on dashboard projects",
-      "Tableau templates & resources",
-      "Course completion certificate",
-      "Career guidance support",
-    ],
-    whoIsItFor: [
-      "Analysts",
-      "Business professionals",
-      "Beginners in visualization",
-    ],
-    curriculum: [
-      {
-        week: "Week 1",
-        title: "Introduction to Data Visualization",
-        topics: [
-          "Importance and benefits of data visualization",
-          "Types of visualization: exploratory vs explanatory",
-          "Basic principles: clarity, simplicity, accuracy",
-          "Understanding how data tells a story",
-        ],
-      },
-      {
-        week: "Week 2",
-        title: "Design Principles for Effective Visualizations",
-        topics: [
-          "Gestalt principles of visual perception",
-          "Use of whitespace, alignment, and balance",
-          "Color theory & choosing effective color palettes",
-          "Typography, readability, and hierarchy",
-          "Avoiding clutter (chartjunk)",
-        ],
-      },
-      {
-        week: "Week 3",
-        title: "Visualization Ethics & Tools",
-        topics: [
-          "Common pitfalls (misleading charts, truncation, scaling issues)",
-          "Ethical visualization practices (bias, transparency, accuracy)",
-          "Overview of visualization tools (Excel, Google Sheets, Tableau, Power BI)",
-          "Advanced tools overview",
-        ],
-      },
-      {
-        week: "Week 4",
-        title: "Getting Started with Tableau",
-        topics: [
-          "Introduction to Tableau & its architecture",
-          "Tableau workspace overview",
-          "Connecting to data sources",
-          "Dimensions vs Measures",
-          "Data types & properties",
-          "Using shelves, marks card, and 'Show Me'",
-        ],
-      },
-      {
-        week: "Week 5",
-        title: "Core Visualizations in Tableau",
-        topics: [
-          "Bar charts, line charts, scatter plots",
-          "Tree maps, cross-tabs, tables",
-          "Sorting, filtering, grouping",
-          "Totals, subtotals, and aggregations",
-          "Trend lines, reference lines, forecasting",
-        ],
-      },
-      {
-        week: "Week 6",
-        title: "Advanced Tableau Concepts",
-        topics: [
-          "Sets, bins, hierarchies",
-          "Context filters",
-          "Drill-down and drill-through",
-          "Data blending & joins",
-          "Working with large datasets",
-        ],
-      },
-      {
-        week: "Week 7",
-        title: "Calculations & Interactivity",
-        topics: [
-          "Calculated fields",
-          "Table calculations",
-          "LOD (Level of Detail) expressions",
-          "Parameters & what-if analysis",
-          "Actions (filter, highlight, URL)",
-          "Building dynamic dashboards",
-        ],
-      },
-      {
-        week: "Week 8",
-        title: "Dashboarding & Real-World Projects",
-        topics: [
-          "Dashboard design principles",
-          "Combining multiple visualizations",
-          "Interactive dashboard creation",
-          "Performance optimization",
-          "End-to-end project (Sales/Business dashboard)",
-          "Presentation & storytelling",
-        ],
-      },
-    ],
-  },
-
-  /* -- 3. SQL / Advanced SQL -- */
-  {
-    id: "sql",
-    slug: "sql-advanced",
-
-    /* Homepage */
-    homepageOrder: 3,
-    homepageTitle: "SQL / Advanced SQL",
-    badge: "Core Skill",
-    badgeColor: "badge-yellow",
-    accent: "#f4a261",
-    chapters: [
-      "SQL Basics",
-      "Joins",
-      "Aggregation",
-      "Advanced Queries",
-      "Optimization",
-      "Projects",
-    ],
-    desc: "Master SQL for querying, analyzing, and managing data in real-world systems.",
-
-    /* Courses page */
-    category: "Data Analytics",
-    categoryLabel: "SQL",
-    bannerImage:
-      "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=600&q=80&auto=format&fit=crop",
-    icon: "fas fa-database",
-    level: "Beginner → Advanced",
-    duration: "8 weeks",
-    modules: 8,
-    color: "card-yellow",
-    enrolledCount: 240,
-    title: "SQL / Advanced SQL",
-    subtitle: "Master SQL for Data Analysis, Querying & Optimization",
-    description:
-      "Learn SQL from fundamentals to advanced querying techniques used in real-world data systems. This course covers joins, aggregations, subqueries, window functions, and performance optimization.",
-    skills: [
-      "SQL fundamentals",
-      "Joins & aggregations",
-      "Subqueries & advanced querying",
-      "Window functions",
-      "Query optimization",
-    ],
-    outcomes: [
-      "Extract insights from databases",
-      "Write advanced SQL queries",
-      "Work efficiently with large datasets",
-    ],
-
-    /* Registration */
-    regFee: "₹500",
-    price: "₹5,999",
-    originalPrice: "₹8,999",
-    emi: "₹499/mo",
-    nextBatch: "April 5, 2026",
-    batchType: "Weekend Batch",
-    instructor: "Faizan Ansari",
-    includes: [
-      "8 weeks of live weekend sessions",
-      "Recorded sessions & datasets",
-      "Hands-on SQL practice & case studies",
-      "Real-world business query examples",
-      "Course completion certificate",
-      "Career guidance support",
-    ],
-    whoIsItFor: ["Data analysts", "Developers", "Beginners in data"],
-    curriculum: [
-      {
-        week: "Week 1",
-        title: "Introduction to Databases & SQL",
-        topics: [
-          "What is SQL and why it is used",
-          "Basics of RDBMS concepts",
-          "Database design fundamentals (Schema, ER diagrams)",
-          "Data types, NULL values, constraints",
-          "Installing SQL Server & tools (SSMS)",
-        ],
-      },
-      {
-        week: "Week 2",
-        title: "Getting Started with SQL Queries",
-        topics: [
-          "SELECT statements",
-          "Filtering data (WHERE clause)",
-          "Sorting (ORDER BY)",
-          "Removing duplicates (DISTINCT)",
-          "Basic operators (logical, relational)",
-        ],
-      },
-      {
-        week: "Week 3",
-        title: "Data Manipulation & Aggregation",
-        topics: [
-          "INSERT, UPDATE, DELETE statements",
-          "GROUP BY & HAVING",
-          "Aggregate functions (SUM, COUNT, AVG, MIN, MAX)",
-          "Working with multiple conditions",
-          "Data summarization",
-        ],
-      },
-      {
-        week: "Week 4",
-        title: "Working with Multiple Tables",
-        topics: [
-          "Joins (INNER, LEFT, RIGHT, FULL)",
-          "Cross joins & self joins",
-          "Combining datasets",
-          "Understanding relationships (Primary & Foreign keys)",
-          "Real-world data modeling",
-        ],
-      },
-      {
-        week: "Week 5",
-        title: "Advanced Querying Techniques",
-        topics: [
-          "Subqueries (nested queries)",
-          "Inline views",
-          "UNION, UNION ALL",
-          "INTERSECT & EXCEPT",
-          "Query structuring for readability",
-        ],
-      },
-      {
-        week: "Week 6",
-        title: "Advanced SQL Concepts",
-        topics: [
-          "Window functions (ROW_NUMBER, RANK, DENSE_RANK)",
-          "LEAD & LAG",
-          "Partitioning & ordering",
-          "Running totals & cumulative calculations",
-          "Analytical queries",
-        ],
-      },
-      {
-        week: "Week 7",
-        title: "Optimization & Real-World Usage",
-        topics: [
-          "Query optimization techniques",
-          "Indexing basics",
-          "Stored procedures",
-          "User-defined functions",
-          "Working with large datasets",
-        ],
-      },
-      {
-        week: "Week 8",
-        title: "Case Studies & Projects",
-        topics: [
-          "End-to-end SQL project",
-          "Business problem-solving using SQL",
-          "Data extraction for analytics",
-          "Writing production-level queries",
-          "Best practices & interview preparation",
-        ],
-      },
-    ],
-  },
-
-  /* -- 4. Excel & Advanced Excel -- */
-  {
-    id: "excel",
-    slug: "excel-advanced",
-
-    /* Homepage */
-    homepageOrder: 4,
-    homepageTitle: "Excel & Advanced Excel",
-    badge: "Beginner Friendly",
-    badgeColor: "badge-green",
-    accent: "#2a9d8f",
-    chapters: [
-      "Excel Basics",
-      "Functions",
-      "Pivot Tables",
-      "Data Cleaning",
-      "Dashboards",
-      "Projects",
-    ],
-    desc: "Master Excel for data analysis, reporting, and dashboard creation.",
-
-    /* Courses page */
-    category: "Data Analytics",
-    categoryLabel: "Excel",
-    bannerImage:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80&auto=format&fit=crop",
-    icon: "fas fa-file-excel",
-    level: "Beginner → Advanced",
-    duration: "8 weeks",
-    modules: 8,
-    color: "card-green",
-    enrolledCount: 300,
-    title: "Excel & Advanced Excel",
-    subtitle: "Master Excel for Data Analysis, Reporting & Dashboarding",
-    description:
-      "Learn Excel from fundamentals to advanced data analysis techniques including formulas, pivot tables, data cleaning, and interactive dashboard creation.",
-    skills: [
-      "Excel fundamentals",
-      "Advanced formulas",
-      "Pivot tables",
-      "Data cleaning",
-      "Dashboarding",
-    ],
-    outcomes: ["Automate reports", "Analyze business data", "Build dashboards"],
-
-    /* Registration */
-    regFee: "₹500",
-    price: "₹4,999",
-    originalPrice: "₹7,999",
-    emi: "₹417/mo",
-    nextBatch: "April 5, 2026",
-    batchType: "Weekend Batch",
-    instructor: "Faizan Ansari",
-    includes: [
-      "8 weeks of live weekend sessions",
-      "Recorded sessions & datasets",
-      "Hands-on Excel projects",
-      "Dashboard templates",
-      "Course completion certificate",
-      "Career guidance support",
-    ],
-    whoIsItFor: ["Beginners", "Business professionals", "Analysts"],
-    curriculum: [
-      {
-        week: "Week 1",
-        title: "Excel Fundamentals",
-        topics: [
-          "Introduction to Excel environment",
-          "Basic navigation & interface",
-          "Data entry & formatting",
-          "Sorting, filtering, and data validation",
-          "Understanding data types",
-        ],
-      },
-      {
-        week: "Week 2",
-        title: "Core Functions & Data Handling",
-        topics: [
-          "Basic functions (SUM, COUNT, AVERAGE, etc.)",
-          "Logical functions (IF, AND, OR, NOT)",
-          "Text functions (LEFT, RIGHT, MID, TRIM, etc.)",
-          "Date & time functions",
-          "Named ranges & structured references",
-        ],
-      },
-      {
-        week: "Week 3",
-        title: "Advanced Functions & Lookups",
-        topics: [
-          "VLOOKUP, HLOOKUP (use cases & limitations)",
-          "INDEX, MATCH (advanced lookup techniques)",
-          "Nested functions",
-          "Dynamic formulas",
-          "Introduction to data modeling in Excel",
-        ],
-      },
-      {
-        week: "Week 4",
-        title: "Data Analysis & Transformation",
-        topics: [
-          "Data cleaning techniques",
-          "Handling large datasets",
-          "Conditional formatting",
-          "Data manipulation using formulas",
-          "Preparing data for analysis",
-        ],
-      },
-      {
-        week: "Week 5",
-        title: "Pivot Tables & Reporting",
-        topics: [
-          "Introduction to Pivot Tables",
-          "Row, column, values, and filters",
-          "Data summarization & aggregation",
-          "Creating summary reports",
-          "Cross-tab analysis",
-        ],
-      },
-      {
-        week: "Week 6",
-        title: "Advanced Pivot & Data Analysis",
-        topics: [
-          "Calculated fields in Pivot Tables",
-          "Grouping & binning",
-          "Slicers & timelines",
-          "Changing report layouts",
-          "Advanced data analysis techniques",
-        ],
-      },
-      {
-        week: "Week 7",
-        title: "Data Visualization & Dashboarding",
-        topics: [
-          "Chart types (bar, line, pie, scatter, etc.)",
-          "Choosing the right chart",
-          "Chart formatting & customization",
-          "Introduction to dashboards",
-          "Designing interactive dashboards",
-        ],
-      },
-      {
-        week: "Week 8",
-        title: "Advanced Dashboarding & Projects",
-        topics: [
-          "Building dynamic dashboards using Pivot controls",
-          "Using slicers, timelines, and interactivity",
-          "Advanced charts (waterfall, thermometer, etc.)",
-          "Dashboard design best practices",
-          "End-to-end business dashboard project",
-        ],
-      },
-    ],
-  },
-
-  /* -- 5. Data Analytics with Python -- */
+  /* -- 1. Data Analytics with Python -- */
   {
     id: "data-analytics-python",
     slug: "data-analytics-with-python",
 
     /* Homepage */
-    homepageOrder: 5,
+    homepageOrder: 1,
     homepageTitle: "Data Analytics with Python",
     badge: "Career Focused",
     badgeColor: "badge-blue",
@@ -792,8 +123,7 @@ export const coursesData = [
     regFee: "₹500",
     price: "₹6,999",
     originalPrice: "₹9,999",
-    emi: "₹583/mo",
-    nextBatch: "April 5, 2026",
+    nextBatch: "June 20, 2026",
     batchType: "Weekend Batch",
     instructor: "Faizan Ansari",
     includes: [
@@ -902,13 +232,323 @@ export const coursesData = [
     ],
   },
 
-  /* -- 6. GenAI Development -- */
+  /* -- 2. SQL / Advanced SQL -- */
+  {
+    id: "sql",
+    slug: "sql-advanced",
+
+    /* Homepage */
+    homepageOrder: 2,
+    homepageTitle: "SQL / Advanced SQL",
+    badge: "Core Skill",
+    badgeColor: "badge-yellow",
+    accent: "#f4a261",
+    chapters: [
+      "SQL Basics",
+      "Joins",
+      "Aggregation",
+      "Advanced Queries",
+      "Optimization",
+      "Projects",
+    ],
+    desc: "Master SQL for querying, analyzing, and managing data in real-world systems.",
+
+    /* Courses page */
+    category: "Data Analytics",
+    categoryLabel: "SQL",
+    bannerImage:
+      "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=600&q=80&auto=format&fit=crop",
+    icon: "fas fa-database",
+    level: "Beginner → Advanced",
+    duration: "8 weeks",
+    modules: 8,
+    color: "card-yellow",
+    enrolledCount: 240,
+    title: "SQL / Advanced SQL",
+    subtitle: "Master SQL for Data Analysis, Querying & Optimization",
+    description:
+      "Learn SQL from fundamentals to advanced querying techniques used in real-world data systems. This course covers joins, aggregations, subqueries, window functions, and performance optimization.",
+    skills: [
+      "SQL fundamentals",
+      "Joins & aggregations",
+      "Subqueries & advanced querying",
+      "Window functions",
+      "Query optimization",
+    ],
+    outcomes: [
+      "Extract insights from databases",
+      "Write advanced SQL queries",
+      "Work efficiently with large datasets",
+    ],
+
+    /* Registration */
+    regFee: "₹500",
+    price: "₹5,999",
+    originalPrice: "₹8,999",
+    nextBatch: "June 20, 2026",
+    batchType: "Weekend Batch",
+    instructor: "Faizan Ansari",
+    includes: [
+      "8 weeks of live weekend sessions",
+      "Recorded sessions & datasets",
+      "Hands-on SQL practice & case studies",
+      "Real-world business query examples",
+      "Course completion certificate",
+      "Career guidance support",
+    ],
+    whoIsItFor: ["Data analysts", "Developers", "Beginners in data"],
+    curriculum: [
+      {
+        week: "Week 1",
+        title: "Introduction to Databases & SQL",
+        topics: [
+          "What is SQL and why it is used",
+          "Basics of RDBMS concepts",
+          "Database design fundamentals (Schema, ER diagrams)",
+          "Data types, NULL values, constraints",
+          "Installing SQL Server & tools (SSMS)",
+        ],
+      },
+      {
+        week: "Week 2",
+        title: "Getting Started with SQL Queries",
+        topics: [
+          "SELECT statements",
+          "Filtering data (WHERE clause)",
+          "Sorting (ORDER BY)",
+          "Removing duplicates (DISTINCT)",
+          "Basic operators (logical, relational)",
+        ],
+      },
+      {
+        week: "Week 3",
+        title: "Data Manipulation & Aggregation",
+        topics: [
+          "INSERT, UPDATE, DELETE statements",
+          "GROUP BY & HAVING",
+          "Aggregate functions (SUM, COUNT, AVG, MIN, MAX)",
+          "Working with multiple conditions",
+          "Data summarization",
+        ],
+      },
+      {
+        week: "Week 4",
+        title: "Working with Multiple Tables",
+        topics: [
+          "Joins (INNER, LEFT, RIGHT, FULL)",
+          "Cross joins & self joins",
+          "Combining datasets",
+          "Understanding relationships (Primary & Foreign keys)",
+          "Real-world data modeling",
+        ],
+      },
+      {
+        week: "Week 5",
+        title: "Advanced Querying Techniques",
+        topics: [
+          "Subqueries (nested queries)",
+          "Inline views",
+          "UNION, UNION ALL",
+          "INTERSECT & EXCEPT",
+          "Query structuring for readability",
+        ],
+      },
+      {
+        week: "Week 6",
+        title: "Advanced SQL Concepts",
+        topics: [
+          "Window functions (ROW_NUMBER, RANK, DENSE_RANK)",
+          "LEAD & LAG",
+          "Partitioning & ordering",
+          "Running totals & cumulative calculations",
+          "Analytical queries",
+        ],
+      },
+      {
+        week: "Week 7",
+        title: "Optimization & Real-World Usage",
+        topics: [
+          "Query optimization techniques",
+          "Indexing basics",
+          "Stored procedures",
+          "User-defined functions",
+          "Working with large datasets",
+        ],
+      },
+      {
+        week: "Week 8",
+        title: "Case Studies & Projects",
+        topics: [
+          "End-to-end SQL project",
+          "Business problem-solving using SQL",
+          "Data extraction for analytics",
+          "Writing production-level queries",
+          "Best practices & interview preparation",
+        ],
+      },
+    ],
+  },
+
+  /* -- 3. Excel & Advanced Excel -- */
+  {
+    id: "excel",
+    slug: "excel-advanced",
+
+    /* Homepage */
+    homepageOrder: 3,
+    homepageTitle: "Excel & Advanced Excel",
+    badge: "Beginner Friendly",
+    badgeColor: "badge-green",
+    accent: "#2a9d8f",
+    chapters: [
+      "Excel Basics",
+      "Functions",
+      "Pivot Tables",
+      "Data Cleaning",
+      "Dashboards",
+      "Projects",
+    ],
+    desc: "Master Excel for data analysis, reporting, and dashboard creation.",
+
+    /* Courses page */
+    category: "Data Analytics",
+    categoryLabel: "Excel",
+    bannerImage:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80&auto=format&fit=crop",
+    icon: "fas fa-file-excel",
+    level: "Beginner → Advanced",
+    duration: "8 weeks",
+    modules: 8,
+    color: "card-green",
+    enrolledCount: 300,
+    title: "Excel & Advanced Excel",
+    subtitle: "Master Excel for Data Analysis, Reporting & Dashboarding",
+    description:
+      "Learn Excel from fundamentals to advanced data analysis techniques including formulas, pivot tables, data cleaning, and interactive dashboard creation.",
+    skills: [
+      "Excel fundamentals",
+      "Advanced formulas",
+      "Pivot tables",
+      "Data cleaning",
+      "Dashboarding",
+    ],
+    outcomes: ["Automate reports", "Analyze business data", "Build dashboards"],
+
+    /* Registration */
+    regFee: "₹500",
+    price: "₹4,999",
+    originalPrice: "₹7,999",
+    nextBatch: "June 20, 2026",
+    batchType: "Weekend Batch",
+    instructor: "Faizan Ansari",
+    includes: [
+      "8 weeks of live weekend sessions",
+      "Recorded sessions & datasets",
+      "Hands-on Excel projects",
+      "Dashboard templates",
+      "Course completion certificate",
+      "Career guidance support",
+    ],
+    whoIsItFor: ["Beginners", "Business professionals", "Analysts"],
+    curriculum: [
+      {
+        week: "Week 1",
+        title: "Excel Fundamentals",
+        topics: [
+          "Introduction to Excel environment",
+          "Basic navigation & interface",
+          "Data entry & formatting",
+          "Sorting, filtering, and data validation",
+          "Understanding data types",
+        ],
+      },
+      {
+        week: "Week 2",
+        title: "Core Functions & Data Handling",
+        topics: [
+          "Basic functions (SUM, COUNT, AVERAGE, etc.)",
+          "Logical functions (IF, AND, OR, NOT)",
+          "Text functions (LEFT, RIGHT, MID, TRIM, etc.)",
+          "Date & time functions",
+          "Named ranges & structured references",
+        ],
+      },
+      {
+        week: "Week 3",
+        title: "Advanced Functions & Lookups",
+        topics: [
+          "VLOOKUP, HLOOKUP (use cases & limitations)",
+          "INDEX, MATCH (advanced lookup techniques)",
+          "Nested functions",
+          "Dynamic formulas",
+          "Introduction to data modeling in Excel",
+        ],
+      },
+      {
+        week: "Week 4",
+        title: "Data Analysis & Transformation",
+        topics: [
+          "Data cleaning techniques",
+          "Handling large datasets",
+          "Conditional formatting",
+          "Data manipulation using formulas",
+          "Preparing data for analysis",
+        ],
+      },
+      {
+        week: "Week 5",
+        title: "Pivot Tables & Reporting",
+        topics: [
+          "Introduction to Pivot Tables",
+          "Row, column, values, and filters",
+          "Data summarization & aggregation",
+          "Creating summary reports",
+          "Cross-tab analysis",
+        ],
+      },
+      {
+        week: "Week 6",
+        title: "Advanced Pivot & Data Analysis",
+        topics: [
+          "Calculated fields in Pivot Tables",
+          "Grouping & binning",
+          "Slicers & timelines",
+          "Changing report layouts",
+          "Advanced data analysis techniques",
+        ],
+      },
+      {
+        week: "Week 7",
+        title: "Data Visualization & Dashboarding",
+        topics: [
+          "Chart types (bar, line, pie, scatter, etc.)",
+          "Choosing the right chart",
+          "Chart formatting & customization",
+          "Introduction to dashboards",
+          "Designing interactive dashboards",
+        ],
+      },
+      {
+        week: "Week 8",
+        title: "Advanced Dashboarding & Projects",
+        topics: [
+          "Building dynamic dashboards using Pivot controls",
+          "Using slicers, timelines, and interactivity",
+          "Advanced charts (waterfall, thermometer, etc.)",
+          "Dashboard design best practices",
+          "End-to-end business dashboard project",
+        ],
+      },
+    ],
+  },
+
+  /* -- 4. GenAI Development -- */
   {
     id: "genai-development",
     slug: "genai-development-llm",
 
     /* Homepage */
-    homepageOrder: 6,
+    homepageOrder: 4,
     homepageTitle: "GenAI Development",
     badge: "Future Tech",
     badgeColor: "badge-purple",
@@ -952,8 +592,7 @@ export const coursesData = [
     regFee: "₹500",
     price: "₹14,999",
     originalPrice: "₹24,999",
-    emi: "₹1,250/mo",
-    nextBatch: "April 5, 2026",
+    nextBatch: "June 20, 2026",
     batchType: "Weekend Batch",
     instructor: "Faizan Ansari",
     includes: [
@@ -1065,10 +704,174 @@ export const coursesData = [
     ],
   },
 
-  /* -- 7. Applied AI -- */
+  /* -- 5. Tableau (Visualization & Dashboarding) -- */
+  {
+    id: "tableau",
+    slug: "tableau-visualization-dashboarding",
+    comingSoon: true,
+
+    /* Homepage */
+    homepageOrder: 5,
+    homepageTitle: "Tableau (Visualization & Dashboarding)",
+    badge: "Trending",
+    badgeColor: "badge-purple",
+    accent: "#6a4c93",
+    chapters: [
+      "Visualization Basics",
+      "Design Principles",
+      "Tableau Fundamentals",
+      "Advanced Tableau",
+      "Dashboards",
+      "Projects",
+    ],
+    desc: "Learn how to turn raw data into powerful dashboards that drive decisions using Tableau and visualization best practices.",
+
+    /* Courses page */
+    category: "Data Visualization",
+    categoryLabel: "BI Tools",
+    bannerImage:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80&auto=format&fit=crop",
+    icon: "fas fa-chart-pie",
+    level: "Beginner → Intermediate",
+    duration: "8 weeks",
+    modules: 8,
+    color: "card-purple",
+    enrolledCount: 185,
+    title: "Tableau (Visualization & Dashboarding)",
+    subtitle: "Master Data Visualization, Dashboard Design & Storytelling",
+    description:
+      "Learn how to transform raw data into meaningful insights through powerful visualizations and interactive dashboards.",
+    skills: [
+      "Data visualization principles",
+      "Tableau fundamentals",
+      "Dashboard design",
+      "Data storytelling",
+      "Interactive dashboards",
+    ],
+    outcomes: [
+      "Build professional dashboards",
+      "Present insights clearly",
+      "Design effective visualizations",
+    ],
+
+    /* Registration */
+    regFee: "₹500",
+    price: "₹5,999",
+    originalPrice: "₹8,999",
+    nextBatch: "April 5, 2026",
+    batchType: "Weekend Batch",
+    instructor: "Faizan Ansari",
+    includes: [
+      "8 weeks of live weekend sessions",
+      "Recorded sessions & datasets",
+      "Hands-on dashboard projects",
+      "Tableau templates & resources",
+      "Course completion certificate",
+      "Career guidance support",
+    ],
+    whoIsItFor: [
+      "Analysts",
+      "Business professionals",
+      "Beginners in visualization",
+    ],
+    curriculum: [
+      {
+        week: "Week 1",
+        title: "Introduction to Data Visualization",
+        topics: [
+          "Importance and benefits of data visualization",
+          "Types of visualization: exploratory vs explanatory",
+          "Basic principles: clarity, simplicity, accuracy",
+          "Understanding how data tells a story",
+        ],
+      },
+      {
+        week: "Week 2",
+        title: "Design Principles for Effective Visualizations",
+        topics: [
+          "Gestalt principles of visual perception",
+          "Use of whitespace, alignment, and balance",
+          "Color theory & choosing effective color palettes",
+          "Typography, readability, and hierarchy",
+          "Avoiding clutter (chartjunk)",
+        ],
+      },
+      {
+        week: "Week 3",
+        title: "Visualization Ethics & Tools",
+        topics: [
+          "Common pitfalls (misleading charts, truncation, scaling issues)",
+          "Ethical visualization practices (bias, transparency, accuracy)",
+          "Overview of visualization tools (Excel, Google Sheets, Tableau, Power BI)",
+          "Advanced tools overview",
+        ],
+      },
+      {
+        week: "Week 4",
+        title: "Getting Started with Tableau",
+        topics: [
+          "Introduction to Tableau & its architecture",
+          "Tableau workspace overview",
+          "Connecting to data sources",
+          "Dimensions vs Measures",
+          "Data types & properties",
+          "Using shelves, marks card, and 'Show Me'",
+        ],
+      },
+      {
+        week: "Week 5",
+        title: "Core Visualizations in Tableau",
+        topics: [
+          "Bar charts, line charts, scatter plots",
+          "Tree maps, cross-tabs, tables",
+          "Sorting, filtering, grouping",
+          "Totals, subtotals, and aggregations",
+          "Trend lines, reference lines, forecasting",
+        ],
+      },
+      {
+        week: "Week 6",
+        title: "Advanced Tableau Concepts",
+        topics: [
+          "Sets, bins, hierarchies",
+          "Context filters",
+          "Drill-down and drill-through",
+          "Data blending & joins",
+          "Working with large datasets",
+        ],
+      },
+      {
+        week: "Week 7",
+        title: "Calculations & Interactivity",
+        topics: [
+          "Calculated fields",
+          "Table calculations",
+          "LOD (Level of Detail) expressions",
+          "Parameters & what-if analysis",
+          "Actions (filter, highlight, URL)",
+          "Building dynamic dashboards",
+        ],
+      },
+      {
+        week: "Week 8",
+        title: "Dashboarding & Real-World Projects",
+        topics: [
+          "Dashboard design principles",
+          "Combining multiple visualizations",
+          "Interactive dashboard creation",
+          "Performance optimization",
+          "End-to-end project (Sales/Business dashboard)",
+          "Presentation & storytelling",
+        ],
+      },
+    ],
+  },
+
+  /* -- 6. Applied AI -- */
   {
     id: "applied-ai",
     slug: "applied-ai",
+    comingSoon: true,
 
     /* Homepage */
     homepageOrder: 7,
@@ -1113,7 +916,6 @@ export const coursesData = [
     regFee: "₹500",
     price: "₹9,999",
     originalPrice: "₹14,999",
-    emi: "₹833/mo",
     nextBatch: "April 5, 2026",
     batchType: "Weekend Batch",
     instructor: "Faizan Ansari",
@@ -1193,10 +995,11 @@ export const coursesData = [
     ],
   },
 
-  /* -- 8. Agentic AI -- */
+  /* -- 7. Agentic AI -- */
   {
     id: "agentic-ai",
     slug: "agentic-ai",
+    comingSoon: true,
 
     /* Homepage */
     homepageOrder: 8,
@@ -1247,7 +1050,6 @@ export const coursesData = [
     regFee: "₹500",
     price: "₹11,999",
     originalPrice: "₹18,999",
-    emi: "₹999/mo",
     nextBatch: "April 5, 2026",
     batchType: "Weekend Batch",
     instructor: "Faizan Ansari",
@@ -1356,10 +1158,11 @@ export const coursesData = [
     ],
   },
 
-  /* -- 9. Advanced RAG -- */
+  /* -- 8. Advanced RAG -- */
   {
     id: "advanced-rag",
     slug: "advanced-rag",
+    comingSoon: true,
 
     /* Homepage */
     homepageOrder: 9,
@@ -1410,7 +1213,6 @@ export const coursesData = [
     regFee: "₹500",
     price: "₹7,999",
     originalPrice: "₹12,999",
-    emi: "₹667/mo",
     nextBatch: "April 5, 2026",
     batchType: "Weekend Batch",
     instructor: "Faizan Ansari",
@@ -1471,7 +1273,61 @@ export const coursesData = [
     ],
   },
 
-  /* -- 10. Web Development (homepage only, coming soon) -- */
+  /* -- 9. Data Science & AI for Leaders (homepage, coming soon) -- */
+  {
+    id: "leaders",
+    slug: "data-science-for-leaders",
+    comingSoon: true,
+
+    /* Homepage */
+    homepageOrder: 11,
+    homepageTitle: "Data Science & AI for Leaders",
+    badge: "New",
+    badgeColor: "badge-purple",
+    accent: "#ec4899",
+    chapters: ["ML Strategy", "Model Evaluation", "AI Ethics", "Case Studies"],
+    desc: "Designed for managers and senior professionals. Understand AI strategy, model evaluation, and data-driven decision making at scale.",
+
+    /* Courses page */
+    category: "Data Science",
+    categoryLabel: "Data",
+    icon: "fas fa-brain",
+    level: "Advanced",
+    duration: "Coming Soon",
+    modules: null,
+    color: "card-purple",
+    enrolledCount: null,
+    title: "Data Science & AI for Leaders",
+    subtitle: "Strategic AI for Decision Makers",
+    description:
+      "Designed for managers and senior professionals. Understand AI strategy, model evaluation, and data-driven decision making at scale.",
+    skills: [
+      "ML Strategy",
+      "Model Evaluation",
+      "AI Ethics",
+      "Case Studies",
+      "AI for Business",
+    ],
+    outcomes: [
+      "Evaluate AI models and tools critically",
+      "Build data-driven strategy for your team",
+      "Understand AI limitations and risks",
+      "Lead AI-powered business transformations",
+    ],
+
+    /* Registration -coming soon */
+    regFee: null,
+    price: null,
+    originalPrice: null,
+    nextBatch: "Coming Soon",
+    batchType: null,
+    instructor: "Faizan Ansari",
+    includes: [],
+    whoIsItFor: [],
+    curriculum: [],
+  },
+
+  /* -- 10. Web Development -- */
   {
     id: "webdev",
     slug: "web-development",
@@ -1518,7 +1374,6 @@ export const coursesData = [
     regFee: "₹10",
     price: "₹10",
     originalPrice: "₹199",
-    emi: "₹1/mo",
     nextBatch: "May 10, 2026",
     batchType: "Weekend Batch",
     instructor: "Riyaz Akhtar",
@@ -1604,61 +1459,6 @@ export const coursesData = [
       },
     ],
   },
-
-  /* -- 11. Data Science & AI for Leaders (homepage, coming soon) -- */
-  {
-    id: "leaders",
-    slug: "data-science-for-leaders",
-    comingSoon: true,
-
-    /* Homepage */
-    homepageOrder: 11,
-    homepageTitle: "Data Science & AI for Leaders",
-    badge: "New",
-    badgeColor: "badge-purple",
-    accent: "#ec4899",
-    chapters: ["ML Strategy", "Model Evaluation", "AI Ethics", "Case Studies"],
-    desc: "Designed for managers and senior professionals. Understand AI strategy, model evaluation, and data-driven decision making at scale.",
-
-    /* Courses page */
-    category: "Data Science",
-    categoryLabel: "Data",
-    icon: "fas fa-brain",
-    level: "Advanced",
-    duration: "Coming Soon",
-    modules: null,
-    color: "card-purple",
-    enrolledCount: null,
-    title: "Data Science & AI for Leaders",
-    subtitle: "Strategic AI for Decision Makers",
-    description:
-      "Designed for managers and senior professionals. Understand AI strategy, model evaluation, and data-driven decision making at scale.",
-    skills: [
-      "ML Strategy",
-      "Model Evaluation",
-      "AI Ethics",
-      "Case Studies",
-      "AI for Business",
-    ],
-    outcomes: [
-      "Evaluate AI models and tools critically",
-      "Build data-driven strategy for your team",
-      "Understand AI limitations and risks",
-      "Lead AI-powered business transformations",
-    ],
-
-    /* Registration -coming soon */
-    regFee: null,
-    price: null,
-    originalPrice: null,
-    emi: null,
-    nextBatch: "Coming Soon",
-    batchType: null,
-    instructor: "Faizan Ansari",
-    includes: [],
-    whoIsItFor: [],
-    curriculum: [],
-  },
 ];
 
 export const courseListData = coursesData.filter(
@@ -1674,7 +1474,6 @@ export const courseRegData = Object.fromEntries(
         regFee: fees ? fmt(fees.regFee) : c.regFee,
         price: fees ? fmt(fees.price) : c.price,
         originalPrice: fees ? fmt(fees.originalPrice) : c.originalPrice,
-        emi: fees ? emi(fees.price) : c.emi,
         nextBatch: c.nextBatch,
         batchType: c.batchType,
         instructor: c.instructor,
@@ -1687,7 +1486,7 @@ export const courseRegData = Object.fromEntries(
 );
 
 /* Re-export so WorkshopForm / WorkshopDetails can read live fees */
-export { workshopFees, fmt as fmtPrice };
+export { workshopFees };
 
 /* ----- WORKSHOPS DATA ----- */
 export const workshopData = {

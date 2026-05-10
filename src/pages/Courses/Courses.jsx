@@ -97,6 +97,11 @@ const CourseCard = ({ course }) => {
           <span>
             <i className="fas fa-signal" /> {course.level}
           </span>
+          {!isComingSoon && reg?.nextBatch && (
+            <span className="courses-page__card-meta-batch">
+              <i className="fas fa-calendar-alt" /> Next Batch: <strong>{reg.nextBatch}</strong>
+            </span>
+          )}
         </div>
 
         <div className="courses-page__skills-tags">
@@ -119,13 +124,6 @@ const CourseCard = ({ course }) => {
               <strong>4.9</strong>
               <span>({course.enrolledCount ?? "100+"} enrolled)</span>
             </div>
-            {reg && (
-              <div className="courses-page__card-price">
-                <span className="courses-page__card-price-now">
-                  {reg.regFee} <em style={{ fontWeight: 400, fontSize: "0.78em", opacity: 0.7 }}>reg fee</em>
-                </span>
-              </div>
-            )}
           </div>
           {isComingSoon ? (
             <span className="courses-page__card-cta courses-page__card-cta--disabled">
@@ -205,7 +203,7 @@ const Courses = () => {
         />
         <meta
           property="og:description"
-          content="From beginner to advanced -find the right data & AI course for your career goals. 500+ students trained. 94% placement rate."
+          content="From beginner to advanced — find the right data & AI course for your career goals. 300+ learners trained. 4.9★ rated."
         />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://analyticshala.in/courses" />

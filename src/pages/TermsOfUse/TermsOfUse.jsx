@@ -265,7 +265,7 @@ const TermsOfUse = () => {
               All prices are displayed in Indian Rupees (INR) inclusive of
               applicable GST unless explicitly stated otherwise. Payments are
               processed securely through Razorpay. We accept all major debit and
-              credit cards, UPI, net banking, and select EMI options.
+              credit cards, UPI, and net banking.
             </p>
             <ul>
               <li>

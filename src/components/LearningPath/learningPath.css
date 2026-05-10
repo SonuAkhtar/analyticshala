@@ -501,17 +501,41 @@
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+  /* Disable pinned layout — show as a normal scrollable section */
+  .lp {
+    height: auto;
+    min-height: unset;
+  }
+
+  .lp__inner {
+    padding: 2.5rem 1.5rem 2rem;
+  }
+
+  .lp__top {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Single column: rail with inline detail, hide desktop card panel */
   .lp__body {
-    grid-template-columns: 240px 1fr;
-    gap: 2.5rem;
+    display: block;
   }
 
-  .lp__card {
-    padding: 2rem;
+  .lp__detail {
+    display: none;
   }
 
-  .lp__card-list {
-    grid-template-columns: 1fr;
+  /* Make the rail fill full width */
+  .lp__rail {
+    gap: 0;
+  }
+
+  .lp__rail-item {
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .lp__rail-node-col {
+    width: 44px;
   }
 
   .lp__node {
@@ -520,7 +544,67 @@
     font-size: 1rem;
   }
 
-  .lp__rail-node-col {
-    width: 44px;
+  /* Show inline text labels */
+  .lp__rail-content {
+    display: flex;
+    padding-top: 0.35rem;
+    gap: 0.1rem;
+  }
+
+  .lp__rail-phase {
+    font-size: 0.66rem;
+  }
+
+  .lp__rail-title {
+    font-size: 0.9rem;
+  }
+
+  .lp__rail-weeks {
+    font-size: 0.7rem;
+  }
+
+  /* Show the inline detail below each label */
+  .lp__inline-detail {
+    display: block;
+    margin-top: 0.5rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .lp__inline-desc {
+    font-size: 0.84rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin: 0 0 0.6rem;
+  }
+
+  .lp__inline-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .lp__inline-list li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.28rem 0.6rem;
+  }
+
+  .lp__inline-list li i {
+    font-size: 0.68rem;
+    color: var(--brand-red);
+  }
+
+  .lp__cta-row {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
   }
 }

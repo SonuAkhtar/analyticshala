@@ -30,9 +30,9 @@ const skillBars = [
 const avatarInitials = ["RS", "PK", "AM", "NJ", "DM"];
 
 const mobileStats = [
-  { num: "94%", label: "Placement Rate" },
-  { num: "500+", label: "Alumni" },
-  { num: "4.9★", label: "Rating" },
+  { num: "4.9★", label: "Avg Rating" },
+  { num: "300+", label: "Learners" },
+  { num: "90", label: "Days to Hired" },
 ];
 
 const techStack = [
@@ -60,16 +60,16 @@ const SlideTracker = ({ animate }) => (
   <div className="mac-slide mac-slide--tracker">
     <div className="mac-tracker-stats">
       <div className="mac-stat">
-        <span className="mac-stat-num">94%</span>
-        <span className="mac-stat-label">Placement Rate</span>
+        <span className="mac-stat-num">4.9★</span>
+        <span className="mac-stat-label">Avg Rating</span>
       </div>
       <div className="mac-stat">
         <span className="mac-stat-num">90</span>
         <span className="mac-stat-label">Days to Job Ready</span>
       </div>
       <div className="mac-stat">
-        <span className="mac-stat-num">4.9★</span>
-        <span className="mac-stat-label">Student Rating</span>
+        <span className="mac-stat-num">300+</span>
+        <span className="mac-stat-label">Learners Trained</span>
       </div>
     </div>
     <div className="mac-divider" />
@@ -114,7 +114,6 @@ const SlideCourses = () => (
               {c.duration} · {c.level.split("→")[0].trim()}
             </span>
           </div>
-          {c.price && <span className="mac-course-price">{c.price}</span>}
           {c.comingSoon && <span className="mac-course-soon">Soon</span>}
         </div>
       ))}
@@ -151,10 +150,6 @@ const SlideWorkshop = () => (
           }}
         />
         <span>{nextWorkshop.seatsLeft} seats left</span>
-      </div>
-      <div className="mac-ws-price-row">
-        <span className="mac-ws-price">{nextWorkshop.price}</span>
-        <span className="mac-ws-orig">{nextWorkshop.originalPrice}</span>
       </div>
     </div>
     <Link to="/workshops" className="mac-cta-btn">

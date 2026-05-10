@@ -179,9 +179,9 @@
   }
 
   .ann-bar__close {
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     border: none;
-    font-size: 1rem;
-    transform: translateY(10%);
+    font-size: 0.9rem;
   }
 }

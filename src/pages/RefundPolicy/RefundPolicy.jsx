@@ -390,12 +390,6 @@ const RefundPolicy = () => {
                     <td>Credit Card</td>
                     <td>7–10 business days (card provider dependent)</td>
                   </tr>
-                  <tr>
-                    <td>EMI (Credit Card)</td>
-                    <td>
-                      7–14 business days; EMI cancellation handled by bank
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </div>

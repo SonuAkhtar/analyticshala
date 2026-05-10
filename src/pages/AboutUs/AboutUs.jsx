@@ -393,17 +393,17 @@ const AboutUs = () => {
             <div className="about__impact-visual">
               <div className="about__impact-sphere" />
               <div className="about__impact-float about__impact-float--1">
-                <i className="fas fa-chart-line" />
+                <i className="fas fa-star" />
                 <div>
-                  <span>Placement Rate</span>
-                  <strong>94%</strong>
+                  <span>Avg Rating</span>
+                  <strong>4.9★</strong>
                 </div>
               </div>
               <div className="about__impact-float about__impact-float--2">
                 <i className="fas fa-users" />
                 <div>
-                  <span>Alumni Network</span>
-                  <strong>500+</strong>
+                  <span>Learners Trained</span>
+                  <strong>300+</strong>
                 </div>
               </div>
             </div>

@@ -77,50 +77,66 @@ const LearningPath = () => {
 
   useGSAP(
     () => {
-      const nodes = nodeRefs.current;
-      const connectors = connectorRefs.current;
-      const cards = cardRefs.current;
+      const mm = gsap.matchMedia();
 
-      nodes
-        .slice(1)
-        .forEach((n) => gsap.set(n, { opacity: 0.25, scale: 0.75 }));
-      connectors.forEach((c) =>
-        gsap.set(c, { scaleY: 0, transformOrigin: "top center" }),
-      );
-      cards.forEach((c, i) =>
-        gsap.set(c, { autoAlpha: i === 0 ? 1 : 0, y: i === 0 ? 0 : 80 }),
-      );
+      const buildTimeline = (nodes, connectors, cards) => {
+        nodes
+          .slice(1)
+          .forEach((n) => gsap.set(n, { opacity: 0.25, scale: 0.75 }));
+        connectors.forEach((c) =>
+          gsap.set(c, { scaleY: 0, transformOrigin: "top center" }),
+        );
+        cards.forEach((c, i) =>
+          gsap.set(c, { autoAlpha: i === 0 ? 1 : 0, y: i === 0 ? 0 : 80 }),
+        );
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "+=290%",
-          pin: true,
-          scrub: 1.5,
-          anticipatePin: 1,
-        },
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "+=290%",
+            pin: true,
+            scrub: 1.5,
+            anticipatePin: 1,
+          },
+        });
+
+        for (let i = 0; i < roadmapSteps.length - 1; i++) {
+          const b = i;
+          tl.to(connectors[i], { scaleY: 1, ease: "none", duration: 0.5 }, b);
+          tl.to(
+            nodes[i + 1],
+            { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(1.5)" },
+            b + 0.38,
+          );
+          tl.to(
+            cards[i],
+            { autoAlpha: 0, y: -22, duration: 0.2, ease: "power2.in" },
+            b + 0.5,
+          );
+          tl.to(
+            cards[i + 1],
+            { autoAlpha: 1, y: 0, duration: 0.35, ease: "power3.out" },
+            b + 0.68,
+          );
+        }
+      };
+
+      mm.add("(min-width: 1025px)", () => {
+        buildTimeline(
+          nodeRefs.current,
+          connectorRefs.current,
+          cardRefs.current,
+        );
       });
 
-      for (let i = 0; i < roadmapSteps.length - 1; i++) {
-        const b = i;
-        tl.to(connectors[i], { scaleY: 1, ease: "none", duration: 0.5 }, b);
-        tl.to(
-          nodes[i + 1],
-          { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(1.5)" },
-          b + 0.38,
+      mm.add("(max-width: 767px)", () => {
+        buildTimeline(
+          nodeRefs.current,
+          connectorRefs.current,
+          cardRefs.current,
         );
-        tl.to(
-          cards[i],
-          { autoAlpha: 0, y: -22, duration: 0.2, ease: "power2.in" },
-          b + 0.5,
-        );
-        tl.to(
-          cards[i + 1],
-          { autoAlpha: 1, y: 0, duration: 0.35, ease: "power3.out" },
-          b + 0.68,
-        );
-      }
+      });
     },
     { scope: sectionRef },
   );

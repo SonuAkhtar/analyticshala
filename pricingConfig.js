@@ -19,4 +19,3 @@ export const workshopFees = {
 };
 
 export const fmt = (n) => `₹${n.toLocaleString("en-IN")}`;
-export const emi = (price) => `${fmt(Math.round(price / 12))}/mo`;

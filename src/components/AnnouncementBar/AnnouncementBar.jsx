@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./announcementBar.css";
 
-const STORAGE_KEY = "analyticshala_ann_dismissed_v1";
+const STORAGE_KEY = "analyticshala_ann_dismissed_v2";
 
 const AnnouncementBar = () => {
   const [visible, setVisible] = useState(false);
@@ -44,12 +44,12 @@ const AnnouncementBar = () => {
         </span>
         <p className="ann-bar__text">
           <span className="ann-bar__text--desktop">
-            <strong>RAG Systems course is live</strong> — Early bird seats filling fast.{" "}
-            <Link to="/course-details?id=rag" className="ann-bar__link">Grab ₹999 off →</Link>
+            <strong>Agentic AI course is live</strong> — Next batch: June 20, 2026. Seats filling fast.{" "}
+            <Link to="/courses/agentic-ai" className="ann-bar__link">View Course →</Link>
           </span>
           <span className="ann-bar__text--mobile">
-            RAG course live —{" "}
-            <Link to="/course-details?id=rag" className="ann-bar__link">Grab ₹999 off →</Link>
+            Agentic AI course live —{" "}
+            <Link to="/courses/agentic-ai" className="ann-bar__link">View Course →</Link>
           </span>
         </p>
       </div>

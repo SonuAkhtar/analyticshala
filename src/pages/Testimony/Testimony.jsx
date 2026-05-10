@@ -11,16 +11,16 @@ const fadeUp = (delay = 0) => ({
 });
 
 const heroStats = [
-  { num: "500+", label: "Students Trained", icon: "fas fa-graduation-cap" },
+  { num: "300+", label: "Learners Trained", icon: "fas fa-graduation-cap" },
   { num: "4.9★", label: "Average Rating", icon: "fas fa-star" },
-  { num: "94%", label: "Placement Rate", icon: "fas fa-briefcase" },
+  { num: "Weekend", label: "Live Batches", icon: "fas fa-calendar-alt" },
   { num: "11+", label: "Years Teaching", icon: "fas fa-chalkboard-teacher" },
 ];
 
 const trustItems = [
   { icon: "fas fa-chalkboard-teacher", text: "Industry Expert Trainers" },
   { icon: "fas fa-certificate", text: "Recognised Certificates" },
-  { icon: "fas fa-users", text: "500+ Alumni Network" },
+  { icon: "fas fa-users", text: "300+ Learners Community" },
   { icon: "fas fa-headset", text: "Lifetime Mentor Access" },
   { icon: "fas fa-briefcase", text: "Career Placement Support" },
 ];

@@ -1,6 +1,6 @@
 .header {
   position: fixed;
-  top: calc(var(--ann-bar-height, 0px) + 1rem);
+  top: calc(var(--ann-bar-height, 0px) + 0.5rem);
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 2rem);
@@ -22,7 +22,12 @@
     background 0.35s ease,
     box-shadow 0.35s ease,
     border-color 0.35s ease,
-    top 0.25s ease;
+    top 0.25s ease,
+    transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header--hidden {
+  transform: translateX(-50%) translateY(calc(-100% - 1.5rem));
 }
 
 .header--scrolled {
@@ -284,13 +289,12 @@
 }
 
 .header__hamburger:hover {
-  background: color-mix(in srgb, var(--text-primary) 7%, transparent);
   border-color: color-mix(in srgb, var(--text-primary) 22%, transparent);
 }
 
 .header__hamburger--active {
-  background: rgba(178, 56, 80, 0.1);
-  border-color: rgba(178, 56, 80, 0.38);
+  background: transparent;
+  border-color: transparent;
 }
 
 .header__hamburger-icon {

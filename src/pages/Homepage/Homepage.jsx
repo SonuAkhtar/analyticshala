@@ -42,7 +42,7 @@ function Homepage() {
         <title>AnalyticShala | Data Analytics &amp; AI Courses in India</title>
         <meta
           name="description"
-          content="Learn Data Analytics, Data Science, AI & ML from industry experts. 94% placement rate. Weekend batches. Real projects. India's most hands-on data education platform."
+          content="Learn Data Analytics, Data Science, AI & ML from industry experts. 4.9★ rated. Weekend batches. Real projects. India's most hands-on data education platform."
         />
         <meta
           property="og:title"
@@ -50,7 +50,7 @@ function Homepage() {
         />
         <meta
           property="og:description"
-          content="94% placement rate. Industry-led curriculum. Join 500+ professionals who built their data careers with AnalyticShala."
+          content="4.9★ rated. Industry-led curriculum. Join 300+ learners who built their data careers with AnalyticShala."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://analyticshala.in" />

@@ -33,8 +33,8 @@ const Footer = () => {
 
             <div className="footer__cta-stats">
               <div className="footer__cta-stat">
-                <span className="footer__cta-num">94%</span>
-                <span className="footer__cta-lbl">Placement Rate</span>
+                <span className="footer__cta-num">4.9★</span>
+                <span className="footer__cta-lbl">Avg Rating</span>
               </div>
               <div className="footer__cta-divider" />
               <div className="footer__cta-stat">
@@ -43,8 +43,8 @@ const Footer = () => {
               </div>
               <div className="footer__cta-divider" />
               <div className="footer__cta-stat">
-                <span className="footer__cta-num">500+</span>
-                <span className="footer__cta-lbl">Alumni Placed</span>
+                <span className="footer__cta-num">300+</span>
+                <span className="footer__cta-lbl">Learners Trained</span>
               </div>
             </div>
           </div>

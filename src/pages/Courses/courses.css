@@ -532,6 +532,24 @@
   font-size: 0.68rem;
 }
 
+.courses-page__card-meta-batch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--cp-blue);
+  background: color-mix(in srgb, var(--cp-blue) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cp-blue) 25%, transparent);
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+}
+
+.courses-page__card-meta-batch i {
+  color: var(--cp-blue);
+  font-size: 0.68rem;
+}
+
 /* Skill tags */
 .courses-page__skills-tags {
   display: flex;

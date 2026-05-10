@@ -6,9 +6,9 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const coursesData = allCourses
-  .filter((c) => c.homepageOrder !== null)
+  .filter((c) => c.homepageOrder !== null && !c.comingSoon)
   .sort((a, b) => a.homepageOrder - b.homepageOrder)
-  .slice(0, 5);
+  .slice(0, 4);
 
 const Courses = ({ setShowDownload }) => {
   const ref = useRef(null);
@@ -72,6 +72,10 @@ const Courses = ({ setShowDownload }) => {
                 <span className="courses__card-meta-pill">
                   <i className="fas fa-clock" />
                   {course.duration}
+                </span>
+                <span className="courses__card-meta-pill courses__card-meta-pill--batch">
+                  <i className="fas fa-calendar-alt" />
+                  Next Batch: June 20, 2026
                 </span>
               </div>
 
