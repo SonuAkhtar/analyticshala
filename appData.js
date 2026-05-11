@@ -64,7 +64,7 @@ export const heroMarqData = [
   { id: 14, name: "ML / AI", icon: "fas fa-brain", color: "#9333EA" },
 ];
 
-/* ----- Course Data ----- */
+/* ----- Course Data ------- */
 
 export const coursesData = [
   /* -- 1. Data Analytics with Python -- */
